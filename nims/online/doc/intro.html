@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>О НИМС &mdash; Документация НИМС набор инструментов мастера-сюжетника 0.4.4u2</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.4.4u2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация НИМС набор инструментов мастера-сюжетника 0.4.4u2" href="nims.html" />
+    <link rel="next" title="Теория" href="theory.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="nims.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="theory.html" title="Теория"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="nims.html" title="&lt;no title&gt;"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="nims.html">Документация НИМС набор инструментов мастера-сюжетника 0.4.4u2</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>О НИМС<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>НИМС - что это?</p>
+<blockquote>
+<div>НИМС - это редактор для написания вводных для ролевых игр (РИ). Это его основная функция, и именно это он должен делать хорошо. Помимо этого, с его помощью решаются побочные задачи, но об этом позже.
+НИМС реализован в виде интерактивной веб-страницы. Все, что вам нужно для работы с НИМС это веб-браузер. Проверялась работа программы в Firefox, Chrome и Internet Explorer. Для работы НИМСу не требуется соединение с интернетом, так же, как не требуется интернет для работы калькулятора.</div></blockquote>
+<p>Порядок работы с НИМС</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Открываете НИМС</li>
+<li>Загружаете базу для редактирования</li>
+<li>Вносите изменения</li>
+<li>Сохраняете базу для последующего запуска</li>
+</ol>
+<p>НИМС не может работать напрямую с файлом, поэтому сохранение не выполняется сразу в файл. Это необходимо делать отдельно. На закрытии вкладки с НИМС всегда показывается напоминалка о необходимости сохранения базы.
+В процессе работы с НИМС все изменения сразу сохраняются в странице. Например, при изменении текста описания игры на первой странице, как только вы завершите ввод, текст будет сохранен.
+Сохраненный файл базы является обычным текстовым файлом фиксированной структуры. Если любопытно, откройте его в любом текстовом редакторе, только помните, что при внесении изменений вручную база может не загрузиться в НИМС при следующем запуске.</p>
+</div></blockquote>
+<p>Технические подробности в двух словах</p>
+<blockquote>
+<div><p>НИМС написан на языке JavaScript с использованием библиотек jQuery (календарь для ввода дат), Vis (таймлайн и социальные сети) и Chart.js (круговые диаграммы), Docxtemplater (выгрузка в docx), Mustache (текстовая выгрузка), Bootstrap 3 (элементы дизайна), Jasmine (тесты), Ramda (элементы функционального программирования), Select2 (списки с поиском). База данных хранится в формате json.</p>
+<p>Авторы используемых иконок с сайта www.flaticon.com: Anton Saputro, Pavel Kozlov, Budi Tanrim, Catalin Fertu, Picol и Freepik. Автор иконки сортировки FatCow.</p>
+<p>Исходный код НИМСа по своей природе открыт. Используется открытая лицензия Apache 2.0. Последняя версия НИМСа находится в репозитории <a class="reference external" href="https://bitbucket.org/NtsDK/story-master-toolkit-smtk-nims/downloads">https://bitbucket.org/NtsDK/story-master-toolkit-smtk-nims/downloads</a>. Исходники документации доступны по ссылке <a class="reference external" href="https://bitbucket.org/NtsDK/story-master-toolkit-smtk-nims-documentation">https://bitbucket.org/NtsDK/story-master-toolkit-smtk-nims-documentation</a>. Так же скачать НИМС можно на сайте <a class="reference external" href="http://trechkalov.com/">http://trechkalov.com/</a> и в группе <a class="reference external" href="http://vk.com/larp_nims">http://vk.com/larp_nims</a>.</p>
+</div></blockquote>
+<p>Специальные обозначения</p>
+<blockquote>
+<div><em>курсив</em> - термины. <code class="docutils literal"><span class="pre">Моноширинный</span> <span class="pre">шрифт</span></code> - названия кнопок и элементов страниц.</div></blockquote>
+<p>Благодарности</p>
+<blockquote>
+<div>Благодарим Анну Волю Махневу и Александра Сэша Махнева за первое тестирование НИМС и обратную связь.</div></blockquote>
+<p>Контакты по вопросам эксплуатации и предложения:</p>
+<blockquote>
+<div><p>Почта: ntsdk(dog)yandex(dot)ru, matilda_(dog)list(dot)ru</p>
+<p>Вконтакт: <a class="reference external" href="http://vk.com/larp_nims">http://vk.com/larp_nims</a></p>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="nims.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="nims.html"
+                        title="предыдущая глава">&lt;no title&gt;</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="theory.html"
+                        title="следующая глава">Теория</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/intro.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="theory.html" title="Теория"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="nims.html" title="&lt;no title&gt;"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="nims.html">Документация НИМС набор инструментов мастера-сюжетника 0.4.4u2</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Тимофей NtsDK Речкалов, Мария Матильда Сидехменова.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

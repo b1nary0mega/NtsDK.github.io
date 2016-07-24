@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Набор инструментов мастера-сюжетника НИМС</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+<!--   <link rel="stylesheet" media="screen" href="themes/style/swiss.css"> -->
+<!--   <link rel="stylesheet" media="screen" href="themes/style/neon.css"> -->
+<!--   <link rel="stylesheet" media="screen" href="themes/style/_reset.css"> -->
+  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide" id="title-slide" label="Титул">
+      <h1 style="font-size:4em;">Набор инструментов мастера-сюжетника НИМС</h1>
+      <h2>Речкалов Тимофей (NtsDK) Сидехменова Мария (Matilda)</h2>
+      <span style="position: absolute;bottom: 0;">
+      g - выбор слайда<br>
+      m - миниатюры слайдов<br>
+      стрелки влево/вправо - переключение слайдов<br>
+      Версия 1.1 (3 июля 2016)
+      </span>
+    </section>
+    
+    <section class="slide" id="concept" label="Концепция">
+      <h2>Концепция</h2>
+      <p>При создании игры мастер-сюжетник задает цели, ценности,
+        мотивации персонажей. Если раздавать игрокам прямые указания вида
+        «ты - глуп, ненавидишь короля, хочешь жениться на принцессе», то
+        игрок будет задавать много вопросов или проигнорирует такие
+        указания. Поэтому традиционно игроку выдаётся ряд историй, в
+        которых персонаж участвовал. Кроме очевидной задачи сообщить
+        человеку доигровой событийный ряд, подобные истории дают пример
+        поведения персонажа, его оценок, его рассуждений и т.д. Так же каждая
+        история должна быть представлена нескольким персонажам, причём
+        по-разному, потому что не все всё знают и у каждого своё видение
+        ситуации. Этот способ эффективен, но технически сложен.</p>
+
+      <p>Для решения данной задачи и был разработан НИМС – набор
+        инструментов мастера сюжетника. В этой презентации мы расскажем
+        о том как мы представляем себе процесс работы над сюжетами с
+        помощью НИМС.</p>
+    </section>
+    
+    <section class="slide" id="terminology" label="Терминология-1">
+      <h2>Терминология</h2>
+      <ul>
+        <li><p><em>Персонаж</em> – персонаж ролевой игры.</p></li>
+        <li><p><em>История</em> – серия взаимосвязанных событий, затрагивающая некоторое количество персонажей.</p></li>
+        <li><p><em>Мастерская история</em> – видение мастера, как всё
+            происходило на самом деле.</p></li>
+        <li><p><em>Адаптация истории</em> – то, как персонаж видит события из истории, в которых он участвовал.</p></li>
+<!--         <li><p><em>Адаптация истории</em> – видение персонажа событий из -->
+<!--             истории, в которых он участвовал.</p></li> -->
+        <li><p><em>Вводная</em> – документ, выдываемый игроку,
+            отыгрывающему персонажа, содержащий все адаптации историй
+            персонажа и вспомогательную информацию.</p></li>
+      </ul>
+    </section>
+
+    <section class="slide" id="master-story" label="Шаг 1. Мастерская история">
+      <h2>Шаг 1. Мастерская история</h2>
+      <p>Всё начинается с истории, которую вы просто придумываете.
+        Всё. Пока не нужно ничего разбивать, мотивировать,
+        детализировать, нужно просто придумать историю как это было. Мы
+        называем эту историю мастерской историей.</p>
+      <h2>Пример</h2>
+      <h3>Хранитель кольца</h3>
+      <p>Гендальф вернулся из долгого путешествия к Фродо и
+        рассказал ему историю кольца всевластья. Так же он рассказал ему
+        про чёрных всадников и отправил в Бри. Их подслушал Сэм,
+        которого Гендальф отправил вместе с Фродо. По пути они встретили
+        Мерри и Пипина и взяли их с собой.</p>
+    </section>
+
+    <section class="slide" id="process-master-story" label="Шаг 2. Обработка мастерской истории">
+      <h2>Шаг 2. Обработка мастерской истории</h2>
+
+      <p>Начинаем прорабатывать мастерскую-историю.</p>
+      <ul>
+        <li>
+          <p>Составляем список персонажей, участвующих в истории.</p>
+          <p>Гендальф, Фродо, Сэм, Мерри, Пипин</p>
+        </li>
+        <li>
+          <p>Разбиваем историю на события по принципу единства
+            времени, места и персонажей и даём событиям названия.</p>
+          <h3>1. Начало пути</h3>
+          <p>Гендальф вернулся из долгого путешествия к Фродо и
+            рассказал ему историю кольца всевластья. Так же он рассказал
+            ему про чёрных всадников и отправил в Бри. Их подслушал Сэм,
+            которого Гендальф отправил вместе с Фродо.</p>
+          <h3>2. Мерри и Пипин</h3>
+          <p>По пути они встретили Мерри и Пипина и взяли их с
+            собой.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide" id="adaptations" label="Шаг 3. Адаптации">
+      <h2>Шаг 3. Адаптации</h2>
+
+      <p>Пока мы описывали события с мастерской точки зрения. На
+        этом шаге мы описываем видение событий каждым из участников
+        события.</p>
+      <ul>
+        <li>
+          <h3>1. Начало пути - Сэм</h3>
+          <p>Подстригал я кусты и вдруг услышал разговор хозяина и
+            Гендальфа (…)</p>
+        </li>
+        <li>
+          <h3>1. Начало пути - Фродо</h3>
+          <p>Гендальф вернулся после долгого отсутствия очень
+            обеспокоенным (…)</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide" id="making-handouts" label="Шаг 4. Формирование вводных">
+      <h2>Шаг 4. Формирование вводных</h2>
+
+      <p>При формировании вводных мы собираем все адаптации для
+        каждого персонажа в один документ и делаем финальную вычитку.</p>
+      <h3>Сэм</h3>
+      <h3>История: Хранитель Кольца</h3>
+      <ul>
+        <li>
+          <h3>1. Начало пути</h3>
+          <p>Подстригал я кусты и вдруг услышал разговор хозяина и
+            Гендальфа (…)</p>
+        </li>
+        <li>
+          <h3>2. Мерри и Пипин</h3>
+          <p>Шли мы с хозяином через поле и вдруг раздался шум, и на
+            нас вывалилось два оболтуса (…)</p>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="slide" id="nims-scheme" label="Схема работы НИМС">
+    <h2>Схема работы НИМС</h2>
+    <div style="display: flex;justify-content: center;">
+<!--     <img src="./images/nims_idea.svg" alt=""> -->
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-opacity="1" color-rendering="auto" color-interpolation="auto" text-rendering="auto" stroke="black" stroke-linecap="square" width="1000" stroke-miterlimit="10" shape-rendering="auto" stroke-opacity="1" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" height="746" font-family="'Dialog'" font-style="normal" stroke-linejoin="miter" font-size="12px" stroke-dashoffset="0" image-rendering="auto">
+  <!--Generated by ySVG 2.5-->
+  <defs id="genericDefs"/>
+  <g>
+    <defs id="defs1">
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1">
+        <path d="M0 0 L1000 0 L1000 746 L0 746 L0 0 Z"/>
+      </clipPath>
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath2">
+        <path d="M6 130 L798 130 L798 720.832 L6 720.832 L6 130 Z"/>
+      </clipPath>
+    </defs>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="67.7484" xml:space="preserve" y="167.3027" clip-path="url(#clipPath2)" stroke="none">История</text>
+    </g>
+    <g stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" fill="red" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="red" stroke-miterlimit="1.45">
+      <rect fill="none" x="31.2793" width="135.1648" height="31.9456" y="145.5213" clip-path="url(#clipPath2)"/>
+    </g>
+    <g fill="rgb(231,231,231)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" stroke="rgb(231,231,231)">
+      <rect x="21.8293" width="154.0648" height="188.5259" y="328.3224" clip-path="url(#clipPath2)" stroke="none"/>
+    </g>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="30.7523" xml:space="preserve" y="356.894" clip-path="url(#clipPath2)" stroke="none">Хранитель кольца</text>
+      <text x="96.639" xml:space="preserve" y="374.769" clip-path="url(#clipPath2)" stroke="none"> </text>
+      <text x="92.1937" xml:space="preserve" y="392.644" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="92.1937" xml:space="preserve" y="410.519" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="92.1937" xml:space="preserve" y="428.394" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="92.1937" xml:space="preserve" y="446.269" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="92.1937" xml:space="preserve" y="464.144" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="92.1937" xml:space="preserve" y="482.019" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="92.1937" xml:space="preserve" y="499.894" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="21.8293" width="154.0648" height="188.5259" y="328.3224" clip-path="url(#clipPath2)"/>
+      <text x="267.7406" xml:space="preserve" y="167.3027" clip-path="url(#clipPath2)" stroke="none">События</text>
+    </g>
+    <g stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" fill="red" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="red" stroke-miterlimit="1.45">
+      <rect fill="none" x="233.1817" width="135.1648" height="31.9456" y="145.5213" clip-path="url(#clipPath2)"/>
+    </g>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="462.2485" xml:space="preserve" y="167.3027" clip-path="url(#clipPath2)" stroke="none">Адаптации</text>
+    </g>
+    <g stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" fill="red" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="red" stroke-miterlimit="1.45">
+      <rect fill="none" x="435.0841" width="135.1648" height="31.9456" y="145.5213" clip-path="url(#clipPath2)"/>
+    </g>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="671.2485" xml:space="preserve" y="167.3027" clip-path="url(#clipPath2)" stroke="none">Вводные</text>
+    </g>
+    <g stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" fill="red" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="red" stroke-miterlimit="1.45">
+      <rect fill="none" x="636.9865" width="135.1648" height="31.9456" y="145.5213" clip-path="url(#clipPath2)"/>
+    </g>
+    <g fill="rgb(231,231,231)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" stroke="rgb(231,231,231)">
+      <rect x="235.7317" width="130.0648" height="118.845" y="248.4448" clip-path="url(#clipPath2)" stroke="none"/>
+    </g>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="254.1156" xml:space="preserve" y="277.9259" clip-path="url(#clipPath2)" stroke="none">Начало пути</text>
+      <text x="298.5414" xml:space="preserve" y="295.8009" clip-path="url(#clipPath2)" stroke="none"> </text>
+      <text x="294.0961" xml:space="preserve" y="313.6759" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="294.0961" xml:space="preserve" y="331.5509" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="294.0961" xml:space="preserve" y="349.4259" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="235.7317" width="130.0648" height="118.845" y="248.4448" clip-path="url(#clipPath2)"/>
+    </g>
+    <g fill="rgb(231,231,231)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" stroke="rgb(231,231,231)">
+      <rect x="235.7317" width="130.0648" height="126.9856" y="506.6678" clip-path="url(#clipPath2)" stroke="none"/>
+    </g>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="243.932" xml:space="preserve" y="540.2192" clip-path="url(#clipPath2)" stroke="none">Мерри и Пипин</text>
+      <text x="298.5414" xml:space="preserve" y="558.0942" clip-path="url(#clipPath2)" stroke="none"> </text>
+      <text x="294.0961" xml:space="preserve" y="575.9692" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="294.0961" xml:space="preserve" y="593.8442" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="294.0961" xml:space="preserve" y="611.7192" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="235.7317" width="130.0648" height="126.9856" y="506.6678" clip-path="url(#clipPath2)"/>
+    </g>
+    <g fill="rgb(231,231,231)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" stroke="rgb(231,231,231)">
+      <rect x="435.1841" width="134.9648" height="56.9856" y="206.4669" clip-path="url(#clipPath2)" stroke="none"/>
+    </g>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="453.7954" xml:space="preserve" y="222.8933" clip-path="url(#clipPath2)" stroke="none">Начало пути:</text>
+      <text x="478.5688" xml:space="preserve" y="240.7683" clip-path="url(#clipPath2)" stroke="none">Фродо</text>
+      <text x="495.9985" xml:space="preserve" y="258.6433" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="435.1841" width="134.9648" height="56.9856" y="206.4669" clip-path="url(#clipPath2)"/>
+      <text x="453.7954" xml:space="preserve" y="295.8009" clip-path="url(#clipPath2)" stroke="none">Начало пути:</text>
+      <text x="487.3071" xml:space="preserve" y="313.6759" clip-path="url(#clipPath2)" stroke="none">Сэм</text>
+      <text x="495.9985" xml:space="preserve" y="331.5509" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="435.1841" width="134.9648" height="56.9856" y="279.3745" clip-path="url(#clipPath2)"/>
+      <text x="453.7954" xml:space="preserve" y="368.7084" clip-path="url(#clipPath2)" stroke="none">Начало пути:</text>
+      <text x="464.9321" xml:space="preserve" y="386.5834" clip-path="url(#clipPath2)" stroke="none">Гендальф</text>
+      <text x="495.9985" xml:space="preserve" y="404.4584" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="435.1841" width="134.9648" height="56.9856" y="352.282" clip-path="url(#clipPath2)"/>
+    </g>
+    <g fill="rgb(231,231,231)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" stroke="rgb(231,231,231)">
+      <rect x="435.1841" width="134.9648" height="56.9856" y="445.0824" clip-path="url(#clipPath2)" stroke="none"/>
+    </g>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="443.6118" xml:space="preserve" y="461.5088" clip-path="url(#clipPath2)" stroke="none">Мерри и Пипин:</text>
+      <text x="478.5688" xml:space="preserve" y="479.3838" clip-path="url(#clipPath2)" stroke="none">Фродо</text>
+      <text x="495.9985" xml:space="preserve" y="497.2588" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="435.1841" width="134.9648" height="56.9856" y="445.0824" clip-path="url(#clipPath2)"/>
+      <text x="443.6118" xml:space="preserve" y="596.6796" clip-path="url(#clipPath2)" stroke="none">Мерри и Пипин:</text>
+      <text x="487.3071" xml:space="preserve" y="614.5546" clip-path="url(#clipPath2)" stroke="none">Сэм</text>
+      <text x="495.9985" xml:space="preserve" y="632.4296" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="435.1841" width="134.9648" height="56.9856" y="580.2532" clip-path="url(#clipPath2)"/>
+      <text x="443.6118" xml:space="preserve" y="529.0942" clip-path="url(#clipPath2)" stroke="none">Мерри и Пипин:</text>
+      <text x="478.186" xml:space="preserve" y="546.9692" clip-path="url(#clipPath2)" stroke="none">Мерри</text>
+      <text x="495.9985" xml:space="preserve" y="564.8442" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="435.1841" width="134.9648" height="56.9856" y="512.6678" clip-path="url(#clipPath2)"/>
+      <text x="443.6118" xml:space="preserve" y="664.265" clip-path="url(#clipPath2)" stroke="none">Мерри и Пипин:</text>
+      <text x="479.229" xml:space="preserve" y="682.14" clip-path="url(#clipPath2)" stroke="none">Пипин</text>
+      <text x="495.9985" xml:space="preserve" y="700.015" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="435.1841" width="134.9648" height="56.9856" y="647.8386" clip-path="url(#clipPath2)"/>
+    </g>
+    <g fill="rgb(231,231,231)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" stroke="rgb(231,231,231)">
+      <rect x="626.7365" width="155.6648" height="159.9856" y="237.4207" clip-path="url(#clipPath2)" stroke="none"/>
+    </g>
+    <g font-size="16px" stroke-linecap="butt" transform="matrix(1.2626,0,0,1.2626,-7.5758,-164.1414)" text-rendering="geometricPrecision" font-family="'Arial'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+      <text x="680.4712" xml:space="preserve" y="269.5971" clip-path="url(#clipPath2)" stroke="none">Фродо</text>
+      <text x="702.3462" xml:space="preserve" y="287.4721" clip-path="url(#clipPath2)" stroke="none"> </text>
+      <text x="636.4595" xml:space="preserve" y="305.3471" clip-path="url(#clipPath2)" stroke="none">Хранитель кольца</text>
+      <text x="649.0259" xml:space="preserve" y="323.2221" clip-path="url(#clipPath2)" stroke="none">1. Начало пути</text>
+      <text x="697.9009" xml:space="preserve" y="341.0971" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <text x="638.8423" xml:space="preserve" y="358.9721" clip-path="url(#clipPath2)" stroke="none">2. Мерри и Пипин</text>
+      <text x="697.9009" xml:space="preserve" y="376.8471" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="626.7365" width="155.6648" height="159.9856" y="237.4207" clip-path="url(#clipPath2)"/>
+      <text x="666.8345" xml:space="preserve" y="484.4115" clip-path="url(#clipPath2)" stroke="none">Гендальф</text>
+      <text x="702.3462" xml:space="preserve" y="502.2865" clip-path="url(#clipPath2)" stroke="none"> </text>
+      <text x="636.4595" xml:space="preserve" y="520.1614" clip-path="url(#clipPath2)" stroke="none">Хранитель кольца</text>
+      <text x="649.0259" xml:space="preserve" y="538.0364" clip-path="url(#clipPath2)" stroke="none">1. Начало пути</text>
+      <text x="697.9009" xml:space="preserve" y="555.9114" clip-path="url(#clipPath2)" stroke="none">...</text>
+      <rect fill="none" x="626.7365" width="155.6648" height="113.9856" y="457.3601" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M175.8941 378.8167 L228.776 348.7699" clip-path="url(#clipPath2)"/>
+      <path d="M235.7316 344.8177 L222.8281 346.3987 L227.9066 349.2639 L227.7683 355.0932 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M175.8941 482.515 L229.4053 524.1456" clip-path="url(#clipPath2)"/>
+      <path d="M235.7195 529.058 L229.3185 517.7431 L228.6161 523.5316 L223.178 525.6359 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M365.7964 272.5946 L428.118 238.7923" clip-path="url(#clipPath2)"/>
+      <path d="M435.1502 234.9781 L422.218 236.3042 L427.2389 239.2691 L426.9857 245.0945 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M365.7964 307.8673 L427.1502 307.8673" clip-path="url(#clipPath2)"/>
+      <path d="M435.1502 307.8673 L423.1502 302.8673 L426.1502 307.8673 L423.1502 312.8673 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M365.7964 343.1399 L428.118 376.9422" clip-path="url(#clipPath2)"/>
+      <path d="M435.1502 380.7564 L426.9857 370.64 L427.2389 376.4655 L422.218 379.4303 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M365.7964 523.4326 L428.6534 478.2677" clip-path="url(#clipPath2)"/>
+      <path d="M435.1502 473.5996 L422.4874 476.5413 L427.8413 478.8513 L428.3226 484.6623 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M365.7964 588.8282 L427.4607 606.529" clip-path="url(#clipPath2)"/>
+      <path d="M435.1502 608.7363 L424.9955 600.6194 L426.4995 606.2531 L422.2364 610.2313 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M365.7964 556.1304 L427.3301 542.855" clip-path="url(#clipPath2)"/>
+      <path d="M435.1502 541.1679 L422.3656 538.811 L426.3526 543.0659 L424.4745 548.5862 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M365.7964 621.526 L428.8723 671.346" clip-path="url(#clipPath2)"/>
+      <path d="M435.1502 676.3046 L428.8324 664.943 L428.0875 670.7262 L422.6342 672.7904 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M570.1489 234.9597 L621.0266 285.0539" clip-path="url(#clipPath2)"/>
+      <path d="M626.7272 290.6667 L621.6843 278.6847 L620.314 284.3523 L614.6683 285.8104 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M570.1489 473.5752 L623.2971 361.5776" clip-path="url(#clipPath2)"/>
+      <path d="M626.7269 354.3502 L617.0651 363.0478 L622.8684 362.4811 L626.0994 367.335 Z" stroke="none" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M570.1489 380.7748 L622.8272 475.113" clip-path="url(#clipPath2)"/>
+      <path d="M626.7275 482.0978 L625.2426 469.1829 L622.3397 474.2399 L616.5115 474.0583 Z" stroke="none" clip-path="url(#clipPath2)"/>
+    </g>
+  </g>
+</svg>
+</div>
+    </section>
+
+    <section class="slide" id="summary" label="Резюме">
+      <h2>Резюме</h2>
+      <ul>
+        <li>
+          <p>Цель достигнута, вводные сделаны, основная задача
+            решена.</p>
+        </li>
+        <li>
+          <p>Описанный алгоритм положен в основу НИМС. Процесс
+            подготовки вводных разбивается на простые шаги и имеет
+            удобную форму представления.</p>
+        </li>
+        <li>
+          <p>Есть ещё ряд вторичных задач и инструментов для их
+            решения. Подробнее о них рассказано во второй части презентации.</p>
+        </li>
+      </ul>
+    </section>
+    
+
+    
+<!--     <section class="slide" id="extras" label="Дополнительные функции"> -->
+<!--       <h2>Дополнительные функции</h2> -->
+<!--       <ul> -->
+<!--         <li> -->
+<!--           <p>Списки инвентаря – список вещей, которые должны быть у -->
+<!--             игрока на начало игры.</p> -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           <p>Планирование игровых событий – инструкция для -->
+<!--             игротехников что и когда они должны делать.</p> -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           <p>Таймлайн доигровых событий.</p> -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           <p>Анализ загруженности и активности персонажа.</p> -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           <p>Отслеживание социальных связей между персонажами.</p> -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           <p>Поиск персонажей по досье.</p> -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           <p>Автоматическое построение статистики и диаграмм.</p> -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           <p>Работа в многопользовательском серверном режиме.</p> -->
+<!--         </li> -->
+<!--       </ul> -->
+<!--     </section> -->
+
+    <section class="slide" id="links" label="Ссылки">
+      <h2>Ссылки</h2>
+      <p>
+        <a
+          href="https://bitbucket.org/NtsDK/story-master-toolkit-smtk-nims/downloads"
+        > Сборки НИМС для скачивания</a>
+      </p>
+      <p>
+        <a href="http://trechkalov.com/nims/online/nims.html">Посмотреть
+          НИМС онлайн</a>
+      </p>
+      <p>
+        <a href="http://trechkalov.com/nims/online/doc/nims.html">Документация
+          НИМС онлайн</a>
+      </p>
+      <p>
+        <a href="http://vk.com/larp_nims">Группа вконтакте</a>
+      </p>
+      <p>
+        <a href="http://trechkalov.com">Сайт разработчика</a>
+      </p>
+      <p>
+        <a href="https://www.youtube.com/playlist?list=PL3zrBk4Un47FkHoRv0eVb5vS7PQtGoALR">YouTube плейлист</a>
+      </p>
+      <p>
+        <a
+          href="https://bitbucket.org/NtsDK/story-master-toolkit-smtk-nims"
+        >Репозиторий ядра НИМС (Bitbucket)</a>
+      </p>
+      <p>
+        <a href="https://github.com/NtsDK/smtk-nims-translations">Репозиторий
+          переводов и документации НИМС (Github)</a>
+      </p>
+    </section>
+    
+    <section class="slide" id="extrax" label="Дополнительные функции">
+      <h1 style="font-size:4em;">Дополнительные функции</h1>
+    </section>
+
+    <section class="slide" id="inventory-lists" label="Списки инвентаря">
+      <h2>Списки инвентаря</h2>
+      <ul>
+        <li>
+          Списки инвентаря – список вещей, которые должны быть у игрока на начало игры. Изначально это список
+            предметов, которые должны быть подготовлены мастерами.
+        </li>
+        <li>
+          Инвентарь закрепляется за персонажем относительно истории. Так мы узнаем откуда предмет взялся и еще
+            это полезно при замене персонажа в истории.
+        </li>
+        <li>
+          Например
+          <ul>
+            <li>
+              В истории «Начало пути» Фродо получает Жало и кольчугу от Бильбо
+            </li>
+            <li>
+              В истории «Братство кольца» Фродо получает Фиал Галадриэли
+            </li>
+          </ul>
+        </li>
+        <li>
+          Если у персонажа есть свой не зависящий от историй инвентарь, то мы можем описать его в досье.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide" id="event-planning" label="Планирование игровых событий">
+      <h2>Планирование игровых событий</h2>
+      <ul>
+        <li>
+          Планирование игровых событий – инструкция для игротехников что и когда они должны делать.
+        </li>
+        <li>
+          Например, в какой-то истории на вторую игровую ночь игротеху нужно подбросить письмо Васе Пупкину, а
+            монстры выходят каждую полночь.
+        </li>
+        <li>
+          Перед игрой инструкции распечатываются и выдаются игротехникам так же как и обычные вводные. Можно
+            подготовить разные инструкции для нескольких игротехов.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide" id="timeline" label="Таймлайн доигровых событий">
+      <h2>Таймлайн доигровых событий</h2>
+      <ul>
+        <li>
+          У каждого события можно указать время. Это необязательная, но рекомендуемая возможность. При наличии
+            времени, можно вывести события во вводные в хронологическом порядке.
+        </li>
+        <li>
+          Если время события не указано, то считается, что событие наступило во время начала игры.
+        </li>
+        <li>
+          На таймлайне событий можно посмотреть как соотносятся по времени события в разных историях.
+        </li>
+      </ul>
+      <img src="images\timeline.jpg" alt="Timeline">
+    </section>
+
+    <section class="slide" id="activity" label="Анализ загруженности и активности персонажа">
+      <h2>Анализ загруженности и активности персонажа</h2>
+      <ul>
+        <li>
+          Каждый персонаж играет свою роль в каждой своей истории.
+        </li>
+        <li>
+          Мы выделили 4 типа активности:
+          <ul>
+            <li>
+              Актив - персонаж играет в истории активную роль. Пример: Фродо, Дон Кихот
+            </li>
+            <li>
+              Спутник - персонаж идет в след за кем-то, но ему самому цель вторична. Пример: Сэм и Санчо Панса.
+            </li>
+            <li>
+              Защита - персонаж защищается от преследователей. Пример: шпион в облаве, убийца в детективной истории.
+              
+            </li>
+            <li>
+              Пассив - персонаж, владеющий информацией или артефактами в истории, но не преследующий никаких целей.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Причем персонаж может иметь несколько типов активности одновременно в одной истории.
+        </li>
+        <li>
+          Графическое и статистическое отображение активностей позволяет оценить степень и качество загруженности
+            персонажа.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide" id="social-links" label="Отслеживание социальных связей">
+      <h2>Отслеживание социальных связей между персонажами</h2>
+      <ul>
+        <li>
+          Подход простой, но логичный. Если персонажи оказались в одном событии, то считается, что это привело к
+            социальному взаимодействию и сформировало социальную связь.
+        </li>
+        <li>
+          Причем не важно отбивались они спина к спине от полчищ врагов или один задел другого плечом, когда
+            скрывался от преследования, таким образом второй во взаимодействии стал свидетелем.
+        </li>
+        <li>
+          И то и другое это социальная связь.
+        </li>
+        <li>
+          На основе имеющихся данных НИМС отрисовывает социальные сети нескольких видов:
+          <ul>
+            <li>
+              Социальные связи - сеть связей между персонажами.
+            </li>
+            <li>
+              Персонаж-участие-история - сеть связей персонажей и историй.
+            </li>
+            <li>
+              Персонаж-активность-история - сеть связей персонажей и историй на основе данных об активности.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <img src="images\social-network.jpg" alt="Social Network">
+    </section>
+
+    <section class="slide" id="charcater-filter" label="Поиск персонажей по досье">
+      <h2>Поиск персонажей по досье</h2>
+      <ul>
+        <li>
+          При большом количестве персонажей и формировании подвязок необходимо искать подходящих персонажей по
+            критериям.
+        </li>
+        <li>
+          Например, в любовную линию нужно добавить молодого, холостого дворянина.
+        </li>
+        <li>
+          Для этого мы можем отфильтровать персонажей по следующим условиям:
+          <ul>
+            <li>
+              Возраст от 18 лет
+            </li>
+            <li>
+              Сословие – дворянин
+            </li>
+            <li>
+              Семейное положение – холост
+            </li>
+          </ul>
+        </li>
+        <li>
+          И отсортировать полученный список по увеличению возраста
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide" id="statistics" label="Статистика и диаграммы">
+      <h2>Статистика и диаграммы</h2>
+      <ul>
+        <li>
+          На основе имеющихся данных НИМС автоматически показывает следующие статистики: количество историй,
+            персонажей, событий, текстовых знаков и подсчитывает общую завершенность.
+        </li>
+        <li>
+          Показываются гистограммы количества событий в историях, количества персонажей в историях, детальной
+            завершенности событий.
+        </li>
+        <li>
+          Автоматически строятся гистограммы для числовых полей в досье и круговые диаграммы для полей с
+            единственным выбором и галочек.
+        </li>
+      </ul>
+      <img src="images\diagrams.jpg" alt="Diagrams">
+    </section>
+
+    <section class="slide" id="server-mode" label="Серверный режим">
+      <h2>Серверный режим</h2>
+      <ul>
+        <li>
+          НИМС первоначально задумывался как инструмент для работы в офлайне, но для подготовки сколько-нибудь
+            больших игр необходимо координировать работу нескольких мастеров-сюжетников.
+        </li>
+        <li>
+          Для этого случая мы сделали серверный режим. На сервере находится общая база для одной игры и несколько
+            пользователей могут подключиться к серверу и работать над игрой (по сути сервер выдает в интернет сайт).
+        </li>
+        <li>
+          На сервере используется жесткое разделение прав между мастерами.
+        </li>
+        <li>
+          Сервер находится сейчас на бета тестировании. Если он вам нужен для игры – напишите нам и мы его для
+            вас поднимем.
+        </li>
+      </ul>
+    </section>
+
+    <!--     <section class="slide" id="" label=""> -->
+<!--     </section> -->
+
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Перейти к</label>
+      <select type="text" name="slidenum" id="goto-slide"></select>
+      <button type="submit">OK</button>
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>

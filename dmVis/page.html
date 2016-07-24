@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>K-Means vs. Fuzzy c-Means</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="styles/styles.css"  media="screen" />
+<!-- <script src="js/0.9.15.min.js" type="text/javascript"></script> -->
+<script src="js/fabric-1.6.3.min.js" type="text/javascript"></script>
+<!-- <script src="js/fabric-1.4.13.min.js" type="text/javascript"></script> -->
+<script src="js/convexHull.js" type="text/javascript"></script>
+<script src="js/Utils.js" type="text/javascript"></script>
+<script src="js/KMeans.js" type="text/javascript"></script>
+<script src="js/fuzzyCMeans.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+
+</head>
+<body onload="init()">
+
+  <div class="controls">
+      <button id="startAutoExecuteButton">Start Auto Execute</button>
+      <button id="stopAutoExecuteButton">Stop Auto Execute</button>
+      <button id="resetButton">Reset</button>
+      <button id="nextButton">Next</button>
+  </div>
+  
+  <div class="content">
+    <div id="alg1" class="frame">
+      <div id="metrixName1">
+      </div>
+<!--       <div id="wrapper1"> -->
+<!--           <canvas id="c1"></canvas> -->
+          <canvas id="c1" width="500" height="500"></canvas>
+<!--       </div> -->
+      <div id="isEnded1">
+      </div>
+    </div>
+    <div id="alg2" class="frame">
+      <div id="metrixName2">
+      </div>
+<!--       <div id="wrapper2"> -->
+          <canvas id="c2" width="500" height="500"></canvas>
+<!--           <canvas id="c2"></canvas> -->
+<!--       </div> -->
+      <div id="isEnded2">
+      </div>
+    </div>
+  </div>
+
+<table>
+    <tr>
+        <td>
+<!--             <div id="metrixName1"> -->
+<!--             </div> -->
+<!--             <div id="wrapper1"> -->
+<!--                 <canvas id="c1" width="1000" height="1000"></canvas> -->
+<!--             </div> -->
+<!--             <div id="isEnded1"> -->
+<!--             </div> -->
+        </td>
+        <td>
+<!--             <div id="metrixName2"> -->
+<!--             </div> -->
+<!--             <div id="wrapper2"> -->
+<!--                 <canvas id="c2" width="600" height="500"></canvas> -->
+<!--             </div> -->
+<!--             <div id="isEnded2"> -->
+<!--             </div> -->
+        </td>
+        <!--<td>-->
+            <!--<div id="metrixName3">-->
+            <!--</div>-->
+            <!--<div id="wrapper3">-->
+                <!--<canvas id="c3" width="300" height="250"></canvas>-->
+            <!--</div>-->
+            <!--<div id="isEnded3">-->
+
+            <!--</div>-->
+        <!--</td>-->
+        <td>
+
+        </td>
+    </tr>
+    <!--<tr>-->
+        <!--<td>-->
+            <!--<div id="metrixName4">-->
+            <!--</div>-->
+            <!--<div id="wrapper4">-->
+                <!--<canvas id="c4" width="300" height="250"></canvas>-->
+            <!--</div>-->
+            <!--<div id="isEnded4">-->
+            <!--</div>-->
+        <!--</td>-->
+        <!--<td>-->
+            <!--<div id="metrixName5">-->
+            <!--</div>-->
+            <!--<div id="wrapper5">-->
+                <!--<canvas id="c5" width="300" height="250"></canvas>-->
+            <!--</div>-->
+            <!--<div id="isEnded5">-->
+            <!--</div>-->
+        <!--</td>-->
+        <!--<td>-->
+            <!--<div id="metrixName6">-->
+            <!--</div>-->
+            <!--<div id="wrapper6">-->
+                <!--<canvas id="c6" width="300" height="250"></canvas>-->
+            <!--</div>-->
+            <!--<div id="isEnded6">-->
+
+            <!--</div>-->
+        <!--</td>-->
+    <!--</tr>-->
+</table>
+<div id="texter">
+</div>
+</body>
+</html>

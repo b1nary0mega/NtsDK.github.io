@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>О системе Ассистент-выборы &mdash; Документация Ассистент-выборы 0.1.0</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация Ассистент-выборы 0.1.0" href="polls_assistant.html" />
+    <link rel="next" title="Решаемые задачи" href="tasks.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="polls_assistant.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="tasks.html" title="Решаемые задачи"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="polls_assistant.html" title="&lt;no title&gt;"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="polls_assistant.html">Документация Ассистент-выборы 0.1.0</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>О системе Ассистент-выборы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Ассистент-выборы - что это?</p>
+<blockquote>
+<div>Система «Ассистент выборы» предназначена для фиксации информации о явке избирателей по часам и сравнения явки между выборами.   Система реализована в виде интерактивной веб-страницы. Все, что вам нужно для работы с системой «Ассистент выборы» это веб-браузер. Проверялась работа программы в Firefox, Chrome. Работа в Internet Explorer не проверялась. Для работы системе «Ассистент выборы» не требуется соединение с интернетом.</div></blockquote>
+<p>Порядок работы с Ассистент-выборы</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Открываете Ассистент-выборы</li>
+<li>Загружаете базу для редактирования</li>
+<li>Вносите изменения</li>
+<li>Сохраняете базу для последующего запуска</li>
+</ol>
+<p>Ассистент-выборы не может работать напрямую с файлом, поэтому сохранение не выполняется сразу в файл. Это необходимо делать отдельно. На закрытии вкладки с Ассистент-выборы всегда показывается напоминалка о необходимости сохранения базы.
+В процессе работы с Ассистент-выборы все изменения сразу сохраняются в странице. Например, при изменении текста описания выборов на первой странице, как только вы завершите ввод, текст будет сохранен.
+Сохраненный файл базы является обычным текстовым файлом фиксированной структуры.</p>
+</div></blockquote>
+<p>Технические подробности в двух словах</p>
+<blockquote>
+<div><p>Система «Ассистент выборы» написана на языке JavaScript с использованием библиотек jQuery (календарь для ввода дат), Chart.js (круговые диаграммы), Bootstrap 3 (элементы дизайна), Ramda (элементы функционального программирования), Select2 (списки с поиском) и др. База данных хранится в формате json.</p>
+<p>Авторы используемых иконок с сайта www.flaticon.com: Anton Saputro, Pavel Kozlov, Budi Tanrim, Catalin Fertu, Picol и Freepik. Автор иконки сортировки FatCow.</p>
+<p>Исходный код системы по открыт под лицензией Apache 2.0. Последняя версия НИМСа находится в репозитории <a class="reference external" href="https://github.com/NtsDK/polls-assistant">https://github.com/NtsDK/polls-assistant</a>. Исходники документации доступны по ссылке <a class="reference external" href="https://github.com/NtsDK/polls-assistant-doc">https://github.com/NtsDK/polls-assistant-doc</a>.</p>
+</div></blockquote>
+<p>Специальные обозначения</p>
+<blockquote>
+<div><em>курсив</em> - термины. <code class="docutils literal"><span class="pre">Моноширинный</span> <span class="pre">шрифт</span></code> - названия кнопок и элементов страниц.</div></blockquote>
+<p>Об авторах</p>
+<blockquote>
+<div><p>Программа &#8220;Ассистент-выборы&#8221; разработана Речкаловым Тимофеем по просьбе Анатолия Чиквина.</p>
+<p>Сайт автора: trechkalov.com</p>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="polls_assistant.html"
+                        title="предыдущая глава">&lt;no title&gt;</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="tasks.html"
+                        title="следующая глава">Решаемые задачи</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/intro.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="tasks.html" title="Решаемые задачи"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="polls_assistant.html" title="&lt;no title&gt;"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="polls_assistant.html">Документация Ассистент-выборы 0.1.0</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Тимофей NtsDK Речкалов.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

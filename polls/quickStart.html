@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Порядок работы &mdash; Документация Ассистент-выборы 0.1.0</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация Ассистент-выборы 0.1.0" href="polls_assistant.html" />
+    <link rel="next" title="Страницы" href="pages.html" />
+    <link rel="prev" title="Решаемые задачи" href="tasks.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="pages.html" title="Страницы"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="tasks.html" title="Решаемые задачи"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="polls_assistant.html">Документация Ассистент-выборы 0.1.0</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Порядок работы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id2">
+<h2>Начало работы<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Скачайте систему &#8220;Ассистент выборы&#8221; по ссылке <a class="reference external" href="https://github.com/NtsDK/polls-assistant/releases/download/0.1.0/polls_assistant_0.1.0.zip">https://github.com/NtsDK/polls-assistant/releases/download/0.1.0/polls_assistant_0.1.0.zip</a>. На странице <a class="reference external" href="https://github.com/NtsDK/polls-assistant/releases/">https://github.com/NtsDK/polls-assistant/releases/</a> могут быть более свежие версии программы.
+Распакуйте архив, зайдите в распакованную папку и нажмите на файл <code class="docutils literal"><span class="pre">polls</span></code>. В вашем браузере по умолчанию откроется система &#8220;Ассистент выборы&#8221;. В систему встроена база пример. Посмотрите как устроено досье участков и как работает сравнение выборов. Например можно увидеть, что явка в 2010 году была хуже, чем в 2008 и 2012. Явка в 10 утра 2012 года была в целом сопоставима с явкой 2008 года, но при этом уже к 12 часам в 2012 году пришло заметно больше избирателей. Как познакомитесь с основами можно переходить к работе со своей базой.</p>
+</div>
+<div class="section" id="id3">
+<h2>Работа с базой<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Если у вас еще нет своей базы, нажмите на кнопку <code class="docutils literal"><span class="pre">Создать</span> <span class="pre">базу</span></code> в правом верхнем углу. Подтвердите свое решение и в систему будет загружена чистая база.</p>
+<div class="figure" id="id7">
+<img alt="_images/0_header_new.jpg" src="_images/0_header_new.jpg" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Кнопка <code class="docutils literal"><span class="pre">Создать</span> <span class="pre">базу</span></code></span></p>
+</div>
+<p>Предположим далее, что вы внесли какие-то изменения и хотите сохранить базу. Для этого нажмите на кнопку <code class="docutils literal"><span class="pre">Сохранить</span> <span class="pre">базу</span> <span class="pre">на</span> <span class="pre">диск</span></code> в правом верхнем углу. Браузер предложит вам сохранить файл <code class="docutils literal"><span class="pre">polls-base</span></code> на диск.</p>
+<div class="figure" id="id8">
+<img alt="_images/0_header_save.jpg" src="_images/0_header_save.jpg" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Кнопка <code class="docutils literal"><span class="pre">Сохранить</span> <span class="pre">базу</span> <span class="pre">на</span> <span class="pre">диск</span></code></span></p>
+</div>
+<p>Когда вы будете работать с системой в следующий раз, вам будет необходимо загрузить свою базу в систему. Для этого нажмите на кнопку <code class="docutils literal"><span class="pre">Загрузить</span> <span class="pre">базу</span> <span class="pre">из</span> <span class="pre">файла</span></code> в правом верхнем углу. Браузер откроет диалог для загрузки файла базы. Выберите ту версию файла <code class="docutils literal"><span class="pre">polls-base</span></code>, которая вам нужна.</p>
+<div class="figure" id="id9">
+<img alt="_images/0_header_load.jpg" src="_images/0_header_load.jpg" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Кнопка <code class="docutils literal"><span class="pre">Загрузить</span> <span class="pre">базу</span> <span class="pre">из</span> <span class="pre">файла</span></code></span></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Работа с избирательными участками<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Перейдите на вкладку <a class="reference internal" href="pages.html#characters-desc"><span>Участки</span></a>. На этой странице вам необходимо создать нужные вам избирательные участки и заполнить их досье. С помощью панели <code class="docutils literal"><span class="pre">Управление</span> <span class="pre">участками</span></code> вы можете создавать/переименовывать/удалять участки. На подвкладке <a class="reference internal" href="pages.html#characters-profile"><span>Участки. Досье</span></a> вы заполняете досье участков. На подвкладке <a class="reference internal" href="pages.html#characters-profile-editor"><span>Участки. Редактор досье</span></a> вы можете изменять досье: добавлять/переименовывать/удалять поля, менять поля местами и так далее.</p>
+<div class="figure" id="id10">
+<img alt="_images/2_1_characterProfile_details.jpg" src="_images/2_1_characterProfile_details.jpg" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Вкладка <code class="docutils literal"><span class="pre">Участки</span></code></span></p>
+</div>
+<p>Обратите внимание, что помимо участков можно создавать и более общие избирательные объекты, такие как районы и города. Это полезно для сравнения избирательных участков с картиной в целом.</p>
+</div>
+<div class="section" id="id5">
+<h2>Работа с выборами<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Перейдите на вкладку <a class="reference internal" href="pages.html#story-desc"><span>Выборы</span></a>. На этой вкладке заполняются данные по явке избирателей. На панели в правом верхнем углу вы можете создать/переименовать/удалить выборы. Слева вы выбираете выборы для отображения. Снизу показываются данные по текущим выборам. На подвкладке <code class="docutils literal"><span class="pre">Описание</span> <span class="pre">выборов</span></code> вы можете указать какую-то общую информацию о выборах. Например, что это были выборы в государственную думу и в местное законодательное собрание.</p>
+<div class="figure" id="id11">
+<img alt="_images/3_2_storyEvents_details.jpg" src="_images/3_2_storyEvents_details.jpg" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Вкладка <code class="docutils literal"><span class="pre">Выборы</span></code></span></p>
+</div>
+<p>На подвкладке <a class="reference internal" href="pages.html#story-events"><span>Выборы. Избиратели</span></a> вы заполняете данные по явке. В столбце <code class="docutils literal"><span class="pre">Общая</span> <span class="pre">численность</span></code> необходимо указать общую численность избирателей у соответствующей территориальной единицы. Без этого значения невозможно вычислить относительную явку. В процессе выборов вы заполняете данные по явке на каждый временной срок и обновляете общую численность избирателей. При необходимости вы можете переключиться на вкладку <a class="reference internal" href="pages.html#story-characters"><span>Сравнение выборов</span></a> и сравнить ход выбором с прошедшими ранее выборами.</p>
+</div>
+<div class="section" id="id6">
+<h2>Сравнение выборов<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Перейдите на вкладку <a class="reference internal" href="pages.html#story-characters"><span>Сравнение выборов</span></a>. Здесь вы можете сравнить выборы. Укажите нужные вам выборы в двух первых выпадающих списках и в третьем списке выберите время для сравнения. Так же здесь можно посмотреть на выборы на точечном графике. Подробнее смотрите в помощи к вкладке <a class="reference internal" href="pages.html#story-characters"><span>Сравнение выборов</span></a>. Обратите внимание, если у вас не указаны данные по участку на выбранное время, то в таблице будут значения &#8216;Н/Д&#8217;.</p>
+<div class="figure" id="id12">
+<img alt="_images/3_3_storyCharacters_1.jpg" src="_images/3_3_storyCharacters_1.jpg" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Вкладка <code class="docutils literal"><span class="pre">Сравнение</span> <span class="pre">выборов.</span> <span class="pre">Таблица</span></code></span></p>
+</div>
+<div class="figure" id="id13">
+<img alt="_images/3_3_storyCharacters_2.jpg" src="_images/3_3_storyCharacters_2.jpg" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Вкладка <code class="docutils literal"><span class="pre">Сравнение</span> <span class="pre">выборов.</span> <span class="pre">График</span></code></span></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="polls_assistant.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Порядок работы</a><ul>
+<li><a class="reference internal" href="#id2">Начало работы</a></li>
+<li><a class="reference internal" href="#id3">Работа с базой</a></li>
+<li><a class="reference internal" href="#id4">Работа с избирательными участками</a></li>
+<li><a class="reference internal" href="#id5">Работа с выборами</a></li>
+<li><a class="reference internal" href="#id6">Сравнение выборов</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="tasks.html"
+                        title="предыдущая глава">Решаемые задачи</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="pages.html"
+                        title="следующая глава">Страницы</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/quickStart.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="pages.html" title="Страницы"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="tasks.html" title="Решаемые задачи"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="polls_assistant.html">Документация Ассистент-выборы 0.1.0</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Тимофей NtsDK Речкалов.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

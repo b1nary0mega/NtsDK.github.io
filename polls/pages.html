@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Страницы &mdash; Документация Ассистент-выборы 0.1.0</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация Ассистент-выборы 0.1.0" href="polls_assistant.html" />
+    <link rel="prev" title="Порядок работы" href="quickStart.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="quickStart.html" title="Порядок работы"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="polls_assistant.html">Документация Ассистент-выборы 0.1.0</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Страницы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="header-desc">
+<span id="id2"></span><h2>Заголовок<a class="headerlink" href="#header-desc" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Вверху страницы находятся основная навигация и кнопки для работы с базой.</p>
+<p>Основные вкладки</p>
+<blockquote>
+<div><p><strong>Обзор</strong> - общая информация о базе и статистика.</p>
+<p><strong>Участки</strong> - добавление/удаление избирательных участков и их досье.</p>
+<p><strong>Выборы</strong> - добавление/удаление выборов, заполнение информации о выборах: численность избирателей на участках и явка по времени на участки.</p>
+<p><strong>Сравнение выборов</strong> - сравнение явки на выборы на указанное время.</p>
+<p><strong>О программе</strong> - информация о создателях программы.</p>
+<p><strong>Фильтр</strong> - поиск избирательных участков по досье.</p>
+</div></blockquote>
+<p>Управление базой</p>
+<blockquote>
+<div><p><strong>Загрузить</strong> - загрузка базы из файла.</p>
+<p><strong>Сохранить</strong> - сохранение базы в файл.</p>
+<p><strong>Новая база</strong> - создание новой базы.</p>
+<p><strong>Помощь</strong> - открывает справку в новой вкладке.</p>
+<p><strong>Логи</strong> - история действий пользователей &#8220;Ассистент выборы&#8221;: создание/переименование/удаление избирательных участков и выборов и т.д.</p>
+</div></blockquote>
+<div class="figure" id="id13">
+<img alt="_images/0_header.jpg" src="_images/0_header.jpg" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Заголовок</span></p>
+</div>
+</div>
+<div class="section" id="overview-desc">
+<span id="id3"></span><h2>Обзор<a class="headerlink" href="#overview-desc" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Это первая страница, открывающаяся при старте системы &#8220;Ассистент выборы&#8221;.</p>
+<p>Содержание страницы</p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">Название</span></code> - здесь указывается название базы.</p>
+<p><code class="docutils literal"><span class="pre">Время</span> <span class="pre">последнего</span> <span class="pre">сохранения</span> <span class="pre">базы</span></code> - это время последнего сохранения базы в файл.</p>
+<p><code class="docutils literal"><span class="pre">Описание</span></code> - текст с описанием базы выборов. Тут можно делать заметки по базе.</p>
+<p><code class="docutils literal"><span class="pre">Статистика</span></code> - общие данные об открытой базе:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">количество</span> <span class="pre">выборов/избирательных</span> <span class="pre">участков</span></code></div></blockquote>
+</div></blockquote>
+<div class="figure" id="id14">
+<img alt="_images/1_1_overview.jpg" src="_images/1_1_overview.jpg" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Вкладка Обзор-Описание</span></p>
+</div>
+<p>На подвкладке Диаграммы приводятся стандартные гистограммы и круговые диаграммы. Число на столбце гистограммы означает высоту столбца. При наведении мышью на столбец приводится детализация: значение и дополнительная информация. Над круговыми диаграммами показывается название доли и её размер.</p>
+<p>Диаграммы досье избирательных участков строятся автоматически для полей вида число (гистограмма), единственный выбор и галочка (круговая диаграмма).</p>
+<div class="figure" id="id15">
+<img alt="_images/1_2_diagrams.jpg" src="_images/1_2_diagrams.jpg" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Вкладка Обзор-Диаграммы</span></p>
+</div>
+</div>
+<div class="section" id="characters-desc">
+<span id="id4"></span><h2>Участки<a class="headerlink" href="#characters-desc" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На странице <code class="docutils literal"><span class="pre">Участки</span></code> есть общая часть и две дополнительных вкладки: досье и редактор досье.</p>
+<p>Общая часть включает в себя элементы для создания/переименование/удаления избирательных участков в верхней части вкладки.</p>
+<div class="figure" id="id16">
+<img alt="_images/2_1_characterProfile.jpg" src="_images/2_1_characterProfile.jpg" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Вкладка Участки</span></p>
+</div>
+</div>
+<div class="section" id="characters-profile">
+<span id="id5"></span><h2>Участки. Досье<a class="headerlink" href="#characters-profile" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На вкладке <code class="docutils literal"><span class="pre">Досье</span></code> происходит заполнение досье участка. В левой части экрана выбирается участок. По центру показано досье. Внесенные в досье изменения сохраняются автоматически. Подробнее про типы данных в досье можно прочитать в описании <code class="docutils literal"><span class="pre">Редактора</span> <span class="pre">досье</span></code>.</p>
+<div class="figure" id="id17">
+<img alt="_images/2_1_characterProfile.jpg" src="_images/2_1_characterProfile.jpg" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Вкладка Участки. Досье</span></p>
+</div>
+</div>
+<div class="section" id="characters-profile-editor">
+<span id="id6"></span><h2>Участки. Редактор досье<a class="headerlink" href="#characters-profile-editor" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На вкладке <code class="docutils literal"><span class="pre">Редактор</span> <span class="pre">досье</span></code> выполняется редактирование досье участков: добавление/изменение/удаление полей в досье. В верхней части вкладки находятся элементы управления для создания, перемещения и удаления полей. Имена полей должны быть уникальны. Все текущие поля показаны в таблице: <code class="docutils literal"><span class="pre">`Название</span></code>, <code class="docutils literal"><span class="pre">Тип</span></code>, <code class="docutils literal"><span class="pre">Значения</span></code> и <code class="docutils literal"><span class="pre">Печатать</span> <span class="pre">во</span> <span class="pre">вводных</span></code>. То, что указано в поле <code class="docutils literal"><span class="pre">Значения</span></code> является значением по умолчанию для всех полей, кроме единственного выбора. В единственном выборе значением по умолчанию является первый элемент.</p>
+<p>Типы полей:</p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">Текст</span></code> - поле для хранения текстовых данных.</p>
+<p><code class="docutils literal"><span class="pre">Строка</span></code> - поле хранит одну строку.</p>
+<p><code class="docutils literal"><span class="pre">Единственный</span> <span class="pre">выбор</span></code> - поле содержащее перечисление значений из которых может быть выбрано только одно. Значения единственного выбора указываются через запятую. Первое значение является значением по умолчанию.</p>
+<p><code class="docutils literal"><span class="pre">Число</span></code> - числовое значение.</p>
+<p><code class="docutils literal"><span class="pre">Галочка</span></code> - поле хранит значение да/нет.</p>
+</div></blockquote>
+<div class="figure" id="id18">
+<img alt="_images/2_3_characterProfileConfigurer.jpg" src="_images/2_3_characterProfileConfigurer.jpg" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Вкладка Участки. Редактор досье</span></p>
+</div>
+</div>
+<div class="section" id="story-desc">
+<span id="id7"></span><h2>Выборы<a class="headerlink" href="#story-desc" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На странице <code class="docutils literal"><span class="pre">Выборы</span></code> осуществляется заполнение явки на выборы. В общую часть входят следующие элементы: создание/переименование/удаление выборов, заполнение текстового комментария выборов. При работе с выборами можно включить режим работы с одной вкладкой или с двумя вкладками. Можно выбрать любую комбинацию вкладок. Чтобы спрятать вкладку кликните на активный заголовок. На данном рисунке активны две панели. Далее будут скриншоты и для однопанельного режима.</p>
+<p>В левой верхней части экрана расположено выпадающее меню для отображения текущих выборов.</p>
+<div class="figure" id="id19">
+<img alt="_images/3_1_masterStory.jpg" src="_images/3_1_masterStory.jpg" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Вкладка Выборы</span></p>
+</div>
+</div>
+<div class="section" id="story-events">
+<span id="id8"></span><h2>Выборы. Избиратели<a class="headerlink" href="#story-events" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На вкладке <code class="docutils literal"><span class="pre">Избиратели</span></code> выполняется заполнение явки избирателей на выборах. В первом столбце указывается название участка, во втором общая численность избирателей, прикрепленная к этому участку. В процессе выборов кого-то вычеркивают из списков, кто-то наоборот приходит с открепительными, поэтому это число меняется. В остальных столбцах фиксируется явка на соответствующее время.</p>
+<div class="figure" id="id20">
+<img alt="_images/3_2_storyEvents.jpg" src="_images/3_2_storyEvents.jpg" />
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Вкладка События</span></p>
+</div>
+</div>
+<div class="section" id="story-characters">
+<span id="id9"></span><h2>Сравнение выборов<a class="headerlink" href="#story-characters" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На вкладке <code class="docutils literal"><span class="pre">Сравнение</span> <span class="pre">выборов</span></code> производится сравнение любой пары выборов между собой. Для этого в верхней части экрана необходимо выбрать текущие выборы (можно и прошедшие), прошедшие выборы и временную отсечку. После этого будет автоматически сформирована таблица. Клик по заголовку таблицы выполняет сортировку по заданному столбцу. Повторный клик меняет направление сортировки.</p>
+<p>В таблице содержатся следующие столбцы:</p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">Участок</span></code> - название избирательного участка.</p>
+<p><code class="docutils literal"><span class="pre">Ответственный</span></code> - ответственный за избирательный участок. Берется из досье.</p>
+<p><code class="docutils literal"><span class="pre">Явка</span> <span class="pre">на</span> <span class="pre">текущих</span> <span class="pre">выборах,</span> <span class="pre">%</span></code> - отношение количества избирателей пришедших на участок к общему числу избирателей, закрепленных на участке на текущих выборах.</p>
+<p><code class="docutils literal"><span class="pre">Явка</span> <span class="pre">на</span> <span class="pre">прошедших</span> <span class="pre">выборах,</span> <span class="pre">%</span></code> - отношение количества избирателей пришедших на участок к общему числу избирателей, закрепленных на участке на прошедших выборах.</p>
+<p><code class="docutils literal"><span class="pre">Абсолютная</span> <span class="pre">разница,</span> <span class="pre">чел</span></code> - разница явок избирателей.</p>
+<p><code class="docutils literal"><span class="pre">Относительная</span> <span class="pre">разница,</span> <span class="pre">%</span></code> - разница относительных явок избирателей.</p>
+</div></blockquote>
+<p>Строки таблицы закрашиваются в цвета в соответствии с разницей относительных явок избирателей (последний столбец). Если разницы нет, то строка закрашивается белым. Если наблюдается повышенная явка, то оттенками зеленого. Если пониженная явка, то оттенками красного.</p>
+<div class="figure" id="id21">
+<img alt="_images/3_3_storyCharacters_1.jpg" src="_images/3_3_storyCharacters_1.jpg" />
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Вкладка Сравнение выборов. Таблица</span></p>
+</div>
+<p>В правом верхнем углу находится галочка <code class="docutils literal"><span class="pre">Показать</span> <span class="pre">график</span></code>. При активации галочки над таблицей будет нарисован точечный график сравнения явки. По оси абсцисс указывается относительная явка на прошедших выборах (4-ый столбец таблицы), по оси ординат указывается относительная явка на текущих выборах (3-ий столбец таблицы). Точки раскрашиваются теми же цветами, что и строки таблицы. При наведении мышки на точку во всплывающем сообщении показывается название участка и сведения о явке.</p>
+<p>На вкладке Персонажи выполняется добавление/удаление/замещение персонажей в истории. При замещении все данные от старого персонажа переходят к новому. Так что да, Ромео не приехал, его место займет Меркуцио)</p>
+<p>Здесь же приведено две таблицы. Первая таблица указывает вид активности персонажа в истории. Описание видов активности приведено в разделе <span class="xref std std-ref">secondary-entities-desc</span>.</p>
+<div class="figure" id="id22">
+<img alt="_images/3_3_storyCharacters_2.jpg" src="_images/3_3_storyCharacters_2.jpg" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Вкладка Сравнение выборов. График</span></p>
+</div>
+</div>
+<div class="section" id="story-presence">
+<span id="id10"></span><h2>О программе<a class="headerlink" href="#story-presence" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На этой вкладке указана информация об авторах, лицензировании и об использованных программных библиотеках и ресурсах.</p>
+</div>
+<div class="section" id="characters-filter">
+<span id="id11"></span><h2>Фильтр<a class="headerlink" href="#characters-filter" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На вкладке Фильтр выполняется выборка из избирательных участков по досье. Подробнее про типы данных в досье можно прочитать в разделе <a class="reference internal" href="#characters-profile-editor"><span>Участки. Редактор досье</span></a>. Фильтрация строк и текстов происходит по наличию искомой строки в строке или тексте. Фильтрация по полям с единственным выбором происходит по выбору из предложенного списка значений. Чтобы сделать множественный выбор зажмите ctrl и выбирайте элементы в списке. Фильтрация для значений вида да/нет аналогична фильтрации по полям с единственным выбором. Фильтрация по числовым значениям требует указания числа и вида проверки: не важно, больше, равно, меньше. Обновление результата фильтрации происходит сразу после изменения параметров фильтра. В центральной части выводится результат фильтрации. Клик по заголовку таблицы выполняет сортировку по соответствующему полю + иконка.</p>
+<p>В верхнем левом углу добавлен список отображаемых полей (множественный выбор через ctrl/shift). Так же под заголовком фильтра указано количество результатов, возвращенное фильтром.</p>
+<div class="figure" id="id23">
+<img alt="_images/2_2_characterFilter.jpg" src="_images/2_2_characterFilter.jpg" />
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Вкладка Фильтр</span></p>
+</div>
+</div>
+<div class="section" id="logs">
+<span id="id12"></span><h2>Логи<a class="headerlink" href="#logs" title="Ссылка на этот заголовок">¶</a></h2>
+<p>В логах мы можем посмотреть историю последних действий пользователей. Текущее ограничение - последняя 1000 операций. Логируются следующие виды деятельности: сохранение/загрузка базы, управление избирательными участками и выборами, изменение структуры досье. В текущий момент не сохраняются данные об изменениях данных о явке.</p>
+<p>Запись о событии содержит следующие поля:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">№</span></code> - номер события в списке событий.</li>
+<li><code class="docutils literal"><span class="pre">Дата</span></code> - время совершения события.</li>
+<li><code class="docutils literal"><span class="pre">Пользователь</span></code> - пользователь от имени которого совершено событие. В системе &#8220;Ассистент выборы&#8221; только один пользователь по умолчанию.</li>
+<li><code class="docutils literal"><span class="pre">Действия</span></code> - тип действия.</li>
+<li><code class="docutils literal"><span class="pre">Параметры</span></code> - переданные параметры.</li>
+</ol>
+</div></blockquote>
+<div class="figure" id="id24">
+<img alt="_images/9_log.jpg" src="_images/9_log.jpg" />
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Вкладка Логи</span></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="polls_assistant.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Страницы</a><ul>
+<li><a class="reference internal" href="#header-desc">Заголовок</a></li>
+<li><a class="reference internal" href="#overview-desc">Обзор</a></li>
+<li><a class="reference internal" href="#characters-desc">Участки</a></li>
+<li><a class="reference internal" href="#characters-profile">Участки. Досье</a></li>
+<li><a class="reference internal" href="#characters-profile-editor">Участки. Редактор досье</a></li>
+<li><a class="reference internal" href="#story-desc">Выборы</a></li>
+<li><a class="reference internal" href="#story-events">Выборы. Избиратели</a></li>
+<li><a class="reference internal" href="#story-characters">Сравнение выборов</a></li>
+<li><a class="reference internal" href="#story-presence">О программе</a></li>
+<li><a class="reference internal" href="#characters-filter">Фильтр</a></li>
+<li><a class="reference internal" href="#logs">Логи</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="quickStart.html"
+                        title="предыдущая глава">Порядок работы</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pages.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="quickStart.html" title="Порядок работы"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="polls_assistant.html">Документация Ассистент-выборы 0.1.0</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Тимофей NtsDK Речкалов.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

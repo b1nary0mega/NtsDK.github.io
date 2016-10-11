@@ -19,7 +19,12 @@ body{
 }
 
 .programContent a.link{
+  cursor: pointer;
+}
+
+.link-container  a.link{
   margin: 0 15px 0 0;
+  white-space: nowrap;
 }
 
 .programContent p a.link{

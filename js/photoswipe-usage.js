@@ -1,24 +1,47 @@
 // build items array
 
 var nimsGallery = [
-{src: 'images/nims/1_1_overview.jpg                  '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/1_2_diagrams.jpg                  '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/2_1_characterProfile.jpg          '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/2_2_characterFilter.jpg           '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/2_3_characterProfileConfigurer.jpg'.trim(), w: 1280, h: 1024},
-{src: 'images/nims/3_1_masterStory.jpg               '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/3_2_storyEvents.jpg               '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/3_3_storyCharacters.jpg           '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/3_4_eventPresence.jpg             '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/4_events.jpg                      '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/5_1_briefingPreview.jpg           '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/5_2_1_standardExport.jpg          '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/5_2_2_customDocx.jpg              '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/5_2_3_customTxt.jpg               '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/6_timeline.jpg                    '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/7_socialNetwork.jpg               '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/8_adminTools.jpg                  '.trim(), w: 1280, h: 1024},
-{src: 'images/nims/9_log.jpg                         '.trim(), w: 1280, h: 1024},
+{src: 'nims/online/extras/doc/_images/1_1_overview.jpg                  '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/1_2_diagrams.jpg                  '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/2_1_characterProfile.jpg          '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/2_2_1_characterFilter.jpg         '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/2_3_characterProfileConfigurer.jpg'.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/3_1_masterStory.jpg               '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/3_2_storyEvents.jpg               '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/3_3_storyCharacters.jpg           '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/3_4_eventPresence.jpg             '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/4_events.jpg                      '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/5_1_1_briefingPreview.jpg         '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/5_2_1_standardExport.jpg          '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/5_2_2_customDocx.jpg              '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/5_2_3_customTxt.jpg               '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/6_timeline.jpg                    '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/7_socialNetwork.jpg               '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/8_adminTools.jpg                  '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/9_1_log.jpg                       '.trim(), w: 1600, h: 1024},
+{src: 'nims/online/extras/doc/_images/10_3_storyMap.jpg                 '.trim(), w: 1600, h: 1024},
+];
+
+var nimsGalleryEn = [
+{src: 'nims-en/online/extras/doc/_images/1_1_overview.jpg                  '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/1_2_diagrams.jpg                  '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/2_1_characterProfile.jpg          '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/2_2_1_characterFilter.jpg         '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/2_3_characterProfileConfigurer.jpg'.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/3_1_masterStory.jpg               '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/3_2_storyEvents.jpg               '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/3_3_storyCharacters.jpg           '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/3_4_eventPresence.jpg             '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/4_events.jpg                      '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/5_1_1_briefingPreview.jpg         '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/5_2_1_standardExport.jpg          '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/5_2_2_customDocx.jpg              '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/5_2_3_customTxt.jpg               '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/6_timeline.jpg                    '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/7_socialNetwork.jpg               '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/8_adminTools.jpg                  '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/9_1_log.jpg                       '.trim(), w: 1600, h: 1024},
+{src: 'nims-en/online/extras/doc/_images/10_3_storyMap.jpg                 '.trim(), w: 1600, h: 1024},
 ];
 
 var pollsGallery = [ {
@@ -153,9 +176,12 @@ function showGallery(items){
 };
 
 function makeListener(id, gallery){
-    document.getElementById(id).addEventListener("click", function() {
+		var el = document.getElementById(id);
+		if(el){
+			el.addEventListener("click", function() {
         showGallery(gallery);
-    });
+			});
+		}
 }
 
 makeListener("arkhamGallery", arkhamGallery);
@@ -169,3 +195,6 @@ makeListener("pollsGallery", pollsGallery);
 makeListener("pollsGallery-img", pollsGallery);
 makeListener("nimsGallery", nimsGallery);
 makeListener("nimsGallery-img", nimsGallery);
+makeListener("nimsGalleryEn", nimsGalleryEn);
+makeListener("nimsGalleryEn-img", nimsGalleryEn);
+

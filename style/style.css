@@ -34,3 +34,26 @@ body{
 .displayNone{
 	display: none;
 }
+
+.langSwitch{
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #ddd !important;
+	background: transparent url(../images/folder29.svg) no-repeat scroll 50% 50%;
+	width: 44px;
+	height: 32px;
+	background-size: 28px;
+}
+
+.langSwitch:hover{
+	background-color: #ccc !important;
+}
+
+.langSwitch-en{
+	background-image: url(../images/gb.svg);
+}
+
+.langSwitch-ru{
+	background-image: url(../images/ru.svg);
+}

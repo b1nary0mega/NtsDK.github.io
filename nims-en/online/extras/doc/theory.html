@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Theory &mdash; Story Master Toolkit NIMS 0.5.2 documentation</title>
+    <title>Theory &#8212; Story Master Toolkit NIMS 0.5.2 documentation</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,14 +17,16 @@
         VERSION:     '0.5.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Story Master Toolkit NIMS 0.5.2 documentation" href="nims.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tasks" href="tasks.html" />
     <link rel="prev" title="Microthemes" href="micros.html" /> 
   </head>
@@ -41,7 +43,7 @@
         <li class="right" >
           <a href="micros.html" title="Microthemes"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="nims.html">Story Master Toolkit NIMS 0.5.2 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="nims.html">Story Master Toolkit NIMS 0.5.2 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -131,7 +133,7 @@
 <p>Example</p>
 <p class="last">To analyze handout status we want to see characters which have very small number of stories. We make filter: show characters which participates in 2 or lesser stories.</p>
 </div>
-<p>Detailed description of profile item types is available in  <a class="reference internal" href="#concepts-character-profile"><span>Character profile</span></a>.</p>
+<p>Detailed description of profile item types is available in  <a class="reference internal" href="#concepts-character-profile"><span class="std std-ref">Character profile</span></a>.</p>
 <p>Filtering of <em>string</em> and <em>text</em> is made by searching substring. <em>Single choice</em> items are filtered by selected value. It is possible to select several values. <em>Checkbox</em> items are equal to yes/no single choice item. <em>Number</em> items are filtered by number and one of conditions: doesn&#8217;t matter, greater, equal, lesser.</p>
 </div>
 <div class="section" id="groups">
@@ -148,13 +150,13 @@
 <p>Example</p>
 <p class="last">You decided to move character from Salieri&#8217;s family to Morello&#8217;s family. You change this information in profile. From this moment character can&#8217;t see any Morello&#8217;s family specific information but now he sees Salieri&#8217;s information.</p>
 </div>
-<p>Each group has associated information which named <em>Group profile</em>. Group profile structure is not editable and consist of master description, text for character and checkbox if it is necessary to print this group in handouts. For details see <a class="reference internal" href="pages.html#groups-desc"><span>Groups</span></a>.</p>
+<p>Each group has associated information which named <em>Group profile</em>. Group profile structure is not editable and consist of master description, text for character and checkbox if it is necessary to print this group in handouts. For details see <a class="reference internal" href="pages.html#groups-desc"><span class="std std-ref">Groups</span></a>.</p>
 </div>
 <div class="section" id="story-map">
 <span id="concepts-investigation-board"></span><h2>Story map<a class="headerlink" href="#story-map" title="Permalink to this headline">¶</a></h2>
 <p>During LARP game writing it is necessary to get a common vision. <em>Story map</em> is implemented to solve this problem. <em>Story map</em> is a schema on which you add active groups, resources and describe relations between them.</p>
 <p>Resources - any objects or object sets which are points of interest for some characters or character groups. The One Ring, canned goods, magic mana, Moria&#8217;s mines - all these things are resources.</p>
-<p>Relations describe conflicts and interests of character groups. Relation can be started only from group and ended on group or resource. Groups are added from existing groups list. Resource are created directly on story map. Story map is filled manually. See details in <a class="reference internal" href="pages.html#investigation-board"><span>Story map</span></a>.</p>
+<p>Relations describe conflicts and interests of character groups. Relation can be started only from group and ended on group or resource. Groups are added from existing groups list. Resource are created directly on story map. Story map is filled manually. See details in <a class="reference internal" href="pages.html#investigation-board"><span class="std std-ref">Story map</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Salieri&#8217;s family is the enemy of Morello&#8217;s family and vice versa.</p>
@@ -201,7 +203,7 @@
 <ol class="arabic simple">
 <li>Social connections - connections between characters. Nodes: characters. Edges: two characters took part in the same event. If two characters were in the same event we expect they have social connection. On the one hand this approach is rude because it ignores many nuances. But in most cases it is enough. For example, officers go to restaurant. All of them know each other and all of them can remember what happens in restaurant. Other example, husband came back home early, wife&#8217;s lover was in wardrobe, wife asks husband to take out the trash. While husband takes it out lover comes away. Wife and lover see each other in event. Wife and husband see each other in event. Lover knows that husband was there. Only husband doesn&#8217;t see lover. In fact it means that lover-husband connection is unidirectional and this information is not available on graph. Unfortunately storing this information for each event will make event editing very difficult. In most cases it is not significant to lose some details. <strong>Connection cardinality</strong> shows how strong is connection between characters. Connection cardinality is a number of different stories in which characters took part. For example, two characters were in cruise and take part into 10 events but only in this story. Connection cardinality is 1. Two mobsters took part in 4 robberies with 5 events in each. Connection cardinality is 4. Connection cardinality is an edge width on graph.</li>
 <li>Character-participation-story - network of characters and stories. Nodes: characters and stories. Edge: character participation in story. Even if character is not participated in any story event it is expected that he is story participant. <em>Node cardinality</em> is a number of characters in story. Node cardinality is shown as node size.</li>
-<li>Character-activity-story - network of characters and stories by activity. Nodes: characters and stories. Edge: character activity in story (see. <a class="reference internal" href="#concepts-character-activity"><span>Character activity</span></a>). For example, if character has active role then character and story will be connected with red edge. If character has no activity information there will no any connection of character and story.</li>
+<li>Character-activity-story - network of characters and stories by activity. Nodes: characters and stories. Edge: character activity in story (see. <a class="reference internal" href="#concepts-character-activity"><span class="std std-ref">Character activity</span></a>). For example, if character has active role then character and story will be connected with red edge. If character has no activity information there will no any connection of character and story.</li>
 </ol>
 </div>
 <div class="section" id="diagrams-and-statistics">
@@ -352,21 +354,18 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/theory.txt"
+      <li><a href="_sources/theory.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -385,12 +384,12 @@
         <li class="right" >
           <a href="micros.html" title="Microthemes"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="nims.html">Story Master Toolkit NIMS 0.5.2 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="nims.html">Story Master Toolkit NIMS 0.5.2 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Timofey NtsDK Rechkalov, Maria Matilda Sidekhmenova.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Timofey NtsDK Rechkalov, Maria Matilda Sidekhmenova.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.
     </div>
   </body>
 </html>

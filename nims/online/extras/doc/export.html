@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Экспорт вводных &mdash; Документация НИМС набор инструментов мастера-сюжетника 0.5.2</title>
+    <title>Экспорт вводных &#8212; Документация НИМС набор инструментов мастера-сюжетника 0.5.2</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,7 +17,8 @@
         VERSION:     '0.5.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
@@ -25,7 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Документация НИМС набор инструментов мастера-сюжетника 0.5.2" href="nims.html" />
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
     <link rel="prev" title="Страницы" href="pages.html" /> 
   </head>
   <body role="document">
@@ -38,7 +40,7 @@
         <li class="right" >
           <a href="pages.html" title="Страницы"
              accesskey="P">назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="nims.html">Документация НИМС набор инструментов мастера-сюжетника 0.5.2</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="nims.html">Документация НИМС набор инструментов мастера-сюжетника 0.5.2</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -94,20 +96,39 @@
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">groupTexts</span></code>, массив данных - массив текстов групп.</p>
 <blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">groupName</span></code>, строка - название группы.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">text</span></code>, текст - текст группы.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">splittedText</span></code>, массив строк - текст группы, разбитый построчно.</p>
+<blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">groupName</span></code>, строка - название группы.</li>
-<li><code class="docutils literal"><span class="pre">text</span></code>, текст - текст группы.</li>
+<li><code class="docutils literal"><span class="pre">string</span></code>, строка.</li>
+</ul>
+</div></blockquote>
+</li>
 </ul>
 </div></blockquote>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">relations</span></code>, массив данных - отношения персонажа.</p>
 <blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">toCharacter</span></code>, строка - имя персонажа к которому описано отношение.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">text</span></code>, текст - текстовое описание отношения.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">splittedText</span></code>, массив строк - построчно разбитый текст отношения.</p>
+<blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">toCharacter</span></code>, строка - имя персонажа к которому описано отношение.</li>
-<li><code class="docutils literal"><span class="pre">text</span></code>, текст - текстовое описание отношения.</li>
-<li><code class="docutils literal"><span class="pre">splittedText</span></code>, текст - построчно разбитый текст отношения.</li>
-<li><code class="docutils literal"><span class="pre">stories</span></code>, строка - список историй, в которых персонажи пересекались.</li>
-<li><code class="docutils literal"><span class="pre">profile</span></code>, объект - досье персонажа, к которому прописано отношение. Данные досье извлекаются с помощью названия поля досье.</li>
+<li><code class="docutils literal"><span class="pre">string</span></code>, строка.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">stories</span></code>, строка - список историй, в которых персонажи пересекались.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">profile</span></code>, объект - досье персонажа, к которому прописано отношение. Данные досье извлекаются с помощью названия поля досье.</p>
+</li>
 </ul>
 </div></blockquote>
 </li>
@@ -151,74 +172,74 @@
 <div class="section" id="id3">
 <h2>Примеры создания шаблонов<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Рассмотрим создание шаблонов на нескольких примерах. Далее приводятся шаблоны для работы с текстами. Эти шаблоны можно проверять на вкладке <code class="docutils literal"><span class="pre">Вводные-&gt;Экспорт-&gt;Продвинутая</span> <span class="pre">текстовая</span> <span class="pre">выгрузка</span></code>. При вставке в ворд вместо двойных и тройных фигурных скобок необходимо использовать одинарные. Для начала создадим шаблон для получения списка инвентаря. Данные которые нам понадобятся - имя персонажа и его инвентарь, полученные из массива всех вводных. Минимальный шаблон, получающий эти данные выглядит так:</p>
-<div class="highlight-python"><div class="highlight"><pre>{{#briefings}}
-{{charName}}
-{{inventory}}
-{{/briefings}}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="c1">#briefings}}</span>
+<span class="p">{{</span><span class="n">charName</span><span class="p">}}</span>
+<span class="p">{{</span><span class="n">inventory</span><span class="p">}}</span>
+<span class="p">{{</span><span class="o">/</span><span class="n">briefings</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Теперь нам нужно красиво это напечатать. Например, давайте напечатаем список инвентаря в текстовом формате:</p>
-<div class="highlight-python"><div class="highlight"><pre>{{#briefings}}{{charName}}: {{inventory}}
-{{/briefings}}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="c1">#briefings}}{{charName}}: {{inventory}}</span>
+<span class="p">{{</span><span class="o">/</span><span class="n">briefings</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Обратите внимание, если {{/briefings}} так же поставить в первую строчку, то все значения склеятся. Перевод строки является частью шаблона, поэтому он должен здесь быть.</p>
 <p>Если мы хотим добавить личное снаряжение персонажа из досье, то мы можем сделать например такой шаблон:</p>
-<div class="highlight-python"><div class="highlight"><pre>{{#briefings}}{{charName}}: {{profileInfo-Снаряжение}}; {{inventory}}
-{{/briefings}}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="c1">#briefings}}{{charName}}: {{profileInfo-Снаряжение}}; {{inventory}}</span>
+<span class="p">{{</span><span class="o">/</span><span class="n">briefings</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Здесь личное снаряжения отделено от инвентаря историй точкой с запятой.</p>
 <p>Чтобы вывести только досье персонажа необходим минимальный шаблон:</p>
-<div class="highlight-python"><div class="highlight"><pre>{{#briefings}}
-{{charName}}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="c1">#briefings}}</span>
+<span class="p">{{</span><span class="n">charName</span><span class="p">}}</span>
 
-{{#profileInfoArray}}
-{{itemName}}
-{{value}}
-{{/profileInfoArray}}
+<span class="p">{{</span><span class="c1">#profileInfoArray}}</span>
+<span class="p">{{</span><span class="n">itemName</span><span class="p">}}</span>
+<span class="p">{{</span><span class="n">value</span><span class="p">}}</span>
+<span class="p">{{</span><span class="o">/</span><span class="n">profileInfoArray</span><span class="p">}}</span>
 
-{{/briefings}}
+<span class="p">{{</span><span class="o">/</span><span class="n">briefings</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Можно выводить досье, указывая каждый элемент отдельно:</p>
-<div class="highlight-python"><div class="highlight"><pre>{{#briefings}}
-{{charName}}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="c1">#briefings}}</span>
+<span class="p">{{</span><span class="n">charName</span><span class="p">}}</span>
 
-{{profileInfo-Игрок}}
-{{profileInfo-Раса}}
-{{profileInfo-Пол}}
+<span class="p">{{</span><span class="n">profileInfo</span><span class="o">-</span><span class="n">Игрок</span><span class="p">}}</span>
+<span class="p">{{</span><span class="n">profileInfo</span><span class="o">-</span><span class="n">Раса</span><span class="p">}}</span>
+<span class="p">{{</span><span class="n">profileInfo</span><span class="o">-</span><span class="n">Пол</span><span class="p">}}</span>
 
-{{/briefings}}
+<span class="p">{{</span><span class="o">/</span><span class="n">briefings</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Минимальный шаблон вывода событий по хронологии:</p>
-<div class="highlight-python"><div class="highlight"><pre>{{#briefings}}
-{{charName}}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="c1">#briefings}}</span>
+<span class="p">{{</span><span class="n">charName</span><span class="p">}}</span>
 
-{{#eventsInfo}}
-{{{displayTime}}}
-{{text}}
-{{/eventsInfo}}
+<span class="p">{{</span><span class="c1">#eventsInfo}}</span>
+<span class="p">{{{</span><span class="n">displayTime</span><span class="p">}}}</span>
+<span class="p">{{</span><span class="n">text</span><span class="p">}}</span>
+<span class="p">{{</span><span class="o">/</span><span class="n">eventsInfo</span><span class="p">}}</span>
 
-{{/briefings}}
+<span class="p">{{</span><span class="o">/</span><span class="n">briefings</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Минимальный шаблон вывода событий по историям:</p>
-<div class="highlight-python"><div class="highlight"><pre>{{#briefings}}
-{{charName}}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="c1">#briefings}}</span>
+<span class="p">{{</span><span class="n">charName</span><span class="p">}}</span>
 
-{{#storiesInfo}}
-{{storyName}}
+<span class="p">{{</span><span class="c1">#storiesInfo}}</span>
+<span class="p">{{</span><span class="n">storyName</span><span class="p">}}</span>
 
-{{#eventsInfo}}
-{{{displayTime}}}
-{{text}}
-{{/eventsInfo}}
+<span class="p">{{</span><span class="c1">#eventsInfo}}</span>
+<span class="p">{{{</span><span class="n">displayTime</span><span class="p">}}}</span>
+<span class="p">{{</span><span class="n">text</span><span class="p">}}</span>
+<span class="p">{{</span><span class="o">/</span><span class="n">eventsInfo</span><span class="p">}}</span>
 
-{{/storiesInfo}}
+<span class="p">{{</span><span class="o">/</span><span class="n">storiesInfo</span><span class="p">}}</span>
 
-{{/briefings}}
+<span class="p">{{</span><span class="o">/</span><span class="n">briefings</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Соответственно все это можно комбинировать и менять местами. Например, элементы досье можно перечислять в любом порядке, а события можно вывести перед досье.</p>
@@ -227,28 +248,28 @@
 <h2>Тонкости<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Шаблонизаторы имеют свои особенности и о некоторых из них необходимо сразу упомянуть. Начнем с работы с многострочными текстами.</p>
 <p>Пусть у вас есть адаптация с текстом:</p>
-<div class="highlight-python"><div class="highlight"><pre>Раз, два, три, четыре, пять,
-Вышел зайчик погулять.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Раз</span><span class="p">,</span> <span class="n">два</span><span class="p">,</span> <span class="n">три</span><span class="p">,</span> <span class="n">четыре</span><span class="p">,</span> <span class="n">пять</span><span class="p">,</span>
+<span class="n">Вышел</span> <span class="n">зайчик</span> <span class="n">погулять</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>В этом фрагменте текста две строчки. Если вывести этот текст в ворд с помощью {text}, то получим:</p>
-<div class="highlight-python"><div class="highlight"><pre>Раз, два, три, четыре, пять, Вышел зайчик погулять.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Раз</span><span class="p">,</span> <span class="n">два</span><span class="p">,</span> <span class="n">три</span><span class="p">,</span> <span class="n">четыре</span><span class="p">,</span> <span class="n">пять</span><span class="p">,</span> <span class="n">Вышел</span> <span class="n">зайчик</span> <span class="n">погулять</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>При вставке в ворд имеющиеся переводы строк игнорируются, поэтому текст из нескольких абзацев слипается в один. Чтобы избавится от этого эффекта необходимо обрабатывать каждый абзац исходного текста отдельно. Для этого в шаблоне используется конструкция вида (ворд шаблон):</p>
-<div class="highlight-python"><div class="highlight"><pre>{#splittedText}{string}
-{/splittedText}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="c1">#splittedText}{string}</span>
+<span class="p">{</span><span class="o">/</span><span class="n">splittedText</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>В этом случае исходный текст автоматически разбивается в НИМС на строки по символу перевода строки и каждая строка вставляется отдельно в ворд.</p>
 <p>Это разбиение может пригодиться не только для работы с вордом. Например, при экспорте в html переводы строк так же игнорируются. Чтобы явно указать разбиение на абзацы используется конструкция вида (текстовый шаблон):</p>
-<div class="highlight-python"><div class="highlight"><pre>{{#splittedText}}&lt;p&gt;{{string}}&lt;/p&gt;
-{{/splittedText}}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="c1">#splittedText}}&lt;p&gt;{{string}}&lt;/p&gt;</span>
+<span class="p">{{</span><span class="o">/</span><span class="n">splittedText</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Разбиение на строки реализовано не только для текстов событий, но и для досье. Например, биографию по абзацам можно вывести так (ворд шаблон):</p>
-<div class="highlight-python"><div class="highlight"><pre>{#profileInfo-splitted-Биография}{string}
-{/profileInfo-splitted-Биография}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="c1">#profileInfo-splitted-Биография}{string}</span>
+<span class="p">{</span><span class="o">/</span><span class="n">profileInfo</span><span class="o">-</span><span class="n">splitted</span><span class="o">-</span><span class="n">Биография</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Ещё одна тонкость для работы с текстовыми шаблонами заключается в том, что некоторые символы по умолчанию кодируются. Простой пример - вывод времени события. Если выводить время шаблоном <code class="docutils literal"><span class="pre">{{time}}</span></code>, то на выходе получим <code class="docutils literal"><span class="pre">3018&amp;#x2F;09&amp;#x2F;30</span> <span class="pre">20:00</span></code>. Чтобы этого не происходило, необходимо указать тройные фигурные скобки. Для шаблона <code class="docutils literal"><span class="pre">{{{time}}}</span></code> получим <code class="docutils literal"><span class="pre">3018/09/30</span> <span class="pre">20:00</span></code>. Так что если у вас в текст попадают странные символы, попробуйте заменить двойные скобки на тройные.</p>
@@ -280,21 +301,18 @@
   <div role="note" aria-label="source link">
     <h3>Эта страница</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/export.txt"
+      <li><a href="_sources/export.rst.txt"
             rel="nofollow">Исходный текст</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Быстрый поиск</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Искать" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Введите слова для поиска или имя модуля, класса или функции.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -310,12 +328,12 @@
         <li class="right" >
           <a href="pages.html" title="Страницы"
              >назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="nims.html">Документация НИМС набор инструментов мастера-сюжетника 0.5.2</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="nims.html">Документация НИМС набор инструментов мастера-сюжетника 0.5.2</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, Тимофей NtsDK Речкалов, Мария Матильда Сидехменова.
-      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016, Тимофей NtsDK Речкалов, Мария Матильда Сидехменова.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.
     </div>
   </body>
 </html>

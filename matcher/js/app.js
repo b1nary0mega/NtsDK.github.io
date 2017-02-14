@@ -15,29 +15,20 @@ See the License for the specific language governing permissions and
 "use strict";
 
 ((exports)=>{
-    var rpgData = {
-        playersInput: "Анна,Боря,Ваня,Галя,Дима",
-        charactersInput:"Арагорн,Боромир,Водный страж,Галадриэль,Денетор",
-        profileInput:"Функция,Любовь,Замес"
-    };
-    var marriageData = {
-        playersInput: "Aнтон,Боря,Ваня,Гоша,Дима",
-        charactersInput:"Аня,Белла,Валя,Галя,Даша",
-        profileInput:"Умная,Красивая,Добрая"
-    };
     
-    var fillData = function(data){
+    var fillData = function(id){
         return function(){
-            queryEl('#playersInput').value = data.playersInput;
-            queryEl('#charactersInput').value = data.charactersInput;
-            queryEl('#profileInput').value = data.profileInput;
+            queryEl('#playersInput').value = l10n.get('players'+id);
+            queryEl('#charactersInput').value = l10n.get('characters'+id);
+            queryEl('#profileInput').value = l10n.get('profile'+id);
         };
     }
     
     exports.init = () => {
         UI.initPanelTogglers();
-        listen(queryEl('.rpg-data'), 'click', fillData(rpgData));  
-        listen(queryEl('.marriage-data'), 'click', fillData(marriageData));  
+        listen(queryEl('.rpg-data'), 'click', fillData(1));  
+        listen(queryEl('.marriage-data'), 'click', fillData(2));  
+        fillData(1)();
         
         listen(queryEl('.create-data-forms'), 'click', createDataForms);
         listen(queryEl('.random-checks'), 'click', randomChecks);
@@ -49,7 +40,7 @@ See the License for the specific language governing permissions and
     
     var match = function(){
         if(state.players === undefined){
-            Utils.alert('Профили не подготовлены');
+            Utils.alert(l10n.get('profiles-not-ready'));
             return;
         }
         
@@ -120,7 +111,7 @@ See the License for the specific language governing permissions and
     
     var calcPriorities = function(){
         if(state.players === undefined){
-            Utils.alert('Профили не подготовлены');
+            Utils.alert(l10n.get('profiles-not-ready'));
             return;
         }
         
@@ -180,24 +171,24 @@ See the License for the specific language governing permissions and
 //            return addEls(makeEl('tr'), [label]);
         }));
     };
-    
+
     var createDataForms = function(){
         var players = queryEl('#playersInput').value.trim();
         var chars = queryEl('#charactersInput').value.trim();
         var profile = queryEl('#profileInput').value.trim();
         if(players === '' || chars === '' || profile === ''){
-            Utils.alert('Некоторые значения отсутствуют');
+            Utils.alert(l10n.get('some-values-missing'));
             return;
         }
         players = players.split(',');
         chars = chars.split(',');
         profile = profile.split(',');
         if(players.length !== chars.length){
-            Utils.alert('Количество персонажей не совпадает с количеством игроков');
+            Utils.alert(l10n.get('player-and char-list-length-not-equal'));
             return;
         }
         if(R.uniq(players).length !== players.length || R.uniq(chars).length !== chars.length || R.uniq(profile).length !== profile.length){
-            Utils.alert('Какие-то значения не уникальны');
+            Utils.alert(l10n.get('some-values-are-not-unique'));
             return;
         }
         state.players = players.sort();

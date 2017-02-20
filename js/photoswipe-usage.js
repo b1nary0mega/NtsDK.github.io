@@ -110,6 +110,12 @@ var fcmItems = [ {
     h : 620
 } ];
 
+var measurelookItems = [ {
+    src : 'images/measurelook-big.jpg',
+    w : 1600,
+    h : 1024
+} ];
+
 var cyberCityGallery = [ {
     src : 'http://cs630917.vk.me/v630917695/e024/7uAM1-XDmj4.jpg',
     w : 1280,
@@ -197,4 +203,8 @@ makeListener("nimsGallery", nimsGallery);
 makeListener("nimsGallery-img", nimsGallery);
 makeListener("nimsGalleryEn", nimsGalleryEn);
 makeListener("nimsGalleryEn-img", nimsGalleryEn);
+makeListener("measurelook", measurelookItems);
+makeListener("measurelook-img", measurelookItems);
+
+
 

@@ -116,6 +116,12 @@ var measurelookItems = [ {
     h : 1024
 } ];
 
+var larpSoftItems = [ {
+    src : 'images/matcher-big.jpg',
+    w : 1600,
+    h : 1024
+} ];
+
 var cyberCityGallery = [ {
     src : 'http://cs630917.vk.me/v630917695/e024/7uAM1-XDmj4.jpg',
     w : 1280,
@@ -205,6 +211,10 @@ makeListener("nimsGalleryEn", nimsGalleryEn);
 makeListener("nimsGalleryEn-img", nimsGalleryEn);
 makeListener("measurelook", measurelookItems);
 makeListener("measurelook-img", measurelookItems);
+makeListener("larpsoft", larpSoftItems);
+makeListener("larpsoft-img", larpSoftItems);
+
+
 
 
 

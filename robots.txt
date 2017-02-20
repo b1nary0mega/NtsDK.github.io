@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Host: trechkalov.com
+Sitemap: http://trechkalov.com/sitemap.xml
+
+User-agent: Yandex
+Allow: /

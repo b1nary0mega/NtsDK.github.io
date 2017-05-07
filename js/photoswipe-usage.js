@@ -122,6 +122,32 @@ var larpSoftItems = [ {
     h : 1024
 } ];
 
+var barrayarItems = [ {
+    src : 'barrayar/Barrayar tunnel map - ru.png',
+    w : 1236,
+    h : 1186
+},{
+    src : 'barrayar/Barrayar tunnel map - ru.svg',
+    w : 1236,
+    h : 1186
+},{
+    src : 'barrayar/Barrayar tunnel map - en.png',
+    w : 1236,
+    h : 1186
+} ,{
+    src : 'barrayar/Barrayar tunnel map - en.svg',
+    w : 1236,
+    h : 1186
+},{
+    src : 'barrayar/barrayar-3d-ru.png',
+    w : 1236,
+    h : 791
+},{
+    src : 'barrayar/barrayar-3d-en.png',
+    w : 1236,
+    h : 791
+} ];
+
 var cyberCityGallery = [ {
     src : 'http://cs630917.vk.me/v630917695/e024/7uAM1-XDmj4.jpg',
     w : 1280,
@@ -213,6 +239,8 @@ makeListener("measurelook", measurelookItems);
 makeListener("measurelook-img", measurelookItems);
 makeListener("larpsoft", larpSoftItems);
 makeListener("larpsoft-img", larpSoftItems);
+makeListener("barrayar", barrayarItems);
+makeListener("barrayar-img", barrayarItems);
 
 
 

@@ -1,0 +1,98 @@
+﻿
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="utf-8">
+    <title>Graph Visualization</title>
+		<meta name="description" content="Отрисовка графа социальной сети персонажей ролевой игры в 3D на основе force-directed layout."/>
+		
+    <script type="text/javascript" src="Graph.js"></script>
+		<script type="text/javascript" src="../../barrayar/tunnel-map-en.js"></script>
+    <script type="text/javascript" src="webgl-frameworks/three.min.js"></script>
+    <script type="text/javascript" src="utils/Stats.js"></script>
+    <script type="text/javascript" src="utils/TrackballControls.js"></script>
+    <script type="text/javascript" src="utils/Label.js"></script>
+    <script type="text/javascript" src="utils/ObjectSelection.js"></script>
+    <script type="text/javascript" src="layouts/force-directed-layout.js"></script>
+    <script type="text/javascript" src="drawings/simple_graph.js"></script>
+    <script type="text/javascript" src="drawings/sphere_graph.js"></script>
+		
+		<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37764330 = new Ya.Metrika({ id:37764330, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37764330" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+    <script type="text/javascript">
+      var drawing;
+      function createDrawing() {
+        var index = parseInt(location.search.split("?")[1]);
+        if(isNaN(index)) {
+          index = 1;
+        }
+        /* Change these values to draw more nodes (numNodes) */
+        switch(index) {
+          case 0:
+            drawing = new Drawing.SimpleGraph({layout: '2d', selection: true, numNodes: 50, showStats: true, showInfo: true});
+            break;
+          case 1:
+            drawing = new Drawing.SimpleGraph({layout: '3d', selection: true, numNodes: 50, graphLayout:{attraction: 5, repulsion: 0.5}, showStats: true, showInfo: true});
+            break;
+        //  case 2:
+        //    drawing = new Drawing.SphereGraph({numNodes: 50, showStats: true, showInfo: true});
+        //    break;
+          default:
+            drawing = new Drawing.SimpleGraph({layout: '3d', selection: true, numNodes: 50, showStats: true, showInfo: true});
+        }
+        document.getElementById("drawing_select").selectedIndex = index;
+      }
+    </script>
+
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        font: 11px courier;
+        overflow: hidden;
+      }
+      #graph-info {
+        position: absolute;
+        top: 0px;
+        left: 40%;
+        margin: 10px;
+        background-color: #ffffe0;
+        color: #333;
+        padding: 5px 10px;
+      }
+      #options {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body onload="createDrawing()">
+    <div id="options">
+      <form>
+        <p>
+          <label>Вид отрисовки</label><br>
+          <select id="drawing_select" onchange="window.location.href = '?' + this.selectedIndex;">
+            <option>2D-модель</option>
+            <option selected="selected">3D-модель</option>
+          </select>
+        </p>
+        <p>
+          <input type="checkbox" id="show_labels" onclick="drawing.show_labels = this.checked;">
+          <label for="show_labels">Показать подписи</label>
+        </p>
+        <p>
+          <input type="button" value="Остановить отрисовку" onclick="drawing.stop_calculating();">
+        </p>
+      </form>
+    </div>
+
+    <div style="position: absolute; bottom: 0;">
+			Вращение: зажмите левую кнопку мыши и ведите мышь<br />
+			Масштаб: зажмите S + левую кнопку мыши и ведите мышь<br>
+			Смещение: зажмите D + левую кнопку мыши и ведите мышь
+    </div>
+  </body>
+</html>

@@ -116,6 +116,16 @@ var measurelookItems = [ {
     h : 1024
 } ];
 
+var docxtemplaterItems = [ {
+    src : 'images/docxtemplater-big.png',
+    w : 1600,
+    h : 1024
+},{
+    src : 'images/docxtemplater-big-en.png',
+    w : 1600,
+    h : 1024
+} ];
+
 var larpSoftItems = [ {
     src : 'images/matcher-big.jpg',
     w : 1600,
@@ -241,6 +251,9 @@ makeListener("larpsoft", larpSoftItems);
 makeListener("larpsoft-img", larpSoftItems);
 makeListener("barrayar", barrayarItems);
 makeListener("barrayar-img", barrayarItems);
+makeListener("docx-sandbox", docxtemplaterItems);
+makeListener("docx-sandbox-img", docxtemplaterItems);
+
 
 
 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<!-- Copyright 2017 Timofey Rechkalov <ntsdk@yandex.ru>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+   limitations under the License.  -->
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docxtemplater and Mustache sandbox</title>
+<meta name="description" content="Intercative editing of Mustach template, transformation of Mustache template to docxtemplater, render docxtemplater template."/>
+
+<script src="libs/jquery-3.1.1.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/ramda.min.js"></script>
+<script src="libs/vex.combined.min.js"></script>
+<script src="libs/mustache.min.js"></script>
+<!-- <script src="libs/docxgen-121.min.js"></script> -->
+<script src="libs/docxtemplater.v3.0.9.min.js"></script>
+<script src="libs/jszip.min.js"></script>
+<script src="libs/FileSaver.js"></script>
+
+
+
+<script src="templates/templatesArr.js"></script>
+<script src="templates/genericTemplate.js"></script>
+<script src="templates/basicTemplate.js"></script>
+<script src="templates/basicJSON.js"></script>
+
+
+<link href="style/bootstrap.min.css" rel="stylesheet">
+<link href="style/vex-theme-default.css" rel="stylesheet">
+<link href="style/vex.css" rel="stylesheet">
+<link href="style/style.css" rel="stylesheet">
+
+
+
+</head>
+<body onload="app.init()">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default intro-panel">
+          <div class="panel-heading">
+            <a href="#/" panel-toggler=".container-fluid .intro-panel .panel-body">
+              <h3 class="panel-title player-profile-header" >About</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <p>
+							Hello everybody! When I start using <a href="https://docxtemplater.com">docxtemplater</a> I have no online sandbox to try it out. Later I made something like that and with some improvements it helps me with template work. I have two stages with template work: checking correctness and compatibility of data and template (1) and appearance work. On the first stage I use <a href="http://mustache.github.io/">Mustache</a> text templater instead docxtemplater. They have compatible core so I can interactively check correctness and compatibility and generate docxtemplater template for second stage. See example in <a href="">YouTube video</a>.
+						</p>
+
+            <p>This page use docxtemplater 3.0.9</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default settings-panel">
+          <div class="panel-heading">
+            <a href="#/" panel-toggler=".container-fluid .settings-panel .panel-body">
+              <h3 class="panel-title player-profile-header" >Sandbox</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <div class="exportContainer sandbox-body">
+							<button id="previewTextOutput" l10n-id="briefings-preview" class="btn btn-default">Preview <br>JSON + Mustache => Screen Output</button>
+							<button id="convertToDocxTemplate" l10n-id="briefings-convert-to-docx-template" class="btn btn-default">Convert to docx template<br> Mustache => docx template</button>
+							<button id="generateByDocxTemplate" l10n-id="briefings-generate-by-docx-template" class="btn btn-default">Generate docx by current template<br>
+							JSON + (Mustache => docx template) => docx</button>
+							<button id="makeCustomTextBriefings" l10n-id="briefings-export" class="btn btn-default">Generate txt by current template<br>
+							JSON + Mustache => txt</button>
+							
+							<div class="form-group row">
+								<div class="col-xs-6">
+									<h3 l10n-id="briefings-template">JSON data</h3>
+									<textarea id="dataArea"></textarea><br>
+								</div>
+								<div class="col-xs-6">
+									<h3 l10n-id="briefings-template">Mustache template</h3>
+									<textarea id="templateArea"></textarea><br>
+								</div>
+								<div class="col-xs-6">
+									<h3 l10n-id="briefings-exported-text">Screen Output</h3>
+									<textarea id="outputArea"></textarea>
+								</div>
+								<div class="col-xs-6">
+									<h3 l10n-id="briefings-exported-text">Upload docx template (Custom docx template)</h3>
+									<input type="file" name="file" id="docxBriefings"> 
+									<button id="makeDocxBriefings" l10n-id="briefings-make-export" class="btn btn-default">Generate docx<br> JSON + custom docx template => docx</button>
+								</div>
+							</div>
+							
+						</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/errors.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/commonUtils.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/uiUtils.js"></script>
+
+  <script src="js/l10n.en.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

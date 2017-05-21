@@ -35,6 +35,18 @@
   <changefreq>monthly</changefreq>
 </url>
 <url>
+  <loc>http://trechkalov.com/docxtemplater/docxtemplater.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/Graph-Visualization/barrayar3d-ru.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/Graph-Visualization/barrayar3d-en.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
   <loc>http://trechkalov.com/measurelook/app.html</loc>
   <changefreq>monthly</changefreq>
 </url>
@@ -55,6 +67,10 @@
   <changefreq>monthly</changefreq>
 </url>
 <url>
+  <loc>http://trechkalov.com/polls/polls_doc/polls_assistant.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
   <loc>http://trechkalov.com/index.html</loc>
   <changefreq>monthly</changefreq>
 </url>
@@ -68,6 +84,10 @@
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/nims.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/docxtemplater/docxtemplater-en.html</loc>
   <changefreq>monthly</changefreq>
 </url>
 <url>
@@ -104,6 +124,26 @@
 </url>
 <url>
   <loc>http://trechkalov.com/nims/online/extras/doc/export.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/genindex.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/intro.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/tasks.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/quickStart.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/pages.html</loc>
   <changefreq>monthly</changefreq>
 </url>
 <url>

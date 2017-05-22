@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Прикладной программный интерфейс (API) &#8212; Документация НИМС набор инструментов мастера-сюжетника 0.6.1</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="Экспорт вводных" href="export.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="export.html" title="Экспорт вводных"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="nims.html">Документация НИМС набор инструментов мастера-сюжетника 0.6.1</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="api">
+<span id="api-description"></span><h1>Прикладной программный интерфейс (API)<a class="headerlink" href="#api" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Часто при работе с разными сервисами возникает потребность в API - возможности программного доступа из сторонних источников. В НИМСе с этим всё проще - он сам с собой работает через API. Всё что здесь перечислено, это родной интерфейс НИМСа, работа с которым осуществляется через Ajax.</p>
+<div class="section" id="id1">
+<h2>Общие соглашения<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>API разбит на модули, адаптированные для исполнения как в браузере, так и в Node.js. Модули принимают на вход объект базы и вспомогательные объекты/сущности/API. Модуль добавляет свои функции в прототип объекта базы.</p>
+<p>Виды прототипных функций:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Функции прототипа начинающиеся на get и is - функции возвращающие данные из базы. Все вызовы этих функций транслируются в GET запросы.</li>
+<li>Функции прототипа начинающиеся на _ - вспомогательные функции. Не транслируются в HTTP запросы.</li>
+<li>Все остальные функции прототипа - функции передачи данных для сохранения в базу. Все вызовы этих функций транслируются в PUT запросы.</li>
+</ol>
+</div></blockquote>
+<p>Виды не прототипных функций:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Внутренние вспомогательные функции - никому вне модуля не видны, в большинстве своем синхронны.</li>
+<li>Функции, добавляемые в объект listeners - функции, для сохранения согласованности данных между разными модулями. Должны быть синхронными. Пример: при удалении пункта досье необходимо удалить его из всех персонажей и фильтров групп.</li>
+<li>Функции, добавляемые в объект dbmsUtils - внутренние вспомогательные функции, которые могут использоваться в более чем одном модуле.</li>
+</ol>
+</div></blockquote>
+<p>Все функции API, предполагающие асинхронное исполнение (GET/PUT запросы), принимают последним аргументом колбек.</p>
+<p>Первым аргументом колбека всегда ожидается объект ошибки.</p>
+<p>На сервере после колбека дополнительным аргументом передаётся информация о пользователе, инициировавшем вызов функции.</p>
+<p>Вспомогательные функции могут быть как на колбеках, так и быть синхронными.</p>
+</div>
+<div class="section" id="id2">
+<h2>Виды вспомогательных объектов<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Модули принимают на вход объект базы и вспомогательные объекты/сущности/API.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Migrator - объект, вносящий изменения для сохранения обратной совместимости в базу.</li>
+<li>CommonUtils - вспомогательные функции, которые необходимо вызывать как в браузере, так и на сервере.</li>
+<li>EventEmitter - внутренний обработчик событий для связи между модулями.</li>
+<li>R - библиотека для функционального программирования на JavaScript - Ramda.</li>
+<li>Ajv - библиотека проверки JSON схем.</li>
+<li>Schema - набор функций для генерации JSON схемы базы НИМС.</li>
+<li>Errors - набор объектов ошибок.</li>
+<li>listeners - объект для хранения подписчиков. На его основе инициализируется EventEmitter при загрузке базы НИМС.</li>
+<li>Constants - константы.</li>
+<li>dbmsUtils - межмодульные утилиты, необходимые для использования внутри базы.</li>
+<li>dateFormat - библиотека для работы с форматированием времени.</li>
+<li>custom - объект для получения вспомогательной информации из модуля.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>Модули<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Общий принцип работы модуля - разрешено читать любую информацию из базы напрямую, в том числе, не входящую в область ответственности модуля. Разрешено вносить изменения в только ту часть базы, которая входит в область ответственности модуля.</p>
+</div>
+<div class="section" id="id4">
+<h2>Стандартные модули<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="accessmanagerapi">
+<h3>Модуль accessManagerAPI<a class="headerlink" href="#accessmanagerapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Административные задачи - настройки прав, управление учетными записями мастеров и игроков.</p>
+<blockquote>
+<div><p>getManagementInfo(callback) - получение всей информации по уровням доступа.</p>
+<p>assignAdmin(name, callback) - назначение администратора.</p>
+<p>assignEditor(name, callback) - назначение редактора.</p>
+<p>removeEditor(callback) - удаление редактора.</p>
+<p>changeAdaptationRightsMode(mode, callback) - смена режима наследования адаптаций.</p>
+<p>removeMaster(name, callback) - удаление мастера.</p>
+<p>removePermission(userName, names, callback) - удаление прав владения объектом.</p>
+<p>assignPermission(userName, names, callback) - назначение права владения объектом.</p>
+<p>getPlayerLoginsArray(callback) - получение списка имен игроков с учетными записями.</p>
+<p>removePlayerLogin(userName, callback) - удаление учетной записи игрока.</p>
+<p>getWelcomeText(callback) - получение приветственного текста для игрока.</p>
+<p>setWelcomeText(text, callback) - изменение приветственного текста для игрока.</p>
+<p>getPlayersOptions(callback) - получение прав игроков: возможность создавать игрока и возможность создавать персонажа.</p>
+<p>setPlayerOption(name, value, callback) - изменение прав игроков.</p>
+</div></blockquote>
+<p>Заглушки - эти функции реализованы на сервере, но необходимо иметь их прототипы в общем интерфейсе для сборки Ajax обёрток:</p>
+<blockquote>
+<div><p>createMaster(name, password, callback) - создание мастера. Невыполнимая операция: сохранение пароля.</p>
+<p>changeMasterPassword(userName, newPassword, callback) - Смена пароля мастера. Невыполнимая операция: сохранение пароля.</p>
+<p>publishPermissionsUpdate(callback) - широковещательная рассылка об изменении прав пользователей. Невыполнимая операция: принудительное уведомление всех пользователей об изменениях в правах владения/настройках сервера.</p>
+<p>createPlayer(userName, password, callback) - создание игрока+учетная запись. Невыполнимая операция: сохранение пароля.</p>
+<p>createPlayerLogin(userName, password, callback) - создание учетной записи игрока. Невыполнимая операция: сохранение пароля.</p>
+<p>changePlayerPassword(userName, password, callback) - смена пароля учетной записи игрока. Невыполнимая операция: сохранение пароля.</p>
+<p>getPlayerProfileInfo(callback) - получение информации о профилях игрока/персонажа. Невыполнимая операция: нет информации о пользователе, вызвавшем функцию.</p>
+<p>createCharacterByPlayer(characterName, callback) - создание персонажа игроком. Невыполнимая операция: нет информации о пользователе, вызвавшем функцию.</p>
+</div></blockquote>
+<p>Зависимости от профилей - переименование/удаление профиля игрока приводит к переименованию/удалению учетной записи игрока:</p>
+<blockquote>
+<div><p>_renameProfile(type, fromName, toName)</p>
+<p>_removeProfile(type, characterName)</p>
+</div></blockquote>
+</div>
+<div class="section" id="baseapi">
+<h3>Модуль baseAPI<a class="headerlink" href="#baseapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Базовые функции.</p>
+<blockquote>
+<div><p>_init(listeners) - инициализация межмодульных подписок.</p>
+<p>getDatabase(callback) - вернуть базу.</p>
+<p>setDatabase(database, callback) - вгрузить базу.</p>
+<p>getMetaInfo(callback) - получить метаинформацию.</p>
+<p>setMetaInfo(name, value, callback) - обновить поле в метаинформации.</p>
+</div></blockquote>
+</div>
+<div class="section" id="briefingexportapi">
+<h3>Модуль briefingExportAPI<a class="headerlink" href="#briefingexportapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Выгрузка данных для экспорта.</p>
+<blockquote>
+<div>getBriefingData(selectedCharacters, selectedStories, exportOnlyFinishedStories, callback) - вернуть данные для выгрузки.</div></blockquote>
+</div>
+<div class="section" id="consistencycheckapi">
+<h3>Модуль consistencyCheckAPI<a class="headerlink" href="#consistencycheckapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Проверка базы на согласованность с помощью JSON schema и инвариантов.</p>
+<blockquote>
+<div>getConsistencyCheckResult(callback) - проверить базу на согласованность.</div></blockquote>
+</div>
+<div class="section" id="entityapi">
+<h3>Модуль entityAPI<a class="headerlink" href="#entityapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Общий интерфейс для работы с сущностями. Пока слабо развит.</p>
+<blockquote>
+<div>getEntityNamesArray(type, callback) - вернуть список имён сущностей указанного типа.</div></blockquote>
+</div>
+<div class="section" id="groupsapi">
+<h3>Модуль groupsAPI<a class="headerlink" href="#groupsapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Работа с группами.</p>
+<blockquote>
+<div><p>getGroupNamesArray(callback) - возвращает названия всех групп.</p>
+<p>getGroup(groupName, callback) - возвращает всю информацию о группе.</p>
+<p>getCharacterGroupTexts(characterName, callback) - возвращает все тексты групп для конкретного персонажа.</p>
+<p>getAllCharacterGroupTexts(callback) - возвращает все тексты групп для каждого персонажа.</p>
+<p>createGroup(groupName, callback) - создать группу.</p>
+<p>renameGroup(fromName, toName, callback) - переименовать группу.</p>
+<p>removeGroup(groupName, callback) - удалить группу.</p>
+<p>saveFilterToGroup(groupName, filterModel, callback) - сохранить фильтр в группу.</p>
+<p>updateGroupField(groupName, fieldName, value, callback) - обновить данные о группе.</p>
+<p>getProfileFilterInfo(callback) - получить фильтр из группы.</p>
+<p>getGroupCharacterSets(callback) - вернуть списки персонажей, состоящих в каждой группе.</p>
+</div></blockquote>
+<p>Зависимости от структуры досье - переименование/удаление/смена типа элементов досье, изменение списка элементов единственного/множественного выбора:</p>
+<blockquote>
+<div><p>_removeProfileItem(type, index, profileItemName)</p>
+<p>_changeProfileItemType(type, profileItemName, newType)</p>
+<p>_renameProfileItem(type, newName, oldName)</p>
+<p>_replaceEnumValue(type, profileItemName, defaultValue, newOptionsMap)</p>
+</div></blockquote>
+</div>
+<div class="section" id="groupschemaapi">
+<h3>Модуль groupSchemaAPI<a class="headerlink" href="#groupschemaapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Построение иерархии групп.</p>
+<blockquote>
+<div>getGroupSchemas(callback) - возвращает иерархическую схему групп.</div></blockquote>
+</div>
+<div class="section" id="investigationboardapi">
+<h3>Модуль investigationBoardAPI<a class="headerlink" href="#investigationboardapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Работа с картой сюжета.</p>
+<blockquote>
+<div><p>getInvestigationBoardData(callback) - возвращает информацию о карте сюжетов.</p>
+<p>addBoardGroup(groupName, callback) - добавить группу на карту сюжета.</p>
+<p>switchGroups(fromName, toName, callback) - заменить группу на карте сюжета.</p>
+<p>setGroupNotes(groupName, notes, callback) - изменить заметку к группе на карте сюжета.</p>
+<p>removeBoardGroup(groupName, callback) - удалить группу с карты сюжета.</p>
+<p>createResource(resourceName, callback) - создать ресурс.</p>
+<p>renameResource(fromName, toName, callback) - переименовать ресурс.</p>
+<p>removeResource(resourceName, callback) - удалить ресурс.</p>
+<p>addEdge(fromId, toId, callback) - добавить ребро.</p>
+<p>setEdgeLabel(fromId, toId, label, callback) - изменить надпись на ребре.</p>
+<p>removeEdge(fromId, toId, callback) - удалить ребро.</p>
+</div></blockquote>
+<p>Зависимость - список ребер на карте сюжета должен содержать списки первого уровня. Они добавляются/удаляются автоматически при изменении узлов.</p>
+<blockquote>
+<div><p>_nodeAdded(nodeName, type)</p>
+<p>_nodeRemoved(nodeName, type)</p>
+<p>_nodeRenamed(fromName, toName, group)</p>
+</div></blockquote>
+<p>Зависимость - переименование/удаление групп влияет на карту сюжета.</p>
+<blockquote>
+<div><p>_renameGroup(fromName, toName)</p>
+<p>_removeGroup(groupName)</p>
+</div></blockquote>
+</div>
+<div class="section" id="logapi">
+<h3>Модуль logAPI<a class="headerlink" href="#logapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Модуль логирования действий пользователя.</p>
+<blockquote>
+<div><p>log(userName, funcName, rewrite, params, callback) - добавить запись в лог.</p>
+<p>getLog(pageNumber, callback) - получить записи лога.</p>
+</div></blockquote>
+</div>
+<div class="section" id="profilebindingapi">
+<h3>Модуль profileBindingAPI<a class="headerlink" href="#profilebindingapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Управление привязками персонаж-игрок.</p>
+<blockquote>
+<div><p>getProfileBindings(callback) - вернуть объект с привязками. Только привязки.</p>
+<p>getExtendedProfileBindings(callback) - вернуть расширенный массив с привязками. Он содержит пары персонаж-игрок. В этих парах есть информация обо всех персонажах и игроках.</p>
+<p>getProfileBinding(type, name, callback) - получить привязку для указанного профиля. Пара персонаж-игрок.</p>
+<p>createBinding(characterName, playerName, callback) - создать привязку.</p>
+<p>removeBinding(characterName, playerName, callback) - удалить привязку.</p>
+</div></blockquote>
+<p>Зависимость - переименование и удаление профилей персонажей и игроков меняет привязки.</p>
+<blockquote>
+<div><p>_renameProfile(type, fromName, toName)</p>
+<p>_removeProfile(type, profileName)</p>
+</div></blockquote>
+</div>
+<div class="section" id="profileconfigurerapi">
+<h3>Модуль profileConfigurerAPI<a class="headerlink" href="#profileconfigurerapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Работа со структурой досье.</p>
+<blockquote>
+<div><p>getProfileStructure(type, callback) - получение структуры профиля.</p>
+<p>createProfileItem(type, name, itemType, value, toEnd, selectedIndex, callback) - создать элемент профиля.</p>
+<p>moveProfileItem(type, index, newIndex, callback) - переместить элемент профиля.</p>
+<p>removeProfileItem(type, index, profileItemName, callback) - удалить элемент профиля.</p>
+<p>changeProfileItemType(type, profileItemName, newType, callback) - изменить тип элемента профиля.</p>
+<p>changeProfileItemPlayerAccess(type, profileItemName, playerAccessType, callback) - изменить уровень доступа игрока к элементу профиля.</p>
+<p>renameProfileItem(type, newName, oldName, callback) - переименовать элемент профиля.</p>
+<p>doExportProfileItemChange(type, profileItemName, checked, callback) - смена флага экспорта.</p>
+<p>updateDefaultValue(type, profileItemName, value, callback) - изменить значение по умолчанию.</p>
+</div></blockquote>
+</div>
+<div class="section" id="profilesapi">
+<h3>Модуль profilesAPI<a class="headerlink" href="#profilesapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Работа с досье персонажей и игроков.</p>
+<blockquote>
+<div><p>getProfileNamesArray(type, callback) - получение списка имен досье.</p>
+<p>getProfile(type, name, callback) - получить досье.</p>
+<p>getAllProfiles(type, callback) - получить все досье.</p>
+<p>createProfile(type, characterName, callback) - создать досье.</p>
+<p>renameProfile(type, fromName, toName, callback) - переименовать досье.</p>
+<p>removeProfile(type, characterName, callback) - удалить досье.</p>
+<p>updateProfileField(type, characterName, fieldName, itemType, value, callback) - изменить значение в досье.</p>
+</div></blockquote>
+<p>Зависимость от структуры досье - создание/переименование/удаление элементов досье, смена типа элемента досье, изменение списка значений в единственном/множественном выборе.</p>
+<blockquote>
+<div><p>_createProfileItem(type, name, itemType, value)</p>
+<p>_removeProfileItem(type, index, profileItemName)</p>
+<p>_changeProfileItemType(type, profileItemName, newType)</p>
+<p>_renameProfileItem(type, newName, oldName)</p>
+<p>_replaceEnumValue(type, profileItemName, defaultValue, newOptionsMap)</p>
+<p>_replaceMultiEnumValue(type, profileItemName, defaultValue, newOptionsMap)</p>
+</div></blockquote>
+</div>
+<div class="section" id="relationsapi">
+<h3>Модуль relationsAPI<a class="headerlink" href="#relationsapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Работа с отношениями персонажей.</p>
+<blockquote>
+<div><p>getRelationsSummary(characterName, callback) - получить информацию по отношениям указанного персонажа.</p>
+<p>setCharacterRelation(fromCharacter, toCharacter, text, callback) - изменить текст отношения между персонажами.</p>
+</div></blockquote>
+<p>Зависимость - отношения зависят от переименования/удаления досье персонажей.</p>
+<blockquote>
+<div><p>_renameCharacter(type, fromName, toName)</p>
+<p>_removeCharacter(type, characterName)</p>
+</div></blockquote>
+</div>
+<div class="section" id="statisticsapi">
+<h3>Модуль statisticsAPI<a class="headerlink" href="#statisticsapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Сбор статистики.</p>
+<blockquote>
+<div>getStatistics(callback) - собрать и вернуть статистическую информацию.</div></blockquote>
+</div>
+<div class="section" id="storyadaptationsapi">
+<h3>Модуль storyAdaptationsAPI<a class="headerlink" href="#storyadaptationsapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Работа с адаптациями.</p>
+<blockquote>
+<div><p>getFilteredStoryNames(showOnlyUnfinishedStories, callback) - возвращает список завершенных/незавершенных историй.</p>
+<p>getStory(storyName, callback) - возвращает историю целиком.</p>
+<p>setEventAdaptationProperty(storyName, eventIndex, characterName, type, value, callback) - изменяет свойство адаптации.</p>
+</div></blockquote>
+</div>
+<div class="section" id="storybaseapi">
+<h3>Модуль storyBaseAPI<a class="headerlink" href="#storybaseapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Управление историями и мастерские истории.</p>
+<blockquote>
+<div><p>getStoryNamesArray(callback) - получить имена всех историй.</p>
+<p>&#64;deprecated
+getAllStories(callback) - вернуть все истории. Используется в социальных сетях и по хорошему большая часть данных не используется.</p>
+<p>getMasterStory(storyName, callback) - получить мастерскую историю.</p>
+<p>setMasterStory(storyName, value, callback) - изменить мастерскую историю.</p>
+<p>createStory(storyName, callback) - создать историю.</p>
+<p>renameStory(fromName, toName, callback) - переименовать историю.</p>
+<p>removeStory(storyName, callback) - удалить историю.</p>
+</div></blockquote>
+</div>
+<div class="section" id="storycharactersapi">
+<h3>Модуль storyCharactersAPI<a class="headerlink" href="#storycharactersapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Управление персонажами в истории.</p>
+<blockquote>
+<div><p>getStoryCharacterNamesArray(storyName, callback) - получить список имен персонажей истории.</p>
+<p>getStoryCharacters(storyName, callback) - получить персонажей истории.</p>
+<p>addStoryCharacter(storyName, characterName, callback) - добавить персонажа в историю.</p>
+<p>switchStoryCharacters(storyName, fromName, toName, callback) - заменить персонажа в истории.</p>
+<p>removeStoryCharacter(storyName, characterName, callback) - удалить персонажа из истории.</p>
+<p>updateCharacterInventory(storyName, characterName, inventory, callback) - изменить инвентарь персонажа.</p>
+<p>onChangeCharacterActivity(storyName, characterName, activityType, checked, callback) - изменить активность персонажа.</p>
+<p>addCharacterToEvent(storyName, eventIndex, characterName, callback) - добавить персонажа в событие.</p>
+<p>removeCharacterFromEvent(storyName, eventIndex, characterName, callback) - удалить персонажа из события.</p>
+</div></blockquote>
+<p>Зависимость - переименование/удаление досье персонажей.</p>
+<blockquote>
+<div><p>_renameCharacterInStories(type, fromName, toName)</p>
+<p>_removeCharacterFromStories(type, characterName)</p>
+</div></blockquote>
+</div>
+<div class="section" id="storyeventsapi">
+<h3>Модуль storyEventsAPI<a class="headerlink" href="#storyeventsapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Управление событиями в истории.</p>
+<blockquote>
+<div><p>getStoryEvents(storyName, callback) - получить все события истории.</p>
+<p>createEvent(storyName, eventName, eventText, toEnd, selectedIndex, callback) - создать событие.</p>
+<p>moveEvent(storyName, index, newIndex, callback) - переместить событие.</p>
+<p>cloneEvent(storyName, index, callback) - клонировать событие.</p>
+<p>mergeEvents(storyName, index, callback) - объединить события.</p>
+<p>removeEvent(storyName, index, callback) - удалить события.</p>
+<p>setEventOriginProperty(storyName, index, property, value, callback) - изменить свойство события.</p>
+</div></blockquote>
+</div>
+<div class="section" id="storyviewapi">
+<h3>Модуль storyViewAPI<a class="headerlink" href="#storyviewapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Функции специального представления историй.</p>
+<blockquote>
+<div><p>getAllInventoryLists(characterName, callback) - получить весь список инвентаря для выбранного персонажа.</p>
+<p>getCharacterEventGroupsByStory(characterName, callback) - получить список событий, сгруппированный по историям выбранного персонажа.</p>
+<p>getCharacterEventsByTime(characterName, callback) - получить список событий персонажа в хронологическом порядке.</p>
+<p>getEventsTimeInfo(callback) - получить информацию о времени событий (таймлайн).</p>
+<p>getCharactersSummary(callback) - получить статистическую информацию о персонажах (фильтр).</p>
+<p>getCharacterReport(characterName, callback) - собрать отчет о персонаже (отчет в досье).</p>
+</div></blockquote>
+</div>
+<div class="section" id="textsearchapi">
+<h3>Модуль textSearchAPI<a class="headerlink" href="#textsearchapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Поиск по текстам.</p>
+<blockquote>
+<div>getTexts(searchStr, textTypes, caseSensitive, callback) - возвращает список текстов с указанной подстрокой, в перечисленных типах текста и флагом регистрозависимости.</div></blockquote>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Серверные модули<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="accessmanageroverridesapi">
+<h3>Модуль accessManagerOverridesAPI<a class="headerlink" href="#accessmanageroverridesapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Определения и переопределения функций accessManagerAPI</p>
+</div>
+<div class="section" id="overridesapi">
+<h3>Модуль overridesAPI<a class="headerlink" href="#overridesapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Переопределения функций.</p>
+</div>
+<div class="section" id="permissionapi">
+<h3>Модуль permissionAPI<a class="headerlink" href="#permissionapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Модуль контроля доступа.</p>
+</div>
+<div class="section" id="permissionsummaryapi">
+<h3>Модуль permissionSummaryAPI<a class="headerlink" href="#permissionsummaryapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Модуль поддержки информации о владельцах сущностей и администрированию.</p>
+</div>
+<div class="section" id="userapi">
+<h3>Модуль userAPI<a class="headerlink" href="#userapi" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Управление учётными записями.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="nims.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="nims.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Прикладной программный интерфейс (API)</a><ul>
+<li><a class="reference internal" href="#id1">Общие соглашения</a></li>
+<li><a class="reference internal" href="#id2">Виды вспомогательных объектов</a></li>
+<li><a class="reference internal" href="#id3">Модули</a></li>
+<li><a class="reference internal" href="#id4">Стандартные модули</a><ul>
+<li><a class="reference internal" href="#accessmanagerapi">Модуль accessManagerAPI</a></li>
+<li><a class="reference internal" href="#baseapi">Модуль baseAPI</a></li>
+<li><a class="reference internal" href="#briefingexportapi">Модуль briefingExportAPI</a></li>
+<li><a class="reference internal" href="#consistencycheckapi">Модуль consistencyCheckAPI</a></li>
+<li><a class="reference internal" href="#entityapi">Модуль entityAPI</a></li>
+<li><a class="reference internal" href="#groupsapi">Модуль groupsAPI</a></li>
+<li><a class="reference internal" href="#groupschemaapi">Модуль groupSchemaAPI</a></li>
+<li><a class="reference internal" href="#investigationboardapi">Модуль investigationBoardAPI</a></li>
+<li><a class="reference internal" href="#logapi">Модуль logAPI</a></li>
+<li><a class="reference internal" href="#profilebindingapi">Модуль profileBindingAPI</a></li>
+<li><a class="reference internal" href="#profileconfigurerapi">Модуль profileConfigurerAPI</a></li>
+<li><a class="reference internal" href="#profilesapi">Модуль profilesAPI</a></li>
+<li><a class="reference internal" href="#relationsapi">Модуль relationsAPI</a></li>
+<li><a class="reference internal" href="#statisticsapi">Модуль statisticsAPI</a></li>
+<li><a class="reference internal" href="#storyadaptationsapi">Модуль storyAdaptationsAPI</a></li>
+<li><a class="reference internal" href="#storybaseapi">Модуль storyBaseAPI</a></li>
+<li><a class="reference internal" href="#storycharactersapi">Модуль storyCharactersAPI</a></li>
+<li><a class="reference internal" href="#storyeventsapi">Модуль storyEventsAPI</a></li>
+<li><a class="reference internal" href="#storyviewapi">Модуль storyViewAPI</a></li>
+<li><a class="reference internal" href="#textsearchapi">Модуль textSearchAPI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">Серверные модули</a><ul>
+<li><a class="reference internal" href="#accessmanageroverridesapi">Модуль accessManagerOverridesAPI</a></li>
+<li><a class="reference internal" href="#overridesapi">Модуль overridesAPI</a></li>
+<li><a class="reference internal" href="#permissionapi">Модуль permissionAPI</a></li>
+<li><a class="reference internal" href="#permissionsummaryapi">Модуль permissionSummaryAPI</a></li>
+<li><a class="reference internal" href="#userapi">Модуль userAPI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="export.html"
+                        title="предыдущая глава">Экспорт вводных</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="export.html" title="Экспорт вводных"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="nims.html">Документация НИМС набор инструментов мастера-сюжетника 0.6.1</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Тимофей NtsDK Речкалов, Мария Матильда Сидехменова.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.
+    </div>
+  </body>
+</html>

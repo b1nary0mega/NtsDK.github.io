@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &#8212; Документация НИМС набор инструментов мастера-сюжетника 0.5.2</title>
+    <title>&lt;no title&gt; &#8212; Документация НИМС набор инструментов мастера-сюжетника 0.6.1</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.2',
+        VERSION:     '0.6.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -29,7 +29,8 @@
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
     <link rel="next" title="О НИМС" href="intro.html" /> 
-		<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37764330 = new Ya.Metrika({ id:37764330, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37764330" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+    
+    <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37764330 = new Ya.Metrika({ id:37764330, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37764330" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="intro.html" title="О НИМС"
              accesskey="N">вперёд</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Документация НИМС набор инструментов мастера-сюжетника 0.5.2</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Документация НИМС набор инструментов мастера-сюжетника 0.6.1</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -56,7 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="micros.html">Микротемы</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theory.html">Концепции</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-core-concepts">История, персонаж, адаптация, вводная</a></li>
-<li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-character-profile">Досье персонажа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-character-profile">Досье персонажа и досье игрока</a></li>
 <li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-character-inventory">Инвентарь персонажа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-character-relations">Отношения</a></li>
 <li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-timeline">Хронология</a></li>
@@ -70,6 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-base">База</a></li>
 <li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-dumping">Выгрузка</a></li>
 <li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-server-mode">Однопользовательская и многопользовательская версия НИМС</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-players">Игрок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#id18">База заявок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#concepts-text-search">Поиск по текстам</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tasks.html">Решаемые задачи</a><ul>
@@ -83,32 +87,44 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickStart.html">Быстрый старт</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages.html">Страницы</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#header-desc">Заголовок</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#overview-desc">Обзор</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#characters-desc">Персонажи</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#characters-profile">Персонажи. Досье</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#characters-profile-editor">Персонажи. Конструктор досье</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#story-desc">Истории</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#story-events">Истории. События</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#story-characters">Истории. Персонажи</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#story-presence">Истории. Присутствие</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#events-desc">Адаптации</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#breifings-desc">Вводные</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#breifings-preview">Вводные. Предварительный просмотр</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#breifings-export">Вводные. Экспорт</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#timeline-desc">Хронология</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#social-network-desc">Социальная сеть</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#characters-filter">Фильтр</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#groups-desc">Группы</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#administrative-tools">Администрирование</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages.html#logs">Логи</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstPage.html">Страница входа</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masterPage.html">Страница мастера</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#header-desc">Заголовок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#overview-desc">Обзор</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#profile-desc">Досье</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#characters-profile">Досье. Редактор досье</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#characters-profile-editor">Досье. Конструктор досье</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#characters-profile-binding">Досье. Сопоставление</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#story-desc">Истории</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#story-events">Истории. События</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#story-characters">Истории. Персонажи</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#story-presence">Истории. Присутствие</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#events-desc">Адаптации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#briefings-desc">Вводные</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#breifings-preview">Вводные. Предварительный просмотр</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#breifings-export">Вводные. Экспорт</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#timeline-desc">Хронология</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#social-network-desc">Социальная сеть</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#characters-filter">Фильтр</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#groups-desc">Группы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#text-search">Поиск по текстам</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#administrative-tools">Администрирование</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masterPage.html#logs">Логи</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="playerPage.html">Страница игрока</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export.html">Экспорт вводных</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="export.html#id2">Организация процесса</a></li>
 <li class="toctree-l2"><a class="reference internal" href="export.html#id3">Примеры создания шаблонов</a></li>
 <li class="toctree-l2"><a class="reference internal" href="export.html#id4">Тонкости</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Прикладной программный интерфейс (API)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id1">Общие соглашения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id2">Виды вспомогательных объектов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id3">Модули</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id4">Стандартные модули</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id5">Серверные модули</a></li>
 </ul>
 </li>
 </ul>
@@ -156,11 +172,11 @@
         <li class="right" >
           <a href="intro.html" title="О НИМС"
              >вперёд</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Документация НИМС набор инструментов мастера-сюжетника 0.5.2</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Документация НИМС набор инструментов мастера-сюжетника 0.6.1</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Тимофей NtsDK Речкалов, Мария Матильда Сидехменова.
+        &#169; Copyright 2017, Тимофей NtsDK Речкалов, Мария Матильда Сидехменова.
       Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.
     </div>
   </body>

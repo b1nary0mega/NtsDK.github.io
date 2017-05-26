@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<!-- Copyright 2017 Timofey Rechkalov <ntsdk@yandex.ru>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+   limitations under the License.  -->
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Микшерный пульт ролевой игры онлайн</title>
+<meta name="description" content="Реализация микшерного пульта ролевой игры (The Mixing Desk of LARP) в виде веб-страницы. 
+Полностью конфигурируем и пригоден для создания вариаций микшерного пульта."/>
+
+<!-- <script src="libs/d3.min.js"></script> -->
+<script src="libs/jquery-3.1.1.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/ramda.min.js"></script>
+<script src="libs/vex.combined.min.js"></script>
+<script src="libs/bootstrap-slider.min.js"></script>
+<script src="libs/FileSaver.js"></script>
+
+<link href="style/bootstrap.min.css" rel="stylesheet">
+<link href="libs/bootstrap-slider.min.css" rel="stylesheet">
+<link href="style/vex-theme-default.css" rel="stylesheet">
+<link href="style/vex.css" rel="stylesheet">
+<link href="style/style.css" rel="stylesheet">
+
+<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37764330 = new Ya.Metrika({ id:37764330, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37764330" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+</head>
+<body onload="app.init()">
+
+  <nav id="navigation"></nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default intro-panel">
+          <div class="panel-heading">
+            <a href="javascript:void(0);" panel-toggler=".container-fluid .intro-panel .panel-body">
+              <h3 class="panel-title player-profile-header" >О программе</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <p>
+              Всем привет! Не так давно я узнал о популярном в англоязычном интернете инструменте для разработки РИ - The Mixing Desk of Larp, что переводится как "микшерный пульт ролевой игры" (далее МПРИ). Сам по себе микшерный пульт состоит из набора бегунков. Каждый бегунок описывает диапазон значений некой сущности. Например, сценография от "полная реалистичность" до "символизм". МПРИ состоит из 12 предопределенных бегунков и 1 дополнительном, на вкус мастера.</p>
+              
+              <p>Ознакомившись с этой концепцией, я захотел попробовать её в деле. Я нашёл 2 реализации: </p>
+              <ul>
+                <li>Авторы оригинальной концепции выложили файл для фотошопа. Его можно скачать, открыть в фотошопе и видимо редактировать.</li>
+                <li>Есть англоязычная реализация на flash.</li>
+              </ul>
+            
+              <p>Ни то, ни другое не позволяет простейшую вещь для работы с данными: выставить настройки микшера онлайн, сохранить данные к себе 
+              и загрузить обратно в страницу для последующего редактирования, поделиться микшером с другом. Это первая проблема. С другой стороны 
+              я знаю как минимум еще одну задачу для микшерного пульта, поэтому я решил её обобщить и добавить возможность создания произвольных 
+              микшерных пультов.</p>
+              
+              <p>Итак, создание пульта с нуля:</p>
+              <ol>
+                <li>Введите название</li>
+                <li>Введите текстовое описание</li>
+                <li>Добавьте ссылки на источники из интернета</li>
+                <li>Создайте бегунки для микшера</li>
+                <li>Выставьте значения на бегунках</li>
+                <li>Сохраните ссылку на страницу к себе в закладки/скопируйте ссылку и отправьте другу/сохраните базу к себе на диск</li>
+              </ol>
+              
+              <p><b>Кликните по заголовку панели, чтобы спрятать/показать содержимое панели.</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default common-info-panel">
+          <div class="panel-heading">
+            <a href="javascript:void(0);" panel-toggler=".container-fluid .common-info-panel .panel-body">
+              <h3 class="panel-title player-profile-header" >Информация</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="name-input" placeholder="Название" value="">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="description-input" placeholder="Описание" value="" style="height: 150px;"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label>Ссылки</label>
+              <div class="links-container"></div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-xs-5">
+                <input type="text" class="form-control" id="link-name-input" placeholder="Название ссылки" value="">
+              </div>
+              <div class="col-xs-5">
+                <input type="text" class="form-control" id="link-body-input" placeholder="Ссылка" value="">
+              </div>
+              <div class="col-xs-2">
+                <button class="btn btn-default create-link-button">Добавить ссылку</button>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-xs-5">
+                <select class="form-control remove-link-select">
+                </select>
+              </div>
+              <div class="col-xs-2">
+                <button class="btn btn-default remove-link-button">Удалить ссылку</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default mixer-settings-panel">
+          <div class="panel-heading">
+            <a href="javascript:void(0);" panel-toggler=".container-fluid .mixer-settings-panel .panel-body">
+              <h3 class="panel-title player-profile-header" >Настройки микшерного пульта</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <div class="form-group row">
+              <div class="col-xs-4">
+                <input type="text" class="form-control" id="slider-name-input" placeholder="Название бегунка" value="">
+              </div>
+              <div class="col-xs-3">
+                <input type="text" class="form-control" id="slider-top-input" placeholder="Верхнее значение" value="">
+              </div>
+              <div class="col-xs-3">
+                <input type="text" class="form-control" id="slider-bottom-input" placeholder="Нижнее значение" value="">
+              </div>
+              <div class="col-xs-2">
+                <button class="btn btn-default create-slider-button">Создать бегунок</button>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-xs-4">
+                <select class="form-control move-slider-select">
+                </select>
+              </div>
+              <div class="col-xs-4">
+                <select class="form-control move-slider-pos-select">
+                </select>
+              </div>
+              <div class="col-xs-2">
+                <button class="btn btn-default move-slider-button">Переместить бегунок</button>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-xs-4">
+                <select class="form-control remove-slider-select">
+                </select>
+              </div>
+              <div class="col-xs-2">
+                <button class="btn btn-default remove-slider-button">Удалить бегунок</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default mixer-panel">
+          <div class="panel-heading">
+            <a href="javascript:void(0);" panel-toggler=".container-fluid .mixer-panel .panel-body">
+              <h3 class="panel-title player-profile-header" >Микшерный пульт</h3>
+            </a>
+          </div>
+          <div class="panel-body ">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title player-profile-header" >Правовая информация</h3>
+          </div>
+          <div class="panel-body ">
+            Авторы оригинальной концепции "Микшерный пульт ролевой игры": Martin E. Andresen и Martin Nielsen.
+            <br>
+            Авторы используемых иконок с сайта flaticon: Freepik, Picol.
+            <br>
+            <a href="https://github.com/NtsDK">Моя страничка на github</a>
+            <br>
+            © Т. В. Речкалов, 2017
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <script src="js/errors.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/fileUtils.js"></script>
+  <script src="js/commonUtils.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/uiUtils.js"></script>
+  <script src="js/marriage.js"></script>
+  <script src="js/l10n.ru.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

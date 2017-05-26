@@ -59,6 +59,10 @@
   <changefreq>monthly</changefreq>
 </url>
 <url>
+  <loc>http://trechkalov.com/sliderShare/sliderShare.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
   <loc>http://trechkalov.com/dmVis/page.html</loc>
   <changefreq>monthly</changefreq>
 </url>
@@ -84,6 +88,14 @@
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/nims.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/matcher/matcher-en.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/sliderShare/sliderShare-en.html</loc>
   <changefreq>monthly</changefreq>
 </url>
 <url>
@@ -119,11 +131,23 @@
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/pages.html</loc>
+  <loc>http://trechkalov.com/nims/online/extras/doc/firstPage.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/masterPage.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/playerPage.html</loc>
   <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>http://trechkalov.com/nims/online/extras/doc/export.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/api.html</loc>
   <changefreq>monthly</changefreq>
 </url>
 <url>
@@ -180,6 +204,10 @@
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/export.html</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/pages.html</loc>
   <changefreq>monthly</changefreq>
 </url>
 </urlset>

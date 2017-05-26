@@ -130,6 +130,10 @@ var larpSoftItems = [ {
     src : 'images/matcher-big.jpg',
     w : 1600,
     h : 1024
+},{
+    src : 'images/mixingDeskOfLARP.jpg',
+    w : 1600,
+    h : 1024
 } ];
 
 var barrayarItems = [ {

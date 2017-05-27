@@ -20,7 +20,7 @@ See the License for the specific language governing permissions and
         "open-database":"Load database from file",
         "save-database":"Save database to file",
         "create-database":"Create new database",
-        "new-base-warning": "Are you sure about creating new database? All unsaved changes in current database will be lost.",
+        "utils-new-base-warning": "Are you sure about creating new database? All unsaved changes in current database will be lost.",
         "before" : "Before '{0}'",
         "to-end" : "To end",
         'slider-name-cant-be-empty':"Slider name can't be empty.",

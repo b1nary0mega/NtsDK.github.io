@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 
-Host: trechkalov.com
-Sitemap: http://trechkalov.com/sitemap.xml
+Host: ntsdk.github.io
+Sitemap: https://ntsdk.github.io/sitemap.xml
 
 User-agent: Yandex
 Allow: /

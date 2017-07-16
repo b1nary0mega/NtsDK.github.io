@@ -118,6 +118,8 @@ See the License for the specific language governing permissions and
             makeSubEl('Текущее время', moment()),
             makeSubEl('Текущее время UTC', moment().utc()),
             makeSubEl('Найдено транзитов', res.length),
+            makeSubEl('Широта', latitude),
+            makeSubEl('Долгота', longitude),
             makeEl('br')
         ]));
         addEls(body, res.map(makeSingleTransitDiv));
@@ -126,8 +128,8 @@ See the License for the specific language governing permissions and
     var makeSingleTransitDiv = (data, i) => {
         return addEls(makeEl('div'), [
             makeSubEl('Номер', i+1),
-            makeSubEl('Начало', moment(data.start)),
-            makeSubEl('Конец', moment(data.end)),
+            makeSubEl('Начало', moment(data.start).toString() + ' ( UTC ' + moment.utc(data.start).toString() + ')'),
+            makeSubEl('Конец', moment(data.end).toString() + ' ( UTC ' + moment.utc(data.end).toString() + ')'),
             makeSubEl('Длительность', moment.duration(data.duration).humanize()),
             makeSubEl('Min. азимут', data.minAzimuth),
             makeSubEl('Max. азимут', data.maxAzimuth),

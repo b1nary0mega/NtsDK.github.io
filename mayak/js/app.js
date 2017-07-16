@@ -72,6 +72,8 @@ See the License for the specific language governing permissions and
 //        
         listen(queryEl('.calc-button'), 'click', calcTransits);
         listen(queryEl('.ask-coords-from-browser'), 'click', askCoordsFromBrowser);
+//        listen(queryEl('.save-coords'), 'click', saveCoords);
+        listen(queryEl('.enable-coord-select'), 'click', enableCoordSelect);
 //        listen(queryEl('#description-input'), 'input', (event) => setModelProp('description',event.target.value));
 //        
 //        listen(queryEl('.common-info-panel .create-link-button'), 'click', createLink);
@@ -103,10 +105,11 @@ See the License for the specific language governing permissions and
         var latitude = (Number(queryEl('.latitude').value));
         var longitude = (Number(queryEl('.longitude').value));
         var altitude = Number(queryEl('.altitude').value);
+        var minElevation = Number(queryEl('.minElevation').value);
         
 //        console.log(jspredict.observe(tle, null));
         var qth = [latitude, longitude, altitude/1000];
-        var res = jspredict.transits(tle, qth,  moment().valueOf(), moment().add(1, 'days').valueOf());
+        var res = jspredict.transits(tle, qth,  moment().valueOf(), moment().add(1, 'days').valueOf()).filter(data => data.maxElevation > minElevation);
         console.log(res);
         
         var body = clearEl(queryEl('.calc-results .panel-body'));
@@ -114,6 +117,7 @@ See the License for the specific language governing permissions and
         addEl(body, addEls(makeEl('div'), [
             makeSubEl('Текущее время', moment()),
             makeSubEl('Текущее время UTC', moment().utc()),
+            makeSubEl('Найдено транзитов', res.length),
             makeEl('br')
         ]));
         addEls(body, res.map(makeSingleTransitDiv));
@@ -138,6 +142,21 @@ See the License for the specific language governing permissions and
            addEl(makeEl('label'), makeText(name)),
            addEl(makeEl('span'), makeText(value))
         ]);
+    };
+    
+//    var saveCoords = () => {
+//        var iframe = queryEl('iframe');
+//        queryEl('.latitude').value = iframe.contentWindow.document.querySelector('#ctl00_cph1_txtLat').value;
+//        queryEl('.longitude').value = iframe.contentWindow.document.querySelector('#ctl00_cph1_txtLong').value;
+////        queryEl('.latitude').value = position.coords.latitude;
+////        queryEl('.longitude').value = position.coords.longitude;
+//    };
+    
+    var enableCoordSelect = () => {
+        var iframe = makeEl('iframe');
+        setAttr(iframe, 'src', "http://www.heavens-above.com/SelectLocation.aspx");
+        setAttr(iframe, 'style', "width: 100%;height: 100vh;");
+        addEl(clearEl(queryEl('.iframe-container')), iframe);
     };
     
 })(this['app']={});

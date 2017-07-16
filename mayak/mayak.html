@@ -97,13 +97,32 @@ NOAA 18
 2 28654  99.1809 219.8741 0014175 355.7665   4.3384 14.12342225626226
             </textarea>
             <button class="ask-coords-from-browser">Запросить координаты у браузера</button>
+            
+            
 <!--             <button>Показать положение на карте</button><br> -->
             <br>
             <label>Широта (latitude), градусы</label><input type="number" value="0" class="latitude"><br>
             <label>Долгота (longitude), градусы</label><input type="number" value="0" class="longitude"><br>
             <label>Высота над уровнем моря (altitude), метры</label><input type="number" value="0" class="altitude"><br>
+            <label>Минимальный угол подъема, градусы</label><input type="number" value="0" class="minElevation"><br>
             <label>Расчитывается время транзита на ближайшие сутки</label><br>
             <button class="calc-button">Расчитать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default coords-selector">
+          <div class="panel-heading">
+            <a href="#/" panel-toggler=".container-fluid .coords-selector .panel-body">
+              <h3 class="panel-title player-profile-header" >Выбор местоположения</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <button class="enable-coord-select">Включить</button>
+            <div class="iframe-container"></div>
+<!--             <iframe src="http://www.heavens-above.com/SelectLocation.aspx" class="coord-selector" style="width: 100%;height: 100vh;"></iframe> -->
           </div>
         </div>
       </div>

@@ -143,15 +143,6 @@ See the License for the specific language governing permissions and
            addEl(makeEl('span'), makeText(value))
         ]);
     };
-    
-//    var saveCoords = () => {
-//        var iframe = queryEl('iframe');
-//        queryEl('.latitude').value = iframe.contentWindow.document.querySelector('#ctl00_cph1_txtLat').value;
-//        queryEl('.longitude').value = iframe.contentWindow.document.querySelector('#ctl00_cph1_txtLong').value;
-////        queryEl('.latitude').value = position.coords.latitude;
-////        queryEl('.longitude').value = position.coords.longitude;
-//    };
-    
     var enableCoordSelect = () => {
         var iframe = makeEl('iframe');
         setAttr(iframe, 'src', "http://www.heavens-above.com/SelectLocation.aspx");

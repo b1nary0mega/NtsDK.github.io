@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<!-- Copyright 2017 Timofey Rechkalov <ntsdk@yandex.ru>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+   limitations under the License.  -->
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Расчёт пролёта спутников</title>
+<meta name="description" content="На этой странице вы можете расчитать время пролёта спутников над вами относительно координат и TLE."/>
+
+<!-- <script src="libs/d3.min.js"></script> -->
+<script src="libs/jquery-3.1.1.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/ramda.min.js"></script>
+<script src="libs/vex.combined.min.js"></script>
+
+<script src="libs/moment-with-locales.js"></script>
+<script src="libs/satellite.js"></script>
+<script src="libs/jspredict.js"></script>
+
+<link href="style/bootstrap.min.css" rel="stylesheet">
+<link href="style/vex-theme-default.css" rel="stylesheet">
+<link href="style/vex.css" rel="stylesheet">
+<link href="style/style.css" rel="stylesheet">
+
+</head>
+<body onload="app.init()">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default intro-panel">
+          <div class="panel-heading">
+            <a href="#/" panel-toggler=".container-fluid .intro-panel .panel-body">
+              <h3 class="panel-title player-profile-header" >О программе</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+<!--             <p> -->
+<!--               Всем привет! На этой странице вы можете попробовать механизм сопоставления игроков и персонажей с помощью -->
+<!--               алгоритма Гейла-Шепли. Детальнее см. <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BE_%D0%BC%D0%B0%D1%80%D1%8C%D1%8F%D0%B6%D0%B5">Задача о марьяже</a>. -->
+<!-- 							Спасибо <a href="https://twitter.com/ArrakeenNative">Matthew Webb</a> за рекомендацию алгоритма. -->
+<!-- 							</p> -->
+
+<!--             <p>Как пользоваться:</p> -->
+            
+<!--             <ol> -->
+<!--               <li>Впишите через запятую имена игроков и персонажей (без повторений, списки должны быть одинаковой -->
+<!--                 длины). Впишите названия полей досье. Нажмите кнопку <span class="btn-name">Создать профили</span>.</li> -->
+<!--               <li>Заполните профили. Принцип заполнения профилей - у игрока ставьте галочку для того что он хочет. -->
+<!--                 У персонажа ставьте галочку для того, что у персонажа есть. Например, если Ваня хочет играть в замес - -->
+<!--                 ставьте ему галочку Замес. Если Боромир участвует в замесе, ставьте галочку Замес. Если лень заполнять -->
+<!--                 профили, нажмите кнопку <span class="btn-name">Случайно расставить галочки</span>. Когда закончите с профилями нажмите <span class="btn-name">Оценить -->
+<!--                 предпочтения</span>.</li> -->
+<!--               <li>Сформированы таблицы предпочтений по принципу меньше-лучше. Если профиль желаний игрока совпадает -->
+<!--                 с профилем возможностей персонажа, то они идеально соответствуют, индекс предпочтения 0. Каждое -->
+<!--                 несоответствие между профилями увеличивает индекс предпочтения на 1. В худшем случае профиль игрока -->
+<!--                 будет полностью не совпадать с профилем персонажа. На основе предпочтений работает алгоритм Гейла-Шепли. -->
+<!--                 Но прежде чем его запустить вы можете в ручную исправить отдельные предпочтения. По готовности жмите -->
+<!--                 <span class="btn-name">Сопоставить</span>.</li> -->
+<!--               <li>В самом низу страницы появится две таблицы. Левая таблица с приоритетом выбора у игрока. Правая с -->
+<!--                 приоритетом выбора у персонажа. Цвет означает уровень удовлетворенности результатом. "Зеленый игрок" -->
+<!--                 означает, что ему в самый раз подобранный персонаж. "Красный персонаж" означает, что для него игрок -->
+<!--                 совсем не в тему, но это последнее что осталось.</li> -->
+<!--               </ol> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default settings-panel">
+          <div class="panel-heading">
+            <a href="#/" panel-toggler=".container-fluid .settings-panel .panel-body">
+              <h3 class="panel-title player-profile-header" >Параметры расчёта</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <label>TLE</label><br>
+            <textarea rows="3" cols="" style="width: 100%;font-family: monospace;" class="tle-text">
+NOAA 18                 
+1 28654U 05018A   17196.95862901 -.00000030  00000-0  90862-5 0  9997
+2 28654  99.1809 219.8741 0014175 355.7665   4.3384 14.12342225626226
+            </textarea>
+            <button class="ask-coords-from-browser">Запросить координаты у браузера</button>
+<!--             <button>Показать положение на карте</button><br> -->
+            <br>
+            <label>Широта (latitude), градусы</label><input type="number" value="0" class="latitude"><br>
+            <label>Долгота (longitude), градусы</label><input type="number" value="0" class="longitude"><br>
+            <label>Высота над уровнем моря (altitude), метры</label><input type="number" value="0" class="altitude"><br>
+            <label>Расчитывается время транзита на ближайшие сутки</label><br>
+            <button class="calc-button">Расчитать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default calc-results">
+          <div class="panel-heading">
+            <a href="#/" panel-toggler=".container-fluid .calc-results .panel-body">
+              <h3 class="panel-title player-profile-header" >Результаты расчета</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title player-profile-header" >Правовая информация</h3>
+          </div>
+          <div class="panel-body ">
+            <a href="https://github.com/nsat/jspredict">Страница работает на основе jsPredict</a>
+            <br>
+            <a href="https://github.com/NtsDK">Моя страничка на github</a>
+            <br>
+            © Т. В. Речкалов, 2017
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <script src="js/errors.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/commonUtils.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/uiUtils.js"></script>
+  <script src="js/l10n.ru.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

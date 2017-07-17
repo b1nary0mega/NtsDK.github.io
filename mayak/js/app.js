@@ -131,10 +131,10 @@ See the License for the specific language governing permissions and
             makeSubEl('Начало', moment(data.start).toString() + ' ( UTC ' + moment.utc(data.start).toString() + ')'),
             makeSubEl('Конец', moment(data.end).toString() + ' ( UTC ' + moment.utc(data.end).toString() + ')'),
             makeSubEl('Длительность', moment.duration(data.duration).humanize()),
-            makeSubEl('Min. азимут', data.minAzimuth),
-            makeSubEl('Max. азимут', data.maxAzimuth),
-            makeSubEl('Apex. азимут', data.apexAzimuth),
-            makeSubEl('Max. подъем', data.maxElevation),
+            makeSubEl('Min. азимут', data.minAzimuth.toFixed(2)),
+            makeSubEl('Max. азимут', data.maxAzimuth.toFixed(2)),
+            makeSubEl('Apex. азимут', data.apexAzimuth.toFixed(2)),
+            makeSubEl('Max. подъем', data.maxElevation.toFixed(2)),
             makeEl('br')
         ])
     };

@@ -17,12 +17,7 @@ See the License for the specific language governing permissions and
 ((exports)=>{
   
     var state = {};
-    var emptyModel = {
-      name:"",
-      description:"",
-      links:[],
-      sliders:[]
-    };
+    var defaultModel = window.defaultModel.data;
     var model;
     var sliders = [];
     
@@ -36,7 +31,7 @@ See the License for the specific language governing permissions and
     var setModelProp = (name, value) => {setProp(model, name, value); updateHash();};
     var arr2Select = R.map(R.compose(R.zipObj(['name']), R.prop('name')));
     exports.getModel = () => model;
-    exports.newModel = () => exports.setModel(emptyModel);
+    exports.newModel = () => exports.setModel(defaultModel);
     exports.setModel = (newModel) => {
         model = newModel;
         queryEl('#name-input').value = model.name;
@@ -58,7 +53,7 @@ See the License for the specific language governing permissions and
             localModel = JSON.parse(decoded);
         } catch(e){
             console.log(e);
-            localModel = R.clone(emptyModel);
+            localModel = R.clone(defaultModel);
             updateHash();
         }
         exports.setModel(localModel);

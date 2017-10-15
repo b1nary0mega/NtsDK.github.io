@@ -20,7 +20,7 @@ See the License for the specific language governing permissions and
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>От столицы до столицы</title>
-<meta name="description" content="Из географии у нас есть знания где находятся страны и их столицы. Но знаете ли вы как далеко друг от друга они находятся?"/>
+<meta name="description" content="Игра на знание географии. Случайным образом выбирается 6 столиц и нужно расположить столицы в порядке удаления от первой." />
 
 <!-- <script src="libs/d3.min.js"></script> -->
 <script src="libs/jquery-3.1.1.min.js"></script>
@@ -41,7 +41,7 @@ See the License for the specific language governing permissions and
 
 <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 
-
+<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37764330 = new Ya.Metrika({ id:37764330, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37764330" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 
 
 </head>
@@ -89,7 +89,7 @@ See the License for the specific language governing permissions and
                 <a href="https://github.com/NtsDK">Моя страничка на github</a>
             <br>
             © Т. В. Речкалов, 2017
-            <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""></div>
+            
             </div>
           </div>
         </div>
@@ -141,27 +141,24 @@ See the License for the specific language governing permissions and
         </div>
       </div>
       
-<!--       <div class="row"> -->
-<!--         <div class="col-xs-12"> -->
-<!--           <div class="panel panel-default settings-panel"> -->
-<!--             <div class="panel-heading"> -->
-<!--               <a href="#/" panel-toggler=".container-fluid .settings-panel .panel-body"> -->
-<!--                 <h3 class="panel-title player-profile-header" >Настройки</h3> -->
-<!--               </a> -->
-<!--             </div> -->
-<!--             <div class="panel-body"> -->
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default  share-panel">
+            <div class="panel-heading">
+              <a href="#/" panel-toggler=".container-fluid .share-panel .panel-body">
+                <h3 class="panel-title player-profile-header" >Поделиться</h3>
+              </a>
+            </div>
+            <div class="panel-body">
+              <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter="" 
+              data-image="http://trechkalov.com/matcher/images/capitals.jpg"
+              data-title="От столицы до столицы" 
+              data-description="Игра на знание географии. Случайным образом выбирается 6 столиц и нужно расположить столицы в порядке удаления от первой."></div>
             
-<!--             <label class="settings-checkbox"><input type="checkbox" class="show-country"       >Показать страну                </label><br> -->
-<!--             <label class="settings-checkbox"><input type="checkbox" class="show-continent"     >Показать континент             </label><br> -->
-<!--             <label class="settings-checkbox"><input type="checkbox" class="show-seed-capital-mark" >Показать метку исходной столицы</label><br> -->
-<!--             <label class="settings-checkbox"><input type="checkbox" class="show-capital-marks" >Показать на карте метки столиц </label><br> -->
-<!--             <label class="settings-checkbox"><input type="checkbox" class="show-shortest-paths">Показать кратчайшие пути       </label><br> -->
-<!--             <label>Сколько выбрать столиц</label> -->
-<!--             <input type="number" min="5" max="10" value="5" class="capital-number"> -->
-<!--             </div> -->
-<!--           </div> -->
-<!--         </div> -->
-<!--       </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   
   </div>

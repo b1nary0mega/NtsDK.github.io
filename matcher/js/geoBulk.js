@@ -29,6 +29,11 @@ See the License for the specific language governing permissions and
         simpleDataset();
         listen(queryEl('#simpleDataset'), 'click', simpleDataset);  
         listen(queryEl('#capitalsDataset'), 'click', capitalsDataset);  
+        listen(queryEl('#capitalsDataset1'), 'click', capitalsDataset2(0));  
+        listen(queryEl('#capitalsDataset2'), 'click', capitalsDataset2(1));  
+        listen(queryEl('#capitalsDataset3'), 'click', capitalsDataset2(2));  
+        listen(queryEl('#capitalsDataset4'), 'click', capitalsDataset2(3));  
+        listen(queryEl('#capitalsDataset5'), 'click', capitalsDataset2(4));  
         listen(queryEl('#londonDataset'), 'click', londonDataset);  
         listen(queryEl('#findCityCoords'), 'click', findCityCoords);  
         state.map = new ymaps.Map ("map", {
@@ -52,8 +57,10 @@ See the License for the specific language governing permissions and
         queryEl('#coordsArea').value = '';
         state.map.geoObjects.removeAll();
         
+        var coordsLimit = Number(queryEl('.coordsLimit').value);
+        
         cities.forEach(name => {
-            var myGeocoder = ymaps.geocode(name, {kind:'locality'});
+            var myGeocoder = ymaps.geocode(name, {kind:'locality', results:coordsLimit});
             myGeocoder.then(
                 function (res) {
                     if(res.geoObjects.getLength() === 0){
@@ -106,8 +113,7 @@ See the License for the specific language governing permissions and
 //                    Лондон
     };
     
-    var capitalsDataset = () => {
-        queryEl('#cityArea').value = `Kabul
+    var capitalsList = `Kabul
 Mariehamn
 Tirana
 Algiers
@@ -353,6 +359,18 @@ Laayoune
 Sana'a
 Lusaka
 Harare`;
+    
+    capitalsList = capitalsList.split('\n').map(R.trim);
+    capitalsList.sort();
+    
+    var capitalsDataset = () => {
+        queryEl('#cityArea').value = capitalsList.join('\n');
+    };
+    
+    var capitalsDataset2 = (num) => {
+        return function() {
+            queryEl('#cityArea').value = R.slice(num*50, (num+1)*50, capitalsList).join('\n');
+        }
     };
     
 })(this['app']={});

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<!-- Copyright 2017 Timofey Rechkalov <ntsdk@yandex.ru>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+   limitations under the License.  -->
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>От столицы до столицы</title>
+<meta name="description" content="Из географии у нас есть знания где находятся страны и их столицы. Но знаете ли вы как далеко друг от друга они находятся?"/>
+
+<!-- <script src="libs/d3.min.js"></script> -->
+<script src="libs/jquery-3.1.1.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/ramda.min.js"></script>
+<script src="libs/vex.combined.min.js"></script>
+<script src="libs/dragula.min.js"></script>
+
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"></script>
+
+<link href="style/bootstrap.min.css" rel="stylesheet">
+<link href="style/dragula.min.css" rel="stylesheet">
+<link href="style/vex-theme-default.css" rel="stylesheet">
+<link href="style/vex.css" rel="stylesheet">
+<link href="style/style.css" rel="stylesheet">
+<link href="style/capital.css" rel="stylesheet">
+
+<script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+
+
+
+
+</head>
+<body onload="app.init()">
+
+<!-- <div class="month-label" style="background-color: white; font-size: 20px;"></div> -->
+<div style="display: flex; ">
+<!--   <div id="map" style="flex:1 1 auto;"></div> -->
+  <div id="map" style="width: 70vw; height: 100vh; flex:1 1 auto;"></div>
+<!--   <div style="flex:1 1 auto;"> -->
+  <div style="width: 30vw; max-height: 100vh;flex:1 1 auto;overflow-y: auto;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default intro-panel">
+            <div class="panel-heading">
+              <a href="#/" panel-toggler=".container-fluid .intro-panel .panel-body">
+                <h3 class="panel-title player-profile-header" >О программе</h3>
+              </a>
+            </div>
+            <div class="panel-body">
+              <p>
+                Всем привет! Однажды я наткнулся на интересный факт. Мы знаем, что Австралия находится от нас где-то на противоположной стороне Земли.
+                Но если подходить строго, то самая удаленная земля от Мельбурна это Азорские острова.
+                По самому короткому пути от нас (Челябинск) до Австралии ближе, чем от Австралии до любой страны Европы.
+                Так появилась идея игры на знание не просто расположения столиц мира, а расстояний между ними.
+                Исходные данные взяты с сайта <a href="http://flag-icon-css.lip.is/">flag-icon-css</a> - коллекция флагов в векторном формате.
+                </p>
+  
+              <p>Как играть:</p>
+              
+              <ol>
+                <li>Нажмите кнопку Начать. Будет выбрана 1 опорная столица мира и от 5 до 10 других столиц (зависит от настроек). 
+                Вам нужно перетаскиванием отсортировать столицы в порядке удалённости от опорной.</li>
+                <li>Когда будете готовы, нажмите кнопку Проверить.
+                Вам будут показаны кратчайшие пути на карте, их длины и ваш счёт. Для 5 столиц максимум можно набрать 10 очков. 
+                Минимум соответственно 0. Удачи!</li>
+                <li>На панели Настройки можно включить разные подсказки. Они применяются когда вы начинаете игру заново.</li>
+                </ol>
+                
+                <p>Нажмите на заголовок панели, чтобы свернуть её.</p>
+                
+                <p>При обнаружении ошибок пишите мне на ghoul71 dot at dot yandex dot ru.</p>
+                
+                <a href="https://github.com/NtsDK">Моя страничка на github</a>
+            <br>
+            © Т. В. Речкалов, 2017
+            <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+            <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default settings-panel">
+            <div class="panel-heading">
+              <a href="#/" panel-toggler=".container-fluid .settings-panel .panel-body">
+                <h3 class="panel-title player-profile-header" >Настройки</h3>
+              </a>
+            </div>
+            <div class="panel-body">
+            
+            <label class="settings-checkbox"><input type="checkbox" class="show-country"       >Показать страну                </label><br>
+            <label class="settings-checkbox"><input type="checkbox" class="show-continent"     >Показать континент             </label><br>
+            <label class="settings-checkbox"><input type="checkbox" class="show-seed-capital-mark" >Показать метку исходной столицы</label><br>
+            <label class="settings-checkbox"><input type="checkbox" class="show-capital-marks" >Показать на карте метки столиц </label><br>
+            <label class="settings-checkbox"><input type="checkbox" class="show-shortest-paths">Показать кратчайшие пути       </label><br>
+            <label>Сколько выбрать столиц (5-10)</label>
+            <input type="number" min="5" max="10" value="5" class="capital-number"><br>
+            <label>Минимальное расстояние между столицами (0-1500 км)</label>
+            <input type="number" min="0" max="1500" class="min-capital-dist"><br>
+            <label class="settings-checkbox"><input type="checkbox" class="full-capital-list">Полный список стран (191+55 государств)</label><br>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default game-panel">
+            <div class="panel-heading">
+              <a href="#/" panel-toggler=".container-fluid .game-panel .panel-body">
+                <h3 class="panel-title player-profile-header" >Игра</h3>
+              </a>
+            </div>
+            <div class="panel-body">
+              <div class="seedCapital"></div>
+              <div class="annotation"><span>Ближе</span></div>
+              <div class="capitalsList"></div>
+              <div class="annotation"><span>Дальше</span></div>
+            
+              <button class="btn btn-default start-game">Начать</button>
+              <button class="btn btn-default end-game">Проверить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+<!--       <div class="row"> -->
+<!--         <div class="col-xs-12"> -->
+<!--           <div class="panel panel-default settings-panel"> -->
+<!--             <div class="panel-heading"> -->
+<!--               <a href="#/" panel-toggler=".container-fluid .settings-panel .panel-body"> -->
+<!--                 <h3 class="panel-title player-profile-header" >Настройки</h3> -->
+<!--               </a> -->
+<!--             </div> -->
+<!--             <div class="panel-body"> -->
+            
+<!--             <label class="settings-checkbox"><input type="checkbox" class="show-country"       >Показать страну                </label><br> -->
+<!--             <label class="settings-checkbox"><input type="checkbox" class="show-continent"     >Показать континент             </label><br> -->
+<!--             <label class="settings-checkbox"><input type="checkbox" class="show-seed-capital-mark" >Показать метку исходной столицы</label><br> -->
+<!--             <label class="settings-checkbox"><input type="checkbox" class="show-capital-marks" >Показать на карте метки столиц </label><br> -->
+<!--             <label class="settings-checkbox"><input type="checkbox" class="show-shortest-paths">Показать кратчайшие пути       </label><br> -->
+<!--             <label>Сколько выбрать столиц</label> -->
+<!--             <input type="number" min="5" max="10" value="5" class="capital-number"> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--       </div> -->
+    </div>
+  
+  </div>
+</div>
+
+    
+
+
+  <script src="js/byMonth.js"></script>
+  <script src="js/heatmap.js"></script>
+  <script src="js/errors.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/commonUtils.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/uiUtils.js"></script>
+  <script src="js/marriage.js"></script>
+  <script src="js/l10n.ru.js"></script>
+  <script src="js/capitalApp.js"></script>
+
+</body>
+</html>

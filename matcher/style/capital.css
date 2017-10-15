@@ -1,0 +1,23 @@
+.flag{
+  width: 40px;
+}
+
+.capitalLine{
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 10px;
+}
+
+.capitalLine > img{
+  margin: 0 8px 0 0;
+}
+
+.annotation{
+  margin: 10px;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.settings-checkbox input {
+  margin-right: 10px;
+}

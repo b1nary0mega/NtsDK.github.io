@@ -272,6 +272,10 @@ function queryEls(sel){
     return nl2array(document.querySelectorAll(sel));
 };
 
+function queryElEl(el, sel){
+    return el.querySelector(sel);
+};
+
 function queryElEls(el, sel){
     return nl2array(el.querySelectorAll(sel));
 };

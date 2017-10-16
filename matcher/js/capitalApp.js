@@ -32,23 +32,44 @@ See the License for the specific language governing permissions and
       ymaps.ready(() => {
         dragula([queryEl('.capitalsList')]);
         listen(queryEl('.start-game'), 'click', startGame);
+        listen(queryEl('.start-game-2'), 'click', startGame);
         listen(queryEl('.end-game'), 'click', endGame);
         UI.initPanelTogglers();
         state.map = new ymaps.Map ("map", {
-            center: [55.76, 37.64], 
+//            center: [55.76, 37.64], 
+            center: [0,0], 
             zoom: 2
+        }, {
+//            projection: ymaps.projection.Cartesian,
+//            projection: ymaps.projection.sphericalMercator,
+//            restrictMapArea: true,
+            minZoom: 1
         });
         state.map.behaviors.enable('scrollZoom');
       });
       
       checkboxList.forEach(el => queryEl('.' + el).checked = true);
-      checkboxList.forEach(el => listen(queryEl('.' + el),'change', startGame));
-      listen(queryEl('.capital-number'),'change', startGame);
+//      checkboxList.forEach(el => listen(queryEl('.' + el),'change', startGame));
+      checkboxList.forEach(el => listen(queryEl('.' + el),'change', notify));
+//      listen(queryEl('.capital-number'),'change', startGame);
+      listen(queryEl('.capital-number'),'change', notify);
+      listen(queryEl('.min-capital-dist'),'change', notify);
+      listen(queryEl('.full-capital-list'),'change', notify);
       queryEl('.full-capital-list').checked = false;
       queryEl('.capital-number').value = 5;
       queryEl('.min-capital-dist').value = 300;
     };
     
+    var notify = () => {
+        PNotify.removeAll();
+        new PNotify({
+          text: 'Изменения настроек будут применены в следующей игре.',
+          type: 'info',
+          styling: 'bootstrap3',
+          delay: 5000,
+          icon: false
+        });
+    }
     var bubbleSort = (arr) => {
         var swaps = 0;
         var tmp;
@@ -80,7 +101,24 @@ See the License for the specific language governing permissions and
         var swaps = bubbleSort(capsArr);
         var max = state.capitalNum*(state.capitalNum-1)/2;
         var score = max - swaps;
-        Utils.alert(score + ' из ' + max);
+        
+        var advices = R.sum(checkboxList.map(el => queryEl('.' + el).checked ? 1: 0));
+        var str;
+        switch(advices){
+            case 0: str="без подсказок!"; break;
+            case 1: str="с одной подсказкой!"; break;
+            case 2: str = "с " + advices + " подсказками!"; break;
+            case 3:case 4:case 5: str = "с " + advices + " подсказками."; break;
+        };   
+        var congrat = '';
+        if(score > max*0.8){
+            congrat = "Поздравляем!";
+        } else if(score > max*0.6){
+            congrat = "Хороший результат!";
+        } else {
+            congrat = "Нужно еще потренироваться";
+        }
+        Utils.alert({unsafeMessage: strFormat('Ваш счет {0} из {1} {2}<br>{3}', [score, max, str, congrat])});
         
         state.capitals.map(addShortestPath(true, state.seedCapital));
         addCapital(state.seedCapital, true);
@@ -91,6 +129,8 @@ See the License for the specific language governing permissions and
     var startGame = () => {
         
         addClass(queryEl('.container-fluid .intro-panel .panel-body'), 'hidden');
+        
+        queryEls('.annotation').map(removeClass(R.__, 'hidden'));
         
         state.map.geoObjects.removeAll();
         state.capitalNum = Number(queryEl('.capital-number').value);

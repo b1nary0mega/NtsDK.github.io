@@ -21,3 +21,7 @@
 .settings-checkbox input {
   margin-right: 10px;
 }
+
+.settings-panel label{
+  border-bottom: 1px dotted #000;
+}

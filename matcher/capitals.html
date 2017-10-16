@@ -28,6 +28,7 @@ See the License for the specific language governing permissions and
 <script src="libs/ramda.min.js"></script>
 <script src="libs/vex.combined.min.js"></script>
 <script src="libs/dragula.min.js"></script>
+<script src="libs/pnotify.custom.min.js"></script>
 
 <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 <script src="//yastatic.net/share2/share.js"></script>
@@ -35,6 +36,7 @@ See the License for the specific language governing permissions and
 <link href="style/bootstrap.min.css" rel="stylesheet">
 <link href="style/dragula.min.css" rel="stylesheet">
 <link href="style/vex-theme-default.css" rel="stylesheet">
+<link href="style/pnotify.custom.min.css" rel="stylesheet">
 <link href="style/vex.css" rel="stylesheet">
 <link href="style/style.css" rel="stylesheet">
 <link href="style/capital.css" rel="stylesheet">
@@ -79,14 +81,17 @@ See the License for the specific language governing permissions and
                 <li>Когда будете готовы, нажмите кнопку Проверить.
                 Вам будут показаны кратчайшие пути на карте, их длины и ваш счёт. Для 5 столиц максимум можно набрать 10 очков. 
                 Минимум соответственно 0. Удачи!</li>
-                <li>На панели Настройки можно включить разные подсказки. Они применяются когда вы начинаете игру заново.</li>
+                <li>Изначально на панели Настройки включены все подсказки, чтобы было проще разобраться с основой игры. Как освоитесь, попробуйте отключить
+                кратчайшие пути и метки столиц. При изменении настроек игра начинается заново.</li>
                 </ol>
                 
                 <p>Нажмите на заголовок панели, чтобы свернуть её.</p>
                 
                 <p>При обнаружении ошибок пишите мне на ghoul71 dot at dot yandex dot ru.</p>
                 
-                <a href="https://github.com/NtsDK">Моя страничка на github</a>
+                <p><a href="https://github.com/NtsDK">Моя страничка на github</a></p>
+                
+                <button class="btn btn-default start-game-2">Начать</button>
             <br>
             © Т. В. Речкалов, 2017
             
@@ -105,16 +110,34 @@ See the License for the specific language governing permissions and
             </div>
             <div class="panel-body">
             
-            <label class="settings-checkbox"><input type="checkbox" class="show-country"       >Показать страну                </label><br>
-            <label class="settings-checkbox"><input type="checkbox" class="show-continent"     >Показать континент             </label><br>
-            <label class="settings-checkbox"><input type="checkbox" class="show-seed-capital-mark" >Показать метку исходной столицы</label><br>
-            <label class="settings-checkbox"><input type="checkbox" class="show-capital-marks" >Показать на карте метки столиц </label><br>
-            <label class="settings-checkbox"><input type="checkbox" class="show-shortest-paths">Показать кратчайшие пути       </label><br>
-            <label>Сколько выбрать столиц (5-10)</label>
+            <label class="settings-checkbox"
+            title="В списке столиц будут показываться названия стран."
+            ><input type="checkbox" class="show-country"       >Показать страну                </label><br>
+            <label class="settings-checkbox"
+            title="В списке столиц будут показываться названия континентов."
+            ><input type="checkbox" class="show-continent"     >Показать континент             </label><br>
+            <label class="settings-checkbox"
+            title="На карте будет установлена метка исходной столицы."
+            ><input type="checkbox" class="show-seed-capital-mark" >Показать метку исходной столицы</label><br>
+            <label class="settings-checkbox"
+            title="На карте будут установлены метки столиц, которые необходимо отсортировать."
+            ><input type="checkbox" class="show-capital-marks" >Показать на карте метки столиц </label><br>
+            <label class="settings-checkbox"
+            title="На карте будут нарисованы кратчайшие пути от исходной столицы ко всем сортируемым столицам."
+            ><input type="checkbox" class="show-shortest-paths">Показать кратчайшие пути       </label><br>
+            <label
+            title="Сколько будет выбрано сортируемых столиц."
+            >Сколько выбрать столиц (5-10)</label>
             <input type="number" min="5" max="10" value="5" class="capital-number"><br>
-            <label>Минимальное расстояние между столицами (0-1500 км)</label>
+            <label
+            title="На практике расстояния от исходной столицы до двух других могут быть очень близкими. Этот параметр регулирует выборку чтобы расстояния между
+            столицами не оказались слишком маленькими."
+            >Минимальное расстояние между столицами (0-1500 км)</label>
             <input type="number" min="0" max="1500" class="min-capital-dist"><br>
-            <label class="settings-checkbox"><input type="checkbox" class="full-capital-list">Полный список стран (191+55 государств)</label><br>
+            <label class="settings-checkbox"
+            title="В карибском бассейне и Океании очень много островных государств. По умолчанию они исключены из выборки. Этот переключатель активирует игру по 
+            полному списку имеющихся стран."
+            ><input type="checkbox" class="full-capital-list">Полный список стран (191+55 государств)</label><br>
             </div>
           </div>
         </div>
@@ -129,13 +152,12 @@ See the License for the specific language governing permissions and
               </a>
             </div>
             <div class="panel-body">
-              <div class="seedCapital"></div>
-              <div class="annotation"><span>Ближе</span></div>
-              <div class="capitalsList"></div>
-              <div class="annotation"><span>Дальше</span></div>
-            
               <button class="btn btn-default start-game">Начать</button>
               <button class="btn btn-default end-game">Проверить</button>
+              <div class="seedCapital"></div>
+              <div class="annotation hidden"><span>Ближе</span></div>
+              <div class="capitalsList"></div>
+              <div class="annotation hidden"><span>Дальше</span></div>
             </div>
           </div>
         </div>

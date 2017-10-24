@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
    limitations under the License. */
 
-"use strict";
+'use strict';
 
 ((exports)=>{
     
@@ -22,7 +22,7 @@ See the License for the specific language governing permissions and
             queryEl('#charactersInput').value = l10n.get('characters'+id);
             queryEl('#profileInput').value = l10n.get('profile'+id);
         };
-    }
+    };
     
     exports.init = () => {
         UI.initPanelTogglers();
@@ -61,7 +61,7 @@ See the License for the specific language governing permissions and
         console.log(playerPriorities);
         console.log(charPriorities);
         
-//        readPriorities
+        //        readPriorities
         
         var res = marriage.match(playerPriorities, charPriorities, true);
         makeResultTable(queryEl('.player-result-panel tbody'), playerPriorities, charPriorities, res);
@@ -87,7 +87,7 @@ See the License for the specific language governing permissions and
     
     var makeResultTable = function(tbody, proposerPriorities, selectorPriorities, result){
         var size = state.players.length-1;
-        var result = R.values(result.proposers).map(R.pick(['id','select']));
+        result = R.values(result.proposers).map(R.pick(['id','select']));
         result.sort(CommonUtils.charOrdAFactory(R.prop('id')));
         
         addEls(clearEl(tbody), result.map(el => {
@@ -96,8 +96,8 @@ See the License for the specific language governing permissions and
             
             var proposer = addEl(makeEl('td'), makeText(el.id));
             var selector = addEl(makeEl('td'), makeText(el.select));
-//            var proposer = addEl(makeEl('td'), makeText(el.id+' ' + proposerHappiness/size));
-//            var selector = addEl(makeEl('td'), makeText(el.select+' ' + selectorHappiness/size));
+            //            var proposer = addEl(makeEl('td'), makeText(el.id+' ' + proposerHappiness/size));
+            //            var selector = addEl(makeEl('td'), makeText(el.select+' ' + selectorHappiness/size));
             setStyle(proposer,'backgroundColor', getColor(size-proposerHappiness, size));
             setStyle(selector,'backgroundColor', getColor(size-selectorHappiness, size));
             
@@ -132,19 +132,19 @@ See the License for the specific language governing permissions and
         
         var playerPriorities = R.mapObjIndexed((playerProfile) => {
             return R.keys(charProfiles).map(char => {
-                return {id:char, index: compareProfiles(playerProfile, charProfiles[char])}
+                return {id:char, index: compareProfiles(playerProfile, charProfiles[char])};
             }).sort(CommonUtils.charOrdAFactory(R.prop('index')));
         }, playerProfiles);
         console.log(playerPriorities);
         var charPriorities = R.mapObjIndexed((charProfile) => {
             return R.keys(playerProfiles).map(player => {
-                return {id:player, index: compareProfiles(charProfile, playerProfiles[player])}
+                return {id:player, index: compareProfiles(charProfile, playerProfiles[player])};
             }).sort(CommonUtils.charOrdAFactory(R.prop('index')));
         }, charProfiles);
         console.log(charPriorities);
         
-//        state.playerPriorities = playerPriorities;
-//        state.charPriorities = charPriorities;
+        //        state.playerPriorities = playerPriorities;
+        //        state.charPriorities = charPriorities;
         
         makePriorityTable(queryEl('.player-priority-panel thead'), queryEl('.player-priority-panel tbody'), playerPriorities);
         makePriorityTable(queryEl('.character-priority-panel thead'), queryEl('.character-priority-panel tbody'), charPriorities);
@@ -162,13 +162,13 @@ See the License for the specific language governing permissions and
                 input.style.width = '40px';
                 addEl(label, input);
                 setAttr(input, 'key', JSON.stringify({subject: subject, itemId: item.id}));
-//                setAttr(input, 'key', JSON.stringify({subject: subject, profileItem: profileItem}));
+                //                setAttr(input, 'key', JSON.stringify({subject: subject, profileItem: profileItem}));
                 return addEl(makeEl('td'), label);
-//                return addEl(makeEl('td'), makeText(item.id + ':' + item.index));
+                //                return addEl(makeEl('td'), makeText(item.id + ':' + item.index));
             });
             
             return addEls(makeEl('tr'), [label].concat(items));
-//            return addEls(makeEl('tr'), [label]);
+            //            return addEls(makeEl('tr'), [label]);
         }));
     };
 

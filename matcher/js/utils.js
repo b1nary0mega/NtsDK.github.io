@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
    limitations under the License. */
 
-"use strict";
+'use strict';
 
 var Utils = {};
 
@@ -23,28 +23,28 @@ var Utils = {};
  *      toggle - toggle content, associated with button
  */
 Utils.addView = function (containers, name, view, opts) {
-    "use strict";
+    'use strict';
     var opts = opts || {};
     view.init();
-    var buttonClass = "navigation-button";
+    var buttonClass = 'navigation-button';
     containers.root.views[name] = view;
-    var button = makeEl("button");
+    var button = makeEl('button');
     if(opts.tooltip){
         var delegate = function(){
-            $(button).attr('data-original-title', L10n.getValue("header-" + name));
+            $(button).attr('data-original-title', L10n.getValue('header-' + name));
         };
         L10n.onL10nChange(delegate);
         $(button).tooltip({
-            title : L10n.getValue("header-" + name),
-            placement : "bottom"
+            title : L10n.getValue('header-' + name),
+            placement : 'bottom'
         });
     } else {
-        addEl(button, makeText(L10n.getValue("header-" + name)));
-        setAttr(button, "l10n-id", "header-" + name);
+        addEl(button, makeText(L10n.getValue('header-' + name)));
+        setAttr(button, 'l10n-id', 'header-' + name);
     }
     addClass(button, buttonClass);
-    addClass(button, "-test-" + name);
-    addClass(button, "-toggle-class-" + name);
+    addClass(button, '-test-' + name);
+    addClass(button, '-toggle-class-' + name);
     if(opts.id){
         button.id = opts.id;
     }
@@ -57,41 +57,41 @@ Utils.addView = function (containers, name, view, opts) {
             //Tests.run();
             elems = containers.navigation.getElementsByClassName(buttonClass);
             if(opts.toggle){
-                var els = getEls("-toggle-class-" + name);
+                var els = getEls('-toggle-class-' + name);
                 for (var i = 0; i < els.length; i++) {
                     if(evt.target.isEqualNode(els[i])){
                         continue;
                     }
-                    if(hasClass(els[i], "active")){
+                    if(hasClass(els[i], 'active')){
                         els[i].click();
                     }
                 }
             }
             
-            var isActive = hasClass(evt.target, "active");
+            var isActive = hasClass(evt.target, 'active');
             for (i = 0; i < elems.length; i++) {
-                removeClass(elems[i], "active");
+                removeClass(elems[i], 'active');
             }
             if(!opts.toggle || (opts.toggle && !isActive)){
-                addClass(evt.target, "active");
+                addClass(evt.target, 'active');
                 
                 passEls(containers.content, getEl('warehouse'));
                 containers.content.appendChild(view.content);
-                removeClass(containers.content, "hidden");
+                removeClass(containers.content, 'hidden');
                 containers.root.currentView = view;
                 view.refresh();
             } else {
-                removeClass(evt.target, "active");
+                removeClass(evt.target, 'active');
                 passEls(containers.content, getEl('warehouse'));
                 containers.root.currentView = null;
-                addClass(containers.content, "hidden");
+                addClass(containers.content, 'hidden');
             }
         };
     };
 
-    button.addEventListener("click", onClickDelegate(view));
+    button.addEventListener('click', onClickDelegate(view));
     if (opts.mainPage) {
-        addClass(button, "active");
+        addClass(button, 'active');
         containers.content.appendChild(view.content);
         containers.root.currentView = view;
     }
@@ -115,7 +115,7 @@ Utils.confirm = function (message, onOk, onCancel) {
 };
 
 Utils.removeChildren = function (myNode) {
-    "use strict";
+    'use strict';
     if (!myNode) {
         return;
     }
@@ -138,12 +138,12 @@ Utils.processError = function(callback){
             }
             callback.apply(null, arr);
         }
-    }
+    };
 };
 
 Utils.handleErrorMsg = function(err){
     var checkErrorType = R.curry(function(err, name){
-        return err instanceof Errors[name] || (err.name && err.name === name)
+        return err instanceof Errors[name] || (err.name && err.name === name);
     });
     if (R.keys(Errors).some(checkErrorType(err))) {
         return strFormat(getL10n(err.messageId), err.parameters);
@@ -157,7 +157,7 @@ Utils.handleErrorMsg = function(err){
 Utils.handleError = (err) => Utils.alert(Utils.handleErrorMsg(err));
 
 Utils.enableEl = R.curry(function(el, condition){
-    var key = el.tagName.toLowerCase() === "textarea" ? "readonly" : "disabled";
+    var key = el.tagName.toLowerCase() === 'textarea' ? 'readonly' : 'disabled';
     if(condition){
         el.removeAttribute(key);
     } else {
@@ -174,10 +174,10 @@ Utils.charOrdAObject = CommonUtils.charOrdAFactory(function(a){
 });
 
 Utils.rebuildSelector = function(selector, names){
-    "use strict";
+    'use strict';
     clearEl(selector);
     names.forEach(function (nameInfo) {
-        var option = makeEl("option");
+        var option = makeEl('option');
         option.appendChild(makeText(nameInfo.displayName));
         option.value = nameInfo.value;
         selector.appendChild(option);
@@ -185,17 +185,17 @@ Utils.rebuildSelector = function(selector, names){
 };
 
 Utils.rebuildSelectorArr = function(selector, names){
-    "use strict";
+    'use strict';
     clearEl(selector);
     names.forEach(function (name) {
-        var option = makeEl("option");
+        var option = makeEl('option');
         option.appendChild(makeText(name));
         selector.appendChild(option);
     });
 };
 
 String.prototype.endsWith = function (suffix) {
-    "use strict";
+    'use strict';
     return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
 
@@ -203,21 +203,21 @@ var strFormat = R.curry(CommonUtils.strFormat);
 
 function getL10n(key){
     return L10n.getValue(key);
-};
+}
 
 function constL10n(key){
     return L10n.getValue('constant-' + key);
 }
 
 function isEmpty (obj) {
-    "use strict";
+    'use strict';
     return (Object.getOwnPropertyNames(obj).length === 0);
-};
+}
 
 var addClass = R.curry(function(o, c){
-    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
+    var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
     if (re.test(o.className)) return;
-    o.className = (o.className + " " + c).replace(/\s+/g, " ").replace(/(^ | $)/g, "");
+    o.className = (o.className + ' ' + c).replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
     return o;
 });
 
@@ -227,10 +227,10 @@ var addClasses = R.curry(function(o, c){
 });
 
 var rAddClass = R.curry(function(c, o){
-  var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
-  if (re.test(o.className)) return;
-  o.className = (o.className + " " + c).replace(/\s+/g, " ").replace(/(^ | $)/g, "");
-  return o;
+    var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
+    if (re.test(o.className)) return;
+    o.className = (o.className + ' ' + c).replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
+    return o;
 });
 
 function toggleClass(o, c){
@@ -239,16 +239,16 @@ function toggleClass(o, c){
     } else {
         addClass(o, c);
     }
-};
+}
 
 function hasClass(o, c){
-    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
+    var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
     return (re.test(o.className));
-};
+}
  
 var removeClass = R.curry(function(o, c){
-    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
-    o.className = o.className.replace(re, "$1").replace(/\s+/g, " ").replace(/(^ | $)/g, "")
+    var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
+    o.className = o.className.replace(re, '$1').replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
 });
 
 function setClassByCondition(o,c,condition){
@@ -258,39 +258,39 @@ function setClassByCondition(o,c,condition){
         removeClass(o,c);
     }
     return o;
-};
+}
 
 function getEl(id){
-  return document.getElementById(id);
-};
+    return document.getElementById(id);
+}
 
 function queryEl(sel){
     return document.querySelector(sel);
-};
+}
 
 function queryEls(sel){
     return nl2array(document.querySelectorAll(sel));
-};
+}
 
 function queryElEl(el, sel){
     return el.querySelector(sel);
-};
+}
 
 function queryElEls(el, sel){
     return nl2array(el.querySelectorAll(sel));
-};
+}
 
 function getEls(clazz){
-  return document.getElementsByClassName(clazz);
-};
+    return document.getElementsByClassName(clazz);
+}
 
 function makeEl(elTag){
-  return document.createElement(elTag);
-};
+    return document.createElement(elTag);
+}
 
 function makeText(text){
-  return document.createTextNode(text);
-};
+    return document.createTextNode(text);
+}
 
 var addEl = R.curry(function(parent, child){
     parent.appendChild(child);
@@ -302,19 +302,19 @@ var addEls = R.curry(function(parent, children){
 });
 
 var makeOpt = function(label){
-    var option = makeEl("option");
+    var option = makeEl('option');
     addEl(option, (makeText(label)));
     return option;
 };
 
 var rAddEl = R.curry(function(child, parent){
-  parent.appendChild(child);
-  return parent;
+    parent.appendChild(child);
+    return parent;
 });
 
 var setAttr = R.curry(function(el, name, value){
-  el.setAttribute(name, value);
-  return el;
+    el.setAttribute(name, value);
+    return el;
 });
 
 var setStyle = R.curry(function(el, name, value){
@@ -325,38 +325,38 @@ var setStyle = R.curry(function(el, name, value){
 function delAttr(el, name){
     el.removeAttribute(name);
     return el;
-};
+}
 
 function getAttr(el, name){
     return el.getAttribute(name);
-};
+}
 
 var setProp = R.curry(function(el, key, value){
-  el[key] = value;
-  return el;
+    el[key] = value;
+    return el;
 });
 
 var setProps = R.curry(function(el, map){
-  for(var key in map){
-    setProp(el, key, map[key]);
-  }
-  return el;
+    for(var key in map){
+        setProp(el, key, map[key]);
+    }
+    return el;
 });
 
 function clearEl(el){
-  Utils.removeChildren(el);
-  return el;
-};
+    Utils.removeChildren(el);
+    return el;
+}
 
 function passEls(src, dst){
     for (var i = 0; i < src.children.length; i++) {
         addEl(dst, src.children[i]);
     }
-};
+}
 
 var listen = R.curry(function(el, event, listener){
-  el.addEventListener(event, listener);
-  return el;
+    el.addEventListener(event, listener);
+    return el;
 });
 
 var listenOnEnter = R.curry(function(el, callback){
@@ -369,7 +369,7 @@ var listenOnEnter = R.curry(function(el, callback){
 
 var fillSelector = R.curry(function(sel, data){
     return addEls(sel, data.map(function (item) {
-        var opt = makeEl("option");
+        var opt = makeEl('option');
         addEl(opt, makeText(item.name));
         if(item.value){opt.value = item.value;}
         if(item.selected){opt.selected = true;}
@@ -380,7 +380,7 @@ var fillSelector = R.curry(function(sel, data){
 
 function nl2array(nodeList){
     return Array.prototype.slice.call(nodeList);
-};
+}
 
 var remapProps = R.curry(function(outKeys, pickKeys, obj){
     return R.compose(R.zipObj(outKeys), R.values, R.pick(pickKeys))(obj);
@@ -414,7 +414,7 @@ var debugInterceptor = function(callback){
     return function(){
         console.log(JSON.stringify(arguments[0]));
         callback.apply(null, arguments);
-    }
+    };
 };
 
 // from date format utils

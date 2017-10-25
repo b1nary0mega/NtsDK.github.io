@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
    limitations under the License. */
 
-"use strict";
+'use strict';
 
 (function(callback){
         
@@ -23,7 +23,7 @@ See the License for the specific language governing permissions and
         };
     
         exports.removeFromArrayByIndex = function(array, from, to) {
-            "use strict";
+            'use strict';
             var rest = array.slice((to || from) + 1 || array.length);
             array.length = from < 0 ? array.length + from : from;
             return array.push.apply(array, rest);
@@ -37,9 +37,9 @@ See the License for the specific language governing permissions and
                 if(R.isNil(a)) return 1;
                 if(R.isNil(b)) return -1;
                 if (a > b)
-                    return sortDir === "asc" ? 1 : -1;
+                    return sortDir === 'asc' ? 1 : -1;
                 if (a < b)
-                    return sortDir === "asc" ? -1 : 1;
+                    return sortDir === 'asc' ? -1 : 1;
                 return 0;
             };
         });
@@ -51,21 +51,21 @@ See the License for the specific language governing permissions and
         exports.eventsByTime = exports.charOrdAFactory(function(a){return new Date(a.time);});
     
         exports.strFormat = function(str, vals){
-            "use strict";
+            'use strict';
             return str.replace(/\{\{|\}\}|\{(\d+)\}/g, function (m, n) {
-                if (m == "{{") { return "{"; }
-                if (m == "}}") { return "}"; }
+                if (m == '{{') { return '{'; }
+                if (m == '}}') { return '}'; }
                 return vals[n];
             });
         };
         
         exports.consoleLog = function(str){
-            "use strict";
+            'use strict';
             console.log(str);
         };
         
         exports.clone = function(o) {
-            "use strict";
+            'use strict';
             if (!o || 'object' !== typeof o) {
                 return o;
             }
@@ -85,7 +85,7 @@ See the License for the specific language governing permissions and
         };
         
         var preg_quote = function (str, delimiter) {
-            "use strict";
+            'use strict';
             // http://kevin.vanzonneveld.net
             // + original by: booeyOH
             // + improved by: Ates Goral (http://magnetiq.com)
@@ -103,14 +103,14 @@ See the License for the specific language governing permissions and
         };
         
         exports.globStringToRegex = function (str) {
-            "use strict";
+            'use strict';
             return new RegExp(preg_quote(str).replace(/\\\*/g, '.*').replace(
-                    /\\\?/g, '.'), 'g');
+                /\\\?/g, '.'), 'g');
         };
         
         // taken from MDN https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
         exports.escapeRegExp = function(string){
-          return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
         };
         
         exports.arr2map = function(array, key){
@@ -131,49 +131,49 @@ See the License for the specific language governing permissions and
                     return;
                 }
                 switch (filterItem.type) {
-                case "enum":
-                case "checkbox":
+                case 'enum':
+                case 'checkbox':
                     if (!filterItem.selectedOptions[value]) {
                         result = false;
                     }
                     break;
-                case "multiEnum":
+                case 'multiEnum':
                     var values = value === '' ? [] : value.split(',');
                     switch (filterItem.condition) {
-                    case "every":
+                    case 'every':
                         if(R.keys(filterItem.selectedOptions).length === 0){
                             result = false;
                         } else {
                             result = R.difference(R.keys(filterItem.selectedOptions), values).length === 0;
                         }
                         break;
-                    case "some":
+                    case 'some':
                         result = R.difference(values,  R.keys(filterItem.selectedOptions)).length !== values.length;
                         break;
-                    case "equal":
+                    case 'equal':
                         result = R.symmetricDifference(values,  R.keys(filterItem.selectedOptions)).length === 0;
                         break;
                     default:
                         throw 'Unexpected condition ' + filterItem.condition;
                     }
                     break;
-                case "number":
+                case 'number':
                     switch (filterItem.condition) {
-                    case "greater":
+                    case 'greater':
                         result = value > filterItem.num;
                         break;
-                    case "equal":
+                    case 'equal':
                         result = value === filterItem.num;
                         break;
-                    case "lesser":
+                    case 'lesser':
                         result = value < filterItem.num;
                         break;
                     default:
                         throw 'Unexpected condition ' + filterItem.condition;
                     }
                     break;
-                case "text":
-                case "string":
+                case 'text':
+                case 'string':
                     result = value.toLowerCase().indexOf(filterItem.regexString.toLowerCase()) != -1;
                     break;
                 default:
@@ -188,13 +188,13 @@ See the License for the specific language governing permissions and
             var arr = [];
             arr.push({
                 name : Constants.CHAR_NAME,
-                type : "string",
-                displayName : "profile-filter-character",
+                type : 'string',
+                displayName : 'profile-filter-character',
             });
             arr.push({
                 name : Constants.CHAR_OWNER,
-                type : "string",
-                displayName : "profile-filter-character-owner",
+                type : 'string',
+                displayName : 'profile-filter-character-owner',
             });
             arr = arr.concat(opts.characters.profileStructure.map(function(element){
                 return {
@@ -202,7 +202,7 @@ See the License for the specific language governing permissions and
                     type: element.type,
                     displayName: element.name,
                     value: element.value
-                }
+                };
             }));
             groupedProfileFilterItems.push({
                 name: 'characterFilterItems',
@@ -212,13 +212,13 @@ See the License for the specific language governing permissions and
             arr = [];
             arr.push({
                 name : Constants.PLAYER_NAME,
-                type : "string",
-                displayName : "profile-filter-player-name",
+                type : 'string',
+                displayName : 'profile-filter-player-name',
             });
             arr.push({
                 name : Constants.PLAYER_OWNER,
-                type : "string",
-                displayName : "profile-filter-player-owner",
+                type : 'string',
+                displayName : 'profile-filter-player-owner',
             });
             arr = arr.concat(opts.players.profileStructure.map(function(element){
                 return {
@@ -226,7 +226,7 @@ See the License for the specific language governing permissions and
                     type: element.type,
                     displayName: element.name,
                     value: element.value
-                }
+                };
             }));
             groupedProfileFilterItems.push({
                 name: 'playerFilterItems',
@@ -301,7 +301,7 @@ See the License for the specific language governing permissions and
                     value: value,
                     type: profileItemInfo.type,
                     itemName: profileItemInfo.name
-                }
+                };
             });
         });
         
@@ -359,7 +359,7 @@ See the License for the specific language governing permissions and
                     if(err) return err;
                     return item();
                 }, null);
-            }
+            };
         });
         
         exports.eitherCheck = R.curry(function(func1, func2){
@@ -373,7 +373,7 @@ See the License for the specific language governing permissions and
                     return null;
                 }
                 return res1;
-            }
+            };
         });
         
         // primitive precondition checks
@@ -381,7 +381,7 @@ See the License for the specific language governing permissions and
             return () => {
                 var diff = R.difference(els, valueList);
                 return diff.length === 0 ? null : [msg, [JSON.stringify(diff)]];
-            }
+            };
         });
         
         exports.elementsFromEnum = arrContainsElsCheck('errors-unsupported-types-in-list');
@@ -390,7 +390,7 @@ See the License for the specific language governing permissions and
         var arrContainsElCheck = R.curry(function(msg, el, valueList){
             return () => {
                 return R.contains(el, valueList) ? null : [msg, [el]];
-            }
+            };
         });
         
         exports.elementFromEnum = arrContainsElCheck('errors-unsupported-type-in-list');
@@ -399,79 +399,79 @@ See the License for the specific language governing permissions and
         exports.entityIsNotUsed = R.curry(function(el, valueList){
             return () => {
                 return !R.contains(el, valueList) ? null : ['errors-entity-is-used', [el]];
-            }
+            };
         });
         
         exports.isString = R.curry(function(el){
             return () => {
                 return R.is(String, el) ? null : ['errors-argument-is-not-a-string', [el]];
-            }
+            };
         });
         
         exports.isEmptyString = R.curry(function(el){
             return () => {
                 return R.equals('', el) ? null : ['errors-argument-is-not-empty-string', [el]];
-            }
+            };
         });
         
         exports.isNotEmptyString = R.curry(function(el){
             return () => {
                 return !R.equals('', el) ? null : ['errors-argument-is-empty-string', [el]];
-            }
+            };
         });
         
         exports.nameIsNotEmpty = R.curry(function(el){
             return () => {
                 return !R.equals('', el) ? null : ['errors-name-is-empty-string', [el]];
-            }
+            };
         });
         
         exports.isArray = R.curry(function(el){
             return () => {
                 return R.is(Array, el) ? null : ['errors-argument-is-not-an-array', [el]];
-            }
+            };
         });
         
         exports.isObject = R.curry(function(el){
             return () => {
                 return R.is(Object, el) ? null : ['errors-argument-is-not-an-object', [el]];
-            }
+            };
         });
         
         exports.isBoolean = R.curry(function(el){
             return () => {
                 return R.is(Boolean, el) ? null : ['errors-argument-is-not-a-boolean', [el]];
-            }
+            };
         });
         
         exports.isNumber = R.curry(function(el){
             return () => {
                 return R.is(Number, el) ? null : ['errors-argument-is-not-a-number', [el]];
-            }
+            };
         });
         
         exports.isNil = R.curry(function(el){
             return () => {
                 return R.isNil(el) ? null : ['errors-argument-is-not-nil', [el]];
-            }
+            };
         });
         
         exports.nil = R.curry(function(){
             return () => {
                 return null;
-            }
+            };
         });
         
         exports.notEquals = R.curry(function(el, el2){
             return () => {
                 return !R.equals(el, el2) ? null : ['errors-argument-must-not-be-equal', [el]];
-            }
+            };
         });
         
         exports.isInRange = R.curry(function(el, low, up){
             return () => {
                 return low <= el && el <= up ? null : ['errors-argument-is-not-in-range', [el, low, up]];
-            }
+            };
         });
         
         exports.createEntityCheck = R.curry(function(entityName, entityList){
@@ -488,16 +488,16 @@ See the License for the specific language governing permissions and
         
         exports.switchEntityCheck = R.curry(function(entity1, entity2, entityList, entityContainerList){
             return exports.chainCheck([exports.entityExistsCheck(entity1, entityList), 
-                                       exports.entityExistsCheck(entity2, entityList),
-                                       exports.entityExists(entity1, entityContainerList),
-                                       exports.entityIsNotUsed(entity2, entityContainerList)]);
+                exports.entityExistsCheck(entity2, entityList),
+                exports.entityExists(entity1, entityContainerList),
+                exports.entityIsNotUsed(entity2, entityContainerList)]);
         });
         
         exports.getValueCheck = function(type){
             switch (type) {
-            case "checkbox":
+            case 'checkbox':
                 return exports.isBoolean;
-            case "number":
+            case 'number':
                 return exports.isNumber;
             }
             return exports.isString;

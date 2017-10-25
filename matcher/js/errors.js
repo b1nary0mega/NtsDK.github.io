@@ -14,23 +14,23 @@ See the License for the specific language governing permissions and
 
 /*
  */
-"use strict";
+'use strict';
 
 (function(exports){
 
     function ValidationError(messageId, parameters) {
-      Error.call(this, arguments) ;
-      this.name = "ValidationError";
+        Error.call(this, arguments) ;
+        this.name = 'ValidationError';
     
-      this.messageId = messageId;
-      this.parameters = parameters;
+        this.messageId = messageId;
+        this.parameters = parameters;
     
-      if (Error.captureStackTrace) {
-        Error.captureStackTrace(this, ValidationError);
-      } else {
-        this.stack = (new Error()).stack;
-      }
-    };
+        if (Error.captureStackTrace) {
+            Error.captureStackTrace(this, ValidationError);
+        } else {
+            this.stack = (new Error()).stack;
+        }
+    }
     
     ValidationError.prototype = Object.create(Error.prototype);
     
@@ -38,7 +38,7 @@ See the License for the specific language governing permissions and
     
     function InternalError(messageId, parameters) {
         Error.call(this, arguments) ;
-        this.name = "InternalError";
+        this.name = 'InternalError';
         
         this.messageId = messageId;
         this.parameters = parameters;
@@ -48,7 +48,7 @@ See the License for the specific language governing permissions and
         } else {
             this.stack = (new Error()).stack;
         }
-    };
+    }
     
     InternalError.prototype = Object.create(Error.prototype);
     

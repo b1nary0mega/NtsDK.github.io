@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 
 /*
  */
-"use strict";
+'use strict';
 
 (function(exports){
     
@@ -1034,11 +1034,11 @@ Harare`;
     
     //Little Bay, Brades, Plymouth не найден 
     //Ramallah не найден 
-  //Kathmandu не найден 
-  //Mata-Utu не найден 
-  //Mogadishu не найден 
-  //Nukuʻalofa не найден 
-  //Riyadh не найден 
+    //Kathmandu не найден 
+    //Mata-Utu не найден 
+    //Mogadishu не найден 
+    //Nukuʻalofa не найден 
+    //Riyadh не найден 
     
     
 
@@ -1293,1493 +1293,1493 @@ Harare`;
     ["Zagreb",1,[45.802814,15.974588]]`;
     
     exports.capitalCoords = R.indexBy(R.prop('name'), rawCapitalCoords.split('\n').map(JSON.parse).map(R.zipObj(['name','num','coords'])));
-//    console.log(exports.capitalCoords);
+    //    console.log(exports.capitalCoords);
     
     var capitalsData = [
         {
-            "alpha2": "AF",
-            "country": "Afghanistan",
-            "continent": "Asia",
-            "capital": "Kabul"
-          },
-          {
-            "alpha2": "AX",
-            "country": "Aland Islands",
-            "continent": "Europe",
-            "capital": "Mariehamn"
-          },
-          {
-            "alpha2": "AL",
-            "country": "Albania",
-            "continent": "Europe",
-            "capital": "Tirana"
-          },
-          {
-            "alpha2": "DZ",
-            "country": "Algeria",
-            "continent": "Africa",
-            "capital": "Algiers"
-          },
-          {
-            "alpha2": "AS",
-            "country": "American Samoa",
-            "continent": "Oceania",
-            "capital": "Pago Pago"
-          },
-          {
-            "alpha2": "AD",
-            "country": "Andorra",
-            "continent": "Europe",
-            "capital": "Andorra la Vella"
-          },
-          {
-            "alpha2": "AO",
-            "country": "Angola",
-            "continent": "Africa",
-            "capital": "Luanda"
-          },
-          {
-            "alpha2": "AI",
-            "country": "Anguilla",
-            "continent": "North America",
-            "capital": "The Valley"
-          },
-          {
-            "alpha2": "AG",
-            "country": "Antigua and Barbuda",
-            "continent": "North America",
-            "capital": "St. John's"
-          },
-          {
-            "alpha2": "AR",
-            "country": "Argentina",
-            "continent": "South America",
-            "capital": "Buenos Aires"
-          },
-          {
-            "alpha2": "AM",
-            "country": "Armenia",
-            "continent": "Asia",
-            "capital": "Yerevan"
-          },
-          {
-            "alpha2": "AW",
-            "country": "Aruba",
-            "continent": "South America",
-            "capital": "Oranjestad"
-          },
-          {
-            "alpha2": "AU",
-            "country": "Australia",
-            "continent": "Oceania",
-            "capital": "Canberra"
-          },
-          {
-            "alpha2": "AT",
-            "country": "Austria",
-            "continent": "Europe",
-            "capital": "Vienna"
-          },
-          {
-            "alpha2": "AZ",
-            "country": "Azerbaijan",
-            "continent": "Asia",
-            "capital": "Baku"
-          },
-          {
-            "alpha2": "BS",
-            "country": "Bahamas",
-            "continent": "North America",
-            "capital": "Nassau"
-          },
-          {
-            "alpha2": "BH",
-            "country": "Bahrain",
-            "continent": "Asia",
-            "capital": "Manama"
-          },
-          {
-            "alpha2": "BD",
-            "country": "Bangladesh",
-            "continent": "Asia",
-            "capital": "Dhaka"
-          },
-          {
-            "alpha2": "BB",
-            "country": "Barbados",
-            "continent": "North America",
-            "capital": "Bridgetown"
-          },
-          {
-            "alpha2": "BY",
-            "country": "Belarus",
-            "continent": "Europe",
-            "capital": "Minsk"
-          },
-          {
-            "alpha2": "BE",
-            "country": "Belgium",
-            "continent": "Europe",
-            "capital": "Brussels"
-          },
-          {
-            "alpha2": "BZ",
-            "country": "Belize",
-            "continent": "North America",
-            "capital": "Belmopan"
-          },
-          {
-            "alpha2": "BJ",
-            "country": "Benin",
-            "continent": "Africa",
-            "capital": "Porto-Novo"
-          },
-          {
-            "alpha2": "BM",
-            "country": "Bermuda",
-            "continent": "North America",
-            "capital": "Hamilton"
-          },
-          {
-            "alpha2": "BT",
-            "country": "Bhutan",
-            "continent": "Asia",
-            "capital": "Thimphu"
-          },
-          {
-            "alpha2": "BO",
-            "country": "Bolivia (Plurinational State of)",
-            "continent": "South America",
-            "capital": "Sucre"
-          },
-          {
-            "alpha2": "BQ",
-            "country": "Bonaire, Sint Eustatius and Saba",
-            "continent": "South America",
-            "capital": "Kralendijk"
-          },
-          {
-            "alpha2": "BA",
-            "country": "Bosnia and Herzegovina",
-            "continent": "Europe",
-            "capital": "Sarajevo"
-          },
-          {
-            "alpha2": "BW",
-            "country": "Botswana",
-            "continent": "Africa",
-            "capital": "Gaborone"
-          },
-          {
-            "alpha2": "BR",
-            "country": "Brazil",
-            "continent": "South America",
-            "capital": "Brasília"
-          },
-          {
-            "alpha2": "IO",
-            "country": "British Indian Ocean Territory",
-            "continent": "Asia",
-            "capital": "Diego Garcia"
-          },
-          {
-            "alpha2": "BN",
-            "country": "Brunei Darussalam",
-            "continent": "Asia",
-            "capital": "Bandar Seri Begawan"
-          },
-          {
-            "alpha2": "BG",
-            "country": "Bulgaria",
-            "continent": "Europe",
-            "capital": "Sofia"
-          },
-          {
-            "alpha2": "BF",
-            "country": "Burkina Faso",
-            "continent": "Africa",
-            "capital": "Ouagadougou"
-          },
-          {
-            "alpha2": "BI",
-            "country": "Burundi",
-            "continent": "Africa",
-            "capital": "Bujumbura"
-          },
-          {
-            "alpha2": "CV",
-            "country": "Cabo Verde",
-            "continent": "Africa",
-            "capital": "Praia"
-          },
-          {
-            "alpha2": "KH",
-            "country": "Cambodia",
-            "continent": "Asia",
-            "capital": "Phnom Penh"
-          },
-          {
-            "alpha2": "CM",
-            "country": "Cameroon",
-            "continent": "Africa",
-            "capital": "Yaoundé"
-          },
-          {
-            "alpha2": "CA",
-            "country": "Canada",
-            "continent": "North America",
-            "capital": "Ottawa"
-          },
-          {
-            "alpha2": "KY",
-            "country": "Cayman Islands",
-            "continent": "North America",
-            "capital": "George Town"
-          },
-          {
-            "alpha2": "CF",
-            "country": "Central African Republic",
-            "continent": "Africa",
-            "capital": "Bangui"
-          },
-          {
-            "alpha2": "TD",
-            "country": "Chad",
-            "continent": "Africa",
-            "capital": "N'Djamena"
-          },
-          {
-            "alpha2": "CL",
-            "country": "Chile",
-            "continent": "South America",
-            "capital": "Santiago"
-          },
-          {
-            "alpha2": "CN",
-            "country": "China",
-            "continent": "Asia",
-            "capital": "Beijing"
-          },
-          {
-            "alpha2": "CX",
-            "country": "Christmas Island",
-            "continent": "Asia",
-            "capital": "Flying Fish Cove"
-          },
-          {
-            "alpha2": "CC",
-            "country": "Cocos (Keeling) Islands",
-            "continent": "Asia",
-            "capital": "West Island"
-          },
-          {
-            "alpha2": "CO",
-            "country": "Colombia",
-            "continent": "South America",
-            "capital": "Bogotá"
-          },
-          {
-            "alpha2": "KM",
-            "country": "Comoros",
-            "continent": "Africa",
-            "capital": "Moroni"
-          },
-          {
-            "alpha2": "CK",
-            "country": "Cook Islands",
-            "continent": "Oceania",
-            "capital": "Avarua"
-          },
-          {
-            "alpha2": "CR",
-            "country": "Costa Rica",
-            "continent": "North America",
-            "capital": "San José"
-          },
-          {
-            "alpha2": "HR",
-            "country": "Croatia",
-            "continent": "Europe",
-            "capital": "Zagreb"
-          },
-          {
-            "alpha2": "CU",
-            "country": "Cuba",
-            "continent": "North America",
-            "capital": "Havana"
-          },
-          {
-            "alpha2": "CW",
-            "country": "Curaçao",
-            "continent": "South America",
-            "capital": "Willemstad"
-          },
-          {
-            "alpha2": "CY",
-            "country": "Cyprus",
-            "continent": "Europe",
-            "capital": "Nicosia"
-          },
-          {
-            "alpha2": "CZ",
-            "country": "Czech Republic",
-            "continent": "Europe",
-            "capital": "Prague"
-          },
-          {
-            "alpha2": "CI",
-            "country": "Côte d'Ivoire",
-            "continent": "Africa",
-            "capital": "Yamoussoukro"
-          },
-          {
-            "alpha2": "CD",
-            "country": "Democratic Republic of the Congo",
-            "continent": "Africa",
-            "capital": "Kinshasa"
-          },
-          {
-            "alpha2": "DK",
-            "country": "Denmark",
-            "continent": "Europe",
-            "capital": "Copenhagen"
-          },
-          {
-            "alpha2": "DJ",
-            "country": "Djibouti",
-            "continent": "Africa",
-            "capital": "Djibouti"
-          },
-          {
-            "alpha2": "DM",
-            "country": "Dominica",
-            "continent": "North America",
-            "capital": "Roseau"
-          },
-          {
-            "alpha2": "DO",
-            "country": "Dominican Republic",
-            "continent": "North America",
-            "capital": "Santo Domingo"
-          },
-          {
-            "alpha2": "EC",
-            "country": "Ecuador",
-            "continent": "South America",
-            "capital": "Quito"
-          },
-          {
-            "alpha2": "EG",
-            "country": "Egypt",
-            "continent": "Africa",
-            "capital": "Cairo"
-          },
-          {
-            "alpha2": "SV",
-            "country": "El Salvador",
-            "continent": "North America",
-            "capital": "San Salvador"
-          },
-          {
-            "alpha2": "GQ",
-            "country": "Equatorial Guinea",
-            "continent": "Africa",
-            "capital": "Malabo"
-          },
-          {
-            "alpha2": "ER",
-            "country": "Eritrea",
-            "continent": "Africa",
-            "capital": "Asmara"
-          },
-          {
-            "alpha2": "EE",
-            "country": "Estonia",
-            "continent": "Europe",
-            "capital": "Tallinn"
-          },
-          {
-            "alpha2": "ET",
-            "country": "Ethiopia",
-            "continent": "Africa",
-            "capital": "Addis Ababa"
-          },
-          {
-            "alpha2": "FK",
-            "country": "Falkland Islands",
-            "continent": "South America",
-            "capital": "Stanley"
-          },
-          {
-            "alpha2": "FO",
-            "country": "Faroe Islands",
-            "continent": "Europe",
-            "capital": "Tórshavn"
-          },
-          {
-            "alpha2": "FM",
-            "country": "Federated States of Micronesia",
-            "continent": "Oceania",
-            "capital": "Palikir"
-          },
-          {
-            "alpha2": "FJ",
-            "country": "Fiji",
-            "continent": "Oceania",
-            "capital": "Suva"
-          },
-          {
-            "alpha2": "FI",
-            "country": "Finland",
-            "continent": "Europe",
-            "capital": "Helsinki"
-          },
-          {
-            "alpha2": "MK",
-            "country": "Republic of Macedonia",
-            "continent": "Europe",
-            "capital": "Skopje"
-          },
-          {
-            "alpha2": "FR",
-            "country": "France",
-            "continent": "Europe",
-            "capital": "Paris"
-          },
-          {
-            "alpha2": "GF",
-            "country": "French Guiana",
-            "continent": "South America",
-            "capital": "Cayenne"
-          },
-          {
-            "alpha2": "PF",
-            "country": "French Polynesia",
-            "continent": "Oceania",
-            "capital": "Papeete"
-          },
-          {
-            "alpha2": "TF",
-            "country": "French Southern Territories",
-            "continent": "Africa",
-            "capital": "Saint-Pierre, Réunion"
-          },
-          {
-            "alpha2": "GA",
-            "country": "Gabon",
-            "continent": "Africa",
-            "capital": "Libreville"
-          },
-          {
-            "alpha2": "GM",
-            "country": "Gambia",
-            "continent": "Africa",
-            "capital": "Banjul"
-          },
-          {
-            "alpha2": "GE",
-            "country": "Georgia",
-            "continent": "Asia",
-            "capital": "Tbilisi"
-          },
-          {
-            "alpha2": "DE",
-            "country": "Germany",
-            "continent": "Europe",
-            "capital": "Berlin"
-          },
-          {
-            "alpha2": "GH",
-            "country": "Ghana",
-            "continent": "Africa",
-            "capital": "Accra"
-          },
-          {
-            "alpha2": "GI",
-            "country": "Gibraltar",
-            "continent": "Europe",
-            "capital": "Gibraltar"
-          },
-          {
-            "alpha2": "GR",
-            "country": "Greece",
-            "continent": "Europe",
-            "capital": "Athens"
-          },
-          {
-            "alpha2": "GL",
-            "country": "Greenland",
-            "continent": "North America",
-            "capital": "Nuuk"
-          },
-          {
-            "alpha2": "GD",
-            "country": "Grenada",
-            "continent": "North America",
-            "capital": "St. George's"
-          },
-          {
-            "alpha2": "GP",
-            "country": "Guadeloupe",
-            "continent": "North America",
-            "capital": "Basse-Terre"
-          },
-          {
-            "alpha2": "GU",
-            "country": "Guam",
-            "continent": "Oceania",
-            "capital": "Hagåtña"
-          },
-          {
-            "alpha2": "GT",
-            "country": "Guatemala",
-            "continent": "North America",
-            "capital": "Guatemala City"
-          },
-          {
-            "alpha2": "GG",
-            "country": "Guernsey",
-            "continent": "Europe",
-            "capital": "Saint Peter Port"
-          },
-          {
-            "alpha2": "GN",
-            "country": "Guinea",
-            "continent": "Africa",
-            "capital": "Conakry"
-          },
-          {
-            "alpha2": "GW",
-            "country": "Guinea-Bissau",
-            "continent": "Africa",
-            "capital": "Bissau"
-          },
-          {
-            "alpha2": "GY",
-            "country": "Guyana",
-            "continent": "South America",
-            "capital": "Georgetown"
-          },
-          {
-            "alpha2": "HT",
-            "country": "Haiti",
-            "continent": "North America",
-            "capital": "Port-au-Prince"
-          },
-          {
-            "alpha2": "VA",
-            "country": "Holy See",
-            "continent": "Europe",
-            "capital": "Vatican City"
-          },
-          {
-            "alpha2": "HN",
-            "country": "Honduras",
-            "continent": "North America",
-            "capital": "Tegucigalpa"
-          },
-          {
-            "alpha2": "HK",
-            "country": "Hong Kong",
-            "continent": "Asia",
-            "capital": "Hong Kong"
-          },
-          {
-            "alpha2": "HU",
-            "country": "Hungary",
-            "continent": "Europe",
-            "capital": "Budapest"
-          },
-          {
-            "alpha2": "IS",
-            "country": "Iceland",
-            "continent": "Europe",
-            "capital": "Reykjavik"
-          },
-          {
-            "alpha2": "IN",
-            "country": "India",
-            "continent": "Asia",
-            "capital": "New Delhi"
-          },
-          {
-            "alpha2": "ID",
-            "country": "Indonesia",
-            "continent": "Asia",
-            "capital": "Jakarta"
-          },
-          {
-            "alpha2": "IR",
-            "country": "Iran (Islamic Republic of)",
-            "continent": "Asia",
-            "capital": "Tehran"
-          },
-          {
-            "alpha2": "IQ",
-            "country": "Iraq",
-            "continent": "Asia",
-            "capital": "Baghdad"
-          },
-          {
-            "alpha2": "IE",
-            "country": "Ireland",
-            "continent": "Europe",
-            "capital": "Dublin"
-          },
-          {
-            "alpha2": "IM",
-            "country": "Isle of Man",
-            "continent": "Europe",
-            "capital": "Douglas"
-          },
-          {
-            "alpha2": "IL",
-            "country": "Israel",
-            "continent": "Asia",
-            "capital": "Jerusalem"
-          },
-          {
-            "alpha2": "IT",
-            "country": "Italy",
-            "continent": "Europe",
-            "capital": "Rome"
-          },
-          {
-            "alpha2": "JM",
-            "country": "Jamaica",
-            "continent": "North America",
-            "capital": "Kingston (Jamaica)"
-          },
-          {
-            "alpha2": "JP",
-            "country": "Japan",
-            "continent": "Asia",
-            "capital": "Tokyo"
-          },
-          {
-            "alpha2": "JE",
-            "country": "Jersey",
-            "continent": "Europe",
-            "capital": "Saint Helier"
-          },
-          {
-            "alpha2": "JO",
-            "country": "Jordan",
-            "continent": "Asia",
-            "capital": "Amman"
-          },
-          {
-            "alpha2": "KZ",
-            "country": "Kazakhstan",
-            "continent": "Asia",
-            "capital": "Astana"
-          },
-          {
-            "alpha2": "KE",
-            "country": "Kenya",
-            "continent": "Africa",
-            "capital": "Nairobi"
-          },
-          {
-            "alpha2": "KI",
-            "country": "Kiribati",
-            "continent": "Oceania",
-            "capital": "South Tarawa"
-          },
-          {
-            "alpha2": "KW",
-            "country": "Kuwait",
-            "continent": "Asia",
-            "capital": "Kuwait City"
-          },
-          {
-            "alpha2": "KG",
-            "country": "Kyrgyzstan",
-            "continent": "Asia",
-            "capital": "Bishkek"
-          },
-          {
-            "alpha2": "LA",
-            "country": "Laos",
-            "continent": "Asia",
-            "capital": "Vientiane"
-          },
-          {
-            "alpha2": "LV",
-            "country": "Latvia",
-            "continent": "Europe",
-            "capital": "Riga"
-          },
-          {
-            "alpha2": "LB",
-            "country": "Lebanon",
-            "continent": "Asia",
-            "capital": "Beirut"
-          },
-          {
-            "alpha2": "LS",
-            "country": "Lesotho",
-            "continent": "Africa",
-            "capital": "Maseru"
-          },
-          {
-            "alpha2": "LR",
-            "country": "Liberia",
-            "continent": "Africa",
-            "capital": "Monrovia"
-          },
-          {
-            "alpha2": "LY",
-            "country": "Libya",
-            "continent": "Africa",
-            "capital": "Tripoli"
-          },
-          {
-            "alpha2": "LI",
-            "country": "Liechtenstein",
-            "continent": "Europe",
-            "capital": "Vaduz"
-          },
-          {
-            "alpha2": "LT",
-            "country": "Lithuania",
-            "continent": "Europe",
-            "capital": "Vilnius"
-          },
-          {
-            "alpha2": "LU",
-            "country": "Luxembourg",
-            "continent": "Europe",
-            "capital": "Luxembourg City"
-          },
-          {
-            "alpha2": "MO",
-            "country": "Macau",
-            "continent": "Asia",
-            "capital": "Macau"
-          },
-          {
-            "alpha2": "MG",
-            "country": "Madagascar",
-            "continent": "Africa",
-            "capital": "Antananarivo"
-          },
-          {
-            "alpha2": "MW",
-            "country": "Malawi",
-            "continent": "Africa",
-            "capital": "Lilongwe"
-          },
-          {
-            "alpha2": "MY",
-            "country": "Malaysia",
-            "continent": "Asia",
-            "capital": "Kuala Lumpur"
-          },
-          {
-            "alpha2": "MV",
-            "country": "Maldives",
-            "continent": "Asia",
-            "capital": "Malé"
-          },
-          {
-            "alpha2": "ML",
-            "country": "Mali",
-            "continent": "Africa",
-            "capital": "Bamako"
-          },
-          {
-            "alpha2": "MT",
-            "country": "Malta",
-            "continent": "Europe",
-            "capital": "Valletta"
-          },
-          {
-            "alpha2": "MH",
-            "country": "Marshall Islands",
-            "continent": "Oceania",
-            "capital": "Majuro"
-          },
-          {
-            "alpha2": "MQ",
-            "country": "Martinique",
-            "continent": "North America",
-            "capital": "Fort-de-France"
-          },
-          {
-            "alpha2": "MR",
-            "country": "Mauritania",
-            "continent": "Africa",
-            "capital": "Nouakchott"
-          },
-          {
-            "alpha2": "MU",
-            "country": "Mauritius",
-            "continent": "Africa",
-            "capital": "Port Louis"
-          },
-          {
-            "alpha2": "YT",
-            "country": "Mayotte",
-            "continent": "Africa",
-            "capital": "Mamoudzou"
-          },
-          {
-            "alpha2": "MX",
-            "country": "Mexico",
-            "continent": "North America",
-            "capital": "Mexico City"
-          },
-          {
-            "alpha2": "MD",
-            "country": "Moldova",
-            "continent": "Europe",
-            "capital": "Chișinău"
-          },
-          {
-            "alpha2": "MC",
-            "country": "Monaco",
-            "continent": "Europe",
-            "capital": "Monaco"
-          },
-          {
-            "alpha2": "MN",
-            "country": "Mongolia",
-            "continent": "Asia",
-            "capital": "Ulaanbaatar"
-          },
-          {
-            "alpha2": "ME",
-            "country": "Montenegro",
-            "continent": "Europe",
-            "capital": "Podgorica"
-          },
-          {
-            "alpha2": "MS",
-            "country": "Montserrat",
-            "continent": "North America",
-            "capital": "Little Bay, Brades, Plymouth"
-          },
-          {
-            "alpha2": "MA",
-            "country": "Morocco",
-            "continent": "Africa",
-            "capital": "Rabat"
-          },
-          {
-            "alpha2": "MZ",
-            "country": "Mozambique",
-            "continent": "Africa",
-            "capital": "Maputo"
-          },
-          {
-            "alpha2": "MM",
-            "country": "Myanmar",
-            "continent": "Asia",
-            "capital": "Naypyidaw"
-          },
-          {
-            "alpha2": "NA",
-            "country": "Namibia",
-            "continent": "Africa",
-            "capital": "Windhoek"
-          },
-          {
-            "alpha2": "NR",
-            "country": "Nauru",
-            "continent": "Oceania",
-            "capital": "Yaren District"
-          },
-          {
-            "alpha2": "NP",
-            "country": "Nepal",
-            "continent": "Asia",
-            "capital": "Kathmandu"
-          },
-          {
-            "alpha2": "NL",
-            "country": "Netherlands",
-            "continent": "Europe",
-            "capital": "Amsterdam"
-          },
-          {
-            "alpha2": "NC",
-            "country": "New Caledonia",
-            "continent": "Oceania",
-            "capital": "Nouméa"
-          },
-          {
-            "alpha2": "NZ",
-            "country": "New Zealand",
-            "continent": "Oceania",
-            "capital": "Wellington"
-          },
-          {
-            "alpha2": "NI",
-            "country": "Nicaragua",
-            "continent": "North America",
-            "capital": "Managua"
-          },
-          {
-            "alpha2": "NE",
-            "country": "Niger",
-            "continent": "Africa",
-            "capital": "Niamey"
-          },
-          {
-            "alpha2": "NG",
-            "country": "Nigeria",
-            "continent": "Africa",
-            "capital": "Abuja"
-          },
-          {
-            "alpha2": "NU",
-            "country": "Niue",
-            "continent": "Oceania",
-            "capital": "Alofi"
-          },
-          {
-            "alpha2": "NF",
-            "country": "Norfolk Island",
-            "continent": "Oceania",
-            "capital": "Kingston (Norfolk)"
-          },
-          {
-            "alpha2": "KP",
-            "country": "North Korea",
-            "continent": "Asia",
-            "capital": "Pyongyang"
-          },
-          {
-            "alpha2": "MP",
-            "country": "Northern Mariana Islands",
-            "continent": "Oceania",
-            "capital": "Capitol Hill"
-          },
-          {
-            "alpha2": "NO",
-            "country": "Norway",
-            "continent": "Europe",
-            "capital": "Oslo"
-          },
-          {
-            "alpha2": "OM",
-            "country": "Oman",
-            "continent": "Asia",
-            "capital": "Muscat"
-          },
-          {
-            "alpha2": "PK",
-            "country": "Pakistan",
-            "continent": "Asia",
-            "capital": "Islamabad"
-          },
-          {
-            "alpha2": "PW",
-            "country": "Palau",
-            "continent": "Oceania",
-            "capital": "Ngerulmud"
-          },
-          {
-            "alpha2": "PA",
-            "country": "Panama",
-            "continent": "North America",
-            "capital": "Panama City"
-          },
-          {
-            "alpha2": "PG",
-            "country": "Papua New Guinea",
-            "continent": "Oceania",
-            "capital": "Port Moresby"
-          },
-          {
-            "alpha2": "PY",
-            "country": "Paraguay",
-            "continent": "South America",
-            "capital": "Asunción"
-          },
-          {
-            "alpha2": "PE",
-            "country": "Peru",
-            "continent": "South America",
-            "capital": "Lima"
-          },
-          {
-            "alpha2": "PH",
-            "country": "Philippines",
-            "continent": "Asia",
-            "capital": "Manila"
-          },
-          {
-            "alpha2": "PN",
-            "country": "Pitcairn",
-            "continent": "Oceania",
-            "capital": "Adamstown"
-          },
-          {
-            "alpha2": "PL",
-            "country": "Poland",
-            "continent": "Europe",
-            "capital": "Warsaw"
-          },
-          {
-            "alpha2": "PT",
-            "country": "Portugal",
-            "continent": "Europe",
-            "capital": "Lisbon"
-          },
-          {
-            "alpha2": "PR",
-            "country": "Puerto Rico",
-            "continent": "North America",
-            "capital": "San Juan"
-          },
-          {
-            "alpha2": "QA",
-            "country": "Qatar",
-            "continent": "Asia",
-            "capital": "Doha"
-          },
-          {
-            "alpha2": "CG",
-            "country": "Republic of the Congo",
-            "continent": "Africa",
-            "capital": "Brazzaville"
-          },
-          {
-            "alpha2": "RO",
-            "country": "Romania",
-            "continent": "Europe",
-            "capital": "Bucharest"
-          },
-          {
-            "alpha2": "RU",
-            "country": "Russia",
-            "continent": "Europe",
-            "capital": "Moscow"
-          },
-          {
-            "alpha2": "RW",
-            "country": "Rwanda",
-            "continent": "Africa",
-            "capital": "Kigali"
-          },
-          {
-            "alpha2": "RE",
-            "country": "Réunion",
-            "continent": "Africa",
-            "capital": "Saint-Denis"
-          },
-          {
-            "alpha2": "BL",
-            "country": "Saint Barthélemy",
-            "continent": "North America",
-            "capital": "Gustavia"
-          },
-          {
-            "alpha2": "SH",
-            "country": "Saint Helena, Ascension and Tristan da Cunha",
-            "continent": "Africa",
-            "capital": "Jamestown"
-          },
-          {
-            "alpha2": "KN",
-            "country": "Saint Kitts and Nevis",
-            "continent": "North America",
-            "capital": "Basseterre"
-          },
-          {
-            "alpha2": "LC",
-            "country": "Saint Lucia",
-            "continent": "North America",
-            "capital": "Castries"
-          },
-          {
-            "alpha2": "MF",
-            "country": "Saint Martin",
-            "continent": "North America",
-            "capital": "Marigot"
-          },
-          {
-            "alpha2": "PM",
-            "country": "Saint Pierre and Miquelon",
-            "continent": "North America",
-            "capital": "Saint-Pierre"
-          },
-          {
-            "alpha2": "VC",
-            "country": "Saint Vincent and the Grenadines",
-            "continent": "North America",
-            "capital": "Kingstown"
-          },
-          {
-            "alpha2": "WS",
-            "country": "Samoa",
-            "continent": "Oceania",
-            "capital": "Apia"
-          },
-          {
-            "alpha2": "SM",
-            "country": "San Marino",
-            "continent": "Europe",
-            "capital": "San Marino"
-          },
-          {
-            "alpha2": "ST",
-            "country": "Sao Tome and Principe",
-            "continent": "Africa",
-            "capital": "São Tomé"
-          },
-          {
-            "alpha2": "SA",
-            "country": "Saudi Arabia",
-            "continent": "Asia",
-            "capital": "Riyadh"
-          },
-          {
-            "alpha2": "SN",
-            "country": "Senegal",
-            "continent": "Africa",
-            "capital": "Dakar"
-          },
-          {
-            "alpha2": "RS",
-            "country": "Serbia",
-            "continent": "Europe",
-            "capital": "Belgrade"
-          },
-          {
-            "alpha2": "SC",
-            "country": "Seychelles",
-            "continent": "Africa",
-            "capital": "Victoria"
-          },
-          {
-            "alpha2": "SL",
-            "country": "Sierra Leone",
-            "continent": "Africa",
-            "capital": "Freetown"
-          },
-          {
-            "alpha2": "SG",
-            "country": "Singapore",
-            "continent": "Asia",
-            "capital": "Singapore"
-          },
-          {
-            "alpha2": "SX",
-            "country": "Sint Maarten",
-            "continent": "North America",
-            "capital": "Philipsburg"
-          },
-          {
-            "alpha2": "SK",
-            "country": "Slovakia",
-            "continent": "Europe",
-            "capital": "Bratislava"
-          },
-          {
-            "alpha2": "SI",
-            "country": "Slovenia",
-            "continent": "Europe",
-            "capital": "Ljubljana"
-          },
-          {
-            "alpha2": "SB",
-            "country": "Solomon Islands",
-            "continent": "Oceania",
-            "capital": "Honiara"
-          },
-          {
-            "alpha2": "SO",
-            "country": "Somalia",
-            "continent": "Africa",
-            "capital": "Mogadishu"
-          },
-          {
-            "alpha2": "ZA",
-            "country": "South Africa",
-            "continent": "Africa",
-            "capital": "Pretoria"
-          },
-          {
-            "alpha2": "GS",
-            "country": "South Georgia and the South Sandwich Islands",
-            "continent": "Antarctica",
-            "capital": "King Edward Point"
-          },
-          {
-            "alpha2": "KR",
-            "country": "South Korea",
-            "continent": "Asia",
-            "capital": "Seoul"
-          },
-          {
-            "alpha2": "SS",
-            "country": "South Sudan",
-            "continent": "Africa",
-            "capital": "Juba"
-          },
-          {
-            "alpha2": "ES",
-            "country": "Spain",
-            "continent": "Europe",
-            "capital": "Madrid"
-          },
-          {
-            "alpha2": "LK",
-            "country": "Sri Lanka",
-            "continent": "Asia",
-            "capital": "Sri Jayawardenepura Kotte, Colombo"
-          },
-          {
-            "alpha2": "PS",
-            "country": "State of Palestine",
-            "continent": "Asia",
-            "capital": "Ramallah"
-          },
-          {
-            "alpha2": "SD",
-            "country": "Sudan",
-            "continent": "Africa",
-            "capital": "Khartoum"
-          },
-          {
-            "alpha2": "SR",
-            "country": "Suriname",
-            "continent": "South America",
-            "capital": "Paramaribo"
-          },
-          {
-            "alpha2": "SJ",
-            "country": "Svalbard and Jan Mayen",
-            "continent": "Europe",
-            "capital": "Longyearbyen"
-          },
-          {
-            "alpha2": "SZ",
-            "country": "Swaziland",
-            "continent": "Africa",
-            "capital": "Lobamba, Mbabane"
-          },
-          {
-            "alpha2": "SE",
-            "country": "Sweden",
-            "continent": "Europe",
-            "capital": "Stockholm"
-          },
-          {
-            "alpha2": "CH",
-            "country": "Switzerland",
-            "continent": "Europe",
-            "capital": "Bern"
-          },
-          {
-            "alpha2": "SY",
-            "country": "Syrian Arab Republic",
-            "continent": "Asia",
-            "capital": "Damascus"
-          },
-          {
-            "alpha2": "TW",
-            "country": "Taiwan",
-            "continent": "Asia",
-            "capital": "Taipei"
-          },
-          {
-            "alpha2": "TJ",
-            "country": "Tajikistan",
-            "continent": "Asia",
-            "capital": "Dushanbe"
-          },
-          {
-            "alpha2": "TZ",
-            "country": "Tanzania",
-            "continent": "Africa",
-            "capital": "Dodoma"
-          },
-          {
-            "alpha2": "TH",
-            "country": "Thailand",
-            "continent": "Asia",
-            "capital": "Bangkok"
-          },
-          {
-            "alpha2": "TL",
-            "country": "Timor-Leste",
-            "continent": "Asia",
-            "capital": "Dili"
-          },
-          {
-            "alpha2": "TG",
-            "country": "Togo",
-            "continent": "Africa",
-            "capital": "Lomé"
-          },
-          {
-            "alpha2": "TK",
-            "country": "Tokelau",
-            "continent": "Oceania",
-            "capital": "Nukunonu, Atafu,Tokelau"
-          },
-          {
-            "alpha2": "TO",
-            "country": "Tonga",
-            "continent": "Oceania",
-            "capital": "Nukuʻalofa"
-          },
-          {
-            "alpha2": "TT",
-            "country": "Trinidad and Tobago",
-            "continent": "South America",
-            "capital": "Port of Spain"
-          },
-          {
-            "alpha2": "TN",
-            "country": "Tunisia",
-            "continent": "Africa",
-            "capital": "Tunis"
-          },
-          {
-            "alpha2": "TR",
-            "country": "Turkey",
-            "continent": "Asia",
-            "capital": "Ankara"
-          },
-          {
-            "alpha2": "TM",
-            "country": "Turkmenistan",
-            "continent": "Asia",
-            "capital": "Ashgabat"
-          },
-          {
-            "alpha2": "TC",
-            "country": "Turks and Caicos Islands",
-            "continent": "North America",
-            "capital": "Cockburn Town"
-          },
-          {
-            "alpha2": "TV",
-            "country": "Tuvalu",
-            "continent": "Oceania",
-            "capital": "Funafuti"
-          },
-          {
-            "alpha2": "UG",
-            "country": "Uganda",
-            "continent": "Africa",
-            "capital": "Kampala"
-          },
-          {
-            "alpha2": "UA",
-            "country": "Ukraine",
-            "continent": "Europe",
-            "capital": "Kiev"
-          },
-          {
-            "alpha2": "AE",
-            "country": "United Arab Emirates",
-            "continent": "Asia",
-            "capital": "Abu Dhabi"
-          },
-          {
-            "alpha2": "GB",
-            "country": "United Kingdom",
-            "continent": "Europe",
-            "capital": "London"
-          },
-          {
-            "alpha2": "UM",
-            "country": "United States Minor Outlying Islands",
-            "continent": "North America",
-            "capital": "Washington, D.C."
-          },
-          {
-            "alpha2": "US",
-            "country": "United States of America",
-            "continent": "North America",
-            "capital": "Washington, D.C."
-          },
-          {
-            "alpha2": "UY",
-            "country": "Uruguay",
-            "continent": "South America",
-            "capital": "Montevideo"
-          },
-          {
-            "alpha2": "UZ",
-            "country": "Uzbekistan",
-            "continent": "Asia",
-            "capital": "Tashkent"
-          },
-          {
-            "alpha2": "VU",
-            "country": "Vanuatu",
-            "continent": "Oceania",
-            "capital": "Port Vila"
-          },
-          {
-            "alpha2": "VE",
-            "country": "Venezuela (Bolivarian Republic of)",
-            "continent": "South America",
-            "capital": "Caracas"
-          },
-          {
-            "alpha2": "VN",
-            "country": "Vietnam",
-            "continent": "Asia",
-            "capital": "Hanoi"
-          },
-          {
-            "alpha2": "VG",
-            "country": "Virgin Islands (British)",
-            "continent": "North America",
-            "capital": "Road Town"
-          },
-          {
-            "alpha2": "VI",
-            "country": "Virgin Islands (U.S.)",
-            "continent": "North America",
-            "capital": "Charlotte Amalie"
-          },
-          {
-            "alpha2": "WF",
-            "country": "Wallis and Futuna",
-            "continent": "Oceania",
-            "capital": "Mata-Utu"
-          },
-          {
-            "alpha2": "EH",
-            "country": "Western Sahara",
-            "continent": "Africa",
-            "capital": "Laayoune"
-          },
-          {
-            "alpha2": "YE",
-            "country": "Yemen",
-            "continent": "Asia",
-            "capital": "Sana'a"
-          },
-          {
-            "alpha2": "ZM",
-            "country": "Zambia",
-            "continent": "Africa",
-            "capital": "Lusaka"
-          },
-          {
-            "alpha2": "ZW",
-            "country": "Zimbabwe",
-            "continent": "Africa",
-            "capital": "Harare"
-          }
-        ]
+            'alpha2': 'AF',
+            'country': 'Afghanistan',
+            'continent': 'Asia',
+            'capital': 'Kabul'
+        },
+        {
+            'alpha2': 'AX',
+            'country': 'Aland Islands',
+            'continent': 'Europe',
+            'capital': 'Mariehamn'
+        },
+        {
+            'alpha2': 'AL',
+            'country': 'Albania',
+            'continent': 'Europe',
+            'capital': 'Tirana'
+        },
+        {
+            'alpha2': 'DZ',
+            'country': 'Algeria',
+            'continent': 'Africa',
+            'capital': 'Algiers'
+        },
+        {
+            'alpha2': 'AS',
+            'country': 'American Samoa',
+            'continent': 'Oceania',
+            'capital': 'Pago Pago'
+        },
+        {
+            'alpha2': 'AD',
+            'country': 'Andorra',
+            'continent': 'Europe',
+            'capital': 'Andorra la Vella'
+        },
+        {
+            'alpha2': 'AO',
+            'country': 'Angola',
+            'continent': 'Africa',
+            'capital': 'Luanda'
+        },
+        {
+            'alpha2': 'AI',
+            'country': 'Anguilla',
+            'continent': 'North America',
+            'capital': 'The Valley'
+        },
+        {
+            'alpha2': 'AG',
+            'country': 'Antigua and Barbuda',
+            'continent': 'North America',
+            'capital': 'St. John\'s'
+        },
+        {
+            'alpha2': 'AR',
+            'country': 'Argentina',
+            'continent': 'South America',
+            'capital': 'Buenos Aires'
+        },
+        {
+            'alpha2': 'AM',
+            'country': 'Armenia',
+            'continent': 'Asia',
+            'capital': 'Yerevan'
+        },
+        {
+            'alpha2': 'AW',
+            'country': 'Aruba',
+            'continent': 'South America',
+            'capital': 'Oranjestad'
+        },
+        {
+            'alpha2': 'AU',
+            'country': 'Australia',
+            'continent': 'Oceania',
+            'capital': 'Canberra'
+        },
+        {
+            'alpha2': 'AT',
+            'country': 'Austria',
+            'continent': 'Europe',
+            'capital': 'Vienna'
+        },
+        {
+            'alpha2': 'AZ',
+            'country': 'Azerbaijan',
+            'continent': 'Asia',
+            'capital': 'Baku'
+        },
+        {
+            'alpha2': 'BS',
+            'country': 'Bahamas',
+            'continent': 'North America',
+            'capital': 'Nassau'
+        },
+        {
+            'alpha2': 'BH',
+            'country': 'Bahrain',
+            'continent': 'Asia',
+            'capital': 'Manama'
+        },
+        {
+            'alpha2': 'BD',
+            'country': 'Bangladesh',
+            'continent': 'Asia',
+            'capital': 'Dhaka'
+        },
+        {
+            'alpha2': 'BB',
+            'country': 'Barbados',
+            'continent': 'North America',
+            'capital': 'Bridgetown'
+        },
+        {
+            'alpha2': 'BY',
+            'country': 'Belarus',
+            'continent': 'Europe',
+            'capital': 'Minsk'
+        },
+        {
+            'alpha2': 'BE',
+            'country': 'Belgium',
+            'continent': 'Europe',
+            'capital': 'Brussels'
+        },
+        {
+            'alpha2': 'BZ',
+            'country': 'Belize',
+            'continent': 'North America',
+            'capital': 'Belmopan'
+        },
+        {
+            'alpha2': 'BJ',
+            'country': 'Benin',
+            'continent': 'Africa',
+            'capital': 'Porto-Novo'
+        },
+        {
+            'alpha2': 'BM',
+            'country': 'Bermuda',
+            'continent': 'North America',
+            'capital': 'Hamilton'
+        },
+        {
+            'alpha2': 'BT',
+            'country': 'Bhutan',
+            'continent': 'Asia',
+            'capital': 'Thimphu'
+        },
+        {
+            'alpha2': 'BO',
+            'country': 'Bolivia (Plurinational State of)',
+            'continent': 'South America',
+            'capital': 'Sucre'
+        },
+        {
+            'alpha2': 'BQ',
+            'country': 'Bonaire, Sint Eustatius and Saba',
+            'continent': 'South America',
+            'capital': 'Kralendijk'
+        },
+        {
+            'alpha2': 'BA',
+            'country': 'Bosnia and Herzegovina',
+            'continent': 'Europe',
+            'capital': 'Sarajevo'
+        },
+        {
+            'alpha2': 'BW',
+            'country': 'Botswana',
+            'continent': 'Africa',
+            'capital': 'Gaborone'
+        },
+        {
+            'alpha2': 'BR',
+            'country': 'Brazil',
+            'continent': 'South America',
+            'capital': 'Brasília'
+        },
+        {
+            'alpha2': 'IO',
+            'country': 'British Indian Ocean Territory',
+            'continent': 'Asia',
+            'capital': 'Diego Garcia'
+        },
+        {
+            'alpha2': 'BN',
+            'country': 'Brunei Darussalam',
+            'continent': 'Asia',
+            'capital': 'Bandar Seri Begawan'
+        },
+        {
+            'alpha2': 'BG',
+            'country': 'Bulgaria',
+            'continent': 'Europe',
+            'capital': 'Sofia'
+        },
+        {
+            'alpha2': 'BF',
+            'country': 'Burkina Faso',
+            'continent': 'Africa',
+            'capital': 'Ouagadougou'
+        },
+        {
+            'alpha2': 'BI',
+            'country': 'Burundi',
+            'continent': 'Africa',
+            'capital': 'Bujumbura'
+        },
+        {
+            'alpha2': 'CV',
+            'country': 'Cabo Verde',
+            'continent': 'Africa',
+            'capital': 'Praia'
+        },
+        {
+            'alpha2': 'KH',
+            'country': 'Cambodia',
+            'continent': 'Asia',
+            'capital': 'Phnom Penh'
+        },
+        {
+            'alpha2': 'CM',
+            'country': 'Cameroon',
+            'continent': 'Africa',
+            'capital': 'Yaoundé'
+        },
+        {
+            'alpha2': 'CA',
+            'country': 'Canada',
+            'continent': 'North America',
+            'capital': 'Ottawa'
+        },
+        {
+            'alpha2': 'KY',
+            'country': 'Cayman Islands',
+            'continent': 'North America',
+            'capital': 'George Town'
+        },
+        {
+            'alpha2': 'CF',
+            'country': 'Central African Republic',
+            'continent': 'Africa',
+            'capital': 'Bangui'
+        },
+        {
+            'alpha2': 'TD',
+            'country': 'Chad',
+            'continent': 'Africa',
+            'capital': 'N\'Djamena'
+        },
+        {
+            'alpha2': 'CL',
+            'country': 'Chile',
+            'continent': 'South America',
+            'capital': 'Santiago'
+        },
+        {
+            'alpha2': 'CN',
+            'country': 'China',
+            'continent': 'Asia',
+            'capital': 'Beijing'
+        },
+        {
+            'alpha2': 'CX',
+            'country': 'Christmas Island',
+            'continent': 'Asia',
+            'capital': 'Flying Fish Cove'
+        },
+        {
+            'alpha2': 'CC',
+            'country': 'Cocos (Keeling) Islands',
+            'continent': 'Asia',
+            'capital': 'West Island'
+        },
+        {
+            'alpha2': 'CO',
+            'country': 'Colombia',
+            'continent': 'South America',
+            'capital': 'Bogotá'
+        },
+        {
+            'alpha2': 'KM',
+            'country': 'Comoros',
+            'continent': 'Africa',
+            'capital': 'Moroni'
+        },
+        {
+            'alpha2': 'CK',
+            'country': 'Cook Islands',
+            'continent': 'Oceania',
+            'capital': 'Avarua'
+        },
+        {
+            'alpha2': 'CR',
+            'country': 'Costa Rica',
+            'continent': 'North America',
+            'capital': 'San José'
+        },
+        {
+            'alpha2': 'HR',
+            'country': 'Croatia',
+            'continent': 'Europe',
+            'capital': 'Zagreb'
+        },
+        {
+            'alpha2': 'CU',
+            'country': 'Cuba',
+            'continent': 'North America',
+            'capital': 'Havana'
+        },
+        {
+            'alpha2': 'CW',
+            'country': 'Curaçao',
+            'continent': 'South America',
+            'capital': 'Willemstad'
+        },
+        {
+            'alpha2': 'CY',
+            'country': 'Cyprus',
+            'continent': 'Europe',
+            'capital': 'Nicosia'
+        },
+        {
+            'alpha2': 'CZ',
+            'country': 'Czech Republic',
+            'continent': 'Europe',
+            'capital': 'Prague'
+        },
+        {
+            'alpha2': 'CI',
+            'country': 'Côte d\'Ivoire',
+            'continent': 'Africa',
+            'capital': 'Yamoussoukro'
+        },
+        {
+            'alpha2': 'CD',
+            'country': 'Democratic Republic of the Congo',
+            'continent': 'Africa',
+            'capital': 'Kinshasa'
+        },
+        {
+            'alpha2': 'DK',
+            'country': 'Denmark',
+            'continent': 'Europe',
+            'capital': 'Copenhagen'
+        },
+        {
+            'alpha2': 'DJ',
+            'country': 'Djibouti',
+            'continent': 'Africa',
+            'capital': 'Djibouti'
+        },
+        {
+            'alpha2': 'DM',
+            'country': 'Dominica',
+            'continent': 'North America',
+            'capital': 'Roseau'
+        },
+        {
+            'alpha2': 'DO',
+            'country': 'Dominican Republic',
+            'continent': 'North America',
+            'capital': 'Santo Domingo'
+        },
+        {
+            'alpha2': 'EC',
+            'country': 'Ecuador',
+            'continent': 'South America',
+            'capital': 'Quito'
+        },
+        {
+            'alpha2': 'EG',
+            'country': 'Egypt',
+            'continent': 'Africa',
+            'capital': 'Cairo'
+        },
+        {
+            'alpha2': 'SV',
+            'country': 'El Salvador',
+            'continent': 'North America',
+            'capital': 'San Salvador'
+        },
+        {
+            'alpha2': 'GQ',
+            'country': 'Equatorial Guinea',
+            'continent': 'Africa',
+            'capital': 'Malabo'
+        },
+        {
+            'alpha2': 'ER',
+            'country': 'Eritrea',
+            'continent': 'Africa',
+            'capital': 'Asmara'
+        },
+        {
+            'alpha2': 'EE',
+            'country': 'Estonia',
+            'continent': 'Europe',
+            'capital': 'Tallinn'
+        },
+        {
+            'alpha2': 'ET',
+            'country': 'Ethiopia',
+            'continent': 'Africa',
+            'capital': 'Addis Ababa'
+        },
+        {
+            'alpha2': 'FK',
+            'country': 'Falkland Islands',
+            'continent': 'South America',
+            'capital': 'Stanley'
+        },
+        {
+            'alpha2': 'FO',
+            'country': 'Faroe Islands',
+            'continent': 'Europe',
+            'capital': 'Tórshavn'
+        },
+        {
+            'alpha2': 'FM',
+            'country': 'Federated States of Micronesia',
+            'continent': 'Oceania',
+            'capital': 'Palikir'
+        },
+        {
+            'alpha2': 'FJ',
+            'country': 'Fiji',
+            'continent': 'Oceania',
+            'capital': 'Suva'
+        },
+        {
+            'alpha2': 'FI',
+            'country': 'Finland',
+            'continent': 'Europe',
+            'capital': 'Helsinki'
+        },
+        {
+            'alpha2': 'MK',
+            'country': 'Republic of Macedonia',
+            'continent': 'Europe',
+            'capital': 'Skopje'
+        },
+        {
+            'alpha2': 'FR',
+            'country': 'France',
+            'continent': 'Europe',
+            'capital': 'Paris'
+        },
+        {
+            'alpha2': 'GF',
+            'country': 'French Guiana',
+            'continent': 'South America',
+            'capital': 'Cayenne'
+        },
+        {
+            'alpha2': 'PF',
+            'country': 'French Polynesia',
+            'continent': 'Oceania',
+            'capital': 'Papeete'
+        },
+        {
+            'alpha2': 'TF',
+            'country': 'French Southern Territories',
+            'continent': 'Africa',
+            'capital': 'Saint-Pierre, Réunion'
+        },
+        {
+            'alpha2': 'GA',
+            'country': 'Gabon',
+            'continent': 'Africa',
+            'capital': 'Libreville'
+        },
+        {
+            'alpha2': 'GM',
+            'country': 'Gambia',
+            'continent': 'Africa',
+            'capital': 'Banjul'
+        },
+        {
+            'alpha2': 'GE',
+            'country': 'Georgia',
+            'continent': 'Asia',
+            'capital': 'Tbilisi'
+        },
+        {
+            'alpha2': 'DE',
+            'country': 'Germany',
+            'continent': 'Europe',
+            'capital': 'Berlin'
+        },
+        {
+            'alpha2': 'GH',
+            'country': 'Ghana',
+            'continent': 'Africa',
+            'capital': 'Accra'
+        },
+        {
+            'alpha2': 'GI',
+            'country': 'Gibraltar',
+            'continent': 'Europe',
+            'capital': 'Gibraltar'
+        },
+        {
+            'alpha2': 'GR',
+            'country': 'Greece',
+            'continent': 'Europe',
+            'capital': 'Athens'
+        },
+        {
+            'alpha2': 'GL',
+            'country': 'Greenland',
+            'continent': 'North America',
+            'capital': 'Nuuk'
+        },
+        {
+            'alpha2': 'GD',
+            'country': 'Grenada',
+            'continent': 'North America',
+            'capital': 'St. George\'s'
+        },
+        {
+            'alpha2': 'GP',
+            'country': 'Guadeloupe',
+            'continent': 'North America',
+            'capital': 'Basse-Terre'
+        },
+        {
+            'alpha2': 'GU',
+            'country': 'Guam',
+            'continent': 'Oceania',
+            'capital': 'Hagåtña'
+        },
+        {
+            'alpha2': 'GT',
+            'country': 'Guatemala',
+            'continent': 'North America',
+            'capital': 'Guatemala City'
+        },
+        {
+            'alpha2': 'GG',
+            'country': 'Guernsey',
+            'continent': 'Europe',
+            'capital': 'Saint Peter Port'
+        },
+        {
+            'alpha2': 'GN',
+            'country': 'Guinea',
+            'continent': 'Africa',
+            'capital': 'Conakry'
+        },
+        {
+            'alpha2': 'GW',
+            'country': 'Guinea-Bissau',
+            'continent': 'Africa',
+            'capital': 'Bissau'
+        },
+        {
+            'alpha2': 'GY',
+            'country': 'Guyana',
+            'continent': 'South America',
+            'capital': 'Georgetown'
+        },
+        {
+            'alpha2': 'HT',
+            'country': 'Haiti',
+            'continent': 'North America',
+            'capital': 'Port-au-Prince'
+        },
+        {
+            'alpha2': 'VA',
+            'country': 'Holy See',
+            'continent': 'Europe',
+            'capital': 'Vatican City'
+        },
+        {
+            'alpha2': 'HN',
+            'country': 'Honduras',
+            'continent': 'North America',
+            'capital': 'Tegucigalpa'
+        },
+        {
+            'alpha2': 'HK',
+            'country': 'Hong Kong',
+            'continent': 'Asia',
+            'capital': 'Hong Kong'
+        },
+        {
+            'alpha2': 'HU',
+            'country': 'Hungary',
+            'continent': 'Europe',
+            'capital': 'Budapest'
+        },
+        {
+            'alpha2': 'IS',
+            'country': 'Iceland',
+            'continent': 'Europe',
+            'capital': 'Reykjavik'
+        },
+        {
+            'alpha2': 'IN',
+            'country': 'India',
+            'continent': 'Asia',
+            'capital': 'New Delhi'
+        },
+        {
+            'alpha2': 'ID',
+            'country': 'Indonesia',
+            'continent': 'Asia',
+            'capital': 'Jakarta'
+        },
+        {
+            'alpha2': 'IR',
+            'country': 'Iran (Islamic Republic of)',
+            'continent': 'Asia',
+            'capital': 'Tehran'
+        },
+        {
+            'alpha2': 'IQ',
+            'country': 'Iraq',
+            'continent': 'Asia',
+            'capital': 'Baghdad'
+        },
+        {
+            'alpha2': 'IE',
+            'country': 'Ireland',
+            'continent': 'Europe',
+            'capital': 'Dublin'
+        },
+        {
+            'alpha2': 'IM',
+            'country': 'Isle of Man',
+            'continent': 'Europe',
+            'capital': 'Douglas'
+        },
+        {
+            'alpha2': 'IL',
+            'country': 'Israel',
+            'continent': 'Asia',
+            'capital': 'Jerusalem'
+        },
+        {
+            'alpha2': 'IT',
+            'country': 'Italy',
+            'continent': 'Europe',
+            'capital': 'Rome'
+        },
+        {
+            'alpha2': 'JM',
+            'country': 'Jamaica',
+            'continent': 'North America',
+            'capital': 'Kingston (Jamaica)'
+        },
+        {
+            'alpha2': 'JP',
+            'country': 'Japan',
+            'continent': 'Asia',
+            'capital': 'Tokyo'
+        },
+        {
+            'alpha2': 'JE',
+            'country': 'Jersey',
+            'continent': 'Europe',
+            'capital': 'Saint Helier'
+        },
+        {
+            'alpha2': 'JO',
+            'country': 'Jordan',
+            'continent': 'Asia',
+            'capital': 'Amman'
+        },
+        {
+            'alpha2': 'KZ',
+            'country': 'Kazakhstan',
+            'continent': 'Asia',
+            'capital': 'Astana'
+        },
+        {
+            'alpha2': 'KE',
+            'country': 'Kenya',
+            'continent': 'Africa',
+            'capital': 'Nairobi'
+        },
+        {
+            'alpha2': 'KI',
+            'country': 'Kiribati',
+            'continent': 'Oceania',
+            'capital': 'South Tarawa'
+        },
+        {
+            'alpha2': 'KW',
+            'country': 'Kuwait',
+            'continent': 'Asia',
+            'capital': 'Kuwait City'
+        },
+        {
+            'alpha2': 'KG',
+            'country': 'Kyrgyzstan',
+            'continent': 'Asia',
+            'capital': 'Bishkek'
+        },
+        {
+            'alpha2': 'LA',
+            'country': 'Laos',
+            'continent': 'Asia',
+            'capital': 'Vientiane'
+        },
+        {
+            'alpha2': 'LV',
+            'country': 'Latvia',
+            'continent': 'Europe',
+            'capital': 'Riga'
+        },
+        {
+            'alpha2': 'LB',
+            'country': 'Lebanon',
+            'continent': 'Asia',
+            'capital': 'Beirut'
+        },
+        {
+            'alpha2': 'LS',
+            'country': 'Lesotho',
+            'continent': 'Africa',
+            'capital': 'Maseru'
+        },
+        {
+            'alpha2': 'LR',
+            'country': 'Liberia',
+            'continent': 'Africa',
+            'capital': 'Monrovia'
+        },
+        {
+            'alpha2': 'LY',
+            'country': 'Libya',
+            'continent': 'Africa',
+            'capital': 'Tripoli'
+        },
+        {
+            'alpha2': 'LI',
+            'country': 'Liechtenstein',
+            'continent': 'Europe',
+            'capital': 'Vaduz'
+        },
+        {
+            'alpha2': 'LT',
+            'country': 'Lithuania',
+            'continent': 'Europe',
+            'capital': 'Vilnius'
+        },
+        {
+            'alpha2': 'LU',
+            'country': 'Luxembourg',
+            'continent': 'Europe',
+            'capital': 'Luxembourg City'
+        },
+        {
+            'alpha2': 'MO',
+            'country': 'Macau',
+            'continent': 'Asia',
+            'capital': 'Macau'
+        },
+        {
+            'alpha2': 'MG',
+            'country': 'Madagascar',
+            'continent': 'Africa',
+            'capital': 'Antananarivo'
+        },
+        {
+            'alpha2': 'MW',
+            'country': 'Malawi',
+            'continent': 'Africa',
+            'capital': 'Lilongwe'
+        },
+        {
+            'alpha2': 'MY',
+            'country': 'Malaysia',
+            'continent': 'Asia',
+            'capital': 'Kuala Lumpur'
+        },
+        {
+            'alpha2': 'MV',
+            'country': 'Maldives',
+            'continent': 'Asia',
+            'capital': 'Malé'
+        },
+        {
+            'alpha2': 'ML',
+            'country': 'Mali',
+            'continent': 'Africa',
+            'capital': 'Bamako'
+        },
+        {
+            'alpha2': 'MT',
+            'country': 'Malta',
+            'continent': 'Europe',
+            'capital': 'Valletta'
+        },
+        {
+            'alpha2': 'MH',
+            'country': 'Marshall Islands',
+            'continent': 'Oceania',
+            'capital': 'Majuro'
+        },
+        {
+            'alpha2': 'MQ',
+            'country': 'Martinique',
+            'continent': 'North America',
+            'capital': 'Fort-de-France'
+        },
+        {
+            'alpha2': 'MR',
+            'country': 'Mauritania',
+            'continent': 'Africa',
+            'capital': 'Nouakchott'
+        },
+        {
+            'alpha2': 'MU',
+            'country': 'Mauritius',
+            'continent': 'Africa',
+            'capital': 'Port Louis'
+        },
+        {
+            'alpha2': 'YT',
+            'country': 'Mayotte',
+            'continent': 'Africa',
+            'capital': 'Mamoudzou'
+        },
+        {
+            'alpha2': 'MX',
+            'country': 'Mexico',
+            'continent': 'North America',
+            'capital': 'Mexico City'
+        },
+        {
+            'alpha2': 'MD',
+            'country': 'Moldova',
+            'continent': 'Europe',
+            'capital': 'Chișinău'
+        },
+        {
+            'alpha2': 'MC',
+            'country': 'Monaco',
+            'continent': 'Europe',
+            'capital': 'Monaco'
+        },
+        {
+            'alpha2': 'MN',
+            'country': 'Mongolia',
+            'continent': 'Asia',
+            'capital': 'Ulaanbaatar'
+        },
+        {
+            'alpha2': 'ME',
+            'country': 'Montenegro',
+            'continent': 'Europe',
+            'capital': 'Podgorica'
+        },
+        {
+            'alpha2': 'MS',
+            'country': 'Montserrat',
+            'continent': 'North America',
+            'capital': 'Little Bay, Brades, Plymouth'
+        },
+        {
+            'alpha2': 'MA',
+            'country': 'Morocco',
+            'continent': 'Africa',
+            'capital': 'Rabat'
+        },
+        {
+            'alpha2': 'MZ',
+            'country': 'Mozambique',
+            'continent': 'Africa',
+            'capital': 'Maputo'
+        },
+        {
+            'alpha2': 'MM',
+            'country': 'Myanmar',
+            'continent': 'Asia',
+            'capital': 'Naypyidaw'
+        },
+        {
+            'alpha2': 'NA',
+            'country': 'Namibia',
+            'continent': 'Africa',
+            'capital': 'Windhoek'
+        },
+        {
+            'alpha2': 'NR',
+            'country': 'Nauru',
+            'continent': 'Oceania',
+            'capital': 'Yaren District'
+        },
+        {
+            'alpha2': 'NP',
+            'country': 'Nepal',
+            'continent': 'Asia',
+            'capital': 'Kathmandu'
+        },
+        {
+            'alpha2': 'NL',
+            'country': 'Netherlands',
+            'continent': 'Europe',
+            'capital': 'Amsterdam'
+        },
+        {
+            'alpha2': 'NC',
+            'country': 'New Caledonia',
+            'continent': 'Oceania',
+            'capital': 'Nouméa'
+        },
+        {
+            'alpha2': 'NZ',
+            'country': 'New Zealand',
+            'continent': 'Oceania',
+            'capital': 'Wellington'
+        },
+        {
+            'alpha2': 'NI',
+            'country': 'Nicaragua',
+            'continent': 'North America',
+            'capital': 'Managua'
+        },
+        {
+            'alpha2': 'NE',
+            'country': 'Niger',
+            'continent': 'Africa',
+            'capital': 'Niamey'
+        },
+        {
+            'alpha2': 'NG',
+            'country': 'Nigeria',
+            'continent': 'Africa',
+            'capital': 'Abuja'
+        },
+        {
+            'alpha2': 'NU',
+            'country': 'Niue',
+            'continent': 'Oceania',
+            'capital': 'Alofi'
+        },
+        {
+            'alpha2': 'NF',
+            'country': 'Norfolk Island',
+            'continent': 'Oceania',
+            'capital': 'Kingston (Norfolk)'
+        },
+        {
+            'alpha2': 'KP',
+            'country': 'North Korea',
+            'continent': 'Asia',
+            'capital': 'Pyongyang'
+        },
+        {
+            'alpha2': 'MP',
+            'country': 'Northern Mariana Islands',
+            'continent': 'Oceania',
+            'capital': 'Capitol Hill'
+        },
+        {
+            'alpha2': 'NO',
+            'country': 'Norway',
+            'continent': 'Europe',
+            'capital': 'Oslo'
+        },
+        {
+            'alpha2': 'OM',
+            'country': 'Oman',
+            'continent': 'Asia',
+            'capital': 'Muscat'
+        },
+        {
+            'alpha2': 'PK',
+            'country': 'Pakistan',
+            'continent': 'Asia',
+            'capital': 'Islamabad'
+        },
+        {
+            'alpha2': 'PW',
+            'country': 'Palau',
+            'continent': 'Oceania',
+            'capital': 'Ngerulmud'
+        },
+        {
+            'alpha2': 'PA',
+            'country': 'Panama',
+            'continent': 'North America',
+            'capital': 'Panama City'
+        },
+        {
+            'alpha2': 'PG',
+            'country': 'Papua New Guinea',
+            'continent': 'Oceania',
+            'capital': 'Port Moresby'
+        },
+        {
+            'alpha2': 'PY',
+            'country': 'Paraguay',
+            'continent': 'South America',
+            'capital': 'Asunción'
+        },
+        {
+            'alpha2': 'PE',
+            'country': 'Peru',
+            'continent': 'South America',
+            'capital': 'Lima'
+        },
+        {
+            'alpha2': 'PH',
+            'country': 'Philippines',
+            'continent': 'Asia',
+            'capital': 'Manila'
+        },
+        {
+            'alpha2': 'PN',
+            'country': 'Pitcairn',
+            'continent': 'Oceania',
+            'capital': 'Adamstown'
+        },
+        {
+            'alpha2': 'PL',
+            'country': 'Poland',
+            'continent': 'Europe',
+            'capital': 'Warsaw'
+        },
+        {
+            'alpha2': 'PT',
+            'country': 'Portugal',
+            'continent': 'Europe',
+            'capital': 'Lisbon'
+        },
+        {
+            'alpha2': 'PR',
+            'country': 'Puerto Rico',
+            'continent': 'North America',
+            'capital': 'San Juan'
+        },
+        {
+            'alpha2': 'QA',
+            'country': 'Qatar',
+            'continent': 'Asia',
+            'capital': 'Doha'
+        },
+        {
+            'alpha2': 'CG',
+            'country': 'Republic of the Congo',
+            'continent': 'Africa',
+            'capital': 'Brazzaville'
+        },
+        {
+            'alpha2': 'RO',
+            'country': 'Romania',
+            'continent': 'Europe',
+            'capital': 'Bucharest'
+        },
+        {
+            'alpha2': 'RU',
+            'country': 'Russia',
+            'continent': 'Europe',
+            'capital': 'Moscow'
+        },
+        {
+            'alpha2': 'RW',
+            'country': 'Rwanda',
+            'continent': 'Africa',
+            'capital': 'Kigali'
+        },
+        {
+            'alpha2': 'RE',
+            'country': 'Réunion',
+            'continent': 'Africa',
+            'capital': 'Saint-Denis'
+        },
+        {
+            'alpha2': 'BL',
+            'country': 'Saint Barthélemy',
+            'continent': 'North America',
+            'capital': 'Gustavia'
+        },
+        {
+            'alpha2': 'SH',
+            'country': 'Saint Helena, Ascension and Tristan da Cunha',
+            'continent': 'Africa',
+            'capital': 'Jamestown'
+        },
+        {
+            'alpha2': 'KN',
+            'country': 'Saint Kitts and Nevis',
+            'continent': 'North America',
+            'capital': 'Basseterre'
+        },
+        {
+            'alpha2': 'LC',
+            'country': 'Saint Lucia',
+            'continent': 'North America',
+            'capital': 'Castries'
+        },
+        {
+            'alpha2': 'MF',
+            'country': 'Saint Martin',
+            'continent': 'North America',
+            'capital': 'Marigot'
+        },
+        {
+            'alpha2': 'PM',
+            'country': 'Saint Pierre and Miquelon',
+            'continent': 'North America',
+            'capital': 'Saint-Pierre'
+        },
+        {
+            'alpha2': 'VC',
+            'country': 'Saint Vincent and the Grenadines',
+            'continent': 'North America',
+            'capital': 'Kingstown'
+        },
+        {
+            'alpha2': 'WS',
+            'country': 'Samoa',
+            'continent': 'Oceania',
+            'capital': 'Apia'
+        },
+        {
+            'alpha2': 'SM',
+            'country': 'San Marino',
+            'continent': 'Europe',
+            'capital': 'San Marino'
+        },
+        {
+            'alpha2': 'ST',
+            'country': 'Sao Tome and Principe',
+            'continent': 'Africa',
+            'capital': 'São Tomé'
+        },
+        {
+            'alpha2': 'SA',
+            'country': 'Saudi Arabia',
+            'continent': 'Asia',
+            'capital': 'Riyadh'
+        },
+        {
+            'alpha2': 'SN',
+            'country': 'Senegal',
+            'continent': 'Africa',
+            'capital': 'Dakar'
+        },
+        {
+            'alpha2': 'RS',
+            'country': 'Serbia',
+            'continent': 'Europe',
+            'capital': 'Belgrade'
+        },
+        {
+            'alpha2': 'SC',
+            'country': 'Seychelles',
+            'continent': 'Africa',
+            'capital': 'Victoria'
+        },
+        {
+            'alpha2': 'SL',
+            'country': 'Sierra Leone',
+            'continent': 'Africa',
+            'capital': 'Freetown'
+        },
+        {
+            'alpha2': 'SG',
+            'country': 'Singapore',
+            'continent': 'Asia',
+            'capital': 'Singapore'
+        },
+        {
+            'alpha2': 'SX',
+            'country': 'Sint Maarten',
+            'continent': 'North America',
+            'capital': 'Philipsburg'
+        },
+        {
+            'alpha2': 'SK',
+            'country': 'Slovakia',
+            'continent': 'Europe',
+            'capital': 'Bratislava'
+        },
+        {
+            'alpha2': 'SI',
+            'country': 'Slovenia',
+            'continent': 'Europe',
+            'capital': 'Ljubljana'
+        },
+        {
+            'alpha2': 'SB',
+            'country': 'Solomon Islands',
+            'continent': 'Oceania',
+            'capital': 'Honiara'
+        },
+        {
+            'alpha2': 'SO',
+            'country': 'Somalia',
+            'continent': 'Africa',
+            'capital': 'Mogadishu'
+        },
+        {
+            'alpha2': 'ZA',
+            'country': 'South Africa',
+            'continent': 'Africa',
+            'capital': 'Pretoria'
+        },
+        {
+            'alpha2': 'GS',
+            'country': 'South Georgia and the South Sandwich Islands',
+            'continent': 'Antarctica',
+            'capital': 'King Edward Point'
+        },
+        {
+            'alpha2': 'KR',
+            'country': 'South Korea',
+            'continent': 'Asia',
+            'capital': 'Seoul'
+        },
+        {
+            'alpha2': 'SS',
+            'country': 'South Sudan',
+            'continent': 'Africa',
+            'capital': 'Juba'
+        },
+        {
+            'alpha2': 'ES',
+            'country': 'Spain',
+            'continent': 'Europe',
+            'capital': 'Madrid'
+        },
+        {
+            'alpha2': 'LK',
+            'country': 'Sri Lanka',
+            'continent': 'Asia',
+            'capital': 'Sri Jayawardenepura Kotte, Colombo'
+        },
+        {
+            'alpha2': 'PS',
+            'country': 'State of Palestine',
+            'continent': 'Asia',
+            'capital': 'Ramallah'
+        },
+        {
+            'alpha2': 'SD',
+            'country': 'Sudan',
+            'continent': 'Africa',
+            'capital': 'Khartoum'
+        },
+        {
+            'alpha2': 'SR',
+            'country': 'Suriname',
+            'continent': 'South America',
+            'capital': 'Paramaribo'
+        },
+        {
+            'alpha2': 'SJ',
+            'country': 'Svalbard and Jan Mayen',
+            'continent': 'Europe',
+            'capital': 'Longyearbyen'
+        },
+        {
+            'alpha2': 'SZ',
+            'country': 'Swaziland',
+            'continent': 'Africa',
+            'capital': 'Lobamba, Mbabane'
+        },
+        {
+            'alpha2': 'SE',
+            'country': 'Sweden',
+            'continent': 'Europe',
+            'capital': 'Stockholm'
+        },
+        {
+            'alpha2': 'CH',
+            'country': 'Switzerland',
+            'continent': 'Europe',
+            'capital': 'Bern'
+        },
+        {
+            'alpha2': 'SY',
+            'country': 'Syrian Arab Republic',
+            'continent': 'Asia',
+            'capital': 'Damascus'
+        },
+        {
+            'alpha2': 'TW',
+            'country': 'Taiwan',
+            'continent': 'Asia',
+            'capital': 'Taipei'
+        },
+        {
+            'alpha2': 'TJ',
+            'country': 'Tajikistan',
+            'continent': 'Asia',
+            'capital': 'Dushanbe'
+        },
+        {
+            'alpha2': 'TZ',
+            'country': 'Tanzania',
+            'continent': 'Africa',
+            'capital': 'Dodoma'
+        },
+        {
+            'alpha2': 'TH',
+            'country': 'Thailand',
+            'continent': 'Asia',
+            'capital': 'Bangkok'
+        },
+        {
+            'alpha2': 'TL',
+            'country': 'Timor-Leste',
+            'continent': 'Asia',
+            'capital': 'Dili'
+        },
+        {
+            'alpha2': 'TG',
+            'country': 'Togo',
+            'continent': 'Africa',
+            'capital': 'Lomé'
+        },
+        {
+            'alpha2': 'TK',
+            'country': 'Tokelau',
+            'continent': 'Oceania',
+            'capital': 'Nukunonu, Atafu,Tokelau'
+        },
+        {
+            'alpha2': 'TO',
+            'country': 'Tonga',
+            'continent': 'Oceania',
+            'capital': 'Nukuʻalofa'
+        },
+        {
+            'alpha2': 'TT',
+            'country': 'Trinidad and Tobago',
+            'continent': 'South America',
+            'capital': 'Port of Spain'
+        },
+        {
+            'alpha2': 'TN',
+            'country': 'Tunisia',
+            'continent': 'Africa',
+            'capital': 'Tunis'
+        },
+        {
+            'alpha2': 'TR',
+            'country': 'Turkey',
+            'continent': 'Asia',
+            'capital': 'Ankara'
+        },
+        {
+            'alpha2': 'TM',
+            'country': 'Turkmenistan',
+            'continent': 'Asia',
+            'capital': 'Ashgabat'
+        },
+        {
+            'alpha2': 'TC',
+            'country': 'Turks and Caicos Islands',
+            'continent': 'North America',
+            'capital': 'Cockburn Town'
+        },
+        {
+            'alpha2': 'TV',
+            'country': 'Tuvalu',
+            'continent': 'Oceania',
+            'capital': 'Funafuti'
+        },
+        {
+            'alpha2': 'UG',
+            'country': 'Uganda',
+            'continent': 'Africa',
+            'capital': 'Kampala'
+        },
+        {
+            'alpha2': 'UA',
+            'country': 'Ukraine',
+            'continent': 'Europe',
+            'capital': 'Kiev'
+        },
+        {
+            'alpha2': 'AE',
+            'country': 'United Arab Emirates',
+            'continent': 'Asia',
+            'capital': 'Abu Dhabi'
+        },
+        {
+            'alpha2': 'GB',
+            'country': 'United Kingdom',
+            'continent': 'Europe',
+            'capital': 'London'
+        },
+        {
+            'alpha2': 'UM',
+            'country': 'United States Minor Outlying Islands',
+            'continent': 'North America',
+            'capital': 'Washington, D.C.'
+        },
+        {
+            'alpha2': 'US',
+            'country': 'United States of America',
+            'continent': 'North America',
+            'capital': 'Washington, D.C.'
+        },
+        {
+            'alpha2': 'UY',
+            'country': 'Uruguay',
+            'continent': 'South America',
+            'capital': 'Montevideo'
+        },
+        {
+            'alpha2': 'UZ',
+            'country': 'Uzbekistan',
+            'continent': 'Asia',
+            'capital': 'Tashkent'
+        },
+        {
+            'alpha2': 'VU',
+            'country': 'Vanuatu',
+            'continent': 'Oceania',
+            'capital': 'Port Vila'
+        },
+        {
+            'alpha2': 'VE',
+            'country': 'Venezuela (Bolivarian Republic of)',
+            'continent': 'South America',
+            'capital': 'Caracas'
+        },
+        {
+            'alpha2': 'VN',
+            'country': 'Vietnam',
+            'continent': 'Asia',
+            'capital': 'Hanoi'
+        },
+        {
+            'alpha2': 'VG',
+            'country': 'Virgin Islands (British)',
+            'continent': 'North America',
+            'capital': 'Road Town'
+        },
+        {
+            'alpha2': 'VI',
+            'country': 'Virgin Islands (U.S.)',
+            'continent': 'North America',
+            'capital': 'Charlotte Amalie'
+        },
+        {
+            'alpha2': 'WF',
+            'country': 'Wallis and Futuna',
+            'continent': 'Oceania',
+            'capital': 'Mata-Utu'
+        },
+        {
+            'alpha2': 'EH',
+            'country': 'Western Sahara',
+            'continent': 'Africa',
+            'capital': 'Laayoune'
+        },
+        {
+            'alpha2': 'YE',
+            'country': 'Yemen',
+            'continent': 'Asia',
+            'capital': 'Sana\'a'
+        },
+        {
+            'alpha2': 'ZM',
+            'country': 'Zambia',
+            'continent': 'Africa',
+            'capital': 'Lusaka'
+        },
+        {
+            'alpha2': 'ZW',
+            'country': 'Zimbabwe',
+            'continent': 'Africa',
+            'capital': 'Harare'
+        }
+    ];
 
-//{
-//        "alpha2": "AF",
-//        "country": "Afghanistan",
-//        "continent": "Asia",
-//        "capital": "Kabul"
-//      },
+    //{
+    //        "alpha2": "AF",
+    //        "country": "Afghanistan",
+    //        "continent": "Asia",
+    //        "capital": "Kabul"
+    //      },
     prepare(enContinents, ruContinents, 'enContinents', 'ruContinents', 'continentDict');
     prepare(enCountries, ruCountries, 'enCountries', 'ruCountries', 'countryDict');
     prepare(enCapitals, ruCapitals, 'enCapitals', 'ruCapitals', 'capitalDict');
@@ -2794,7 +2794,7 @@ Harare`;
             enContinent: el.continent,
             enName: el.capital,
             coords: exports.capitalCoords[el.capital].coords
-        }
+        };
     });
     exports.capitals = R.indexBy(R.prop('name'),exports.capitals);
     

@@ -12,38 +12,38 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
    limitations under the License. */
 
-"use strict";
+'use strict';
 
 ((exports)=>{
     
     var state = {};
     
     exports.init = () => {
-      ymaps.ready(() => {
+        ymaps.ready(() => {
         
-        UI.initPanelTogglers();
+            UI.initPanelTogglers();
 
         
-        queryEl('#coordsArea').value = '';
+            queryEl('#coordsArea').value = '';
         
-        simpleDataset();
-        listen(queryEl('#simpleDataset'), 'click', simpleDataset);  
-        listen(queryEl('#capitalsDataset'), 'click', capitalsDataset);  
-        listen(queryEl('#capitalsDataset1'), 'click', capitalsDataset2(0));  
-        listen(queryEl('#capitalsDataset2'), 'click', capitalsDataset2(1));  
-        listen(queryEl('#capitalsDataset3'), 'click', capitalsDataset2(2));  
-        listen(queryEl('#capitalsDataset4'), 'click', capitalsDataset2(3));  
-        listen(queryEl('#capitalsDataset5'), 'click', capitalsDataset2(4));  
-        listen(queryEl('#londonDataset'), 'click', londonDataset);  
-        listen(queryEl('#findCityCoords'), 'click', findCityCoords);  
-        state.map = new ymaps.Map ("map", {
-            center: [55.76, 37.64], 
-            zoom: 2
+            simpleDataset();
+            listen(queryEl('#simpleDataset'), 'click', simpleDataset);  
+            listen(queryEl('#capitalsDataset'), 'click', capitalsDataset);  
+            listen(queryEl('#capitalsDataset1'), 'click', capitalsDataset2(0));  
+            listen(queryEl('#capitalsDataset2'), 'click', capitalsDataset2(1));  
+            listen(queryEl('#capitalsDataset3'), 'click', capitalsDataset2(2));  
+            listen(queryEl('#capitalsDataset4'), 'click', capitalsDataset2(3));  
+            listen(queryEl('#capitalsDataset5'), 'click', capitalsDataset2(4));  
+            listen(queryEl('#londonDataset'), 'click', londonDataset);  
+            listen(queryEl('#findCityCoords'), 'click', findCityCoords);  
+            state.map = new ymaps.Map ('map', {
+                center: [55.76, 37.64], 
+                zoom: 2
+            });
+        
+            state.map.behaviors.enable('scrollZoom');
+        
         });
-        
-        state.map.behaviors.enable('scrollZoom');
-        
-      });
 
     };
     
@@ -84,7 +84,7 @@ See the License for the specific language governing permissions and
                         });
                         
                         state.map.geoObjects.add(myPlacemark);
-                    })
+                    });
                     
                     
                 },
@@ -92,7 +92,7 @@ See the License for the specific language governing permissions and
                     alert('Ошибка');
                 }
             );
-        })
+        });
     };
     
     var simpleDataset = () => {
@@ -101,16 +101,16 @@ See the License for the specific language governing permissions and
 Челябинск
 Екатеринбург
 Новосибирск`;
-//                    Лондон Великобритания
-//                    London
-//                    Лондон
+        //                    Лондон Великобритания
+        //                    London
+        //                    Лондон
     };
     
     var londonDataset = () => {
-        queryEl('#cityArea').value = `Лондон`;
-//                    Лондон Великобритания
-//                    London
-//                    Лондон
+        queryEl('#cityArea').value = 'Лондон';
+        //                    Лондон Великобритания
+        //                    London
+        //                    Лондон
     };
     
     var capitalsList = `Kabul
@@ -370,7 +370,7 @@ Harare`;
     var capitalsDataset2 = (num) => {
         return function() {
             queryEl('#cityArea').value = R.slice(num*50, (num+1)*50, capitalsList).join('\n');
-        }
+        };
     };
     
 })(this['app']={});

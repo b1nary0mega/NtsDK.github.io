@@ -12,64 +12,64 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
    limitations under the License. */
 
-"use strict";
+'use strict';
 
 ((exports)=>{
     
     var state = {};
     
     var checkboxList = [
-        "show-country",
-        "show-continent",
-        "show-seed-capital-mark",
-        "show-capital-marks",
-        "show-shortest-paths"
+        'show-country',
+        'show-continent',
+        'show-seed-capital-mark',
+        'show-capital-marks',
+        'show-shortest-paths'
     ];
     
     
     exports.init = () => {
-//        queryEl('body').innerHTML = JSON.stringify(Data.capitals); 
-      ymaps.ready(() => {
-        dragula([queryEl('.capitalsList')]);
-        listen(queryEl('.start-game'), 'click', startGame);
-        listen(queryEl('.start-game-2'), 'click', startGame);
-        listen(queryEl('.end-game'), 'click', endGame);
-        UI.initPanelTogglers();
-        state.map = new ymaps.Map ("map", {
-//            center: [55.76, 37.64], 
-            center: [0,0], 
-            zoom: 2
-        }, {
-//            projection: ymaps.projection.Cartesian,
-//            projection: ymaps.projection.sphericalMercator,
-//            restrictMapArea: true,
-            minZoom: 1
+        //        queryEl('body').innerHTML = JSON.stringify(Data.capitals); 
+        ymaps.ready(() => {
+            dragula([queryEl('.capitalsList')]);
+            listen(queryEl('.start-game'), 'click', startGame);
+            listen(queryEl('.start-game-2'), 'click', startGame);
+            listen(queryEl('.end-game'), 'click', endGame);
+            UI.initPanelTogglers();
+            state.map = new ymaps.Map ('map', {
+                //            center: [55.76, 37.64], 
+                center: [0,0], 
+                zoom: 2
+            }, {
+                //            projection: ymaps.projection.Cartesian,
+                //            projection: ymaps.projection.sphericalMercator,
+                //            restrictMapArea: true,
+                minZoom: 1
+            });
+            state.map.behaviors.enable('scrollZoom');
         });
-        state.map.behaviors.enable('scrollZoom');
-      });
       
-      checkboxList.forEach(el => queryEl('.' + el).checked = true);
-//      checkboxList.forEach(el => listen(queryEl('.' + el),'change', startGame));
-      checkboxList.forEach(el => listen(queryEl('.' + el),'change', notify));
-//      listen(queryEl('.capital-number'),'change', startGame);
-      listen(queryEl('.capital-number'),'change', notify);
-      listen(queryEl('.min-capital-dist'),'change', notify);
-      listen(queryEl('.full-capital-list'),'change', notify);
-      queryEl('.full-capital-list').checked = false;
-      queryEl('.capital-number').value = 5;
-      queryEl('.min-capital-dist').value = 300;
+        checkboxList.forEach(el => queryEl('.' + el).checked = true);
+        //      checkboxList.forEach(el => listen(queryEl('.' + el),'change', startGame));
+        checkboxList.forEach(el => listen(queryEl('.' + el),'change', notify));
+        //      listen(queryEl('.capital-number'),'change', startGame);
+        listen(queryEl('.capital-number'),'change', notify);
+        listen(queryEl('.min-capital-dist'),'change', notify);
+        listen(queryEl('.full-capital-list'),'change', notify);
+        queryEl('.full-capital-list').checked = false;
+        queryEl('.capital-number').value = 5;
+        queryEl('.min-capital-dist').value = 300;
     };
     
     var notify = () => {
         PNotify.removeAll();
         new PNotify({
-          text: 'Изменения настроек будут применены в следующей игре.',
-          type: 'info',
-          styling: 'bootstrap3',
-          delay: 5000,
-          icon: false
+            text: 'Изменения настроек будут применены в следующей игре.',
+            type: 'info',
+            styling: 'bootstrap3',
+            delay: 5000,
+            icon: false
         });
-    }
+    };
     var bubbleSort = (arr) => {
         var swaps = 0;
         var tmp;
@@ -94,7 +94,7 @@ See the License for the specific language governing permissions and
         
         divs.forEach(el => {
             var name = getAttr(el,'name');
-            addEl(clearEl(queryElEl(el, '.dist')), makeText(' (' + Math.round(caps[name].distance/1000) + ' км)'))
+            addEl(clearEl(queryElEl(el, '.dist')), makeText(' (' + Math.round(caps[name].distance/1000) + ' км)'));
         });
         
         var capsArr = capitalNames.map(el => caps[el]);
@@ -105,18 +105,18 @@ See the License for the specific language governing permissions and
         var advices = R.sum(checkboxList.map(el => queryEl('.' + el).checked ? 1: 0));
         var str;
         switch(advices){
-            case 0: str="без подсказок!"; break;
-            case 1: str="с одной подсказкой!"; break;
-            case 2: str = "с " + advices + " подсказками!"; break;
-            case 3:case 4:case 5: str = "с " + advices + " подсказками."; break;
-        };   
+        case 0: str='без подсказок!'; break;
+        case 1: str='с одной подсказкой!'; break;
+        case 2: str = 'с ' + advices + ' подсказками!'; break;
+        case 3:case 4:case 5: str = 'с ' + advices + ' подсказками.'; break;
+        }   
         var congrat = '';
         if(score > max*0.8){
-            congrat = "Поздравляем!";
+            congrat = 'Поздравляем! Вы можете нарисовать глобус по памяти!';
         } else if(score > max*0.6){
-            congrat = "Хороший результат!";
+            congrat = 'Хороший результат! Вы не заблудитесь на глобусе.';
         } else {
-            congrat = "Нужно еще потренироваться";
+            congrat = 'Нужно еще потренироваться';
         }
         Utils.alert({unsafeMessage: strFormat('Ваш счет {0} из {1} {2}<br>{3}', [score, max, str, congrat])});
         
@@ -146,12 +146,12 @@ See the License for the specific language governing permissions and
         state.seedCapital = R.clone(Data.capitals[names[0]]);
         var tries = 10000;
         var ok = false;
-//        var rest = R.tail(names);
+        //        var rest = R.tail(names);
         var minDist = Number(queryEl('.min-capital-dist').value)*1000;
         while(tries > 0 && !ok){
             names = shuffle(names);
             state.seedCapital = R.clone(Data.capitals[names[0]]);
-//            rest = shuffle(rest);
+            //            rest = shuffle(rest);
             state.capitals = R.clone(R.values(R.pick(R.slice(1, 1+state.capitalNum, names), Data.capitals)));
             state.capitals.map(el => el.distance = getDistance(state.seedCapital.coords, el.coords));
             var distances = state.capitals.map(R.prop('distance'));
@@ -208,30 +208,30 @@ See the License for the specific language governing permissions and
     var getDistance = R.curry((startPoint, endPoint) => ymaps.coordSystem.geo.solveInverseProblem(startPoint, endPoint).distance);
     
     var addShortestPath = R.curry((showKm, cap1, cap2) => {
-        var hint = cap1.name + "-" + cap2.name;
+        var hint = cap1.name + '-' + cap2.name;
         if(showKm) {
             hint = hint + ' (' + Math.round(cap2.distance/1000) + ' км)';
         }
         
         var myGeoObject = new ymaps.GeoObject({
         // Описываем геометрию типа "Ломаная линия".
-        geometry: {
-            type: "LineString",
-            coordinates: [
-                cap1.coords, cap2.coords
-            ]
-        },
-        // Описываем данные геообъекта.
-        properties: {
-            hintContent: hint
-        }
+            geometry: {
+                type: 'LineString',
+                coordinates: [
+                    cap1.coords, cap2.coords
+                ]
+            },
+            // Описываем данные геообъекта.
+            properties: {
+                hintContent: hint
+            }
         }, {
             // Включаем отображение в форме геодезических кривых.
             geodesic: true,
             // Задаем ширину в 5 пикселей.
             strokeWidth: 5,
             // Задаем цвет линии.
-            strokeColor: "#F008"
+            strokeColor: '#F008'
         });
         // Добавляем геообъект на карту.
         state.map.geoObjects.add(myGeoObject);
@@ -239,7 +239,7 @@ See the License for the specific language governing permissions and
     
     var addCapital = R.curry((capital, isSeed) => {
         var myPlacemark = new ymaps.Placemark(capital.coords, { 
-//            balloonContent: JSON.stringify(arr),
+            //            balloonContent: JSON.stringify(arr),
             iconContent: capital.name
         }, {
             preset: isSeed ? 'islands#greenStretchyIcon' : 'islands#blueStretchyIcon', 

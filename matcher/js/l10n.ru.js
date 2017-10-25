@@ -12,17 +12,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
    limitations under the License. */
 
-"use strict";
+'use strict';
 
 ((exports)=>{
     
     var l10n ={
-        players1: "Анна,Боря,Ваня,Галя,Дима",
-        characters1:"Арагорн,Боромир,Водный страж,Галадриэль,Денетор",
-        profile1:"Функция,Любовь,Замес",
-        players2: "Aнтон,Боря,Ваня,Гоша,Дима",
-        characters2:"Аня,Белла,Валя,Галя,Даша",
-        profile2:"Умная,Красивая,Добрая",
+        players1: 'Анна,Боря,Ваня,Галя,Дима',
+        characters1:'Арагорн,Боромир,Водный страж,Галадриэль,Денетор',
+        profile1:'Функция,Любовь,Замес',
+        players2: 'Aнтон,Боря,Ваня,Гоша,Дима',
+        characters2:'Аня,Белла,Валя,Галя,Даша',
+        profile2:'Умная,Красивая,Добрая',
         'profiles-not-ready': 'Профили не подготовлены',
         'some-values-missing' : 'Некоторые значения отсутствуют',
         'player-and char-list-length-not-equal' : 'Количество персонажей не совпадает с количеством игроков',

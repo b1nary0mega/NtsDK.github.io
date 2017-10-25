@@ -12,17 +12,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
    limitations under the License. */
 
-"use strict";
+'use strict';
 
 ((exports)=>{
     
     var l10n ={
-        players1: "Ann,Bob,Caroline,Daphne,Judas",
-        characters1:"Aragorn,Boromir,Water Guardian,Galadriel,Denetor",
-        profile1:"Function,Love,Action",
-        players2: "1,2,3,4,5,6,7,8,9",
-        characters2:"A,B,C,D,E,F,G,H,I",
-        profile2:"Val1,Val2,Val3",
+        players1: 'Ann,Bob,Caroline,Daphne,Judas',
+        characters1:'Aragorn,Boromir,Water Guardian,Galadriel,Denetor',
+        profile1:'Function,Love,Action',
+        players2: '1,2,3,4,5,6,7,8,9',
+        characters2:'A,B,C,D,E,F,G,H,I',
+        profile2:'Val1,Val2,Val3',
         'profiles-not-ready': 'Profiles are not prepared',
         'some-values-missing' : 'Some values missing',
         'player-and char-list-length-not-equal' : 'Character number is not equal to player number',

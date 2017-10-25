@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
    limitations under the License. */
 
-"use strict";
+'use strict';
 
 (function(exports){
 
@@ -21,35 +21,35 @@ See the License for the specific language governing permissions and
     
         var i;
         for (i = 1; i < containers.length; i++) { // don't hide 1st element
-            addClass(containers[i], "hidden");
+            addClass(containers[i], 'hidden');
         }
     
         var tabButtons = getEls(tabClazz);
     
-        addClass(tabButtons[0], "active");
+        addClass(tabButtons[0], 'active');
     
         for (i = 0; i < tabButtons.length; i++) {
-            listen(tabButtons[i], "click", tabButtonClick(tabButtons, containers));
+            listen(tabButtons[i], 'click', tabButtonClick(tabButtons, containers));
         }
     };
     
     var tabButtonClick = function(buttons, containers) {
         return function(event) {
             for (var i = 0; i < buttons.length; i++) {
-                setClassByCondition(buttons[i], "active", event.target.id === buttons[i].id);
+                setClassByCondition(buttons[i], 'active', event.target.id === buttons[i].id);
             }
             for (var i = 0; i < containers.length; i++) {
-                setClassByCondition(containers[i], "hidden", event.target.id + "Container" !== containers[i].id);
+                setClassByCondition(containers[i], 'hidden', event.target.id + 'Container' !== containers[i].id);
             }
         };
     };
     
     exports.fillShowItemSelector = function (selector, displayArray) {
         var el;
-        setAttr(selector, "size", displayArray.length);
+        setAttr(selector, 'size', displayArray.length);
         displayArray.forEach(function(value) {
-            el = setProps(makeEl("option"), {
-                "selected" : true,
+            el = setProps(makeEl('option'), {
+                'selected' : true,
             });
             setClassByCondition(el, 'hidden', value.hidden);
             addEl(selector, addEl(el, makeText(value.name)));
@@ -60,10 +60,10 @@ See the License for the specific language governing permissions and
         var el, groupEl, counter = 0;
         addEls(selector, optionGroups.map(function(group) {
             counter++;
-            groupEl = setAttr(makeEl("optgroup"), 'label', group.name);
+            groupEl = setAttr(makeEl('optgroup'), 'label', group.name);
             addEls(groupEl, group.array.map((value) => {
-                el = setProps(makeEl("option"), {
-                    "selected" : true,
+                el = setProps(makeEl('option'), {
+                    'selected' : true,
                 });
                 setClassByCondition(el, 'hidden', value.hidden);
                 counter += (value.hidden ? 0 : 1);
@@ -71,7 +71,7 @@ See the License for the specific language governing permissions and
             }));
             return groupEl;
         }));
-        setAttr(selector, "size", counter);
+        setAttr(selector, 'size', counter);
     };
     
     exports.showSelectedEls = function(classKey){
@@ -84,19 +84,19 @@ See the License for the specific language governing permissions and
                 }
                 els = getEls(i + classKey);
                 for (j = 0; j < els.length; j++) {
-                    setClassByCondition(els[j], "hidden", !el.options[i].selected);
+                    setClassByCondition(els[j], 'hidden', !el.options[i].selected);
                 }
             }
-        }
+        };
     };
     
     exports.initSelectorFilters = function(){
-        var elems = document.querySelectorAll("[selector-filter]");
+        var elems = document.querySelectorAll('[selector-filter]');
         var el, sel;
         for (var i = 0; i < elems.length; i++) {
             el = elems[i];
-            sel = queryEl(getAttr(el,"selector-filter"));
-            listen(el, "input", filterOptions(sel))
+            sel = queryEl(getAttr(el,'selector-filter'));
+            listen(el, 'input', filterOptions(sel));
         }
     };
     
@@ -107,35 +107,35 @@ See the License for the specific language governing permissions and
             val = CommonUtils.globStringToRegex(val.trim().toLowerCase());
             for (i = 0; i < sel.options.length; i += 1) {
                 opt = sel.options[i];
-                setClassByCondition(opt, "hidden", opt.innerHTML.toLowerCase().search(val) === -1);
+                setClassByCondition(opt, 'hidden', opt.innerHTML.toLowerCase().search(val) === -1);
             }
-        }
+        };
     };
     
     exports.initPanelTogglers = function(){
-        var elems = document.querySelectorAll("[panel-toggler]");
+        var elems = document.querySelectorAll('[panel-toggler]');
         var el, sel, attr;
         for (var i = 0; i < elems.length; i++) {
             el = elems[i];
-            attr = getAttr(el,"panel-toggler");
+            attr = getAttr(el,'panel-toggler');
             sel = document.querySelector(attr);
             if(sel == null){
-                Utils.alert("Panel toggler is broken: " + attr);
+                Utils.alert('Panel toggler is broken: ' + attr);
             }
-            listen(el, "click", exports.togglePanel(sel))
+            listen(el, 'click', exports.togglePanel(sel));
         }
     };
     
     exports.togglePanel = function(sel){
         return function(event){
-            toggleClass(sel, "hidden");
-        }
+            toggleClass(sel, 'hidden');
+        };
     };
     
     exports.makeEventTimePicker = function (opts) {
-        var input = makeEl("input");
+        var input = makeEl('input');
         R.ap([addClass(input)], opts.extraClasses);
-        addClass(input, "eventTime");
+        addClass(input, 'eventTime');
         input.value = opts.eventTime;
         
         input.eventIndex = opts.index;
@@ -148,11 +148,11 @@ See the License for the specific language governing permissions and
             onChangeDateTime : opts.onChangeDateTimeCreator(input),
         };
         
-        if (opts.eventTime !== "") {
+        if (opts.eventTime !== '') {
             pickerOpts.value = opts.eventTime;
         } else {
             pickerOpts.value = opts.date;
-            addClass(input, "defaultDate");
+            addClass(input, 'defaultDate');
         }
         
         jQuery(input).datetimepicker(pickerOpts);
@@ -171,12 +171,12 @@ See the License for the specific language governing permissions and
     };
     
     exports.makeAdaptationTimeInput = function(storyName, event, characterName, isEditable){
-        var input = makeEl("input");
-        setClassByCondition(input, "notEditable", !isEditable);
-        addClass(input,"adaptationTimeInput");
+        var input = makeEl('input');
+        setClassByCondition(input, 'notEditable', !isEditable);
+        addClass(input,'adaptationTimeInput');
         input.value = event.characters[characterName].time;
         input.dataKey = JSON.stringify([storyName, event.index, characterName]);
-        listen(input, "change", onChangePersonalTimeDelegate);
+        listen(input, 'change', onChangePersonalTimeDelegate);
         return input;
     };
     
@@ -187,17 +187,17 @@ See the License for the specific language governing permissions and
     };
     
     exports.makeAdaptationReadyInput = function(storyName, event, characterName, isEditable){
-        var div = makeEl("div");
-        var input = makeEl("input");
-        setClassByCondition(input, "notEditable", !isEditable);
-        input.type = "checkbox";
+        var div = makeEl('div');
+        var input = makeEl('input');
+        setClassByCondition(input, 'notEditable', !isEditable);
+        input.type = 'checkbox';
         input.checked = event.characters[characterName].ready;
         input.dataKey = JSON.stringify([storyName, event.index, characterName]);
-        input.id = event.index + "-" + storyName + "-" + characterName;
-        listen(input, "change", onChangeReadyStatus);
+        input.id = event.index + '-' + storyName + '-' + characterName;
+        listen(input, 'change', onChangeReadyStatus);
         addEl(div, input);
         
-        addEl(div, setAttr(addEl(makeEl("label"), makeText(constL10n(Constants.finishedText))), "for", input.id));
+        addEl(div, setAttr(addEl(makeEl('label'), makeText(constL10n(Constants.finishedText))), 'for', input.id));
         return div;
     };
     
@@ -208,12 +208,12 @@ See the License for the specific language governing permissions and
     };
     
     exports.makePanelCore = function(title, content){
-        var panel = addClasses(makeEl('div'), ["panel", "panel-default"]);
-        var h3 = addClass(addEl(makeEl('h3'), title), "panel-title");
+        var panel = addClasses(makeEl('div'), ['panel', 'panel-default']);
+        var h3 = addClass(addEl(makeEl('h3'), title), 'panel-title');
         var a = setAttr(makeEl('a'),'href','#/');
-        var headDiv = addClass(makeEl('div'), "panel-heading");
+        var headDiv = addClass(makeEl('div'), 'panel-heading');
         addEl(panel, addEl(headDiv, addEl(a, h3)));
-        var contentDiv = addClass(makeEl('div'), "panel-body");
+        var contentDiv = addClass(makeEl('div'), 'panel-body');
         addEl(panel, addEl(contentDiv, content));
         return {
             panel: panel,

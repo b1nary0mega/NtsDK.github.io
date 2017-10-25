@@ -24,7 +24,7 @@ var Utils = {};
  */
 Utils.addView = function (containers, name, view, opts) {
     'use strict';
-    var opts = opts || {};
+    opts = opts || {};
     view.init();
     var buttonClass = 'navigation-button';
     containers.root.views[name] = view;

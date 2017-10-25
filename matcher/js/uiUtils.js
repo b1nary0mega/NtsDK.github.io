@@ -38,7 +38,7 @@ See the License for the specific language governing permissions and
             for (var i = 0; i < buttons.length; i++) {
                 setClassByCondition(buttons[i], 'active', event.target.id === buttons[i].id);
             }
-            for (var i = 0; i < containers.length; i++) {
+            for (i = 0; i < containers.length; i++) {
                 setClassByCondition(containers[i], 'hidden', event.target.id + 'Container' !== containers[i].id);
             }
         };

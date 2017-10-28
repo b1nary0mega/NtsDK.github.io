@@ -10,7 +10,7 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-   limitations under the License. */
+    limitations under the License. */
 
 'use strict';
 
@@ -38,23 +38,23 @@ See the License for the specific language governing permissions and
         //        var selectors = selectorPriority.map((prio, id) => {return { checkList: prio, prop: [], select: null, id: id};} );
         //        var proposers = proposerPriority.map((prio, id) => {return { checkList: prio, next: 0, id: id};} );
         //        var selectors = selectorPriority.map((prio, id) => {return { checkList: prio, prop: [], select: null, id: id};} );
-        
+
         if(log)console.log('proposers ' + JSON.stringify(proposers));
         if(log)console.log('selectors ' + JSON.stringify(selectors));
         if(log)console.log('');
-        
+
         while (true) {
             var acceptedProposers = R.values(selectors).map(R.prop('select')).filter(R.compose(R.not, R.isNil));
             if(log)console.log('acceptedProposers ' + JSON.stringify(acceptedProposers));
             if(log)console.log('');
-            
+
             var rejectedProposers = R.keys(proposers).filter((proposer) => acceptedProposers.indexOf(proposer) === -1).filter(proposer => proposers[proposer].next < size);
             if(log)console.log('rejectedProposers ' + JSON.stringify(rejectedProposers));
             if(log)console.log('');
             if(rejectedProposers.length == 0){
                 break;
             }
-            
+
             rejectedProposers.forEach((proposer) =>{
                 var tmp = proposers[proposer];
                 selectors[tmp.checkList[tmp.next]].prop.push(tmp.id);
@@ -64,7 +64,7 @@ See the License for the specific language governing permissions and
             if(log)console.log('proposers ' + JSON.stringify(proposers));
             if(log)console.log('selectors ' + JSON.stringify(selectors));
             if(log)console.log('');
-            
+
             //woman make select
             R.values(selectors).filter(selector => selector.prop.length > 0).forEach(function(selector) {
                 var best = selector.prop.reduce(function(best, proposerId) {
@@ -75,12 +75,12 @@ See the License for the specific language governing permissions and
                 }
                 selector.prop = [];
             });
-            
+
             if(log)console.log('selectors select');
             if(log)console.log('selectors ' + JSON.stringify(selectors));
             if(log)console.log('');
         }
-        
+
         R.values(selectors).forEach(selector => proposers[selector.select].select = selector.id);
         if(log)console.log('proposers ' + JSON.stringify(proposers));
         if(log)console.log('selectors ' + JSON.stringify(selectors));

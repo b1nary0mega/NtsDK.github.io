@@ -10,7 +10,7 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-   limitations under the License. */
+    limitations under the License. */
 
 'use strict';
 
@@ -49,7 +49,7 @@ Utils.addView = function (containers, name, view, opts) {
         button.id = opts.id;
     }
     containers.navigation.appendChild(button);
-    
+
 
     var elems, i;
     var onClickDelegate = function (view) {
@@ -67,14 +67,14 @@ Utils.addView = function (containers, name, view, opts) {
                     }
                 }
             }
-            
+
             var isActive = hasClass(evt.target, 'active');
             for (i = 0; i < elems.length; i++) {
                 removeClass(elems[i], 'active');
             }
             if(!opts.toggle || (opts.toggle && !isActive)){
                 addClass(evt.target, 'active');
-                
+
                 passEls(containers.content, getEl('warehouse'));
                 containers.content.appendChild(view.content);
                 removeClass(containers.content, 'hidden');
@@ -130,7 +130,7 @@ Utils.processError = function(callback){
             Utils.handleError(err);
             return;
         }
-        
+
         if(callback){
             var arr = [];
             for (var i = 1; i < arguments.length; i++) {
@@ -245,7 +245,7 @@ function hasClass(o, c){
     var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
     return (re.test(o.className));
 }
- 
+
 var removeClass = R.curry(function(o, c){
     var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
     o.className = o.className.replace(re, '$1').replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
@@ -389,7 +389,7 @@ var remapProps = R.curry(function(outKeys, pickKeys, obj){
 var remapProps4Select2 = remapProps(['id','text'], ['value', 'displayName']);
 var remapProps4Select = remapProps(['value','name'], ['value', 'displayName']);
 
-var getSelect2DataCommon = R.curry(function(preparator, obj){ 
+var getSelect2DataCommon = R.curry(function(preparator, obj){
     return R.compose(R.zipObj(['data']), R.append(R.__, []), R.map(preparator))(obj);
 });
 
@@ -422,4 +422,3 @@ var debugInterceptor = function(callback){
 Date.prototype.format = function (mask, utc) {
     return dateFormat(this, mask, utc);
 };
-

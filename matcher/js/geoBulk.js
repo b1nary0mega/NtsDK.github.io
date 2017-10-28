@@ -1,4 +1,4 @@
-﻿/*Copyright 2017 Timofey Rechkalov <ntsdk@yandex.ru>
+/*Copyright 2017 Timofey Rechkalov <ntsdk@yandex.ru>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -10,43 +10,43 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-   limitations under the License. */
+    limitations under the License. */
 
 'use strict';
 
 ((exports)=>{
-    
+
     var state = {};
-    
+
     exports.init = () => {
         ymaps.ready(() => {
-        
+
             UI.initPanelTogglers();
 
-        
+
             queryEl('#coordsArea').value = '';
-        
+
             simpleDataset();
-            listen(queryEl('#simpleDataset'), 'click', simpleDataset);  
-            listen(queryEl('#capitalsDataset'), 'click', capitalsDataset);  
-            listen(queryEl('#capitalsDataset1'), 'click', capitalsDataset2(0));  
-            listen(queryEl('#capitalsDataset2'), 'click', capitalsDataset2(1));  
-            listen(queryEl('#capitalsDataset3'), 'click', capitalsDataset2(2));  
-            listen(queryEl('#capitalsDataset4'), 'click', capitalsDataset2(3));  
-            listen(queryEl('#capitalsDataset5'), 'click', capitalsDataset2(4));  
-            listen(queryEl('#londonDataset'), 'click', londonDataset);  
-            listen(queryEl('#findCityCoords'), 'click', findCityCoords);  
+            listen(queryEl('#simpleDataset'), 'click', simpleDataset);
+            listen(queryEl('#capitalsDataset'), 'click', capitalsDataset);
+            listen(queryEl('#capitalsDataset1'), 'click', capitalsDataset2(0));
+            listen(queryEl('#capitalsDataset2'), 'click', capitalsDataset2(1));
+            listen(queryEl('#capitalsDataset3'), 'click', capitalsDataset2(2));
+            listen(queryEl('#capitalsDataset4'), 'click', capitalsDataset2(3));
+            listen(queryEl('#capitalsDataset5'), 'click', capitalsDataset2(4));
+            listen(queryEl('#londonDataset'), 'click', londonDataset);
+            listen(queryEl('#findCityCoords'), 'click', findCityCoords);
             state.map = new ymaps.Map ('map', {
-                center: [55.76, 37.64], 
+                center: [55.76, 37.64],
                 zoom: 2
             });
-        
+
             state.map.behaviors.enable('scrollZoom');
-        
+
         });
 
     };
-    
+
     var findCityCoords = () => {
         var cities = queryEl('#cityArea').value.trim();
         if(cities === ''){
@@ -56,9 +56,9 @@ See the License for the specific language governing permissions and
         var coordsArea = queryEl('#coordsArea');
         queryEl('#coordsArea').value = '';
         state.map.geoObjects.removeAll();
-        
+
         var coordsLimit = Number(queryEl('.coordsLimit').value);
-        
+
         cities.forEach(name => {
             var myGeocoder = ymaps.geocode(name, {kind:'locality', results:coordsLimit});
             myGeocoder.then(
@@ -69,24 +69,24 @@ See the License for the specific language governing permissions and
                     }
                     var total = res.geoObjects.getLength();
                     R.times(R.identity, res.geoObjects.getLength()).map(num => {
-                        var printName = name + (total === 1 ? '' : '-' + (num+1)); 
-                        
+                        var printName = name + (total === 1 ? '' : '-' + (num+1));
+
                         var coords =  res.geoObjects.get(num).geometry.getCoordinates();
                         // console.log(coords);
                         var arr = [name, num+1, coords];
                         coordsArea.value = coordsArea.value  + JSON.stringify(arr) + '\n';
-                        
-                        var myPlacemark = new ymaps.Placemark(coords, { 
+
+                        var myPlacemark = new ymaps.Placemark(coords, {
                             balloonContent: JSON.stringify(arr),
                             iconContent: printName
                         }, {
                             preset: 'islands#greenStretchyIcon',
                         });
-                        
+
                         state.map.geoObjects.add(myPlacemark);
                     });
-                    
-                    
+
+
                 },
                 function (err) {
                     alert('Ошибка');
@@ -94,7 +94,7 @@ See the License for the specific language governing permissions and
             );
         });
     };
-    
+
     var simpleDataset = () => {
         queryEl('#cityArea').value = `Москва
 Санкт-Петербург
@@ -105,14 +105,14 @@ See the License for the specific language governing permissions and
         //                    London
         //                    Лондон
     };
-    
+
     var londonDataset = () => {
         queryEl('#cityArea').value = 'Лондон';
         //                    Лондон Великобритания
         //                    London
         //                    Лондон
     };
-    
+
     var capitalsList = `Kabul
 Mariehamn
 Tirana
@@ -359,18 +359,18 @@ Laayoune
 Sana'a
 Lusaka
 Harare`;
-    
+
     capitalsList = capitalsList.split('\n').map(R.trim);
     capitalsList.sort();
-    
+
     var capitalsDataset = () => {
         queryEl('#cityArea').value = capitalsList.join('\n');
     };
-    
+
     var capitalsDataset2 = (num) => {
         return function() {
             queryEl('#cityArea').value = R.slice(num*50, (num+1)*50, capitalsList).join('\n');
         };
     };
-    
+
 })(this['app']={});

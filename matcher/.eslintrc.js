@@ -51,6 +51,7 @@ module.exports = {
         strFormat: false,
     },
     "extends": "eslint:recommended",
+//    "extends": "airbnb" ,
     "rules": {
         "no-console": "off",
         "no-unused-vars": "off",

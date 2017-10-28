@@ -1,4 +1,4 @@
-﻿/*Copyright 2017 Timofey Rechkalov <ntsdk@yandex.ru>
+/*Copyright 2017 Timofey Rechkalov <ntsdk@yandex.ru>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -10,18 +10,18 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-   limitations under the License. */
+    limitations under the License. */
 
 'use strict';
 
 ((exports)=>{
-    
+
     var state = {};
-    
+
     exports.init = () => {
-      
+
         var grayencode = (g) => g ^ (g >> 1);
-      
+
         var zoom = 5;
         var x1,y1,x0,y0;
         x1=y1=x0=y0=0;
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
         for(i=1;i<max;i++){
         //num = i;
             num = grayencode(i);
-        
+
             x1=y1=0;
             mul = 1;
             while(num>0){
@@ -74,7 +74,7 @@ See the License for the specific language governing permissions and
         updateSvg(zoom, res);
 
     };
-    
+
     var updateSvg = (zoom, points) => {
         var svgNS = 'http://www.w3.org/2000/svg';
         var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -86,7 +86,7 @@ See the License for the specific language governing permissions and
         rect.setAttribute('height',500);
         rect.setAttribute('fill','#95B3D7');
         //svg.appendChild(rect);
-      
+
         var poly = document.createElementNS(svgNS,'polyline');
         setAttr(poly, 'stroke', 'red');
         setAttr(poly, 'stroke-width', '1px');
@@ -95,17 +95,17 @@ See the License for the specific language governing permissions and
         setAttr(poly, 'points', points.map(el => el.map(R.multiply(zoom)).join(',')).join(' '));
         //setAttr(poly, 'points', "10,40 100,40 40,60 140,60 120,45 120,75 140,60");
         svg.appendChild(poly);
-      
+
         var max = R.multiply(zoom,Math.max.apply(null, R.flatten(points)));
-      
+
         //setAttr(svg, 'width', max + 'px');
         //setAttr(svg, 'height', max + 'px');
         setAttr(svg, 'style', 'width:' + max + 'px;'+'height:' + max + 'px');
-      
+
         //stroke="red" stroke-width="3px" fill="none"
         //points=" 10,40 100,40 40,60 140,60 120,45 120,75 140,60"
-    
+
         addEl(clearEl(queryEl('.fractal-space')), svg);
     };
-    
+
 })(this['app']={});

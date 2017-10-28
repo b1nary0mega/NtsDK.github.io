@@ -10,14 +10,14 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-   limitations under the License. */
+    limitations under the License. */
 
 /*
  */
 'use strict';
 
 (function(exports){
-    
+
     var prepare = (en, ru, enList, ruList, dictName) => {
         exports[enList] = en.split('\n').map(R.trim);
         exports[ruList] = ru.split('\n').map(R.trim);
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
         North America
         South America
         Antarctica`;
-    
+
     var ruContinents = `Азия
         Европа
         Африка
@@ -39,7 +39,7 @@ See the License for the specific language governing permissions and
         Северная Америка
         Южная Америка
         Антарктида`;
-    
+
     var enCountries = `Afghanistan
 Aland Islands
 Albania
@@ -286,7 +286,7 @@ Western Sahara
 Yemen
 Zambia
 Zimbabwe`;
-    
+
     var ruCountries = `Афганистан
 Аландские острова
 Албания
@@ -533,8 +533,8 @@ Zimbabwe`;
 Йемен
 Замбия
 Зимбабве`;
-    
-    
+
+
     var enCapitals = `Kabul
 Mariehamn
 Tirana
@@ -1027,24 +1027,24 @@ Harare`;
 Сана
 Лусака
 Хараре`;
-    
+
     prepare(enContinents, ruContinents, 'enContinents', 'ruContinents', 'continentDict');
     prepare(enCountries, ruCountries, 'enCountries', 'ruCountries', 'countryDict');
     prepare(enCapitals, ruCapitals, 'enCapitals', 'ruCapitals', 'capitalDict');
-    
-    //Little Bay, Brades, Plymouth не найден 
-    //Ramallah не найден 
-    //Kathmandu не найден 
-    //Mata-Utu не найден 
-    //Mogadishu не найден 
-    //Nukuʻalofa не найден 
-    //Riyadh не найден 
-    
-    
 
-    
+    //Little Bay, Brades, Plymouth не найден
+    //Ramallah не найден
+    //Kathmandu не найден
+    //Mata-Utu не найден
+    //Mogadishu не найден
+    //Nukuʻalofa не найден
+    //Riyadh не найден
 
-    
+
+
+
+
+
     var rawCapitalCoords = `["Abuja",1,[9.05115,7.521693]]
         ["Mogadishu",1,[2.043933, 45.354286]]
         ["Little Bay, Brades, Plymouth",1,[16.700596, -62.218987]]
@@ -1291,10 +1291,10 @@ Harare`;
     ["Yamoussoukro",1,[6.809741,-5.250608]]
     ["Yerevan",1,[40.177642,44.512591]]
     ["Zagreb",1,[45.802814,15.974588]]`;
-    
+
     exports.capitalCoords = R.indexBy(R.prop('name'), rawCapitalCoords.split('\n').map(JSON.parse).map(R.zipObj(['name','num','coords'])));
     //    console.log(exports.capitalCoords);
-    
+
     var capitalsData = [
         {
             'alpha2': 'AF',
@@ -2783,7 +2783,7 @@ Harare`;
     prepare(enContinents, ruContinents, 'enContinents', 'ruContinents', 'continentDict');
     prepare(enCountries, ruCountries, 'enCountries', 'ruCountries', 'countryDict');
     prepare(enCapitals, ruCapitals, 'enCapitals', 'ruCapitals', 'capitalDict');
-    
+
     exports.capitals = capitalsData.filter(el => R.contains(el.capital, R.keys(exports.capitalCoords))).map(el => {
         return {
             alpha2: el.alpha2,
@@ -2797,7 +2797,7 @@ Harare`;
         };
     });
     exports.capitals = R.indexBy(R.prop('name'),exports.capitals);
-    
+
     var extraCountryList = `land Islands
 American Samoa
 Anguilla
@@ -2853,19 +2853,18 @@ Vanuatu
 Virgin Islands (British)
 Virgin Islands (U.S.)
 Wallis and Futuna`;
-    
-    
+
+
     exports.extraCountryList = extraCountryList.split('\n').map(R.trim);
 //    console.log(exports.capitals);
-    
+
 //    console.log(JSON.stringify(exports.capitals));
 //    exports.continentDict = R.zipObj(enContinents,ruContinents);
-    
+
 //    console.log(enContinents);
 //    console.log(ruContinents);
 //    console.log(R.zipObj(enContinents,ruContinents));
-    
 
-    
+
+
 })(typeof exports === 'undefined'? this['Data']={}: exports);
-

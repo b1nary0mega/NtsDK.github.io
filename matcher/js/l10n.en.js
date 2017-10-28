@@ -10,12 +10,12 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-   limitations under the License. */
+    limitations under the License. */
 
 'use strict';
 
 ((exports)=>{
-    
+
     var l10n ={
         players1: 'Ann,Bob,Caroline,Daphne,Judas',
         characters1:'Aragorn,Boromir,Water Guardian,Galadriel,Denetor',
@@ -28,7 +28,7 @@ See the License for the specific language governing permissions and
         'player-and char-list-length-not-equal' : 'Character number is not equal to player number',
         'some-values-are-not-unique' : 'Some values are not unique',
     };
-    
+
     exports.get = (key)=>l10n[key];
 
 })(this['l10n']={});

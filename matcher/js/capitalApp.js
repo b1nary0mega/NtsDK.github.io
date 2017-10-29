@@ -160,7 +160,6 @@ See the License for the specific language governing permissions and
     };
 
     const startGame = () => {
-        delAttr(queryEl('.end-game'), 'disabled');
         addClass(queryEl('.container-fluid .intro-panel .panel-body'), 'hidden');
 
         queryEls('.annotation').map(removeClass(R.__, 'hidden'));
@@ -204,6 +203,7 @@ See the License for the specific language governing permissions and
             Utils.alert('Не удалось подобрать подходящий набор столиц. Попробуйте уменьшить минимальное расстояние между столицами от главной.');
             return;
         }
+        delAttr(queryEl('.end-game'), 'disabled');
 
         if (queryEl('.show-seed-capital-mark').checked) {
             addCapital(state.seedCapital, true);

@@ -14,15 +14,12 @@ See the License for the specific language governing permissions and
 
 'use strict';
 
-((exports)=>{
-
-    var fillData = function(id){
-        return function(){
-            queryEl('#playersInput').value = l10n.get('players'+id);
-            queryEl('#charactersInput').value = l10n.get('characters'+id);
-            queryEl('#profileInput').value = l10n.get('profile'+id);
-        };
-    };
+((exports) => {
+    const fillData = id => (() => {
+        queryEl('#playersInput').value = l10n.get(`players${id}`);
+        queryEl('#charactersInput').value = l10n.get(`characters${id}`);
+        queryEl('#profileInput').value = l10n.get(`profile${id}`);
+    });
 
     exports.init = () => {
         UI.initPanelTogglers();
@@ -36,25 +33,31 @@ See the License for the specific language governing permissions and
         listen(queryEl('.match-button'), 'click', match);
     };
 
-    var state = {};
+    const state = {};
 
-    var match = function(){
-        if(state.players === undefined){
+    const match = () => {
+        if (state.players === undefined) {
             Utils.alert(l10n.get('profiles-not-ready'));
             return;
         }
 
-        var numberInputs = shuffle(queryEls('.player-priority-panel input[type=number]'));
-        var playerPriorities = R.zipObj(state.players, R.ap([R.clone], R.repeat([], state.players.length)));
-        numberInputs.forEach(el => {
-            var key = JSON.parse(getAttr(el,'key'));
-            playerPriorities[key.subject].push({id: key.itemId, index: Number(el.value)});
+        let numberInputs = shuffle(queryEls('.player-priority-panel input[type=number]'));
+        const playerPriorities = R.zipObj(
+            state.players,
+            R.ap([R.clone], R.repeat([], state.players.length))
+        );
+        numberInputs.forEach((el) => {
+            const key = JSON.parse(getAttr(el, 'key'));
+            playerPriorities[key.subject].push({ id: key.itemId, index: Number(el.value) });
         });
         numberInputs = shuffle(queryEls('.character-priority-panel input[type=number]'));
-        var charPriorities = R.zipObj(state.chars, R.ap([R.clone], R.repeat([], state.chars.length)));
-        numberInputs.forEach(el => {
-            var key = JSON.parse(getAttr(el,'key'));
-            charPriorities[key.subject].push({id: key.itemId, index: Number(el.value)});
+        const charPriorities = R.zipObj(
+            state.chars,
+            R.ap([R.clone], R.repeat([], state.chars.length))
+        );
+        numberInputs.forEach((el) => {
+            const key = JSON.parse(getAttr(el, 'key'));
+            charPriorities[key.subject].push({ id: key.itemId, index: Number(el.value) });
         });
         R.values(playerPriorities).forEach(arr => arr.sort(CommonUtils.charOrdAFactory(R.prop('index'))));
         R.values(charPriorities).forEach(arr => arr.sort(CommonUtils.charOrdAFactory(R.prop('index'))));
@@ -63,85 +66,88 @@ See the License for the specific language governing permissions and
 
         //        readPriorities
 
-        var res = marriage.match(playerPriorities, charPriorities, true);
+        let res = marriage.match(playerPriorities, charPriorities, true);
         makeResultTable(queryEl('.player-result-panel tbody'), playerPriorities, charPriorities, res);
         res = marriage.match(charPriorities, playerPriorities, true);
         makeResultTable(queryEl('.character-result-panel tbody'), charPriorities, playerPriorities, res);
     };
 
-    var getColor = function(value, total) {
-        if(total === 0){return 'transparent';}
-        function calc(b,a,part){
-            return (a*part + (1-part)*b).toFixed(0);
+    const getColor = (value, total) => {
+        if (total === 0) { return 'transparent'; }
+        function calc(b, a, part) {
+            return ((a * part) + ((1 - part) * b)).toFixed(0);
         }
 
-        var p = value / total;
-        if(p<0.5){
-            p=p*2;
-            return strFormat('rgba({0},{1},{2}, 1)', [calc(251,255,p),calc(126,255,p),calc(129,0,p)]); // red to yellow mapping
-        } else {
-            p=(p-0.5)*2;
-            return strFormat('rgba({0},{1},{2}, 1)', [calc(255,123,p),calc(255,225,p),calc(0,65,p)]); // yellow to green mapping
+        let p = value / total;
+        if (p < 0.5) {
+            p *= 2;
+            return strFormat('rgba({0},{1},{2}, 1)', [calc(251, 255, p), calc(126, 255, p), calc(129, 0, p)]); // red to yellow mapping
         }
+        p = (p - 0.5) * 2;
+        return strFormat('rgba({0},{1},{2}, 1)', [calc(255, 123, p), calc(255, 225, p), calc(0, 65, p)]); // yellow to green mapping
     };
 
-    var makeResultTable = function(tbody, proposerPriorities, selectorPriorities, result){
-        var size = state.players.length-1;
-        result = R.values(result.proposers).map(R.pick(['id','select']));
-        result.sort(CommonUtils.charOrdAFactory(R.prop('id')));
+    const makeResultTable = (tbody, proposerPriorities, selectorPriorities, result) => {
+        const size = state.players.length - 1;
+        const res = R.values(result.proposers).map(R.pick(['id', 'select']));
+        res.sort(CommonUtils.charOrdAFactory(R.prop('id')));
 
-        addEls(clearEl(tbody), result.map(el => {
-            var proposerHappiness = proposerPriorities[el.id].map(R.prop('id')).indexOf(el.select);
-            var selectorHappiness = selectorPriorities[el.select].map(R.prop('id')).indexOf(el.id);
+        addEls(clearEl(tbody), res.map((el) => {
+            const proposerHappiness = proposerPriorities[el.id].map(R.prop('id')).indexOf(el.select);
+            const selectorHappiness = selectorPriorities[el.select].map(R.prop('id')).indexOf(el.id);
 
-            var proposer = addEl(makeEl('td'), makeText(el.id));
-            var selector = addEl(makeEl('td'), makeText(el.select));
-            //            var proposer = addEl(makeEl('td'), makeText(el.id+' ' + proposerHappiness/size));
-            //            var selector = addEl(makeEl('td'), makeText(el.select+' ' + selectorHappiness/size));
-            setStyle(proposer,'backgroundColor', getColor(size-proposerHappiness, size));
-            setStyle(selector,'backgroundColor', getColor(size-selectorHappiness, size));
+            const proposer = addEl(makeEl('td'), makeText(el.id));
+            const selector = addEl(makeEl('td'), makeText(el.select));
+            // var proposer = addEl(makeEl('td'), makeText(el.id+' ' + proposerHappiness/size));
+            // var selector = addEl(makeEl('td'), makeText(el.select+' ' + selectorHappiness/size));
+            setStyle(proposer, 'backgroundColor', getColor(size - proposerHappiness, size));
+            setStyle(selector, 'backgroundColor', getColor(size - selectorHappiness, size));
 
             return addEls(makeEl('tr'), [proposer, selector]);
         }));
     };
 
-    var compareProfiles = (prof1, prof2)=>{
-        return R.sum(R.keys(prof1).map(name => prof1[name] === prof2[name] ? 0 : 10));
-    };
+    const compareProfiles = (prof1, prof2) => R.sum(R.keys(prof1)
+        .map(name => (prof1[name] === prof2[name] ? 0 : 10)));
 
-    var calcPriorities = function(){
-        if(state.players === undefined){
+    const calcPriorities = () => {
+        if (state.players === undefined) {
             Utils.alert(l10n.get('profiles-not-ready'));
             return;
         }
 
-        var checkboxes = queryEls('.player-profile-panel input[type=checkbox]');
-        var playerProfiles = R.zipObj(state.players, R.ap([R.clone], R.repeat({}, state.players.length)));
-        checkboxes.forEach(el => {
-            var key = JSON.parse(getAttr(el,'key'));
+        let checkboxes = queryEls('.player-profile-panel input[type=checkbox]');
+        const playerProfiles = R.zipObj(
+            state.players,
+            R.ap([R.clone], R.repeat({}, state.players.length))
+        );
+        checkboxes.forEach((el) => {
+            const key = JSON.parse(getAttr(el, 'key'));
             playerProfiles[key.subject][key.profileItem] = el.checked;
         });
         checkboxes = queryEls('.character-profile-panel input[type=checkbox]');
-        var charProfiles = R.zipObj(state.chars, R.ap([R.clone], R.repeat({}, state.chars.length)));
-        checkboxes.forEach(el => {
-            var key = JSON.parse(getAttr(el,'key'));
+        const charProfiles = R.zipObj(
+            state.chars,
+            R.ap([R.clone], R.repeat({}, state.chars.length))
+        );
+        checkboxes.forEach((el) => {
+            const key = JSON.parse(getAttr(el, 'key'));
             charProfiles[key.subject][key.profileItem] = el.checked;
         });
         console.log(playerProfiles);
         console.log(charProfiles);
 
-        var playerPriorities = R.mapObjIndexed((playerProfile) => {
-            return R.keys(charProfiles).map(char => {
-                return {id:char, index: compareProfiles(playerProfile, charProfiles[char])};
-            }).sort(CommonUtils.charOrdAFactory(R.prop('index')));
-        }, playerProfiles);
-        console.log(playerPriorities);
-        var charPriorities = R.mapObjIndexed((charProfile) => {
-            return R.keys(playerProfiles).map(player => {
-                return {id:player, index: compareProfiles(charProfile, playerProfiles[player])};
-            }).sort(CommonUtils.charOrdAFactory(R.prop('index')));
-        }, charProfiles);
-        console.log(charPriorities);
+        const indexCmp = CommonUtils.charOrdAFactory(R.prop('index'));
+        const profile2data = R.curry((profile, profiles, profileName) => ({
+            id: profileName,
+            index: compareProfiles(profile, profiles[profileName]),
+        }));
+        //        console.log(playerPriorities);
+        const profile2priority = R.curry((profiles, profile) => R.keys(profiles)
+            .map(profile2data(profile, profiles)).sort(indexCmp));
+        const playerPriorities = R.mapObjIndexed(profile2priority(charProfiles), playerProfiles);
+        const charPriorities = R.mapObjIndexed(profile2priority(playerProfiles), charProfiles);
+        //        console.log(charPriorities);
 
         //        state.playerPriorities = playerPriorities;
         //        state.charPriorities = charPriorities;
@@ -150,20 +156,19 @@ See the License for the specific language governing permissions and
         makePriorityTable(queryEl('.character-priority-panel thead'), queryEl('.character-priority-panel tbody'), charPriorities);
     };
 
-    var makePriorityTable = (thead, tbody, priorities)=>{
-        addEl(clearEl(thead), addEls(makeEl('tr'), [''].concat(R.range(0,state.players.length)).map(name => addEl(makeEl('th'), makeText(name)))));
+    const makePriorityTable = (thead, tbody, priorities) => {
+        addEl(clearEl(thead), addEls(makeEl('tr'), [''].concat(R.range(0, state.players.length)).map(name => addEl(makeEl('th'), makeText(name)))));
 
-        addEls(clearEl(tbody), R.keys(priorities).sort().map(subject => {
-            var label = addEl(makeEl('th'), makeText(subject));
-            var items = priorities[subject].map(item => {
-                var label = addEl(makeEl('div'), makeText(item.id));
-                var input = setAttr(makeEl('input'), 'type', 'number');
+        addEls(clearEl(tbody), R.keys(priorities).sort().map((subject) => {
+            const label = addEl(makeEl('th'), makeText(subject));
+            const items = priorities[subject].map((item) => {
+                const label2 = addEl(makeEl('div'), makeText(item.id));
+                const input = setAttr(makeEl('input'), 'type', 'number');
                 input.value = item.index;
                 input.style.width = '40px';
-                addEl(label, input);
-                setAttr(input, 'key', JSON.stringify({subject: subject, itemId: item.id}));
-                //                setAttr(input, 'key', JSON.stringify({subject: subject, profileItem: profileItem}));
-                return addEl(makeEl('td'), label);
+                addEl(label2, input);
+                setAttr(input, 'key', JSON.stringify({ subject, itemId: item.id }));
+                return addEl(makeEl('td'), label2);
                 //                return addEl(makeEl('td'), makeText(item.id + ':' + item.index));
             });
 
@@ -172,22 +177,23 @@ See the License for the specific language governing permissions and
         }));
     };
 
-    var createDataForms = function(){
-        var players = queryEl('#playersInput').value.trim();
-        var chars = queryEl('#charactersInput').value.trim();
-        var profile = queryEl('#profileInput').value.trim();
-        if(players === '' || chars === '' || profile === ''){
+    const createDataForms = () => {
+        let players = queryEl('#playersInput').value.trim();
+        let chars = queryEl('#charactersInput').value.trim();
+        let profile = queryEl('#profileInput').value.trim();
+        if (players === '' || chars === '' || profile === '') {
             Utils.alert(l10n.get('some-values-missing'));
             return;
         }
         players = players.split(',');
         chars = chars.split(',');
         profile = profile.split(',');
-        if(players.length !== chars.length){
+        if (players.length !== chars.length) {
             Utils.alert(l10n.get('player-and char-list-length-not-equal'));
             return;
         }
-        if(R.uniq(players).length !== players.length || R.uniq(chars).length !== chars.length || R.uniq(profile).length !== profile.length){
+        if (R.uniq(players).length !== players.length || R.uniq(chars).length !== chars.length ||
+                R.uniq(profile).length !== profile.length) {
             Utils.alert(l10n.get('some-values-are-not-unique'));
             return;
         }
@@ -199,14 +205,14 @@ See the License for the specific language governing permissions and
         createTable(queryEl('.character-profile-panel thead'), queryEl('.character-profile-panel tbody'), state.profile, state.chars);
     };
 
-    var createTable = (thead, tbody, profile, subjects) => {
+    let createTable = (thead, tbody, profile, subjects) => {
         addEl(clearEl(thead), addEls(makeEl('tr'), [''].concat(profile).map(name => addEl(makeEl('th'), makeText(name)))));
 
-        addEls(clearEl(tbody), subjects.map(subject => {
-            var label = addEl(makeEl('th'), makeText(subject));
-            var items = profile.map(profileItem => {
-                var input = setAttr(makeEl('input'), 'type', 'checkbox');
-                setAttr(input, 'key', JSON.stringify({subject: subject, profileItem: profileItem}));
+        addEls(clearEl(tbody), subjects.map((subject) => {
+            const label = addEl(makeEl('th'), makeText(subject));
+            const items = profile.map((profileItem) => {
+                const input = setAttr(makeEl('input'), 'type', 'checkbox');
+                setAttr(input, 'key', JSON.stringify({ subject, profileItem }));
                 return addEl(makeEl('td'), input);
             });
 
@@ -215,24 +221,23 @@ See the License for the specific language governing permissions and
     };
 
     function shuffle(array) {
-        var currentIndex = array.length,
-            temporaryValue,
-            randomIndex;
+        let currentIndex = array.length, temporaryValue, randomIndex;
+        const arr2 = R.clone(array);
         // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
+        while (currentIndex !== 0) {
             // Pick a remaining element...
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex -= 1;
             // And swap it with the current element.
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
+            temporaryValue = arr2[currentIndex];
+            arr2[currentIndex] = arr2[randomIndex];
+            arr2[randomIndex] = temporaryValue;
         }
 
-        return array;
+        return arr2;
     }
 
-    var randomChecks = ()=>{
-        queryEls('input[type=checkbox]').forEach(el => el.checked = Math.random() >= 0.5);
-    };
-})(this['app']={});
+    // eslint-disable-next-line no-param-reassign
+    const randomCheck = el => (el.checked = Math.random() >= 0.5);
+    let randomChecks = () => queryEls('input[type=checkbox]').forEach(randomCheck);
+})(this.app = {});

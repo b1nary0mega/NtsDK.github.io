@@ -23,6 +23,7 @@ module.exports = {
         jQuery: false,
         $: false,
         vex: false,
+        Ya: false,
         
         
         l10n: false,

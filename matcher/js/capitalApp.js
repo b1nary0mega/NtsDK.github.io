@@ -106,28 +106,53 @@ See the License for the specific language governing permissions and
         const score = getScore(capsArr);
 
         const advices = state.advices.map(el => checkboxes[el]).join(', ');
-        let str;
+        let str, strShort;
         switch (state.advices.length) {
-        case 0: str = 'без подсказок!'; break;
-        case 1: str = `с одной подсказкой: <br>${advices}!`; break;
-        case 2: str = `с ${state.advices.length} подсказками: <br>${advices}!`; break;
-        case 3: case 4: case 5: str = `с ${state.advices.length} подсказками: <br>${advices}.`; break;
-        default: str = '';
+        case 0:
+            str = 'без подсказок!';
+            strShort = 'без подсказок!';
+            break;
+        case 1:
+            str = `с одной подсказкой: <br>${advices}!`;
+            strShort = 'с одной подсказкой!';
+            break;
+        case 2:
+            str = `с ${state.advices.length} подсказками: <br>${advices}!`;
+            strShort = `с ${state.advices.length} подсказками!`;
+            break;
+        case 3: case 4: case 5:
+            str = `с ${state.advices.length} подсказками: <br>${advices}.`;
+            strShort = `с ${state.advices.length} подсказками.`;
+            break;
+        default:
+            str = '';
+            strShort = '';
         }
-        let congrat = '';
+        let congrat = '', congratSocial = '';
         if (score > max * 0.8 && state.advices.length < 3) {
             congrat = 'Поздравляем! Вы можете нарисовать глобус по памяти!';
-        } else if (score > max * 0.6 && state.advices.length < 4) {
+            congratSocial = 'Я могу нарисовать глобус по памяти!';
+        } else if (score > max * 0.6) {
             congrat = 'Хороший результат! Вы не заблудитесь на глобусе.';
+            congratSocial = 'На глобусе не заблужусь.';
         } else {
-            congrat = 'Нужно еще потренироваться';
+            congrat = 'Нужно ещё потренироваться';
+            congratSocial = 'Буду ещё тренироваться.';
         }
-        const socials = `<div class="ya-share2"
+        const socials = `<div id="ya-share3"
             data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""
             data-image="http://trechkalov.com/matcher/images/capitals.jpg"
             data-title="От столицы до столицы"
             data-description="Ваш счет ${score} из ${max} ${str} ${congrat}"></div>`;
         Utils.alert({ unsafeMessage: `Ваш счет ${score} из ${max} ${str}<br>${congrat}${socials}` });
+        Ya.share2('ya-share3', {
+            content: {
+                url: 'http://trechkalov.com/matcher/capitals.html',
+                title: `Мой счет в игре «От столицы до столицы» ${score} из ${max} ${strShort}  ${congratSocial}`,
+                //                description: `Мой счет ${score} из ${max} ${str} ${congrat}`,
+                image: 'http://trechkalov.com/matcher/images/capitals.jpg'
+            }
+        });
 
         state.capitals.map(addShortestPath(true, state.seedCapital));
         addCapital(state.seedCapital, true);

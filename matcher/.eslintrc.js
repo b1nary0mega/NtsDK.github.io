@@ -45,6 +45,7 @@ module.exports = {
         clearEl: false,
         setAttr: false,
         getAttr: false,
+        delAttr: false,
         setProps: false,
         setStyle: false,
         listen: false,

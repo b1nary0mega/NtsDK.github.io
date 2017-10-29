@@ -16,14 +16,15 @@ See the License for the specific language governing permissions and
 
 ((exports) => {
     const state = {};
+    const checkboxes = {
+        'show-country': 'Названия стран',
+        'show-continent': 'Названия континетов',
+        'show-seed-capital-mark': 'Метка опорной столицы',
+        'show-capital-marks': 'Метки столиц',
+        'show-shortest-paths': 'Отображение кратчайших путей'
+    };
 
-    const checkboxList = [
-        'show-country',
-        'show-continent',
-        'show-seed-capital-mark',
-        'show-capital-marks',
-        'show-shortest-paths'
-    ];
+    const checkboxList = R.keys(checkboxes);
 
     exports.init = () => {
         //        queryEl('body').innerHTML = JSON.stringify(Data.capitals);
@@ -85,7 +86,11 @@ See the License for the specific language governing permissions and
         return swaps;
     };
 
+    const getMax = () => (state.capitalNum * (state.capitalNum - 1)) / 2;
+    const getScore = capsArr => getMax() - bubbleSort(R.clone(capsArr));
+
     const endGame = () => {
+        setAttr(queryEl('.end-game'), 'disabled', 'disabled');
         const divs = queryEls('.capitalsList div');
         const capitalNames = divs.map(el => getAttr(el, 'name'));
 
@@ -97,49 +102,53 @@ See the License for the specific language governing permissions and
         });
 
         const capsArr = capitalNames.map(el => caps[el]);
-        const swaps = bubbleSort(capsArr);
-        const max = (state.capitalNum * (state.capitalNum - 1)) / 2;
-        const score = max - swaps;
+        const max = getMax();
+        const score = getScore(capsArr);
 
-        const advices = R.sum(checkboxList.map(el => (queryEl(`.${el}`).checked ? 1 : 0)));
+        const advices = state.advices.map(el => checkboxes[el]).join(', ');
         let str;
-        switch (advices) {
+        switch (state.advices.length) {
         case 0: str = 'без подсказок!'; break;
-        case 1: str = 'с одной подсказкой!'; break;
-        case 2: str = `с ${advices} подсказками!`; break;
-        case 3: case 4: case 5: str = `с ${advices} подсказками.`; break;
+        case 1: str = `с одной подсказкой: <br>${advices}!`; break;
+        case 2: str = `с ${state.advices.length} подсказками: <br>${advices}!`; break;
+        case 3: case 4: case 5: str = `с ${state.advices.length} подсказками: <br>${advices}.`; break;
         default: str = '';
         }
         let congrat = '';
-        if (score > max * 0.8) {
+        if (score > max * 0.8 && state.advices.length < 3) {
             congrat = 'Поздравляем! Вы можете нарисовать глобус по памяти!';
-        } else if (score > max * 0.6) {
+        } else if (score > max * 0.6 && state.advices.length < 4) {
             congrat = 'Хороший результат! Вы не заблудитесь на глобусе.';
         } else {
             congrat = 'Нужно еще потренироваться';
         }
-        Utils.alert({ unsafeMessage: strFormat('Ваш счет {0} из {1} {2}<br>{3}', [score, max, str, congrat]) });
+        const socials = `<div class="ya-share2"
+            data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""
+            data-image="http://trechkalov.com/matcher/images/capitals.jpg"
+            data-title="От столицы до столицы"
+            data-description="Ваш счет ${score} из ${max} ${str} ${congrat}"></div>`;
+        Utils.alert({ unsafeMessage: `Ваш счет ${score} из ${max} ${str}<br>${congrat}${socials}` });
 
         state.capitals.map(addShortestPath(true, state.seedCapital));
         addCapital(state.seedCapital, true);
         state.capitals.map(addCapital(R.__, false));
     };
 
-
     const startGame = () => {
+        delAttr(queryEl('.end-game'), 'disabled');
         addClass(queryEl('.container-fluid .intro-panel .panel-body'), 'hidden');
 
         queryEls('.annotation').map(removeClass(R.__, 'hidden'));
 
         state.map.geoObjects.removeAll();
         state.capitalNum = Number(queryEl('.capital-number').value);
+        state.advices = checkboxList.filter(el => queryEl(`.${el}`).checked);
 
         let names = R.keys(Data.capitals);
 
         if (!queryEl('.full-capital-list').checked) {
             names = names.filter(name => !R.contains(Data.capitals[name].enCountry, Data.extraCountryList));
         }
-
 
         names = shuffle(names);
         state.seedCapital = R.clone(Data.capitals[names[0]]);
@@ -152,8 +161,11 @@ See the License for the specific language governing permissions and
             state.seedCapital = R.clone(Data.capitals[names[0]]);
             //            rest = shuffle(rest);
             state.capitals = R.clone(R.values(R.pick(R.slice(1, 1 + state.capitalNum, names), Data.capitals)));
-            state.capitals.map(el =>
-                (el.distance = getDistance(state.seedCapital.coords, el.coords)));
+            state.capitals.map(el => (el.distance = getDistance(state.seedCapital.coords, el.coords)));
+            while (getMax() * 0.4 < getScore(state.capitals)) {
+                state.capitals = shuffle(state.capitals);
+            }
+
             const distances = state.capitals.map(R.prop('distance'));
             distances.sort();
 
@@ -167,11 +179,6 @@ See the License for the specific language governing permissions and
             Utils.alert('Не удалось подобрать подходящий набор столиц. Попробуйте уменьшить минимальное расстояние между столицами от главной.');
             return;
         }
-
-
-        console.log(state.seedCapital);
-        console.log(state.capitals);
-
 
         if (queryEl('.show-seed-capital-mark').checked) {
             addCapital(state.seedCapital, true);
@@ -207,10 +214,10 @@ See the License for the specific language governing permissions and
     const getDistance = R.curry((startPoint, endPoint) =>
         ymaps.coordSystem.geo.solveInverseProblem(startPoint, endPoint).distance);
 
-    const addShortestPath = R.curry((showKm, cap1, cap2) => {
-        let hint = `${cap1.name}-${cap2.name}`;
-        if (showKm) {
-            hint += ` (${Math.round(cap2.distance / 1000)} км)`;
+    const addShortestPath = R.curry((showHint, cap1, cap2) => {
+        let hint = '';
+        if (showHint) {
+            hint = `${cap1.name}-${cap2.name} (${Math.round(cap2.distance / 1000)} км)`;
         }
 
         const myGeoObject = new ymaps.GeoObject({

@@ -5,3 +5,6 @@
 
 eclint check js
 eclint fix js
+
+eclint check js/capitalApp.js
+"node_modules/.bin/eslint" js/capitalApp.js

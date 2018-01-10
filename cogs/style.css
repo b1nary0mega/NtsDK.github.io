@@ -45,7 +45,7 @@ div.table_description {
   top:200px;
   left:360px;
   z-index:299;
-  width:250px;
+  /*width:250px;*/
   /*height:120px;*/
   background-color: #f9f9f9;
   border-style:solid;
@@ -77,4 +77,5 @@ div.table_description {
 .panel-body a{
   width: 100%;
   margin-bottom: 4px;
+  white-space: normal;
 }

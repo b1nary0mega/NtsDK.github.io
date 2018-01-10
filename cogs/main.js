@@ -21,6 +21,12 @@ function init(){
   listen(queryEl(`${root}.save-edge-button`), 'click', updateEdge);
   listen(queryEl(`${root}.cancel-add-edge-button`), 'click', cancel('.board-add-edge-popup'));
   
+  listen(document, 'keyup', function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+      queryEls(`${root}.hidable-popup`).forEach(el => addClass(el, 'hidden'));
+    }
+  });
+  
   draw();
 }
 
@@ -44,6 +50,7 @@ function drawNetwork() {
           document.getElementById('saveButton').onclick = saveData.bind(this, data, callback);
           document.getElementById('cancelButton').onclick = clearPopUp.bind();
           document.getElementById('network-popUp').style.display = 'block';
+          document.getElementById('node-label').focus();
         },
         editNode: function (data, callback) {
           // filling in the popup DOM elements
@@ -54,6 +61,7 @@ function drawNetwork() {
           document.getElementById('saveButton').onclick = saveData.bind(this, data, callback);
           document.getElementById('cancelButton').onclick = cancelEdit.bind(this,callback);
           document.getElementById('network-popUp').style.display = 'block';
+          document.getElementById('node-label').focus();
         },
         addEdge: function (data, callback) {
           data.arrows ='to';
@@ -92,6 +100,7 @@ function showEdgeLabelEditor(params) {
         };
         queryEl(`${root}.add-edge-label-input`).value = edge.label || '';
         showPopup('.board-add-edge-popup', true);
+        queryEl(`${root}.add-edge-label-input`).focus();
     }
 }
 function hideEdgeLabelEditor(params) {

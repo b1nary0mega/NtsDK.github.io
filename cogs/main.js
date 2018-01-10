@@ -16,7 +16,7 @@ function init(){
   document.querySelector('.draw-button').addEventListener('click', draw);
   document.querySelector('.get-image-button').addEventListener('click', getImage);
   document.querySelector('.download-button').addEventListener('click', downloadCsv);
-  
+  document.querySelector('.clear-button').addEventListener('click', clearNetwork);
   
   listen(queryEl(`${root}.save-edge-button`), 'click', updateEdge);
   listen(queryEl(`${root}.cancel-add-edge-button`), 'click', cancel('.board-add-edge-popup'));
@@ -37,7 +37,7 @@ function drawNetwork() {
     manipulation: {
         addNode: function (data, callback) {
           // filling in the popup DOM elements
-          document.getElementById('operation').innerHTML = "Добавить персонажа";
+          document.getElementById('operation').innerHTML = "Добавить узел";
           document.getElementById('node-id').value = data.id;
           document.getElementById('node-label').value = data.label;
           document.getElementById('node-group').value = "";
@@ -47,7 +47,7 @@ function drawNetwork() {
         },
         editNode: function (data, callback) {
           // filling in the popup DOM elements
-          document.getElementById('operation').innerHTML = "Редактировать персонажа";
+          document.getElementById('operation').innerHTML = "Редактировать узел";
           document.getElementById('node-id').value = data.id;
           document.getElementById('node-label').value = data.label;
           document.getElementById('node-group').value = data.group;
@@ -175,26 +175,31 @@ function getImage(event){
   context.fillStyle = "#ffffff";
   context.fillRect(0,0,w,h);
   
-  //canvas.globalAlpha = 0.5;
   var img    = canvas.toDataURL("image/png");
   var link = document.querySelector(".link");
   event.target.href = img;
-  draw();
+  //draw();
+  drawNetwork();
   //document.write('<img src="'+img+'"/>');
+}
+
+function clearNetwork(){
+  var r = confirm("Очистка шестеренки необратима. Вы уверены?");
+  if (r == true) {
+    document.querySelector('.nodesText').value = '';
+    document.querySelector('.edgesText').value = '';
+    draw();
+  }
 }
 
 function updateEdge() {
     const input = queryEl(`${root}.add-edge-label-input`);
     const label = input.value.trim();
     const { edge } = state.modifyArgs;
-    /*DBMS.setEdgeLabel(edge.from, edge.to, label, (err) => {
-        if (err) { Utils.handleError(err); return; }*/
-
-        edge.label = label;
-        showPopup('.board-add-edge-popup', false);
-        input.value = '';
-        state.modifyArgs.callback(edge);
-   // });
+    edge.label = label;
+    showPopup('.board-add-edge-popup', false);
+    input.value = '';
+    state.modifyArgs.callback(edge);
 }
 
 function cancel(selector) {
@@ -205,21 +210,9 @@ function cancel(selector) {
 }
 
 function downloadCsv() {
-    /*const el = queryEl(`${root}.profile-item-selector`);
-    const selected = [];
-    for (let i = 0; i < el.options.length; i += 1) {
-        selected[i] = el.options[i].selected;
-    }
-
-    const dataArrays = makePrintData();
-    const cleanArrays = dataArrays.map(dataArray => dataArray.filter((item, index) => selected[index]).map(R.prop('value')));*/
-
-    //FileUtils.arr2d2Csv(cleanArrays, 'table.csv');
-    
     var arr = state.nodesDataset.map((node) => [node.label, node.group]);
     var arr2 = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).label, edge.label, 
       state.nodesDataset.get(edge.to).label]);
-    //state.edgesDataset = new vis.DataSet();
 
     arr2d2Csv(arr.concat(arr2), 'cogs.csv');
 }

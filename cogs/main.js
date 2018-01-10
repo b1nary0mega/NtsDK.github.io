@@ -11,7 +11,9 @@ state.edgesDataset = new vis.DataSet();
 
 function init(){
   document.querySelector('.nodesText').value = charExample;
+  setAttr(document.querySelector('.nodesText'),'rows', charExample.split('\n').length);
   document.querySelector('.edgesText').value = nodesExample;
+  setAttr(document.querySelector('.edgesText'),'rows', nodesExample.split('\n').length);
   
   document.querySelector('.draw-button').addEventListener('click', draw);
   document.querySelector('.get-image-button').addEventListener('click', getImage);

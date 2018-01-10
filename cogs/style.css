@@ -79,3 +79,9 @@ div.table_description {
   margin-bottom: 4px;
   white-space: normal;
 }
+
+textarea{
+  resize: vertical;
+  max-width: 100%; 
+  width: 100%;
+}

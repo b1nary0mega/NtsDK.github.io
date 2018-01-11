@@ -19,6 +19,21 @@ See the License for the specific language governing permissions and
 
 //const strFormat = R.curry(CommonUtils.strFormat);
 
+var CU = {};
+
+CU.charOrdAFactoryBase = R.curry((sortDir, prepare) => function cmp(a, b) {
+    a = prepare(a);
+    b = prepare(b);
+    if (R.isNil(a) && R.isNil(b)) return 0;
+    if (R.isNil(a)) return 1;
+    if (R.isNil(b)) return -1;
+    if (a > b) { return sortDir === 'asc' ? 1 : -1; }
+    if (a < b) { return sortDir === 'asc' ? -1 : 1; }
+    return 0;
+});
+
+CU.charOrdAFactory = CU.charOrdAFactoryBase('asc');
+
 function getL10n(key) {
     return L10n.getValue(key);
 }

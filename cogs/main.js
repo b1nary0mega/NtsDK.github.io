@@ -12,21 +12,39 @@ state.edgesDataset = new vis.DataSet();
 function init(){
   document.querySelector('.nodesText').value = charExample;
   setAttr(document.querySelector('.nodesText'),'rows', charExample.split('\n').length);
-  document.querySelector('.edgesText').value = nodesExample;
-  setAttr(document.querySelector('.edgesText'),'rows', nodesExample.split('\n').length);
+  document.querySelector('.edgesText').value = edgesExample;
+  setAttr(document.querySelector('.edgesText'),'rows', edgesExample.split('\n').length);
   
   document.querySelector('.draw-button').addEventListener('click', draw);
   document.querySelector('.get-image-button').addEventListener('click', getImage);
   document.querySelector('.download-button').addEventListener('click', downloadCsv);
   document.querySelector('.clear-button').addEventListener('click', clearNetwork);
+  var closeBtn = addEl(addClasses(makeEl('button'), ['btn','btn-default']),makeText('Закрыть'));
   
+  listenOnEnter(queryEl(`${root}#node-label`), () => document.getElementById('saveButton').click());
+  listenOnEnter(queryEl(`${root}#node-group`), () => document.getElementById('saveButton').click());
+
   listen(queryEl(`${root}.save-edge-button`), 'click', updateEdge);
+  listenOnEnter(queryEl(`${root}.add-edge-label-input`), () => queryEl(`${root}.save-edge-button`).click());
   listen(queryEl(`${root}.cancel-add-edge-button`), 'click', cancel('.board-add-edge-popup'));
+  
+  listen(queryEl(`${root}.close-settings-popup-button`), 'click', cancel('#config'));
+  listen(queryEl(`${root}.physics-settings-button`), 'click', () => showPopup(`${root}#config`, true));
+  
+  listen(queryEl(`${root}.search-node`), 'change', onNodeFocus);
   
   listen(document, 'keyup', function(e) {
     if (e.keyCode == 27) { // escape key maps to keycode `27`
       queryEls(`${root}.hidable-popup`).forEach(el => addClass(el, 'hidden'));
     }
+  });
+  
+  state.nodesDataset.on('*', () => {
+    updateNodeTextArea();
+    fillSearchSelect();
+  });
+  state.edgesDataset.on('*', () => {
+    updateEdgeTextArea();
   });
   
   draw();
@@ -35,10 +53,6 @@ function init(){
 // create a network
 function drawNetwork() {
   var container = document.getElementById('mynetwork');
-  /*var data = {
-    nodes: nodes,
-    edges: edges
-  };*/
   var options = {
     locale: 'ru',
     locales: visLocales,
@@ -71,21 +85,50 @@ function drawNetwork() {
             var r = confirm("Хотите ли вы присоединить узел к самому себе?");
             if (r == true) {
               callback(data);
+              //updateTextAreas();
             }
           }
           else {
             callback(data);
+            //updateTextAreas();
           }
+        },
+        editEdge:function (data, callback) {
+          callback(data);
+          //updateTextAreas();
+        },
+        deleteNode:function (data, callback) {
+          callback(data);
+          //updateTextAreas();
+        },
+        deleteEdge:function (data, callback) {
+          callback(data);
+          //updateTextAreas();
+        },
+    },
+    physics: {
+      stabilization: false
+    },
+    configure: {
+      filter:function (option, path) {
+        if (path.indexOf('physics') !== -1) {
+          return true;
         }
+        if (path.indexOf('smooth') !== -1 || option === 'smooth') {
+          return true;
+        }
+        return false;
+      },
+      container: document.getElementById('configInner')
     }
   };
   const data = {
     nodes: state.nodesDataset,
     edges: state.edgesDataset
   };
-  var network = new vis.Network(container, data, options);
-  network.on('selectEdge', showEdgeLabelEditor);
-  network.on('deselectEdge', hideEdgeLabelEditor);
+  state.network = new vis.Network(container, data, options);
+  state.network.on('selectEdge', showEdgeLabelEditor);
+  state.network.on('deselectEdge', hideEdgeLabelEditor);
 }
 
 function showEdgeLabelEditor(params) {
@@ -130,7 +173,10 @@ function saveData(data,callback) {
   data.group = document.getElementById('node-group').value;
   clearPopUp();
   callback(data);
+  //updateTextAreas();
 }
+
+
 
 function parseData(){
   nodes = [];
@@ -189,9 +235,7 @@ function getImage(event){
   var img    = canvas.toDataURL("image/png");
   var link = document.querySelector(".link");
   event.target.href = img;
-  //draw();
   drawNetwork();
-  //document.write('<img src="'+img+'"/>');
 }
 
 function clearNetwork(){
@@ -211,6 +255,7 @@ function updateEdge() {
     showPopup('.board-add-edge-popup', false);
     input.value = '';
     state.modifyArgs.callback(edge);
+    //updateTextAreas();
 }
 
 function cancel(selector) {
@@ -218,6 +263,26 @@ function cancel(selector) {
         showPopup(selector, false);
         state.modifyArgs.callback();
     };
+}
+
+function updateNodeTextArea(){
+  document.querySelector('.nodesText').value = state.nodesDataset.map((node) => [node.label, node.group].join('\t')).join('\n');
+  //document.querySelector('.edgesText').value = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).label, edge.label, 
+  //    state.nodesDataset.get(edge.to).label].join('\t')).join('\n');
+  //fillSearchSelect();
+}
+
+function updateEdgeTextArea(){
+  //document.querySelector('.nodesText').value = state.nodesDataset.map((node) => [node.label, node.group].join('\t')).join('\n');
+  document.querySelector('.edgesText').value = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).label, edge.label, 
+      state.nodesDataset.get(edge.to).label].join('\t')).join('\n');
+  //fillSearchSelect();
+}
+
+function fillSearchSelect(){
+  var arr = state.nodesDataset.map((node) => ({name: node.label, value: node.id}));
+  arr.sort(CU.charOrdAFactory(a => a.name.toLowerCase()));
+  fillSelector(clearEl(queryEl('.search-node')), arr);
 }
 
 function downloadCsv() {
@@ -247,5 +312,9 @@ var arr2d2Csv = (arr, fileName) => {
     });
     saveAs(out, fileName);
 };
+
+function onNodeFocus(event) {
+    state.network.focus(event.target.value, snFocusOptions);
+}
 
 init();

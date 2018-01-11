@@ -38,15 +38,21 @@
             <div>Связи</div>
             <textarea class="edgesText form-control" style=""></textarea>
           </div>
+          <div>
+            <div>Поиск</div>
+            <select class="search-node form-control" style=""></select>
+          </div>
           <br>
           <button class="draw-button btn btn-primary">Нарисовать</button><br>
           <a href="#" class="link get-image-button btn btn-primary" style="" download="cogs.png">Скачать картинку (вызовет перерисовку картинки)</a><br>
           <button class="download-button btn btn-primary">Скачать таблицу для Excel (CSV)</button><br>
           <button class="clear-button btn btn-primary">Очистить</button>
+          <button class="physics-settings-button btn btn-primary">Настройки физики отображения</button>
       </div>
       <div class="panel-body">
         © <a href="http://trechkalov.com">NtsDK</a>, 2017 <a href="https://github.com/NtsDK">github</a>
       </div>
+      
     </div>
     
     <div id="mynetwork" class=" col-xs-9">
@@ -64,10 +70,10 @@
         <td>id</td><td><input id="node-id" value="new value" /></td>
       </tr>
       <tr>
-        <td>Подпись</td><td><input id="node-label" value="new value" class="form-control"/></td>
+        <td>Подпись</td><td><input id="node-label" placeholder="" class="form-control"/></td>
       </tr>
       <tr>
-        <td>Тип (группа)</td><td><input id="node-group" value=""  class="form-control"/></td>
+        <td>Тип (группа)</td><td><input id="node-group" placeholder=""  class="form-control"/></td>
       </tr>
     </table>
     <button id="saveButton" class="btn btn-primary">Сохранить</button>
@@ -78,6 +84,12 @@
     <input class="add-edge-label-input form-control" l10n-placeholder-id="investigation-board-enter-edge-label">
     <button class="save-edge-button btn btn-primary" l10n-id="common-ok">Сохранить</button>
     <button class="cancel-add-edge-button btn btn-primary" l10n-id="common-cancel">Отмена</button>
+  </div>
+  
+  <div id="config" class="hidable-popup hidden">
+    <div id="configInner" >
+    </div>
+    <button class="close-settings-popup-button btn btn-primary" l10n-id="common-ok" style="float: right;">Закрыть</button>
   </div>
 
   <script type="text/javascript" src="main.js"></script>

@@ -19,41 +19,116 @@
 </head>
 <body>
 
+
+
 <div class="container-fluid">
   <div class="row">
-    <div class="panel panel-default col-xs-3">
-      <div class="panel-body">
-          <p>FAQ: Что такое шестерёнка? См. <a href="http://master.larp.ru/theory/gear.php">тут</a> и <a href="http://lib.rpg.ru/index.php/%D0%A8%D0%B5%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%BD%D0%BA%D0%B0_%D1%80%D0%BE%D0%BB%D0%B5%D0%B9">тут</a></p>
-          <p>Заполните таблицу в эксель как на <a data-toggle="collapse" href="#example-img">картинке</a>.</p>
-          <img class="collapse" id="example-img" src="excelExample.jpg" style="width: 100%;">
+    <div class="col-xs-3" style="overflow-y: auto;height: 100vh;">
+    
+      <div id="faq" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="">
+            <h5 class="panel-title">
+              <a data-toggle="collapse" data-parent="#faq" href="#answerOne" aria-expanded="true" aria-controls="answerOne">
+              Инструкция
+              </a>
+            </h5>
+          </div>
+          <div id="answerOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+            <div class="panel-body">
+              <p>FAQ: Что такое шестерёнка? См. <a href="http://master.larp.ru/theory/gear.php">тут</a> и <a href="http://lib.rpg.ru/index.php/%D0%A8%D0%B5%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%BD%D0%BA%D0%B0_%D1%80%D0%BE%D0%BB%D0%B5%D0%B9">тут</a></p>
+              <p>Заполните таблицу в эксель как на <a data-toggle="collapse" href="#example-img">картинке</a>.</p>
+              <img class="collapse" id="example-img" src="excelExample.jpg" style="width: 100%;">
+            
+              <p>Разверните панель Данные.</p>
+              <p>Скопируйте из Excel список узлов вида "название тип".</p>
+              <p>Скопируйте из Excel список связей вида "узел1 действие узел2".</p>
+              <p>Нажмите Нарисовать.</p>
+            </div>
+          </div>
+        </div>
         
-          <p>Скопируйте из Excel список узлов вида "название тип".</p>
-          <p>Скопируйте из Excel список связей вида "узел1 действие узел2".</p>
-          <p>Нажмите Нарисовать.</p>
-          <div>
-            <div>Узлы</div>
-            <textarea class="nodesText form-control" style=""></textarea>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="">
+            <h5 class="panel-title">
+              <a data-toggle="collapse" data-parent="#faq" href="#answerTwo" aria-expanded="false" aria-controls="answerTwo">
+              Данные
+              </a>
+            </h5>
           </div>
-          <div>
-            <div>Связи</div>
-            <textarea class="edgesText form-control" style=""></textarea>
+          <div id="answerTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+            <div class="panel-body">
+              <div>
+                <div>Узлы</div>
+                <textarea class="nodesText form-control" style=""></textarea>
+              </div>
+              <div>
+                <div>Связи</div>
+                <textarea class="edgesText form-control" style=""></textarea>
+              </div>
+              <div>
+                <div>Поиск</div>
+                <select class="search-node form-control" style=""></select>
+              </div>
+              <br>
+              <button class="draw-button btn btn-primary">Нарисовать</button><br>
+              <button class="clear-button btn btn-primary">Очистить</button>
+            </div>
           </div>
-          <div>
-            <div>Поиск</div>
-            <select class="search-node form-control" style=""></select>
+        </div>
+        
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="">
+            <h5 class="panel-title">
+              <a data-toggle="collapse" data-parent="#faq" href="#answerThree" aria-expanded="false" aria-controls="answerThree">
+              Физика
+              </a>
+            </h5>
           </div>
-          <br>
-          <button class="draw-button btn btn-primary">Нарисовать</button><br>
-          <a href="#" class="link get-image-button btn btn-primary" style="" download="cogs.png">Скачать картинку (вызовет перерисовку картинки)</a><br>
-          <button class="download-button btn btn-primary">Скачать таблицу для Excel (CSV)</button><br>
-          <button class="clear-button btn btn-primary">Очистить</button>
-          <button class="physics-settings-button btn btn-primary">Настройки физики отображения</button>
+          <div id="answerThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+            <div class="panel-body">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input physics-enabled-checkbox" type="checkbox" value="">
+                  Физика включена
+                </label>
+              </div>
+              <div class="form-group">
+                <button class="physics-settings-button btn btn-primary">Редактор физики отображения</button>
+              </div>
+              <div class="form-group">
+                <div>Свои настройки физики (копируются из редактора - нажмите generate option)</div>
+                <textarea class="custom-physics-settings form-control" style=""></textarea>
+              </div>
+              <button class="custom-physics-settings-button btn btn-primary">Применить настройки</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="">
+            <h5 class="panel-title">
+              <a data-toggle="collapse" data-parent="#faq" href="#answerFour" aria-expanded="false" aria-controls="answerFour">
+              Экспорт
+              </a>
+            </h5>
+          </div>
+          <div id="answerFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+            <div class="panel-body">
+              <a href="#" class="link get-image-button btn btn-primary" style="" download="cogs.png">Скачать картинку (вызовет перерисовку картинки)</a><br>
+              <button class="download-button btn btn-primary">Скачать таблицу для Excel (CSV)</button><br>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="panel-body">
-        © <a href="http://trechkalov.com">NtsDK</a>, 2017 <a href="https://github.com/NtsDK">github</a>
+    
+      <div class="panel panel-default">
+        <div class="panel-body">
+          © <a href="http://trechkalov.com">NtsDK</a>, 2017 <a href="https://github.com/NtsDK">github</a>
+        </div>
       </div>
-      
     </div>
+
     
     <div id="mynetwork" class=" col-xs-9">
       <div class="vis-network" style="" tabindex="900">
@@ -65,23 +140,24 @@
 
   <div id="network-popUp" class="hidable-popup">
     <span id="operation">node</span> <br>
-    <table style="margin:auto;">
-      <tr style="display:none;">
-        <td>id</td><td><input id="node-id" value="new value" /></td>
-      </tr>
-      <tr>
-        <td>Подпись</td><td><input id="node-label" placeholder="" class="form-control"/></td>
-      </tr>
-      <tr>
-        <td>Тип (группа)</td><td><input id="node-group" placeholder=""  class="form-control"/></td>
-      </tr>
-    </table>
+    <div class="form-group hidden">
+      <input id="node-id" value="new value" />
+    </div>
+    <div class="form-group">
+      <input id="node-label" placeholder="Подпись" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <input id="node-group" placeholder="Тип (группа)"  class="form-control"/>
+    </div>
     <button id="saveButton" class="btn btn-primary">Сохранить</button>
     <button id="cancelButton" class="btn btn-primary">Отмена</button>
   </div>
 
   <div class="board-add-edge-popup board-popup hidden hidable-popup">
-    <input class="add-edge-label-input form-control" l10n-placeholder-id="investigation-board-enter-edge-label">
+    <div class="form-group">
+      <input class="add-edge-label-input form-control" placeholder="Подпись">
+    </div>
+    
     <button class="save-edge-button btn btn-primary" l10n-id="common-ok">Сохранить</button>
     <button class="cancel-add-edge-button btn btn-primary" l10n-id="common-cancel">Отмена</button>
   </div>

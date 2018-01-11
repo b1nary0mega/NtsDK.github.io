@@ -10,6 +10,9 @@ state.edgesDataset = new vis.DataSet();
 
 
 function init(){
+  queryEl(`${root}.physics-enabled-checkbox`).checked = true;
+  queryEl(`${root}.custom-physics-settings`).value = '';
+  
   document.querySelector('.nodesText').value = charExample;
   setAttr(document.querySelector('.nodesText'),'rows', charExample.split('\n').length);
   document.querySelector('.edgesText').value = edgesExample;
@@ -32,6 +35,33 @@ function init(){
   listen(queryEl(`${root}.physics-settings-button`), 'click', () => showPopup(`${root}#config`, true));
   
   listen(queryEl(`${root}.search-node`), 'change', onNodeFocus);
+  
+  listen(queryEl(`${root}.custom-physics-settings-button`), 'click', () => {
+    var options = queryEl(`${root}.custom-physics-settings`).value;
+    if(options.trim() === ''){
+      return;
+    }
+    if(CU.startsWith(options, 'var options = ')){
+      options = options.substring('var options = '.length);
+    }
+    try{
+      options = JSON.parse(options);
+    }catch(e){
+      console.error(e);
+      alert('Ошибка при загрузке настроек');
+      return;
+    }
+    state.network.setOptions(options);
+  });
+  
+  listen(queryEl(`${root}.physics-enabled-checkbox`), 'change', (event) => {
+    state.network.setOptions({
+      "physics": {
+        "enabled": event.target.checked,
+        "minVelocity": 0.75
+      }
+    })
+  });
   
   listen(document, 'keyup', function(e) {
     if (e.keyCode == 27) { // escape key maps to keycode `27`
@@ -59,6 +89,7 @@ function drawNetwork() {
     manipulation: {
         addNode: function (data, callback) {
           // filling in the popup DOM elements
+          data.label = '';
           document.getElementById('operation').innerHTML = "Добавить узел";
           document.getElementById('node-id').value = data.id;
           document.getElementById('node-label').value = data.label;

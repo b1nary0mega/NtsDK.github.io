@@ -34,6 +34,8 @@ CU.charOrdAFactoryBase = R.curry((sortDir, prepare) => function cmp(a, b) {
 
 CU.charOrdAFactory = CU.charOrdAFactoryBase('asc');
 
+CU.startsWith = (str1, str2) => str1.substring(0, str2.length) === str2;
+
 function getL10n(key) {
     return L10n.getValue(key);
 }

@@ -212,6 +212,7 @@ function saveData(data,callback) {
   data.group = document.getElementById('node-group').value;
   data.notes = document.getElementById('node-notes').value;
   data.label = makeLabel(data.name, data.notes);
+  data.shape = 'box';
   clearPopUp();
   callback(data);
 }
@@ -236,7 +237,8 @@ function parseData(){
       label,
       group: arr[1],
       notes: arr[2],
-      name: arr[0]
+      name: arr[0],
+      shape: 'box'
     })
   });
   

@@ -10,7 +10,6 @@ state.edgesDataset = new vis.DataSet();
 
 
 function init(){
-  queryEl(`${root}.physics-enabled-checkbox`).checked = true;
   queryEl(`${root}.custom-physics-settings`).value = '';
   
   document.querySelector('.nodesText').value = charExample;
@@ -26,7 +25,8 @@ function init(){
   
   listenOnEnter(queryEl(`${root}#node-label`), () => document.getElementById('saveButton').click());
   listenOnEnter(queryEl(`${root}#node-group`), () => document.getElementById('saveButton').click());
-
+  listenOnEnter(queryEl(`${root}#node-notes`), () => document.getElementById('saveButton').click());
+  
   listen(queryEl(`${root}.save-edge-button`), 'click', updateEdge);
   listenOnEnter(queryEl(`${root}.add-edge-label-input`), () => queryEl(`${root}.save-edge-button`).click());
   listen(queryEl(`${root}.cancel-add-edge-button`), 'click', cancel('.board-add-edge-popup'));
@@ -54,6 +54,7 @@ function init(){
     state.network.setOptions(options);
   });
   
+  queryEl(`${root}.physics-enabled-checkbox`).checked = true;
   listen(queryEl(`${root}.physics-enabled-checkbox`), 'change', (event) => {
     state.network.setOptions({
       "physics": {
@@ -62,6 +63,9 @@ function init(){
       }
     })
   });
+  
+  queryEl(`${root}.show-notes-checkbox`).checked = true;
+  listen(queryEl(`${root}.show-notes-checkbox`), 'change', draw);
   
   listen(document, 'keyup', function(e) {
     if (e.keyCode == 27) { // escape key maps to keycode `27`
@@ -90,10 +94,12 @@ function drawNetwork() {
         addNode: function (data, callback) {
           // filling in the popup DOM elements
           data.label = '';
+          data.name = '';
           document.getElementById('operation').innerHTML = "Добавить узел";
           document.getElementById('node-id').value = data.id;
-          document.getElementById('node-label').value = data.label;
+          document.getElementById('node-label').value = data.name;
           document.getElementById('node-group').value = "";
+          document.getElementById('node-notes').value = "";
           document.getElementById('saveButton').onclick = saveData.bind(this, data, callback);
           document.getElementById('cancelButton').onclick = clearPopUp.bind();
           document.getElementById('network-popUp').style.display = 'block';
@@ -103,8 +109,9 @@ function drawNetwork() {
           // filling in the popup DOM elements
           document.getElementById('operation').innerHTML = "Редактировать узел";
           document.getElementById('node-id').value = data.id;
-          document.getElementById('node-label').value = data.label;
+          document.getElementById('node-label').value = data.name;
           document.getElementById('node-group').value = data.group;
+          document.getElementById('node-notes').value = data.notes;
           document.getElementById('saveButton').onclick = saveData.bind(this, data, callback);
           document.getElementById('cancelButton').onclick = cancelEdit.bind(this,callback);
           document.getElementById('network-popUp').style.display = 'block';
@@ -138,6 +145,7 @@ function drawNetwork() {
         },
     },
     physics: {
+      enabled: queryEl(`${root}.physics-enabled-checkbox`).checked,
       stabilization: false
     },
     configure: {
@@ -200,14 +208,21 @@ function cancelEdit(callback) {
 
 function saveData(data,callback) {
   data.id = document.getElementById('node-id').value;
-  data.label = document.getElementById('node-label').value;
+  data.name = document.getElementById('node-label').value;
   data.group = document.getElementById('node-group').value;
+  data.notes = document.getElementById('node-notes').value;
+  data.label = makeLabel(data.name, data.notes);
   clearPopUp();
   callback(data);
-  //updateTextAreas();
 }
 
-
+function makeLabel(name, notes){
+  let label = name; 
+  if(queryEl(`${root}.show-notes-checkbox`).checked){
+    label += (notes.trim() !== '' ? ('\n\n' + notes) : '');
+  }
+  return label;
+}
 
 function parseData(){
   nodes = [];
@@ -215,10 +230,13 @@ function parseData(){
   nodesText.split('\n').filter(el => el.trim() !== '').forEach((str, index) => {
     let arr = str.split('\t');
     dictionary[arr[0].toLowerCase().trim()] = index;
+    var label = makeLabel(arr[0], arr[2]);
     nodes.push({
       id: index,
-      label: arr[0],
-      group: arr[1]
+      label,
+      group: arr[1],
+      notes: arr[2],
+      name: arr[0]
     })
   });
   
@@ -286,7 +304,6 @@ function updateEdge() {
     showPopup('.board-add-edge-popup', false);
     input.value = '';
     state.modifyArgs.callback(edge);
-    //updateTextAreas();
 }
 
 function cancel(selector) {
@@ -297,29 +314,24 @@ function cancel(selector) {
 }
 
 function updateNodeTextArea(){
-  document.querySelector('.nodesText').value = state.nodesDataset.map((node) => [node.label, node.group].join('\t')).join('\n');
-  //document.querySelector('.edgesText').value = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).label, edge.label, 
-  //    state.nodesDataset.get(edge.to).label].join('\t')).join('\n');
-  //fillSearchSelect();
+  document.querySelector('.nodesText').value = state.nodesDataset.map((node) => [node.name, node.group, node.notes].join('\t')).join('\n');
 }
 
 function updateEdgeTextArea(){
-  //document.querySelector('.nodesText').value = state.nodesDataset.map((node) => [node.label, node.group].join('\t')).join('\n');
-  document.querySelector('.edgesText').value = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).label, edge.label, 
-      state.nodesDataset.get(edge.to).label].join('\t')).join('\n');
-  //fillSearchSelect();
+  document.querySelector('.edgesText').value = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).name, edge.label, 
+      state.nodesDataset.get(edge.to).name].join('\t')).join('\n');
 }
 
 function fillSearchSelect(){
-  var arr = state.nodesDataset.map((node) => ({name: node.label, value: node.id}));
+  var arr = state.nodesDataset.map((node) => ({name: node.name, value: node.id}));
   arr.sort(CU.charOrdAFactory(a => a.name.toLowerCase()));
   fillSelector(clearEl(queryEl('.search-node')), arr);
 }
 
 function downloadCsv() {
-    var arr = state.nodesDataset.map((node) => [node.label, node.group]);
-    var arr2 = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).label, edge.label, 
-      state.nodesDataset.get(edge.to).label]);
+    var arr = state.nodesDataset.map((node) => [node.name, node.group, node.notes]);
+    var arr2 = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).name, edge.label, 
+      state.nodesDataset.get(edge.to).name]);
 
     arr2d2Csv(arr.concat(arr2), 'cogs.csv');
 }

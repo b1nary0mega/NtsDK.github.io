@@ -54,7 +54,7 @@ function init(){
     state.network.setOptions(options);
   });
   
-  queryEl(`${root}.physics-enabled-checkbox`).checked = true;
+  queryEl(`${root}.physics-enabled-checkbox`).checked = false;
   listen(queryEl(`${root}.physics-enabled-checkbox`), 'change', (event) => {
     state.network.setOptions({
       "physics": {
@@ -87,6 +87,7 @@ function init(){
 // create a network
 function drawNetwork() {
   var container = document.getElementById('mynetwork');
+  clearEl(queryEl('#configInner'));
   var options = {
     locale: 'ru',
     locales: visLocales,
@@ -147,6 +148,9 @@ function drawNetwork() {
     physics: {
       enabled: queryEl(`${root}.physics-enabled-checkbox`).checked,
       stabilization: false
+    },
+    "edges": {
+      "smooth": false
     },
     configure: {
       filter:function (option, path) {

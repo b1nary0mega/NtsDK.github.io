@@ -220,9 +220,13 @@ function saveData(data,callback) {
 function makeLabel(name, notes){
   let label = name; 
   if(queryEl(`${root}.show-notes-checkbox`).checked){
-    label += (notes.trim() !== '' ? ('\n\n' + notes) : '');
+    label += (notes.trim() !== '' ? ('\n\n' + prepareStr(notes)) : '');
   }
   return label;
+}
+
+function prepareStr(str) {
+    return str.split('\n').map(R.splitEvery(20)).map(R.join('\n')).join('\n');
 }
 
 function parseData(){

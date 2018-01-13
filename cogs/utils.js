@@ -36,6 +36,12 @@ CU.charOrdAFactory = CU.charOrdAFactoryBase('asc');
 
 CU.startsWith = (str1, str2) => str1.substring(0, str2.length) === str2;
 
+CU.strFormat = R.curry((str, vals) => str.replace(/\{\{|\}\}|\{(\d+)\}/g, (m, n) => {
+    if (m === '{{') { return '{'; }
+    if (m === '}}') { return '}'; }
+    return vals[n];
+}));
+
 function getL10n(key) {
     return L10n.getValue(key);
 }

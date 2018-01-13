@@ -20,6 +20,8 @@ function init(){
   document.querySelector('.draw-button').addEventListener('click', draw);
   document.querySelector('.get-image-button').addEventListener('click', getImage);
   document.querySelector('.download-button').addEventListener('click', downloadCsv);
+  document.querySelector('.download-json-button').addEventListener('click', downloadJSON);
+  document.querySelector('.download-graphml-button').addEventListener('click', downloadYED);
   document.querySelector('.clear-button').addEventListener('click', clearNetwork);
   var closeBtn = addEl(addClasses(makeEl('button'), ['btn','btn-default']),makeText('Закрыть'));
   
@@ -64,13 +66,18 @@ function init(){
     })
   });
   
-  queryEl(`${root}.show-notes-checkbox`).checked = true;
+  queryEl(`${root}.show-notes-checkbox`).checked = false;
   listen(queryEl(`${root}.show-notes-checkbox`), 'change', draw);
   
   listen(document, 'keyup', function(e) {
     if (e.keyCode == 27) { // escape key maps to keycode `27`
       queryEls(`${root}.hidable-popup`).forEach(el => addClass(el, 'hidden'));
     }
+  });
+  
+  queryEl(`${root}.big-picture-checkbox`).checked = false;
+  listen(queryEl(`${root}.big-picture-checkbox`), 'change', (event) => {
+    setClassByCondition(queryEl(`${root}#mynetwork > div`),'big-picture',event.target.checked);
   });
   
   state.nodesDataset.on('*', () => {
@@ -82,6 +89,11 @@ function init(){
   });
   
   draw();
+}
+
+function draw(){
+  parseData();
+  drawNetwork();
 }
 
 // create a network
@@ -150,7 +162,10 @@ function drawNetwork() {
       stabilization: false
     },
     "edges": {
-      "smooth": false
+      "smooth": {
+        "type": "discrete",
+        "forceDirection": "none"
+      }
     },
     configure: {
       filter:function (option, path) {
@@ -275,10 +290,7 @@ function parseData(){
   state.edgesDataset.add(edges);
 }
 
-function draw(){
-  parseData();
-  drawNetwork();
-}
+
 
 function getImage(event){
   var canvas = document.querySelector("canvas");
@@ -342,9 +354,51 @@ function downloadCsv() {
     var arr = state.nodesDataset.map((node) => [node.name, node.group, node.notes]);
     var arr2 = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).name, edge.label, 
       state.nodesDataset.get(edge.to).name]);
-
-    arr2d2Csv(arr.concat(arr2), 'cogs.csv');
+      
+    arr2d2Csv(arr.concat([['']]).concat(arr2), 'cogs.csv');
 }
+
+function downloadJSON() {
+  var arr = state.nodesDataset.map((node) => [node.name, node.group, node.notes]);
+  var arr2 = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).name, edge.label, 
+    state.nodesDataset.get(edge.to).name]);
+    
+  const out = new Blob([JSON.stringify({nodes: arr, edges: arr2})], {
+      type: 'text/csv;charset=utf-8;'
+  });
+  saveAs(out, 'cogs.json');
+}
+
+function downloadYED() {
+  var arr = state.nodesDataset.map((node) => [node.name, node.group, node.notes]);
+  var arr2 = state.edgesDataset.map((edge) => [state.nodesDataset.get(edge.from).name, edge.label, 
+    state.nodesDataset.get(edge.to).name]);
+  
+  var groups = {};
+  var index = 1;
+  state.nodesDataset.map(node => {
+    if(groups[node.group] === undefined){
+      groups[node.group] = index;
+      index++;
+    }
+  });
+    
+  var nodes = state.nodesDataset.map(node => {
+    var colors = colorPalette[groups[node.group]-1].color;
+    return CU.strFormat(nodeTmpl, [node.id, node.name, colors.background, colors.border]);
+  }).join('\n');
+  
+  var edges = state.edgesDataset.map(edge => {
+    return CU.strFormat(edgeTmpl, [edge.id, edge.label, edge.from, edge.to]);
+  }).join('\n');
+  const out = new Blob([CU.strFormat(gmlBase, [nodes, edges])], {
+      type: 'text/xml;charset=utf-8;'
+  });
+  saveAs(out, 'cogs.graphml');
+}
+
+
+
 
 function preprocessCsvStr(str) {
     if (!(typeof str === 'string' || str instanceof String)) {

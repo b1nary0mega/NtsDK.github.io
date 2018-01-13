@@ -104,3 +104,18 @@ textarea{
 #faq .panel{
   margin-bottom: 0;
 }
+
+[role="tablist"] h5  > a{
+  display: inline-block;
+  width: 100%;
+}
+
+.big-picture {
+  overflow: auto !important;
+}
+
+.big-picture > canvas {
+  width: 3000px !important;
+  height: 3000px !important;
+}
+  

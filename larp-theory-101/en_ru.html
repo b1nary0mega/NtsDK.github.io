@@ -1,0 +1,3576 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Как написать ролевую игру: основы теории ролевых игр живого действия</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+<!--   <link rel="stylesheet" media="screen" href="themes/style/swiss.css"> -->
+<!--   <link rel="stylesheet" media="screen" href="themes/style/neon.css"> -->
+<!--   <link rel="stylesheet" media="screen" href="themes/style/_reset.css"> -->
+  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+  <link rel="stylesheet" media="screen" href="customStyles.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+  
+  <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47378101 = new Ya.Metrika2({ id:47378101, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47378101" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+</head>
+<body class="en_ru_version">
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+    
+    ﻿<section class="slide" id="title-slide" label="Титул">
+  <h1 style="font-size:2.5em;">Как написать ролевую игру:<br> основы теории ролевых игр живого действия</h1>
+  <h2>Джефф Дивальд - diewald@comcast.net<br></h2>
+  <span style="position: absolute;bottom: 0;">
+  g - выбор слайда<br>
+  m - миниатюры слайдов<br>
+  Стрелки влево/вправо - переключение слайдов<br>
+  © 1997-2014 Джефф Дивальд<br>
+  Июль 17, 2014 V1.3<br>
+  перевели Тимофей Речкалов (NtsDK) и Мария Сидехменова (Матильда), версия 1.1 от 28 декабря 2017 г.
+  </span>
+</section>
+<!-- <section class="slide" id="title-slide" label="Title slide"> -->
+
+<!--   <h1 style="font-size:4em;">So You Want to Write a LARP:<br> LARP Theory 101</h1> -->
+<!--   <h2>Jeff Diewald - diewald@comcast.net</h2> -->
+<!--   <span style="position: absolute;bottom: 0;"> -->
+<!--   g - slide selector<br> -->
+<!--   m - slide thumbnails<br> -->
+<!--   arrow left/right - slide moving<br> -->
+<!--   © 1997-2014 By Jeff Diewald, All Rights Reserved<br> -->
+<!--   July 17, 2014 V1.3 -->
+<!--   </span> -->
+<!-- </section> -->
+
+
+    <section class="slide" id="Introduction from translator"
+  label="Предисловие от переводчика">
+  <h2 class="source">Introduction from translator</h2>
+  <h2 class="translation">Предисловие от переводчика</h2>
+  <ul>
+    <li>
+      <p class="source"></p>
+      <p class="translation">
+        Всем привет! Это презентация Джеффа Дивальда об основах
+        написания ролевых игр живого действия (РИЖД). Джефф из Америки и
+        он активно занимается ролевыми играми. Участник и организатор
+        конференции ролевых игр Новой Англии (New England LARP
+        Conference, <a
+          href="http://www.interactiveliterature.org/NEIL/nelcoConferences.html">NELCO</a>).
+        Член организации Интерактивная литература Новой Англии (New
+        England Interactive Literature, <a
+          href="http://interactiveliterature.org/NEIL/index.html">NEIL</a>).
+        NEIL проводит конвенты, организует конкурсы и мастер-классы по
+        написанию ролевых игр, поддерживает онлайн библиотеку материалов
+        игр (само собой, на английском).
+      </p>
+    </li>
+    <li>
+      <p class="source"></p>
+      <p class="translation">
+        Данную презентацию я нашёл в <a
+          href="https://larpoutofcharacter.wordpress.com/2015/02/26/so-you-want-to-write-a-larp/">материалах
+          конференции NELCO 2014</a>. Автор одобрил её перевод на русский
+        язык. Помимо презентации существует <a
+          href="https://www.youtube.com/watch?v=N0HNP8UtmRw">видео</a> с
+        выступлением автора на YouTube.
+      </p>
+    </li>
+    <li>
+      <p class="source"></p>
+      <p class="translation">
+        <a href="http://www.vortexofchaos.net/larpsWritten.html">Сайт
+          с играми Джеффа</a>.
+      </p>
+    </li>
+    <li>
+      <p class="source"></p>
+      <p class="translation">Джефф упоминает много игр, и я
+        постарался найти информацию по этим играм в сети и добавить на
+        них ссылки в тексте.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide" id="Introduction" label="Содержание">
+  <h2 class="source">Introduction</h2>
+  <h2 class="translation">Содержание</h2>
+  <ul>
+    <li>
+      <p class="source">Introduction</p>
+      <p class="translation">Введение</p>
+    </li>
+    <li>
+      <p class="source">Twelve LARP writing rules to live by</p>
+      <p class="translation">12 правил написания РИЖД</p>
+    </li>
+    <li>
+      <p class="source">How to get started</p>
+      <p class="translation">Как начать</p>
+    </li>
+    <li>
+      <p class="source">Size, Shape and Duration</p>
+      <p class="translation">Размер, форма и длительность</p>
+    </li>
+    <li>
+      <p class="source">Writing Characters</p>
+      <p class="translation">Написание персонажей</p>
+    </li>
+    <li>
+      <p class="source">Mechanics</p>
+      <p class="translation">Модели</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="Who Am I To Talk About LARP?"
+  label="Кто я такой, чтобы говорить о РИЖД?">
+  <h2 class="source">Who Am I To Talk About LARP?</h2>
+  <h2 class="translation">Кто я такой, чтобы говорить о РИЖД?</h2>
+  <ul>
+    <li>
+      <p class="source">Author or co-author of sixteen LARPs</p>
+      <p class="translation">Автор или соавтор 16 РИЖД</p>
+    </li>
+    <li>
+      <p class="source">
+        Author of <i>Across the Sea of Stars</i>, a LARP which contains more than thirty
+        microLARPs within it
+      </p>
+      <p class="translation">
+        Автор игры <a
+          href="http://www.vortexofchaos.net/across_the_sea_of_stars/home.html">Across
+          the Sea of Stars</a>, в которой было более
+        30 микро игр внутри
+      </p>
+    </li>
+    <li>
+      <p class="source">
+        Facilitator/Participant in seven Build Your Own Game efforts,
+        including <i>Collision Imminent!</i> (12 прогонов на 2013 год),
+        <i>The Barbecue</i> (NELCO 2012), <i>The Night Queen
+          Princess Fluffykins Passed</i> (NELCO 2013)
+      </p>
+      <p class="translation">
+        Помощник\участник 7 мероприятий по созданию своих РИЖД, включая
+        <a
+          href="http://www.vortexofchaos.net/collision/CollisionImminent.html">Collision
+          Imminent!</a> (12 runs by 2013), <a
+          href="http://www.vortexofchaos.net/barbecue/home.html">The
+          Barbecue</a> (NELCO 2012), <a
+          href="http://www.vortexofchaos.net/princess_fluffykins/home.html">The
+          Night Queen Princess Fluffykins Passed (En)</a> (NELCO 2013)
+      </p>
+    </li>
+    <li>
+      <p class="source">Con-chair for Intercon the Thirteenth, staff
+        on every Boston Intercon since then, including years on the Bid
+        Committee</p>
+      <p class="translation">Главорг на Intercon XIII, организатор
+        всех Intercon в Бостоне с того момента, включая годы в the Bid
+        Committee</p>
+    </li>
+    <li>
+      <p class="source">Player in much more than 100 LARPs since
+        1986, of all kinds of LARPs</p>
+      <p class="translation">Игрок на более чем 100 РИЖД всех видов,
+        начиная с 1986 года</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="Who Am I To Talk About LARP? (2)"
+  label="Кто я такой, чтобы говорить о РИЖД?">
+  <h2 class="source">Who Am I To Talk About LARP?</h2>
+  <h2 class="translation">Кто я такой, чтобы говорить о РИЖД?</h2>
+  <ul>
+    <li>
+      <p class="source">These are the rules and guidelines that work
+        for me and other LARP authors I respect.</p>
+      <p class="translation">В этой презентации изложены правила и
+        принципы написания РИЖД. Эти правила есть результат опыта
+        разработки РИ мной и других компетентных на мой взгляд мастеров.
+      </p>
+    </li>
+    <li>
+      <p class="source">They are general rules, applicable to LARPs
+        of all styles and genres.</p>
+      <p class="translation">Это общие правила, применимые для РИЖД
+        всех стилей и жанров.</p>
+    </li>
+    <li>
+      <p class="source">Any rule can be bent, or even broken, if
+        you're careful. Usually, breaking a rule just leads to avoidable
+        problems.</p>
+      <p class="translation">Любое правило можно обойти или
+        нарушить, если вы осторожны. Но обычно нарушение правила
+        приводит к тем самым проблемам, из-за которых оно было создано.
+      </p>
+    </li>
+    <li>
+      <p class="source">Learn from the successes and failures of
+        others. Play other games, other systems, other genres, and other
+        styles.</p>
+      <p class="translation">Учитесь на успехах и ошибках других.
+        Играйте в разные игры с разными системами, в разных жанрах и
+        стилях.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="What is LARP?" label="Что такое РИЖД?">
+  <h2 class="source">What is LARP?</h2>
+  <h2 class="translation">Что такое РИЖД?</h2>
+  <ul>
+    <li>
+      <p class="source">Period drawing-room murder mystery?</p>
+      <p class="translation">Загадка убийства в гостиной?</p>
+    </li>
+    <li>
+      <p class="source">Live-combat medieval fantasy battles in a
+        field?</p>
+      <p class="translation">Манёвры в сеттинге средневекового
+        фентези?</p>
+    </li>
+    <li>
+      <p class="source">Gothic vampires in a political struggle
+        amidst unknowing humans?</p>
+      <p class="translation">Готические вампиры в политической
+        борьбе, среди ничего не знающих людей?</p>
+    </li>
+    <li>
+      <p class="source">An emergency evacuation of a dying starship?
+      </p>
+      <p class="translation">Аварийная эвакуация с разрушающегося
+        космического корабля?</p>
+    </li>
+    <li>
+      <p class="source">Characters breaking out into Broadway songs
+        and dance?</p>
+      <p class="translation">Персонажи, врывающиеся в Бродвейские
+        песни и танцы?</p>
+    </li>
+    <br>
+    <li>
+      <p class="source">All of the above. LARP isn’t defined by a
+        particular style or genre.</p>
+      <p class="translation">Всё перечисленное. РИЖД не определяется
+        каким-то одним стилем или жанром.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="What is LARP? (2)"
+  label="Что такое РИЖД?">
+  <h2 class="source">What is LARP?</h2>
+  <h2 class="translation">Что такое РИЖД?</h2>
+  <ul>
+    <li>
+      <p class="source">4 characters stuck in a simulated elevator
+        for 15 minutes?</p>
+      <p class="translation">4 персонажа застряли в как бы лифте на
+        15 минут?</p>
+    </li>
+    <li>
+      <p class="source">9 characters in a room for an hour without a
+        GM?</p>
+      <p class="translation">9 персонажей в комнате играют 1 час без
+        мастеров?</p>
+    </li>
+    <li>
+      <p class="source">30 characters in a bed and breakfast hotel
+        for a weekend?</p>
+      <p class="translation">30 персонажей остановились в отеле на
+        уикенд?</p>
+    </li>
+    <li>
+      <p class="source">60 characters in a nine month campaign all
+        meeting once a month, with smaller groups meeting more
+        frequently?</p>
+      <p class="translation">60 персонажей в девятимесячной серии
+        игр, собирающиеся раз в месяц и несколько небольших групп,
+        собирающихся чаще?</p>
+    </li>
+    <br>
+    <li>
+      <p class="source">All of the above. LARP isn’t defined by a
+        particular size or duration.</p>
+      <p class="translation">Всё перечисленное. РИЖД не определяется
+        количеством участников или длительностью игры.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="So, what is LARP?"
+  label="Так что же такое РИЖД?">
+  <h2 class="source">So, what is LARP?</h2>
+  <h2 class="translation">Так что же такое РИЖД?</h2>
+  <ul>
+    <li>
+      <p class="source">A LARP is live action. It has people
+        interacting with each other, acting out their intentions. The
+        players don’t describe actions to a moderating GM.</p>
+      <p class="translation">РИЖД это живое действие. На нём люди
+        взаимодействуют друг с другом, отыгрывая свои намерения. Игроки
+        не описывают действия модерирующим игру мастерам.</p>
+    </li>
+    <li>
+      <p class="source">A LARP tells a story. It may be small or it
+        may be epic.</p>
+      <p class="translation">РИЖД рассказывает историю. История
+        может быть как маленькой, так и эпической.</p>
+    </li>
+    <li>
+      <p class="source">A LARP has players playing characters with
+        character-specific goals.</p>
+      <p class="translation">На РИЖД игроки играют персонажей с
+        персонажно-специфичными целями.</p>
+    </li>
+    <li>
+      <p class="source">A LARP is improvised. Players make choices
+        and drive the action, outside of Game Master control.</p>
+      <p class="translation">РИЖД импровизационна. Игроки делают
+        свой выбор и направляют свои действия вне указки мастера.</p>
+    </li>
+    <li>
+      <p class="source">A LARP has no audience. The players are the
+        audience.</p>
+      <p class="translation">В РИЖД нет зрителей. Игроки и есть
+        зрители.</p>
+    </li>
+    <li>
+      <p class="source">This definition is squishy and open-ended.
+        There’s a lot that LARP can be. Don’t be afraid to experiment.</p>
+      <p class="translation">Определение не жестко и не
+        окончательно. На РИЖД может быть очень много разного. Не бойтесь
+        экспериментировать.</p>
+    </li>
+  </ul>
+</section>
+
+    <section class="slide" id="Twelve Rules to Live By"
+  label="12 жизненно важных правил">
+  <h2 class="source">Twelve Rules to Live By</h2>
+  <h2 class="translation">12 жизненно важных правил</h2>
+  <ul>
+    <li>
+      <p class="source">There are a dozen useful rules to keep in
+        mind as you're designing and writing a LARP.</p>
+      <p class="translation">Есть дюжина правил, которые полезно
+        держать в голове при планировании и написании РИЖД.</p>
+    </li>
+    <li>
+      <p class="source">These are guidelines that shouldn't be
+        broken.</p>
+      <p class="translation">Эти правила не следует нарушать.</p>
+    </li>
+    <li>
+      <p class="source">They're nothing new - I wrote these rules
+        for a Usenet discussion in 1997; they worked for me before then,
+        and I use them to this day.</p>
+      <p class="translation">В них нет ничего нового - я писал их в
+        Usenet-обсуждении в 1997. Они работали в моей практике до этого,
+        и я использую их до сих пор.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="Rule 1: Interesting Characters"
+  label="Правило 1: интересные персонажи">
+  <h2 class="source">Rule 1: Interesting Characters</h2>
+  <h2 class="translation">Правило 1: интересные персонажи</h2>
+  <ul>
+    <li>
+      <p class="source">Role-playing is about getting inside the
+        head of another person and letting them live for a while.</p>
+      <p class="translation">На ролевой игре вы пускаете в свою
+        голову другую личность и позволяете ей существовать там
+        некоторое время.</p>
+    </li>
+    <li>
+      <p class="source">Characters should be rich, full characters
+        with shades of gray.</p>
+      <p class="translation">Персонажи должны быть сложными,
+        цельными и объемными.</p>
+    </li>
+    <li>
+      <p class="source">
+        «Actors love mental disorders, dialects, and corsets. Give them
+        one of the three and they're happy». Robin Tunney from <i>The
+          Mentalist</i>
+      </p>
+      <p class="translation">
+        «Актеры любят психические расстройства, жаргон и корсеты. Дай им
+        что-нибудь из набора и они счастливы». Тереза Лисбон (Робин
+        Танни) из <i>Менталиста</i>
+      </p>
+    </li>
+    <li>
+      <p class="source">There has to be more than just shtic,
+        though. An accent or a limp is not enough.</p>
+      <p class="translation">У персонажа должно быть больше чем
+        просто «изюминка». Только акцента или хромоты не достаточно.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide" id="Rule 2: Interesting Stories"
+  label="Правило 2: интересные истории">
+  <h2 class="source">Rule 2: Interesting Stories</h2>
+  <h2 class="translation">Правило 2: интересные истории</h2>
+  <ul>
+    <li>
+      <p class="source">Not plots - stories. They are NOT the same.
+      </p>
+      <p class="translation">Сюжеты и истории - не одно и то же.</p>
+    </li>
+    <li>
+      <p class="source">Life is a tale, with a complex set of events
+        and people that have gotten you to this point.</p>
+      <p class="translation">Жизнь это история из множества событий
+        и людей, которые привели вас к текущему состоянию.</p>
+    </li>
+    <li>
+      <p class="source">Characters should be similarly detailed,
+        with information that helps the player know and understand them.
+      </p>
+      <p class="translation">Персонажи должны быть детальны как в
+        жизни. Должно быть достаточно информации, которая поможет
+        игрокам знать и понимать этих персонажей.</p>
+    </li>
+    <li>
+      <p class="source">Give the players things they can talk about
+        in game, ways that they can connect to other characters.</p>
+      <p class="translation">Дайте игрокам что-то, что они смогут
+        обсудить во время игры, а также способы, которыми они могут
+        контактировать с другими персонажами.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="Rule 3: Human Stories"
+  label="Правило 3: человеческие истории">
+  <h2 class="source">Rule 3: Human Stories</h2>
+  <h2 class="translation">Правило 3: человеческие истории</h2>
+  <ul>
+    <li>
+      <p class="source">The most memorable stories are the ones that
+        deal with the things that make us who and what we are. Life,
+        love, loss, birth, death, failure, success...</p>
+      <p class="translation">Наиболее запоминающиеся истории, это
+        те, которые делают нас теми, кем и чем мы являемся: жизнь,
+        любовь, потеря, рождение, смерть, неудача, успех...</p>
+    </li>
+    <li>
+      <p class="source"></p>
+      <p class="translation">Жизнь, любовь, потеря, рождение,
+        смерть, неудача, успех...</p>
+    </li>
+    <li>
+      <p class="source">They can be very simple at their heart, but
+        very, very powerful to play.</p>
+      <p class="translation">Они могут быть простыми в своей сути,
+        но очень и очень мощными в игре.</p>
+    </li>
+    <li>
+      <p class="source">
+        You don't even have to be human to tell human stories. <i>Dustpan:
+          The LARP</i> has a cat's hairball as a character, and it's
+        wrestling with issues of identity and loss.
+      </p>
+      <p class="translation">
+        Вам даже не нужно быть человеком, чтобы рассказывать
+        человеческие истории. В игре <a
+          href="http://www.vortexofchaos.net/dustpan/home.html">Dustpan:
+          The LARP</a> есть персонаж - комок кошачьей шерсти. Он борется со
+        своими проблемами. (прим.пер.: это игра о вещах, закатившихся
+        или живущих под диваном. Персонажи: муравей, рисинка, два
+        игрушечных медвежонка, зелёный M&Mс, витаминка, плесень и т.д.
+        Всего 18 персонажей.)
+      </p>
+    </li>
+    <li>
+      <p class="source">Saving the world stories are highly
+        overrated and cliche.</p>
+      <p class="translation">Истории спасения мира слишком
+        переоценены и клишированы.</p>
+    </li>
+  </ul>
+  <span class="notes source"> There's not a single human
+    character in Dustpan, but they all have human drama. </span> <span
+    class="notes translation"> В Dustpan нет ни одного персонажа
+    человека, но у всех персонажей человеческая драма. </span>
+</section>
+
+
+<section class="slide" id="Rule 4: Tough Decisions"
+  label="Правило 4: трудные решения">
+  <h2 class="source">Rule 4: Tough Decisions</h2>
+  <h2 class="translation">Правило 4: трудные решения</h2>
+  <ul>
+    <li>
+      <p class="source">Put the character on the spot. Make them
+        choose between difficult options.</p>
+      <p class="translation">Поставьте персонажа в трудное
+        положение. Заставьте его делать сложный выбор.</p>
+    </li>
+    <li>
+      <p class="source">Black and white decisions can be too easy.
+        The more shades of gray, the better.</p>
+      <p class="translation">Черно-белые решения слишком просты.
+        Больше оттенков - лучше.</p>
+    </li>
+    <ul>
+      <li>
+        <p class="source">
+          Do I keep a sacred oath that I've been entrusted with, and, by
+          doing so, allow a war to break out, one that will kill
+          millions? Do I break the oath, challenge my religious tenets,
+          risk my own imminent death, all to save nameless strangers?
+          How do I decide this as I am scrambling to recover something
+          that could bring death and destruction on my own people, some
+          of whom have interpreted my attempts to help them as heresy? (<i>Tabula
+            Rasa v2.0</i>)
+        </p>
+        <p class="translation">
+          Буду ли я следовать данному священному обету, и тем самым
+          позволю случиться войне, которая убьет миллионы? Нарушу ли я
+          обет и свои религиозные догмы, рискуя собственной жизнью,
+          чтобы спасти незнакомцев? Каково будет моё решение, если я
+          попытаюсь спасти то, что принесет смерть и разрушение моим
+          людям, которые воспримут попытки помочь им как ересь? (<i>Tabula
+            Rasa v2.0</i>)
+        </p>
+      </li>
+    </ul>
+    <li>
+      <p class="source">Give the player a good reason for each of
+        the options.</p>
+      <p class="translation">Дайте игроку мотив для каждого варианта
+        выбора.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="Rule 5: Repercussions"
+  label="Правило 5: последствия">
+  <h2 class="source">Rule 5: Repercussions</h2>
+  <h2 class="translation">Правило 5: последствия</h2>
+  <ul>
+    <li>
+      <p class="source">There have to be repercussions.</p>
+      <p class="translation">На игре должны быть последствия.</p>
+    </li>
+    <li>
+      <p class="source">Pulling a gun in real life is not a trivial
+        act, yet look how often it happens in LARPs.</p>
+      <p class="translation">Направить на человека пистолет в
+        реальной жизни непросто, но посмотрите как это часто происходит
+        на играх.</p>
+    </li>
+    <li>
+      <p class="source">I should not be able to get away with
+        murder.</p>
+      <p class="translation">У убийцы не должно быть возможности
+        остаться безнаказанным.</p>
+    </li>
+    <li>
+      <p class="source">Make the players live with the consequences
+        of their actions, and give those consequences teeth.</p>
+      <p class="translation">Дайте своим игрокам возможность жить с
+        последствиями их действий и дайте последствиям зубы.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="Rule 6: Things to Do In Game"
+  label="Правило 6: что делать на игре">
+  <h2 class="source">Rule 6: Things to Do In Game</h2>
+  <h2 class="translation">Правило 6: что делать на игре</h2>
+  <ul>
+    <li>
+      <p class="source">You can never have too many plots.</p>
+      <p class="translation">У вас никогда не может быть слишком
+        много сюжетов.</p>
+    </li>
+    <li>
+      <p class="source">Too many games are seriously underplotted,
+        where things drag for some (or all) of the characters,
+        especially in longer games.</p>
+      <p class="translation">Слишком много игр слишком недосюжечены.
+        Где события вяло развиваются для некоторых (или даже для всех)
+        персонажей, особенно на длинных играх.</p>
+    </li>
+    <li>
+      <p class="source">The real fun happens when a player realizes
+        that she's been running nonstop for the entire game, without a
+        moment to catch her breath.</p>
+      <p class="translation">Настоящий фан случается, когда игрок
+        понимает, что он бежит без остановки всю игру без возможности
+        перевести дыхание.</p>
+    </li>
+    <li>
+      <p class="source">A bored player is a dangerous player. They
+        can wreck a game.</p>
+      <p class="translation">Скучающий игрок это опасный игрок. Он
+        может сломать игру.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Notes: A bored player, with a gun,
+    in a game where there are no consequences on opening fire, can ruin
+    the experience for everyone, especially you. The story of that will
+    live on in the LARP community. </span> <span class="notes translation">
+    Скучающий игрок с пушкой на игре без последствий на открытие
+    стрельбы может разрушить опыт любого и особенно вас. Такие истории
+    известны в РИЖД сообществе. </span>
+</section>
+
+
+<section class="slide" id="Rule 7: A Chance to be Noticed"
+  label="Правило 7: шанс быть замеченным">
+  <h2 class="source">Rule 7: A Chance to be Noticed</h2>
+  <h2 class="translation">Правило 7: шанс быть замеченным</h2>
+  <ul>
+    <li>
+      <p class="source">All players aren't created equal. Some are
+        better at playing than others.</p>
+      <p class="translation">Игроки не одинаковы. Некоторые играют
+        лучше, чем другие.</p>
+    </li>
+    <li>
+      <p class="source">All characters should be more equal.</p>
+      <p class="translation">Все персонажи должны быть сопоставимы
+        по проработанности.</p>
+    </li>
+    <li>
+      <p class="source">Everyone should have a chance for a great
+        part, for a dramatic moment, or a time when everyone turns to
+        them for an answer.</p>
+      <p class="translation">У каждого должен быть шанс на звёздный
+        час, на драматический момент или момент когда все обратятся к
+        нему за ответом.</p>
+    </li>
+    <li>
+      <p class="source">Why would I want to play Third Spear Carrier
+        from the Left? Why is my character's story less important than
+        someone else's?</p>
+      <p class="translation">Почему я должен играть третьего
+        копейщика слева? Почему моя история менее важная, чем чья-то
+        ещё?</p>
+    </li>
+    <li>
+      <p class="source">You never know when someone is really going
+        to surprise you.</p>
+      <p class="translation">Вы никогда не знаете, кто сможет вас
+        приятно удивить.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Notes: When people came out of
+    Conjunction, everyone was arguing, because everyone believed that
+    the 20+ character game had been centered around them. That's ideal.
+  </span> <span class="notes translation"> Когда люди выходят из
+    согласия, каждый начинает спорить, потому что верит, что игра на 20+
+    персонажей крутиться вокруг него. Это идеально. </span>
+</section>
+
+
+<section class="slide" id="Rule 8: Try Something Different"
+  label="Правило 8: попробуйте что-нибудь другое">
+  <h2 class="source">Rule 8: Try Something Different</h2>
+  <h2 class="translation">Правило 8: попробуйте что-нибудь другое</h2>
+  <ul>
+    <li>
+      <p class="source">Players get typecast. Roles get typecast.
+        LARPs get typecast. Plots get typecast. Cliche is boring. How
+        many times have you seen:</p>
+      <p class="translation">У игроков есть типажи. У ролей есть
+        типажи. У РИЖД есть типажи. У сюжетов есть типажи. Клише это
+        скучно. Сколько раз вы видели</p>
+    </li>
+    <ul>
+      <li>
+        <p class="source">The king/Vampire Prince/boss/head of the
+          family is dead</p>
+        <p class="translation">Король\вампирский князь\босс\глава
+          дома мертв</p>
+      </li>
+      <li>
+        <p class="source">Pregnant teenage angst</p>
+        <p class="translation">Печаль беременного подростка</p>
+      </li>
+      <li>
+        <p class="source">Trapped in a house during a storm with a
+          psycho killer</p>
+        <p class="translation">Оказаться запертым в доме вместе с
+          психопатом убийцей во время шторма.</p>
+      </li>
+    </ul>
+    <li>
+      <p class="source">Just as players need to stretch their
+        role-playing muscles, writers need to stretch their plotting and
+        character-writing muscles.</p>
+      <p class="translation">Так же как игрокам необходимо развивать
+        свои ролевые мускулы, писателям необходимо развивать свои
+        сюжетные и персонажные мускулы.</p>
+    </li>
+    <li>
+      <p class="source">Switch it up. Find a new twist. Learn from
+        other writers and games.</p>
+      <p class="translation">Переключитесь. Найдите новый поворот.
+        Учитесь у других писателей и игр.</p>
+    </li>
+  </ul>
+  <span class="notes source"> These stories can work, if you
+    bring something new to them. ! This also applies to casting... Sure
+    - I might be exactly what you see as the person to play General
+    Hiram Cork, the blood and guts boss of the San Inguon military base
+    and defender of America against the Commie threat. However, I might
+    also like the chance to play Tony "Scooter" Turrelli, the
+    unappreciated teenager who was always 2nd in everything at the local
+    school. One is a commanding role, in the middle of a lot of the
+    action, driving the game at every turn. The other is far more of a
+    character role, dealing with the far more mundane crises of
+    adolescence. I might not be what you had in mind for the part - and
+    I might not be the best person to play the part - but give me the
+    chance. (In my case, I actually played both characters in diferent
+    runs of "I Was a Teenage Mutant From Outer Space!" Both were great
+    fun!) </span> <span class="notes translation"> Эти истории будут
+    работать, если вы привнесете в них что-то новое. Это так же
+    применимо к кастингу. Конечно, я могу быть в точности что вы видите
+    как человек, играющий генерала Хирама Корка, жестокого начальника на
+    военной базе Сан Ингуон и защитника Америки от коммунистов. Тем не
+    менее, мне так же может понравиться шанс сыграть Тони "Скутера"
+    Турелли, недооцененного тинейджера, который всегда был вторым во
+    всем в местной школе. Первый это командная роль в середине кучи
+    экшена, направляющая игру каждым действием. Другая это намного более
+    персонажная роль про отроческий кризис. Возможно, я не тот, кого вы
+    видите на этой роли и возможно я не лучший игрок для этой позиции,
+    но дайте мне шанс. (В моем случае я сыграл обоих персонажей в разных
+    прогонах игры "I Was a Teenage Mutant From Outer Space!" И оба раза
+    мне было супер) </span>
+</section>
+
+
+
+<section class="slide" id="Rule 9: A Character Involved"
+  label="Правило 9: вовлечённость персонажей">
+  <h2 class="source">Rule 9: A Character Involved</h2>
+  <h2 class="translation">Правило 9: вовлечённость персонажей</h2>
+  <ul>
+    <li>
+      <p class="source">Outsiders who have little connection to a
+        game aren't much fun.</p>
+      <p class="translation">Аутсайдеры, слабо связанные с игрой,
+        это не очень интересно.</p>
+    </li>
+    <li>
+      <p class="source">Characters that are ostracized by everyone
+        can quickly lose their luster.</p>
+      <p class="translation">Персонажи, которых все гнобят, могут
+        быстро потерять интерес.</p>
+    </li>
+    <li>
+      <p class="source">Why should I play a character who is only
+        there to be abused?</p>
+      <p class="translation">Почему я должен играть персонажа,
+        который находится на игре только для того, чтобы его оскорбляли?</p>
+    </li>
+    <li>
+      <p class="source">Make sure every character has connections to
+        several others in game, in some way. Give them reasons to talk
+        to each other.</p>
+      <p class="translation">Будьте уверены, что у каждого персонажа
+        есть связи различных видов с другими персонажами. Дайте им
+        причины говорить друг с другом.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Notes: It doesn't have to be some
+    sequence of cosmic coincidences in the backstory. The stranger who
+    turns out to be a medic can be very valuable. ! An
+    uninvolved/ostracized character can get bored very quickly. In
+    Return to Bora Gora, I was ostracized. I was also the only one with
+    the combination to the safe with the nuke. There was panic when I
+    went missing. </span> <span class="notes translation"> Это не должно
+    быть последовательностью космических совпадений в предыстории.
+    Странник, который оказывается медиком это очень ценно.
+    Невовлеченный\остракированный персонаж может быстро начать скучать.
+    В Return to Bora Gora я был остракирован. Так же я был единственным,
+    у кого был пароль от сейфа с атомной бомбой. На игре была паника,
+    когда я пропал. </span>
+</section>
+
+
+<section class="slide" id="Rule 10: A Chance at Success"
+  label="Правило 10: шанс на успех">
+  <h2 class="source">Rule 10: A Chance at Success</h2>
+  <h2 class="translation">Правило 10: шанс на успех</h2>
+  <ul>
+    <li>
+      <p class="source">You can stack the odds against me - but as
+        long as I think there's a chance, I'll be engaged and I'll have
+        fun.</p>
+      <p class="translation">Вы можете ставить передо мной
+        препятствия, но пока я буду думать, что у меня есть шанс, я буду
+        вовлечен, и мне будет интересно.</p>
+    </li>
+    <li>
+      <p class="source">If a character's only purpose is to go down
+        for the big fall, then it's probably not going to be fun. If I
+        don't stand a chance, and all there is to do is to flail at
+        impossible goals, I won't be happy</p>
+      <p class="translation">Если единственное назначение персонажа
+        это проигрыш, игроку, скорее всего, будет не интересно. Мне не
+        понравится, если у меня не будет шансов и всё, что я могу это
+        биться о невозможные цели.</p>
+    </li>
+    <li>
+      <p class="source">
+        Unless you tell me about it <i>beforehand</i>, so the player can
+        plan accordingly. They can play it for all it's worth. This
+        rewrites the goals - the meaning of "success" becomes very
+        different. The doomed character can give their opponents a real
+        challenge, and that makes a better game for everyone.
+      </p>
+      <p class="translation">
+        Разве только вы скажете об этом игроку <i>заранее</i>, и он к
+        этому подготовится. В этом случае произойдёт переопределение
+        цели, значение «успеха» становится принципиально другим.
+        Обречённый персонаж может бросить настоящий вызов оппонентам, и
+        это сделает игру лучше для всех.
+      </p>
+    </li>
+  </ul>
+  <span class="notes source"> Notes: You've worked very hard to
+    set up contradicting goals in characters. Why risk it by having a
+    player rewrite their own goals? ! Don't change the rules of the game
+    halfway through. </span> <span class="notes translation"> Вы много
+    работали, чтобы дать противоречивые цели персонажам. Зачем рисковать
+    тем, что игрок может заменить их своими собственным целями? Не
+    меняйте правила по прошествии половины игры. </span>
+</section>
+
+
+
+<section class="slide" id="Rule 11: Making the Best of Good Players"
+  label="Правило 11: делайте игру лучше с помощью хороших игроков">
+  <h2 class="source">Rule 11: Making the Best of Good Players</h2>
+  <h2 class="translation">Правило 11: делайте игру лучше с помощью
+    хороших игроков</h2>
+  <ul>
+    <li>
+      <p class="source">Nothing makes a game greater for a player
+        than the chance to interact with someone who's really good at
+        it. It usually makes their own play better. Give them the chance
+        to do so whenever you can.</p>
+      <p class="translation">Верный способ сделать игру конкретного
+        игрока лучше, это возможность взаимодействий с сильным игроком.
+        Предусмотрите для этого максимальное количество возможностей.</p>
+    </li>
+    <li>
+      <p class="source">Good players can make a weak game stronger,
+        and can pull other people along in the process.</p>
+      <p class="translation">Хорошие игроки могут сделать слабую
+        игру сильнее и могут втянуть других людей в процесс.</p>
+    </li>
+    <li>
+      <p class="source">Chemistry happens with the right elements.</p>
+      <p class="translation">Химия случается между правильными
+        элементами.</p>
+    </li>
+    <li>
+      <p class="source">You never know where those combinations are
+        going to come from, so you have to mix people up.</p>
+      <p class="translation">Вы никогда не знаете в каких
+        комбинациях эта химия случится, поэтому людей нужно смешивать.</p>
+    </li>
+    <li>
+      <p class="source">This means you want a LOT of interactions,
+        among a lot of characters.</p>
+      <p class="translation">Поэтому вы должны стремится к
+        максимальному количеству взаимодействий между игроками.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Notes: I call them the "Phone Book
+    Players" - you can throw anything at them and the game will be
+    great. </span> <span class="notes translation"> Я называю это игроки
+    по телефонному справочнику - вы можете бросить что угодно в них и
+    игра будет отличной. </span>
+</section>
+
+
+<section class="slide" id="Rule 12: Play without Interruption"
+  label="Правило 12: игра без прерываний">
+  <h2 class="source">Rule 12: Play without Interruption</h2>
+  <h2 class="translation">Правило 12: игра без прерываний</h2>
+  <ul>
+    <li>
+      <p class="source">When my character gets rolling, don't stop
+        me. Nothing breaks a game faster for me than having to step out
+        and do something to facilitate the game.</p>
+      <p class="translation">Когда мой персонаж разогнался - не
+        останавливайте меня. Быстрее всего мне ломает игру необходимость
+        остановиться и сделать вспомогательные действия для продолжения
+        игры.</p>
+    </li>
+    <li>
+      <p class="source">
+        I <i>never</i> want to roll a die, throw Rock/Paper/Scissors,
+        add a modifier, reread a special ability card, search through
+        index cards for an item, or remember some mechanic, if I don't
+        have to. It breaks the role-playing. It breaks the mood.
+      </p>
+      <p class="translation">
+        Я <i>никогда</i> не хотел бросать кубик, играть в
+        камень-ножницы-бумага, добавлять модификатор, перечитывать карту
+        спец способности, искать среди карточек нужную или вспоминать
+        нюансы модельки. Это разрушает ролеплей и настрой.
+      </p>
+    </li>
+    <li>
+      <p class="source">Consider the great moments you've had when
+        LARPing. The really great moments probably came when you were
+        pouring your heart and soul into the character, without a
+        mechanic in sight.</p>
+      <p class="translation">Вспомните отличные моменты из ваших
+        игр. По настоящему крутые моменты вероятно случились, когда вы
+        вложили ваше сердце и душу в персонажа без видимых элементов
+        моделей.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Notes: Confessing my sins and my
+    heresy to the Pope, one on one. Competing socially with Lancelot to
+    try to keep Guenevere with me, even as I knew I was losing. Painting
+    a canvas as a Toreador vampire, keeping the easel between me and the
+    Hunters who were there in an uneasy truce. </span> <span
+    class="notes translation"> Исповедь в грехах и ереси Папе
+    римскому один на один. Социальное соревнование с Ланселотом в
+    попытке удержать Гиневру, даже зная, что я проигрываю. Рисование
+    полотна как Тореадор держа мольберт между мной и охотниками, с
+    которыми было заключено шаткое перемирие. </span>
+</section>
+    <section class="slide" id="So, You Have This Brilliant Idea..."
+  label="Итак, у вас есть прекрасная идея...">
+  <h2 class="source">So, You Have This Brilliant Idea...</h2>
+  <h2 class="translation">Итак, у вас есть прекрасная идея...</h2>
+  <ul>
+    <li>
+      <p class="source">You have an inspiration for a game - it can
+        be anything. A clever title, a cool prop, a great setting, a
+        genre that speaks to you... But that's not enough.</p>
+      <p class="translation">У вас есть вдохновение для игры - это
+        может быть что угодно. Удачное название, крутой антураж,
+        отличный сеттинг, жанр говорящий сам за себя... но этого не
+        достаточно.</p>
+    </li>
+    <li>
+      <p class="source">A clever mechanic is rarely a good place to
+        start. It's an easy place for many, and an easy place to get
+        wrapped up and lost.</p>
+      <p class="translation">Удачная модель редко бывает хорошей
+        отправной точкой. Многие мастера начинают с моделей, но на этом
+        пути легко запутаться и потеряться.</p>
+    </li>
+    <li>
+      <p class="source">You need a story. This is where you have to
+        start.</p>
+      <p class="translation">Вам нужна история. Это ваша точка
+        старта.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="Keep It Simple" label="Будьте проще">
+  <h2 class="source">Keep It Simple</h2>
+  <h2 class="translation">Будьте проще</h2>
+  <ul>
+    <li>
+      <p class="source">Your global story concept should be simple
+        to describe. If it takes more than a sentence or two, you
+        haven't simplified it enough.</p>
+      <p class="translation">Ваша глобальная концепция должна быть
+        сформулирована просто. Одного-двух предложений достаточно.</p>
+    </li>
+    <li>
+      <p class="source">
+        <i>Collision Imminent!</i> - A horde of passengers trying to
+        escape from a dying starship, and the crew trying to help them.
+        Starship Titanic.
+      </p>
+      <p class="translation">
+        <a
+          href="http://www.vortexofchaos.net/collision/CollisionImminent.html">Collision
+          Imminent!</a> Пассажиры покидают гибнущий космический корабль.
+        Экипаж спасает их. Звёздный корабль Титаник.
+      </p>
+    </li>
+    <li>
+      <p class="source">
+        <a href="http://www.vortexofchaos.net/idol_hands/home.html">The
+          Idol Hands of Death</a> - An archaeological expedition in Egypt in
+        1921 invites interesting people to see what they've found, and
+        there's a murder.
+      </p>
+      <p class="translation">
+        <a href="http://www.vortexofchaos.net/idol_hands/home.html">The
+          Idol Hands of Death</a> - археологическая экспедиция в Египте в
+        1921 сделала историческое открытие. На место раскопок
+        приглашаются известные люди. Внезапное убийство.
+      </p>
+    </li>
+    <li>
+      <p class="source">Given this, you have a focus. Now you can
+        work on the story concepts that will tell the global story. Each
+        character will have their own story concept inside of and
+        related to the global story.</p>
+      <p class="translation">В паре-тройке этих фраз вы показываете
+        фокус игры. Далее вы можете работать над концептами отдельных
+        историй, раскрывающих глобальный сюжет. У каждого персонажа
+        будет собственная идея внутри глобального сюжета, соотносящаяся
+        с ним.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="But I have Great Character Ideas!"
+  label="Но у меня есть крутые идеи персонажей!">
+  <h2 class="source">But I have Great Character Ideas!</h2>
+  <h2 class="translation">Но у меня есть крутые идеи персонажей!</h2>
+  <ul>
+    <li>
+      <p class="source">Characters are important, and definitely jot
+        down your notes source, but consider the following character
+        ideas:</p>
+      <p class="translation">Персонажи важны и определенно занимают
+        место в ваших записках, но давайте рассмотрим следующие идеи
+        персонажей:</p>
+    </li>
+    <li>
+      <p class="source">Virgil Thorne, a Toreador vampire, a painter
+        struggling with his Sire and his vampiric brother over what his
+        birthright should be.</p>
+      <p class="translation">Вёрджил Торн, вампир Тореадор,
+        художник, борющийся с сиром и его вампирским братом за то, что
+        принадлежит ему по праву рождения.</p>
+    </li>
+    <li>
+      <p class="source">
+        Arthur, King of the Britons, a mashup from <i>Camelot</i> and <i>Spamalot</i>
+      </p>
+      <p class="translation">
+        Артур, король Бритонов - смесь из <i>Камелота</i> и <i>Спамалота</i>
+      </p>
+    </li>
+    <li>
+      <p class="source">Z, the paranoid and catnip-loving black cat
+        who sees Creatures from the Ninth Dimension.</p>
+      <p class="translation">Зи, параноидальный кот любитель
+        валерьянки, видящий созданий из девятого измерения.</p>
+    </li>
+    <li>
+      <p class="source">
+        All great characters to play, but what would they <i>do</i>
+        together? You have to start with the global story and the story
+        concepts that tell that global story. That will define the
+        characters. It will also tell you how many characters.
+      </p>
+      <p class="translation">
+        Это отличные персонажи, но <i>что</i> их объединяет? Вам нужно
+        начать с глобальной истории и концепции. Это определит
+        персонажей, а так же их количество.
+      </p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="So, How Do I Build The Story?"
+  label="Как же мне построить историю?">
+  <h2 class="source">So, How Do I Build The Story?</h2>
+  <h2 class="translation">Как же мне построить историю?</h2>
+  <ul>
+    <li>
+      <p class="source">Consider a simple basic story concept: "You
+        love your father. You hate your father." Each character should
+        have their own story concept that helps to build the global
+        story.</p>
+      <p class="translation">Рассмотрим простой концепт: «Вы любите
+        своего отца. Вы ненавидите своего отца». У каждого персонажа
+        должен быть концепт своей истории, который помогает строить
+        глобальный сюжет.</p>
+    </li>
+    <li>
+      <p class="source">
+        This is a coming-of-age story, a finding oneself story, a
+        classic. Classics are that way for a reason. Don't be afraid to
+        use and adapt a classic. How many flavors have we seen of <i>Romeo
+          and Juliet</i> or the Hero Cycle?
+      </p>
+      <p class="translation">
+        Это история взросления, история поиска себя, классика. Классика
+        не зря называется классикой. Не бойтесь использовать и
+        адаптировать классику. Как много вариаций <i>Ромео и
+          Джульетты</i> или саги о герое мы видели?
+      </p>
+    </li>
+    <li>
+      <p class="source">There's conflict right there, which means
+        drama. There's a choice to be made. Having to make choices is
+        key.</p>
+      <p class="translation">Здесь есть конфликт, а значит, драма.
+        Здесь должен быть сделан выбор. Необходимость делать выбор это
+        ключевой момент.</p>
+    </li>
+    <li>
+      <p class="source">
+        It's the foundation for a child character, but what's the
+        character going to <i>do in the game</i>? Standing around in
+        some kind of mental anguish is not going to be much fun, or last
+        for very long before most players get bored.
+      </p>
+      <p class="translation">
+        Это основа персонажа ребенка, но <i>что будет</i> делать
+        персонаж на игре? Не интересно стоять в сторонке с душевными
+        терзаниями и ждать, когда другие игроки заскучают настолько,
+        чтобы обратить на него внимание.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide" id="I didn't see that coming..."
+  label="Я не знал, что это надо сделать">
+  <h2 class="source">I didn't see that coming...</h2>
+  <h2 class="translation">Я не знал, что это надо сделать</h2>
+  <ul>
+    <li>
+      <p class="source">You need a "To Do" list for each character.
+      </p>
+      <p class="translation">Вам нужен список целей для каждого
+        персонажа.</p>
+    </li>
+    <li>
+      <p class="source">
+        Character ideas can help in building the To Do list, but they
+        aren't necessary. The To Do list <i>will</i> suggest things
+        about the character.
+      </p>
+      <p class="translation">
+        Идеи персонажей могут помочь в построении списка целей, но они
+        не необходимы. Список целей <i>подскажет</i> особенности
+        персонажей.
+      </p>
+    </li>
+    <li>
+      <p class="source">Clearly, this is a story about conflict with
+        a father, so the To Do list might include taking an action
+        attempting to gain approval. Alternatively, the character might
+        do something knowing it risks disapproval.</p>
+      <p class="translation">Ясно, что это история о конфликте с
+        отцом, значит в списке целей может быть попытка получить его
+        одобрение. И наоборот, персонаж может сделать что-то, что имеет
+        риск неодобрения.</p>
+    </li>
+    <li>
+      <p class="source">So, one item on the To Do list might be
+        "Host an event, so you can demonstrate your organizational and
+        leadership skills for your father." This involves at least two
+        characters - the father and the child.</p>
+      <p class="translation">Один вариант в списке целей -
+        «Организуй мероприятие, чтобы показать свои организаторские и
+        лидерские способности отцу». Это затрагивает как минимум двух
+        персонажей - отца и ребенка.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="Isn't that just plot?"
+  label="А разве это не сюжет?">
+  <h2 class="source">Isn't that just plot?</h2>
+  <h2 class="translation">А разве это не сюжет?</h2>
+  <ul>
+    <li>
+      <p class="source">An action on the To Do list isn't the same
+        thing as a plot. A plot is driven by actions on the To Do lists
+        of all of the characters involved in the plot.</p>
+      <p class="translation">Действие в списке целей это не то же
+        самое, что сюжет. Сюжет развивается действиями всех персонажей,
+        вовлеченных в этот сюжет.</p>
+    </li>
+    <li>
+      <p class="source">"Hosting an event" is not a plot. What
+        happens at the event, however, is driven by plot - and hopefully
+        by a lot of them interacting with each other.</p>
+      <p class="translation">«Проведение мероприятия» это не сюжет.
+        А вот что произойдет на мероприятии будет определяться сюжетом,
+        и это будет следствием взаимодействия игроков.</p>
+    </li>
+    <li>
+      <p class="source">Thinking about potential plots will define
+        To Do items that can be distributed to characters in the game.</p>
+      <p class="translation">Размышления о потенциальных сюжетах
+        определяют списки целей, которые могут быть распределены среди
+        персонажей на игре.</p>
+    </li>
+    <li>
+      <p class="source">"Hosting an event" is part of a goal or a
+        set of them. The child character will want the event to look
+        good. The father character may have goals based on the event,
+        and has his own decision to make - whether to approve or
+        disapprove.</p>
+      <p class="translation">«Проведение мероприятия» это часть цели
+        или набора целей. Персонаж ребенка хочет, чтобы событие хорошо
+        выглядело. Цели отца могут так же соотносится с событием и у
+        него могут быть свои критерии одобрения\неодобрения.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Being pregnant is not a plot. Give
+    messy birth to the demon child mid-game is a bit cliche, but it's a
+    To Do. </span> <span class="notes translation"> Быть беременной это
+    не сюжет. Дать родится ребенку демона в середине игры это клише, но
+    это в пункт в списке целей. </span>
+</section>
+
+
+<section class="slide" id="But is it enough?"
+  label="Достаточно ли этого?">
+  <h2 class="source">But is it enough?</h2>
+  <h2 class="translation">Достаточно ли этого?</h2>
+  <ul>
+    <li>
+      <p class="source">Child character, hosting an event, wants
+        father to approve.</p>
+      <p class="translation">Ребёнок, проводящий событие, хочет
+        одобрения от отца.</p>
+    </li>
+    <li>
+      <p class="source">Father character, concerned about child, is
+        waiting for the event to happen.</p>
+      <p class="translation">Отец, заинтересованный в ребенке, ждёт
+        когда событие случится.</p>
+    </li>
+    <li>
+      <p class="source">No one else shows up.</p>
+      <p class="translation">Никого больше нет в истории.</p>
+    </li>
+    <br>
+    <li>
+      <p class="source">This could be a very interesting but short
+        LARP between the two characters. You could write dramatic
+        character backgrounds to shape and color the interaction. Then
+        you could turn two players loose and watch what happens.</p>
+      <p class="translation">Это может быть очень интересная, но
+        очень короткая игра между двумя персонажами. Вы можете написать
+        драматическую предысторию, чтобы сформировать взаимодействие.
+        Затем вы можете их стравить и посмотреть что случится.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide" id="The Golden Triangle"
+  label="Золотой треугольник">
+  <h2 class="source">The Golden Triangle</h2>
+  <h2 class="translation">Золотой треугольник</h2>
+  <div class="flex-root">
+    <ul class="flex-1-1-auto">
+      <li>
+        <p class="source">Conflicts and decisions add drama to
+          characters, and gets them to interact. Consider the Golden
+          Triangle.</p>
+        <p class="translation">Конфликты и решения добавляют
+          драматизма персонажам и заставляют их взаимодействовать.
+          Рассмотрим золотой треугольник.</p>
+      </li>
+      <li>
+        <p class="source">Each vertex represents a character. One
+          character is advocating for X. Another character is advocating
+          for not-X. The third character is the one who has to decide
+          between X and not-X.</p>
+        <p class="translation">Каждая вершина представляет
+          персонажа. Один персонаж склоняет к Х. Другой персонаж
+          склоняет к не-Х. Третий персонаж должен выбрать между Х и
+          не-Х.</p>
+      </li>
+    </ul>
+    <div class="flex-1-1-auto svg-img">
+      <img src="images/golden triangle_ru.svg" alt="Golden triangle">
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="Add a story with a Triangle"
+  label="Добавим историю с треугольником">
+  <h2 class="source">Add a story with a Triangle</h2>
+  <h2 class="translation">Добавим историю с треугольником</h2>
+  <ul>
+    <li>
+      <p class="source">Consider a second child for the father, with
+        a similar, but subtly different story concept: "You hate your
+        father. You love your father." This suggests an entirely
+        different dynamic between the father and this child.</p>
+      <p class="translation">Рассмотрим второго ребенка у отца с
+        похожей, но немного отличной концепцией «ты ненавидишь своего
+        отца. ты любишь своего отца». Это предполагает другую динамику
+        между отцом и ребенком.</p>
+    </li>
+    <li>
+      <p class="source">There's also a story between the two
+        children: "Father always loved the first one more." Sibling
+        rivalry - another classic!</p>
+      <p class="translation">Так же это история между детьми: «Отец
+        всегда любил первого больше». Соперничество детей - ещё одна
+        классическая история.</p>
+    </li>
+    <li>
+      <p class="source">This adds a To Do to the second child - make
+        #1 look bad. There's a To Do for the first child - figure out
+        what #2 is up to and stop it.</p>
+      <p class="translation">Это добавляет в список целей второго
+        ребёнка пункты «пусть первый провалится». Пункт в список целей
+        первого ребёнка «узнать что делает второй и предотвратить это».</p>
+    </li>
+    <li>
+      <p class="source">One triangle is clear: the first child wants
+        to succeed, the second child wants the first to fail, and the
+        father must decide the result, reacting accordingly.</p>
+      <p class="translation">Итоговый треугольник: первый ребёнок
+        хочет преуспеть, второй хочет, чтобы первый провалился, отец
+        должен принять решение.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Note that I've described this
+    without any details about the children. These details can drive the
+    story in diferent directions. Consider how the story can difer
+    depending on the ages and genders of the children. Consider how the
+    story can difer if each child was from a diferent mother. What's the
+    global story you're trying to tell? Are there some consistent themes
+    spanning groups of characters? </span> <span class="notes translation">
+    Обратите внимание, что я описал эту историю без деталей о детях. Эти
+    детали могут повести историю в другом направлении. Подумайте, как
+    эта история может измениться в зависимости от возраста и пола детей.
+    Как она может измениться, если дети будут от разных матерей. Какую
+    глобальную историю вы хотите рассказать? Есть ли тут какие-то
+    согласованные темы групп персонажей? </span>
+</section>
+
+
+<section class="slide" id="More triangles, please!"
+  label="Больше треугольников пожалуйста!">
+  <h2 class="source">More triangles, please!</h2>
+  <h2 class="translation">Больше треугольников пожалуйста!</h2>
+  <ul>
+    <li>
+      <p class="source">Consider a romantic interest for the first
+        child, with a "star-crossed lovers" story concept. The To Do
+        item is "introduce the lover to the father.""</p>
+      <p class="translation">Рассмотрите романтический интерес
+        первого ребёнка. История вида «несчастные влюбленные». Пункт в
+        списке целей «представьте возлюбленного отцу».</p>
+    </li>
+    <li>
+      <p class="source">This new character has all sorts of
+        potential triangles. Consider a triangle between the father, the
+        lover, and the second child. The father wants to know the
+        details of the lover's history. (A To Do!) The lover doesn't
+        want to have that history come out. The second child has to
+        determine what to say to the father.</p>
+      <p class="translation">У этого нового персонажа может быть
+        множество разных треугольников. Например, треугольник
+        отец-возлюбленный-второй ребёнок. Отец хочет знать больше о
+        возлюбленном. Возлюбленный не хочет, чтобы история всплыла.
+        Второй ребёнок должен решить что сказать отцу.</p>
+    </li>
+    <li>
+      <p class="source">If the second child doesn't know the
+        history, this adds another To Do - "find out the lover's
+        history." Depending on the story you're trying to tell will
+        drive what the second child is looking for, what they find, and
+        what they might do with that knowledge.</p>
+      <p class="translation">Если второй ребёнок не знает историю
+        про возлюбленного, то добавляется пункт в списке целей «найти
+        историю возлюбленного». В зависимости от истории, которую вы
+        хотите рассказать это приведёт к тому, что будет искать и что
+        найдет второй ребёнок, и что он сможет сделать с этим знанием.</p>
+    </li>
+    <li>
+      <p class="source">Time period, genre, gender of the lover -
+        all these and more add important flavor to the story.</p>
+      <p class="translation">Время, жанр, пол возлюбленного - всё
+        это и другое добавляет больше оттенков истории.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide" id="A Common Fatal Mistake"
+  label="Общая фатальная ошибка">
+  <h2 class="source">A Common Fatal Mistake</h2>
+  <h2 class="translation">Общая фатальная ошибка</h2>
+  <ul>
+    <li>
+      <p class="source">"Find out the lover's history." "Find the
+        McGuffin Widget." These are common To Dos, intended to drive a
+        lot of plot. Many times these fail, driving a player nuts in the
+        process, and potentially wrecking a game.</p>
+      <p class="translation">«Найди историю возлбленного». «Найди
+        Макгаффин». Эти пункты часто встречаются в списках целей и от
+        них ожидают большого развития сюжета. Очень часто это не
+        срабатывает, сводит игроков с ума и потенциально может разрушить
+        игру.</p>
+    </li>
+    <li>
+      <p class="source">If I ask the lover "do you have a sleazy
+        past?" - they're going to lie. If I ask a second character about
+        the lover, they may have skimmed over that part of their
+        character and don't remember. I have to keep looking.</p>
+      <p class="translation">Если я спрошу у возлюбленного «Есть ли
+        у тебя грязное прошлое?» - он соврёт. Если я спрошу второго
+        персонажа о возлюбленном, он может не вспомнить важных деталей о
+        другом персонаже. Мне придётся идти дальше.</p>
+    </li>
+    <li>
+      <p class="source">
+        If there are 20 other players in the game, and it takes me 3
+        minutes to ask each one that one question, then that's <i>an
+          hour</i> I've spent trying to solve one problem. That's a lot of
+        time and effort, and I have other things to do!
+      </p>
+      <p class="translation">
+        Если на игре 20 игроков и я трачу 3 минуты, чтобы спросить у
+        каждого, я потрачу <i>час</i> времени на решение одной проблемы.
+        Это много времени и усилий, а ведь есть ещё и другие задачи!
+      </p>
+    </li>
+    <li>
+      <p class="source">
+        <i>Information has to exist in more than one place, and
+          there has to be a way to get at it in those places. This is
+          also why dropping a character can kill entire sections of a
+          game.</i>
+      </p>
+      <p class="translation">
+        <i>Информация должна быть в нескольких местах на игре, и
+          должен быть способ до этих мест добраться. Из-за этой проблемы
+          потеря одного игрока может привести к потере больших частей
+          игры.</i>
+      </p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide" id="Compounding the Mistake"
+  label="Суммарная ошибка">
+  <h2 class="source">Compounding the Mistake</h2>
+  <h2 class="translation">Суммарная ошибка</h2>
+  <ul>
+    <li>
+      <p class="source">"Find the McGuffin widget" is commonly the
+        result of following a clue chain - a sequence of steps to get to
+        where you have to go.</p>
+      <p class="translation">«Найди Макгаффин» это результат
+        следования по пути из зацепок - последовательности шагов,
+        приводящих туда, куда вы идете.</p>
+    </li>
+    <li>
+      <p class="source">In one game, I was looking for a map. The
+        characters that had the information I needed had it in the form
+        of pieces of a cryptic poem that led to the map.</p>
+      <p class="translation">На одной игре я искал карту. Персонажи,
+        которые владели информацией о карте получили её в виде
+        стихов-шифров, указывающих путь.</p>
+    </li>
+    <li>
+      <p class="source">They had a scrap of paper with words that
+        said nothing about a map. They had nothing in their character
+        background that said what the scraps of paper were about.
+        (Players know they're important, which might be a reason not to
+        reveal them.) They were the only ones in game who knew.</p>
+      <p class="translation">У игроков были клочки бумаги со
+        словами, ничего не говорящими о карте. В их вводных не было
+        ничего сказано, зачем нужны эти клочки бумаги. Игроки знали, что
+        они важны и поэтому старались не показывать их лишний раз. Ни у
+        кого больше не было информации о карте.</p>
+    </li>
+    <li>
+      <p class="source">I asked all of them about a map. They didn't
+        know about a map. I never found it - and I spent much of a
+        weekend looking for it.</p>
+      <p class="translation">Я спрашивал всех о карте, но никто об
+        этом не знал. У других персонажей была информация, но они не
+        заехали. Карту я так и не нашёл и потратил уикенд на её поиск.</p>
+    </li>
+  </ul>
+  <span class="notes source"> More information was available - in
+    characters that weren't cast, because there weren't enough players
+    to fill those roles. ! Marin County New Age Society failed for me
+    because I was the last one in a chain of events. One of the players
+    decided that they weren't going to do their step. I was hosed, with
+    no chance of recovery. </span> <span class="notes translation">
+    Больше информации было у других персонажей, но они не заехали. Marin
+    County New Age Society провалилась для меня, потому что я был
+    последним в цепи событий. Один из игроков решил, что он не будет
+    делать свой шаг. Я был в шоке, без шанса на спасение. </span>
+</section>
+
+<section class="slide" id="The Cardinal Rule" label="Главное правило">
+  <h2 class="source">The Cardinal Rule</h2>
+  <h2 class="translation">Главное правило</h2>
+  <ul>
+    <li>
+      <p class="source">As you're thinking about stories,
+        characters, To Dos, triangles, plots, and goals, constantly ask
+        yourself this question:</p>
+      <p class="translation">Когда думаете над историями,
+        персонажами, списками целей, треугольниками, сюжетами и целями,
+        постоянно задавайте себе вопрос:</p>
+    </li>
+    <ul>
+      <li>
+        <p class="source">
+          <b>Would This Be Fun To Play?</b>
+        </p>
+        <p class="translation">
+          <b>Будет ли в это интересно играть?</b>
+        </p>
+      </li>
+    </ul>
+    <li>
+      <p class="source">If it's not fun to play, then why would
+        someone want to do it? This is a game. It's entertainment.</p>
+      <p class="translation">Если нет, тогда почему кто-то захочет
+        это делать? Это игра. Это развлечение. (прим.пер.: в видео Джефф
+        говорит «The Nordics will tell you that if you have angst and,
+        you know, selfloading in game it might be fun for them. I don't
+        follow in that category».)</p>
+    </li>
+    <li>
+      <p class="source">If you wouldn't want to play the part, why
+        would someone else want to?</p>
+      <p class="translation">Если вы не хотите в это играть, почему
+        кто-то другой захочет?</p>
+    </li>
+    <li>
+      <p class="source">If the answer is "no", then strongly
+        consider replacing the game/ character/plot/goal with one that
+        will be fun to play. This doesn't exclude dark and twisted
+        stories, just boring or distasteful ones.</p>
+      <p class="translation">Если ответ «нет», тогда серьёзно
+        задумайтесь над заменой игры/персонажа/сюжета/цели тем, во что
+        будет интересно сыграть. Это не исключает тёмных и запутанных
+        историй. Только скучные или неприятные.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="To Do is to Do"
+  label="Список целей это действия">
+  <h2 class="source">To Do is to Do</h2>
+  <h2 class="translation">Список целей это действия</h2>
+  <ul>
+    <li>
+      <p class="source">As you're building the character, review the
+        To Do list. Ask yourself this:</p>
+      <p class="translation">При написании персонажа пересмотрите
+        список целей. Спросите себя:</p>
+    </li>
+    <ul>
+      <li>
+        <p class="source">
+          <b>Could this character be replaced by a mannequin or an
+            item card?</b>
+        </p>
+        <p class="translation">
+          <b>Можно ли персонажа заменить манекеном или предметом?</b>
+        </p>
+      </li>
+    </ul>
+    <li>
+      <p class="source">A brilliantly written character means little
+        if all the player has to do is admire your writing.</p>
+      <p class="translation">Прекрасно прописанный персонаж
+        бессмысленен, если всё, что может сделать игрок, это восхититься
+        вашим текстом.</p>
+    </li>
+    <li>
+      <p class="source">A character should have To Dos to keep them
+        busy. Other characters should have To Dos that bring even more
+        action to the first one. There should be a dense web of
+        interactions, going in all directions.</p>
+      <p class="translation">У персонажа должен быть список целей,
+        который заставит его действовать. Другие персонажи должны иметь
+        свои списки целей, приводящие к действиям с первым игроком.
+        Должна быть плотная сеть взаимодействий всех со всеми.</p>
+    </li>
+    <li>
+      <p class="source">
+        I'm a believer in the "you can <b>never</b> have too much plot"
+        school of LARP writing.
+      </p>
+      <p class="translation">
+        Я представитель школы мастеров «на вашей игре <b>никогда</b> не
+        будет слишком много сюжетов».
+      </p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="To Do is to Do II"
+  label="Список целей это действия II">
+  <h2 class="source">To Do is to Do II</h2>
+  <h2 class="translation">Список целей это действия II</h2>
+  <ul>
+    <li>
+      <p class="source">Some writers use puzzles to simulate
+        engineering tasks, or working your way through a bureaucracy, or
+        something complicated. Thus, the player has a To Do, which looks
+        reasonable.</p>
+      <p class="translation">Некоторые мастера используют
+        головоломки для имитации инженерных задач, или имитации
+        бюрократии или чего-то сложного. Таким образом, игрок вроде бы
+        обоснованно занят.</p>
+    </li>
+    <li>
+      <p class="source">LARP is about acting and interacting. A
+        puzzle does not fit this paradigm.</p>
+      <p class="translation">РИЖД про действие и взаимодействие.
+        Головоломки не укладываются в эту парадигму.</p>
+    </li>
+    <li>
+      <p class="source">Some players hate puzzles. Some players are
+        not good at puzzles. Why is it fun for someone to sit and solve
+        Sudoku puzzles while everyone else is having intense
+        interactions?</p>
+      <p class="translation">Некоторые игроки не любят головоломки.
+        Некоторые плохо в них играют. Почему должно быть интересно
+        разгадывать судоку, пока остальные игроки интенсивно
+        взаимодействуют?</p>
+    </li>
+    <li>
+      <p class="source">
+        Of course, it all depends on the puzzle. In the fabulous <i>Curse
+          of Whately's Moonbase</i>, getting the air system working required
+        reassembling a number of PVC pipes into slots to get fan-driven
+        air flowing out the output pipe. Landing the ship was a ship
+        landing video game while riding in an RV. The ship was an RV
+        being driven to the destination, in the dark, on back streets,
+        out of radio contact with the base. Characters had to work
+        together to make things work.
+      </p>
+      <p class="translation">
+        Безусловно, всё зависит от головоломки. На невероятной игре <i>Curse
+          of Whately's Moonbase</i>, починка вентиляции заключалась в
+        пересборке системы из ПВХ труб таким образом, что поток воздуха
+        из входной трубы начинал идти из выходной. А посадка корабля это
+        была видеоигра во время поездки в трейлере. Корабль отыгрывался
+        трейлером, который ехал в точку назначения в темноте по
+        закоулкам без радиосвязи с базой. Персонажи должны были работать
+        вместе, чтобы всё получилось.
+      </p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="To Do is to Do Too"
+  label="Список целей это действия III">
+  <h2 class="source">To Do is to Do Too</h2>
+  <h2 class="translation">Список целей это действия III</h2>
+  <ul>
+    <li>
+      <p class="source">Consider the experience of actually having
+        to do this, while risking being caught.</p>
+      <p class="translation">Рассмотрите вариант сделать что-либо по
+        настоящему, рискуя быть пойманным.</p>
+    </li>
+    <li>
+      <p class="source">Consider a To Do that is "Break into a safe
+        and steal the secret plans."</p>
+      <p class="translation">Рассмотрим задачу «Вскрыть сейф и
+        украсть секретные планы».</p>
+    </li>
+    <li>
+      <p class="source">I was the GM. The player, playing a
+        safecracker character, came up to me and said "I go to the
+        office and break into the safe. What do I find?" In many games,
+        this is exactly the right approach. He expected me to invoke a
+        mechanic, do a quick description, and hand him some item cards.
+      </p>
+      <p class="translation">Я был мастером. Игрок, играющий
+        медвежатника, пришёл ко мне и сказал: «Я иду в офис и взламываю
+        сейф. Что я нашёл?» На многих играх это правильный подход. Он
+        ждал, что у меня есть какая-то модель, я сделаю короткое
+        описание и дам ему какие-то карточки предметов.</p>
+    </li>
+    <li>
+      <p class="source">"I don't know," I replied. "You'll have to
+        find it and tell me." It really threw the player. In this game,
+        there was a real safe in a real office space, with things inside
+        it. He wasn't expecting that, and it made his game more of a
+        challenge.</p>
+      <p class="translation">Я ответил: «Я не знаю. Найди его и
+        скажи мне». Это ошеломило игрока. На игре был реальный сейф в
+        реальном офисе с вещами внутри. Игрок этого не ожидал, и это
+        сделало его игру интереснее.</p>
+    </li>
+    <li>
+      <p class="source">Another player, playing the same part in
+        another run, told me that someone nearly walked in on him as he
+        was going to the safe. He'd had to hide in the room and hope he
+        wasn't detected. He talked about how his heart had been racing
+        at nearly being caught. Once in the safe, there was more than he
+        expected, and he had to take more precious time to find exactly
+        what he was looking for. Then, when it was in his hands, he had
+        to figure out how to hide the bulky object for the rest of the
+        game.</p>
+      <p class="translation">Другой игрок, играющий ту же роль в
+        другом прогоне, рассказал мне, что кто-то вошёл в офис, когда он
+        подбирался к сейфу. Он спрятался в комнате, надеясь, что его не
+        заметят. Он рассказывал о том, как его накрыло адреналином,
+        когда его почти поймали. В сейфе оказалось больше вещей, чем он
+        ожидал, поэтому он потратил некоторое время на поиски нужного.
+        Когда он, наконец, нашёл то, что нужно, ему пришлось искать
+        способ спрятать большой предмет до конца игры.</p>
+    </li>
+
+  </ul>
+</section>
+
+<section class="slide" id="To Do is to Do Until It Is Done"
+  label="Список целей это действия, которые должны быть завершены">
+  <h2 class="source">To Do is to Do Until It Is Done</h2>
+  <h2 class="translation">Список целей это действия, которые должны
+    быть завершены</h2>
+  <ul>
+    <li>
+      <p class="source">Never write a To Do that is "find a way to
+        leave the game." It's a big mistake, and easy to make.</p>
+      <p class="translation">Никогда не ставьте задачу «найти способ
+        покинуть игру». Это большая ошибка и её легко допустить.</p>
+    </li>
+    <li>
+      <p class="source">You won't write it consciously, or in that
+        form, but you have to keep the position of the character in
+        mind. For many characters, there are points in games where the
+        best and most logical solution is simply to leave.</p>
+      <p class="translation">Проверяйте ситуацию глазами игрока:
+        даже если это не написано прямо, у многих персонажей есть
+        моменты, когда наиболее логичное действие это покинуть игру.</p>
+    </li>
+    <li>
+      <p class="source">What will you do if they decide To Do this
+        three minutes into the game? All of your plotting, all of your
+        interactions, all of your triangles, plots and goals involving
+        this character would vanish.</p>
+      <p class="translation">Что произойдет, если они решат это
+        сделать через три минуты после начала игры? Все ваши сюжеты,
+        взаимодействия, треугольники, цели, включающие этого персонажа
+        отвалятся.</p>
+    </li>
+    <li>
+      <p class="source">Forcing the player to stay just annoys them,
+        rightly so. You need to give them a stronger reason to stay</p>
+      <p class="translation">Не принуждайте игрока безосновательно
+        оставаться в игре. Дайте ему вескую причину продолжать играть.</p>
+    </li>
+    <li>
+      <p class="source">This only works if everyone has the goal of
+        leaving, and the game ends when they all succeed.</p>
+      <p class="translation">Исключение: игра в которой у всех стоит
+        задача «покинуть это место» и игра закончится, когда они
+        преуспеют.</p>
+    </li>
+  </ul>
+</section>
+    <section class="slide" id="Size, Shape and Duration"
+  label="Размер, форма и длительность">
+  <h2 class="source">Size, Shape and Duration</h2>
+  <h2 class="translation">Размер, форма и длительность</h2>
+  <ul>
+    <li>
+      <p class="source">You’ve been writing story concepts, To Dos,
+        character bits, plots, and goals. How many are enough?</p>
+      <p class="translation">Вы пишете истории, персонажей, сюжеты и
+        цели. Когда нужно остановиться?</p>
+    </li>
+    <li>
+      <p class="source">That all depends on the story and
+        sub-stories you’re trying to tell. You can tell a simple,
+        elegant, and powerful story with two or three characters, in a
+        handful of triangles. You can tell a lot more stories with more
+        triangles and characters.</p>
+      <p class="translation">Всё зависит от истории и подисторий,
+        которые вы рассказываете. Вы можете рассказать простую,
+        элегантную и сильную историю с двумя-тремя персонажами с
+        небольшим количеством треугольников. Можете рассказать много
+        историй с кучей треугольников и персонажей.</p>
+    </li>
+    <li>
+      <p class="source">You can decide up front about how many
+        characters you want in the game, and that will help drive your
+        process - but don’t be limited by a strict number up front.
+        Consider it an estimate, and work from there.</p>
+      <p class="translation">Прикиньте заранее, сколько персонажей
+        вам нужно на игре и отталкивайтесь от этого, но не ограничивайте
+        себя жёстко. Воспринимайте это число как примерную оценку.</p>
+    </li>
+    <li>
+      <p class="source">If you’re doing it right, the characters
+        will tell you when there is a complete set.</p>
+      <p class="translation">
+        Вы почувствуете тот момент, когда набор персонажей станет
+        полным.
+        <!--       Вы почувствуете тот момент, когда детерминант матрицы персонажей станет не нулевым. -->
+      </p>
+    </li>
+  </ul>
+  <span class="notes source"> Idol Hands of Death started with 20
+    characters. After the first run, I realized that there were a couple
+    of dangling threads and loose ends. We also had 22 signups for the
+    second run. Tim Lasko and I sat down and talked about our
+    experiences in the game - and soon had two new characters that
+    filled in some of the holes. They helped to fill out the stories.
+    Players in the second and third run never realized that we’d added
+    characters. For the fourth run, we realized that we still had some
+    holes, and we knew how we could fill them. Three new characters,
+    tied in with the others, worked brilliantly. They fit in so well
+    that one of the new characters has gotten several votes as the
+    potential killer, in both of the runs where they were present. </span><span
+    class="notes translation"> Idol Hands of Death начиналась с
+    20 персонажей. После первого прогона я нашёл несколько провисов и
+    потерянных хвостов. На второй прогон собиралось 22 человека. Тим
+    Ласко и я сели и обсудили наш игровой опыт - вместе мы сделали двух
+    новых персонажей, заполняющих некоторые пробелы. Они помогли
+    историям раскрыться. Игроки на втором и третьем прогоне не знали,
+    что мы добавили персонажей. На четвертый прогон мы поняли, что у нас
+    всё ещё есть дыры и мы знаем, как их заткнуть. Три дополнительных
+    персонажа были завязаны с прочими и это превосходно сработало. Они
+    так хорошо подошли, что один из новых персонажей получил несколько
+    голосов, что он может быть убийцей в обоих прогонах, на которых он
+    был. </span>
+</section>
+
+
+
+<section class="slide" id="Interconnection Math"
+  label="Математика взаимосвязей">
+  <h2 class="source">Interconnection Math</h2>
+  <h2 class="translation">Математика взаимосвязей</h2>
+  <div class="flex-root">
+    <ul class="flex-1-1-auto">
+      <li>
+        <p class="source">The number of interactions possible in a
+          game increases proportionately to the square of the number of
+          players in the game.</p>
+        <p class="translation">Количество возможных взаимодействий
+          на игре растет пропорционально квадрату игроков.</p>
+      </li>
+      <li>
+        <p class="source">
+          In a large or crowded space, it takes time for people just to
+          <i>find</i> each other.
+        </p>
+        <p class="translation">
+          На большом пространстве или в толпе очень много времени уходит
+          только на то, чтобы <i>найти</i> друг друга.
+        </p>
+      </li>
+      <li>
+        <p class="source">It takes time for people to talk to each
+          other.</p>
+        <p class="translation">На разговоры тратится много времени.</p>
+      </li>
+      <li>
+        <p class="source">Characters have to be subtle to get what
+          they’re after, and that takes even longer.</p>
+        <p class="translation">Персонаж не может просто подойти и
+          сказать «Выкладывай свои грязные секреты». На получение
+          полезной информации тратится ещё больше времени.</p>
+      </li>
+    </ul>
+    <div class="flex-1-1-auto svg-img">
+      <img src="images/interconnections.svg" alt="Interconnections">
+    </div>
+  </div>
+  <!--   TDOD - добавить отдельным пунктом -->
+  <!--   <span class="notes source"> In my run of The Morning After, -->
+  <!--     game space was the entire WPI campus. It took a long time to go from -->
+  <!--     place to place. ! Even 30 or 40 people are swallowed up by all the -->
+  <!--     nooks and crannies in four floors of Sage Hall at RPI. </span><span -->
+  <!--     class="notes translation"> В моем прогоне The Morning After -->
+  <!--     игровой зоной был университетский кампус. Очень много времени -->
+  <!--     уходило на переходы. Даже 30 или 40 игроков теряются в во всех этих -->
+  <!--     уголках и закутках четырехэтажного здания. </span> -->
+</section>
+
+
+
+<section class="slide" id="There are Limits" label="Есть пределы">
+  <h2 class="source">There are Limits</h2>
+  <h2 class="translation">Есть пределы</h2>
+  <ul>
+    <li>
+      <p class="source">You can only expect a limited number of
+        connections and conversations in a given amount of time.</p>
+      <p class="translation">Количество взаимодействий и разговоров
+        в заданный промежуток времени ограничено.</p>
+    </li>
+    <li>
+      <p class="source">Theoretically, this limits the number of
+        characters you should have for a given game length: 20-30 = 4
+        hours, 30-40 = 8 hours, and 50-60 = weekend.</p>
+      <p class="translation">В теории количество персонажей
+        определяет длительность игры: 20-30 - 4 часа, 30-40 - 8 часов,
+        50-60 - выходные.</p>
+    </li>
+    <li>
+      <p class="source">This also depends on your players and their
+        style. Some players can take a three player LARP and go for
+        hours. Others are just the opposite.</p>
+      <p class="translation">Хотя конечно, многое зависит от
+        конкретных игроков и их стиля. Некоторые игроки могут часами
+        играть в игру на 3 человека. Другие наоборот.</p>
+    </li>
+    <li>
+      <p class="source">Realistically, most characters aren’t going
+        to interact with everyone. Characters work with smaller groups,
+        going outside the group as necessary, especially in bigger
+        games, where characters can’t be as densely tied together.</p>
+      <p class="translation">В реальности взаимодействия всех со
+        всеми не происходит. Персонажи играют маленькими группами,
+        отделяющимися от больших групп. Особенно на больших играх, где
+        персонажи не плотно связаны.</p>
+    </li>
+    <li>
+      <p class="source">Keep this in mind when writing “Find the
+        McGuffin” plots. Characters won’t talk with everyone. In Lullaby
+        of Broadway 3, As Arthur, I spent most of the weekend with
+        Guenevere and Lancelot. I talked to quite a few of the others,
+        but really was focused on our story. I couldn’t tell you what
+        happened with the rest of the game.</p>
+      <p class="translation">На игре Lullaby of Broadway 3 в роли
+        Артура я провёл большую часть времени с Гиневрой и Ланселотом. Я
+        конечно общался с другими , но в основном был сосредоточен на
+        нашей истории. Я не могу сказать, что происходило вне неё на
+        игре.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="The Primogen Council Problem"
+  label="Проблема совета примогенов">
+  <h2 class="source">The Primogen Council Problem</h2>
+  <h2 class="translation">Проблема совета примогенов</h2>
+  <div class="flex-root">
+    <ul class="flex-1-1-auto">
+      <li>
+        <p class="source">The Primogen are the leaders of the
+          various Vampire clans, who get together, in private, with the
+          Prince, to figure out how to solve the problems created by
+          each other and their clans.</p>
+        <p class="translation">Примогены (лидеры различных
+          вампирских кланов) собираются с принцем на Белый совет для
+          решения ряда проблем.</p>
+      </li>
+      <li>
+        <p class="source">The number of possible interactions drops
+          dramatically, because key people are locked in a separate
+          room, incommunicado.</p>
+        <p class="translation">Количество возможных взаимодействий
+          для оставшихся снаружи уменьшается в разы, так как ключевые
+          персонажи заперты в отдельной комнате без связи с внешним
+          миром.</p>
+      </li>
+      <li>
+        <p class="source">Some players can’t do anything. The game
+          breaks for them.</p>
+        <p class="translation">Что ломает игру некоторым игрокам,
+          потому что им нечего делать.</p>
+      </li>
+    </ul>
+    <div class="flex-1-1-auto svg-img">
+      <img src="images/interconnections2.svg" alt="Interconnections2">
+    </div>
+  </div>
+  <span class="notes source"> All of their connections are gone.
+  </span> <span class="notes translation">Все их связи уходят. </span>
+</section>
+
+
+<section class="slide" id="It’s not just the Primogen Council..."
+  label="И это не только про совет примогенов...">
+  <h2 class="source">It’s not just the Primogen Council...</h2>
+  <h2 class="translation">И это не только про совет примогенов...</h2>
+  <ul>
+    <li>
+      <p class="source">The Away Team, going off on a mission.</p>
+      <p class="translation">Разведгруппа, отправившаяся на задание.</p>
+    </li>
+    <li>
+      <p class="source">A clique or faction having to work on
+        deciphering an arcane text.</p>
+      <p class="translation">Группа магов, занятая расшифровкой
+        текста аркана.</p>
+    </li>
+    <li>
+      <p class="source">Über-plots, where many of the players, but
+        not all, are chasing something.</p>
+      <p class="translation">Сверх-сюжеты, с активной погоней за
+        чем-нибудь, в которые включено большинство, но не все.</p>
+    </li>
+    <!--     <li> -->
+    <!--       <p class="source">The Big Combat Bubble, where a large group -->
+    <!--         of players are using slow mechanics to resolve things.</p> -->
+    <!--       <p class="translation">Большой боевой пузырь, в котором -->
+    <!--         большая группа людей используют медленные модели для своих -->
+    <!--         действий.</p> -->
+    <!--     </li> -->
+    <li>
+      <p class="source">Loner characters, trying to have
+        interactions with those who are tightly bound to a larger group,
+        can’t make connections.</p>
+      <p class="translation">Одиночные персонажи не могут
+        взаимодействовать с плотно занятыми группами.</p>
+    </li>
+    <li>
+      <p class="source">Try to avoid this whenever possible, because
+        you don’t want Bored Players.</p>
+      <p class="translation">Избегайте этого везде, где возможно,
+        потому что вам не нужны скучающие игроки.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Secrets of the Necronomicon kept
+    people in tight groups for large chunks of the game. </span><span
+    class="notes translation"> Secrets of the Necronomicon
+    собирали людей вместе в крепкие группы на протяжении больших
+    участков времени. </span>
+</section>
+
+
+
+<section class="slide" id="Variable Sized Games"
+  label="Игры изменяемого размера">
+  <h2 class="source">Variable Sized Games</h2>
+  <h2 class="translation">Игры изменяемого размера</h2>
+  <ul>
+    <li>
+      <p class="source">Sometimes, you can’t get 20 players for a
+        game.</p>
+      <p class="translation">Иногда случается недозаезд.</p>
+    </li>
+    <li>
+      <p class="source">When you drop a character, you’re tearing a
+        hole in the dense web of interactions you’ve carefully
+        constructed. Some To Dos will be impossible to complete. Some
+        information will not be as accessible. (If this is the only
+        source of that information, go back and fix that.)</p>
+      <p class="translation">Недозаезд персонажа создаёт дыру в
+        плотной сети взаимодействий, которую вы конструировали.
+        Невозможно достичь некоторых целей. Некоторая информация
+        стнавоится недоступной. Особенно критично, если персонаж был
+        единственным источником какой-то информации. Стремитесь не
+        допускать этого.</p>
+    </li>
+    <li>
+      <p class="source">This is hard to plan for. It can be done.</p>
+      <p class="translation">Предупредить недозаезд сложно, но
+        реально.</p>
+    </li>
+    <li>
+      <p class="source">Never write an “extra” character, that is
+        somehow less. The players will know. All the characters should
+        be equal and integrated with each other.</p>
+      <p class="translation">Никогда не пишите «дополнительных»
+        куцых персонажей. Игроки это поймут. Все персонажи должны быть
+        сопоставимы по проработанности и завязаны друг на друга.</p>
+    </li>
+    <li>
+      <p class="source">Letting characters get killed off mid-game
+        has similar issues. Writing a good replacement character is very
+        tough to do well.</p>
+      <p class="translation">Убийство персонажа в середине игры
+        ведёт к тем же проблемам. Очень трудно хорошо написать
+        персонажа-замену. Поэтому на моих играх нет смертей.</p>
+    </li>
+  </ul>
+  <span class="notes source"> I personally don’t do this. Even
+    with Idol Hands growing from 20 to 22 to 25 characters, those new
+    parts are fully integrated. Remove one and the game wouldn’t work as
+    well. </span><span class="notes translation"> Лично я этого не
+    делаю. Даже когда Idol Hands вырос с 20 до 22, а потом до 25
+    персонажей, новые части были полностью интегрированы. Убери одного и
+    игра не будет работать, как планировалось. </span>
+</section>
+
+
+<section class="slide" id="12 Characters Walk Into A Bar..."
+  label="Встретились как-то 12 персонажей...">
+  <h2 class="source">12 Characters Walk Into A Bar...</h2>
+  <h2 class="translation">Встретились как-то 12 персонажей...</h2>
+  <ul>
+    <li>
+      <p class="source">Your characters have spoken, and you have a
+        good idea for the size of the game. You’ve considered the web of
+        interactions. How long should the game run?</p>
+      <p class="translation">Вы придумали персонажей. У вас есть
+        представление о размере игры. Вы прикидываете сеть
+        взаимодействий. Как долго должна длиться игра?</p>
+    </li>
+    <li>
+      <p class="source">That depends on a couple of factors:</p>
+      <p class="translation">Зависит от нескольких факторов:</p>
+    </li>
+    <ul>
+      <li>
+        <p class="source">Are you going to put everything into the
+          characters at game start?</p>
+        <p class="translation">Планируете ли вы дать всю информацию
+          на старте игры?</p>
+      </li>
+      <li>
+        <p class="source">
+          Are you going to introduce external events and <i>significant</i>
+          new information during the game? (<i>e.g.</i> pages of
+          restored memories)
+        </p>
+        <p class="translation">
+          Планируете ли вы внешние события и вброс <i>важной</i> игровой
+          информации во время игры? Например, восстановленные
+          воспоминания.
+        </p>
+      </li>
+      <li>
+        <p class="source">Are you using mechanics that will take a
+          long time to resolve if things end in a massive conflict?</p>
+        <p class="translation">Используете ли вы модели, требующие
+          большого времени?</p>
+      </li>
+    </ul>
+  </ul>
+  <span class="notes source"> Inserting information takes time,
+    and information takes time to propagate through the game. ! Variable
+    numbers of characters are hard, because the number of interactions
+    changes dramatically. Plots can break. Start simple, and use a fixed
+    number - unless you’re doing something like a horde game. </span><span
+    class="notes translation">Вброс и распространение информации
+    требуют времени. Изменяемое количество игроков это тяжелая проблема,
+    так как сильно меняется плотность взаимодействий. Сюжеты могут
+    сломаться. Начинайте с простого и используйте фиксированное
+    количество, если конечно вы не делаете игру орд (horde game).</span>
+</section>
+
+
+<section class="slide" id="So How Long Should It Run?"
+  label="Так сколько игра должна длиться?">
+  <h2 class="source">So How Long Should It Run?</h2>
+  <h2 class="translation">Так сколько игра должна длиться?</h2>
+  <ul>
+    <li>
+      <p class="source">Your estimates are TOO LONG.</p>
+      <p class="translation">Ваши оценки СИЛЬНО ЗАВЫШЕНЫ.</p>
+    </li>
+    <li>
+      <p class="source">Be merciless. I’ve rarely met a game that
+        couldn’t be compressed in time. Doing so puts pressure on the
+        players to act. Time pressure also helps to prevent slow
+        periods.</p>
+      <p class="translation">Будьте милосердны. Я встречал мало игр,
+        которые нельзя сократить по времени. Уменьшая время, вы
+        подталкиваете игроков к действию. Временное давление также
+        помогает предотвратить снижение темпа.</p>
+    </li>
+    <li>
+      <p class="source">Give your players a lot to do and not enough
+        time to accomplish everything. Force them to choose their
+        priorities. Yes, this means that many of your possible To Dos
+        won’t get finished, but you still have to write them.</p>
+      <p class="translation">Дайте игрокам возможность многое
+        сделать, но не дайте времени, чтобы всё завершить. Заставьте их
+        расставить приоритеты. Да, это значит, что некоторые из ваших
+        целей не будут завершены, но это не значит, что их не надо
+        написать.</p>
+    </li>
+    <li>
+      <p class="source">Leave the players wanting more. That’s so
+        much better than having everyone just standing around waiting
+        for the last two people to finish up their last plot.</p>
+      <p class="translation">Пусть игроки хотят большего. Это
+        намного лучше, чем когда все ждут двух последних игроков,
+        доигрывающих свой сюжет.</p>
+    </li>
+  </ul>
+  <span class="notes source"> This is also what playtesting is
+    for. </span><span class="notes translation">По этой же причине
+    необходимо проводить плейтесты.</span>
+</section>
+
+
+
+<section class="slide" id="Don’t Skimp On the Other Bits"
+  label="Не скупитесь на другие части">
+  <h2 class="source">Don’t Skimp On the Other Bits</h2>
+  <h2 class="translation">Не скупитесь на другие части</h2>
+  <ul>
+    <li>
+      <p class="source">It takes time to set up the space.</p>
+      <p class="translation">Обустройство пространства требует
+        времени.</p>
+    </li>
+    <li>
+      <p class="source">You’re going to start the role-playing later
+        than you want. Players are scum; they will be late.</p>
+      <p class="translation">Вы начнёте игру позже, чем планировали.
+        Игроки - бараны, они опоздают.</p>
+    </li>
+    <li>
+      <p class="source">You probably need a game briefing, to
+        explain the space and anything tricky about your game, such as
+        mechanics. Be brief; people are here to LARP, not listen to you
+        talk.</p>
+      <p class="translation">Возможно, перед игрой вы будете
+        проводить парад, объясняя организацию пространства или модели.
+        Будьте кратки - игроки приехали играть, а не слушать вас.</p>
+    </li>
+    <li>
+      <p class="source">You may want to have a game wrap when you’re
+        done.</p>
+      <p class="translation">Вам может понадобиться дополнительное
+        время по завершению игры.</p>
+    </li>
+    <li>
+      <p class="source">It takes time to clean up.</p>
+      <p class="translation">Уборка требует времени.</p>
+    </li>
+    <li>
+      <p class="source">Plan on this, especially if you have a fixed
+        time and place to run.</p>
+      <p class="translation">Учитывайте это, особенно если вы жестко
+        ограничены временем и местом.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Tony Mitton has a great rant on why
+    Players Are Scum. Of course, Sue Lee has an equivalent rant about
+    how GMs are Bastards. </span><span class="notes translation"> У Тони
+    Миттона есть отличный текст, почему игроки бараны. Конечно же, Сью
+    Ли написала аналогичный текст, почему мастера козлы.</span>
+</section>
+    <section class="slide" id="Writing Characters"
+  label="Написание персонажей">
+  <h2 class="source">Writing Characters</h2>
+  <h2 class="translation">Написание персонажей</h2>
+  <ul>
+    <li>
+      <p class="source">A game is a collection of characters with
+        things they have to do, individually and/or collectively. The
+        details and directions that a LARP will take depend on how those
+        characters will see their tasks and goals, and how the player
+        interprets them.</p>
+      <p class="translation">Игра - это набор персонажей, с целями,
+        которые им предстоит достичь индивидуально или совместно. Детали
+        и ход игры зависят от того, как персонажи воспримут свои задачи
+        и цели, и как игроки их интерпретируют.</p>
+    </li>
+    <li>
+      <p class="source">A To Do will be approached very differently
+        depending on whether the character is a tarnished saint, a
+        depraved sociopath, a sinner seeking absolution, a selfish
+        manipulator looking only to their own ends, or something
+        entirely different.</p>
+      <p class="translation">Одна и та же цель будет воспринята
+        по-разному павшим святым, развращённым социопатом, кающимся
+        грешником, эгоистичным манипулятором и т.д.</p>
+    </li>
+    <li>
+      <p class="source">Your job is to weave a character into the
+        given set of goals. You probably already have some good ideas
+        about them, but listen as they tell you about themselves. They
+        may surprise you.</p>
+      <p class="translation">Ваша задача - вплести персонажа в
+        созданный вами набор целей. Возможно, у вас есть хорошие идеи
+        для персонажей, но слушайте, что они говорят. Они могут удивить
+        вас.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="How Long Should a Character Be?"
+  label="Насколько длинным должен быть текст персонажа?">
+  <h2 class="source">How Long Should a Character Be?</h2>
+  <h2 class="translation">Насколько длинным должен быть текст
+    персонажа?</h2>
+  <ul>
+    <li>
+      <p class="source">That depends on the number of To Dos, the
+        length of the game, and the depth you want to give your
+        characters.</p>
+      <p class="translation">Это зависит от количества целей,
+        длительности игры, и глубины персонажа, которой вы хотите
+        достичь.</p>
+    </li>
+    <li>
+      <p class="source">"You don't remember." is the shortest
+        legitimate character sheet I know. That doesn't go very far.
+        Either the character will get their memory back, requiring a
+        longer description, or other characters will have to know what
+        happened, which means their sheets are longer.</p>
+      <p class="translation">«Ты ничего не помнишь», - это самое
+        короткое описание персонажа, которое я знаю. Будем честны, оно
+        даёт мало информации. Либо персонаж вернёт свои воспоминания в
+        виде более длинного описания на игре, либо другие персонажи
+        будут знать что случилось, а значит их тексты длиннее.</p>
+    </li>
+    <li>
+      <p class="source">Three sentences can totally work, for a game
+        like FOCUS: the Generic LARP. There was a surprisingly rich
+        environment, and everyone had a clear archetype to play.</p>
+      <p class="translation">Трёх предложений может быть достаточно
+        для игры вроде FOCUS: the Generic LARP. Там была удивительно
+        богатая обстановка и у каждого был чёткий архетип для отыгрыша.
+      </p>
+    </li>
+    <li>
+      <p class="source">Three sentences (or less) can fail totally,
+        like in Slave Girls of the Terror Dome, where nothing was
+        connected or made sense.</p>
+      <p class="translation">Трёх предложений может быть
+        недостаточно, как на игре Slave Girls of the Terror Dome, где
+        всё было бессвязно и не имело смысла.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="Where Is the Character Information?"
+  label="Где разместить информацию о персонаже?">
+  <h2 class="source">Where Is the Character Information?</h2>
+  <h2 class="translation">Где разместить информацию о персонаже?</h2>
+  <ul>
+    <li>
+      <p class="source">Character information is often spread into
+        several pieces. Consider a game with d'Artagnan, of The Three
+        Musketeers. From most specific to most generic, details about
+        his character could be:</p>
+      <p class="translation">Информация о персонаже часто разбита на
+        несколько частей. Рассмотрим для примера д'Артаньяна из Трёх
+        мушкетёров. От частного к общему, информация о персонаже может
+        быть:</p>
+    </li>
+    <ul>
+      <li>
+        <p class="source">In his character biography (e.g.
+          d'Artagnan's personal history)</p>
+        <p class="translation">Во вводной персонажа (личная история
+          д'Артаньяна)</p>
+      </li>
+      <li>
+        <p class="source">Introduced in the game, via contingency
+          envelopes or arrival information.</p>
+        <p class="translation">Введена в игру через триггерные
+          конверты или информацию по прибытии.</p>
+      </li>
+      <li>
+        <p class="source">In small-group or description bluesheets
+          (e.g. A Musketeer's bluesheet, French court politics, etc.)</p>
+        <p class="translation">Во вводных для групп персонажей или в
+          текстах описания мироустройства (описание мушкетёров, политика
+          Французского суда и т.д.)</p>
+      </li>
+      <li>
+        <p class="source">In public materials (e.g. common knowledge
+          of events at the court, history of duels, etc.)</p>
+        <p class="translation">В публичных материалах: общеизвестные
+          факты о, сплетни, слухи и т.д.</p>
+      </li>
+    </ul>
+  </ul>
+</section>
+
+
+
+
+<section class="slide" id="Which of those Places Do I Choose?"
+  label="Что куда писать?">
+  <h2 class="source">Which of those Places Do I Choose?</h2>
+  <h2 class="translation">Что куда писать?</h2>
+  <ul>
+    <li>
+      <p class="source">It's clearly easier and more private to put
+        more useful and specific information about how a character
+        thinks in the most specific materials - the character biography.
+      </p>
+      <p class="translation">Проще и надёжнее писать самую полезную
+        и личную информацию о том, как персонаж думает в максимально
+        личных материалах - во вводной.</p>
+    </li>
+    <li>
+      <p class="source">To say that d'Artagnan was passionately in
+        love with the Queen and how he feels is not something publicly
+        known.</p>
+      <p class="translation">К примеру, страстная влюбленность
+        д'Артаньяна в королеву - это не публично известный факт.</p>
+    </li>
+    <li>
+      <p class="source">If it's relevant, it belongs in the
+        biography.</p>
+      <p class="translation">В таком случаете пишите в личную
+        вводную.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="How will the Choice Affect Game Play?"
+  label="Как выбор подачи информации влияет на игру?">
+  <h2 class="source">How will the Choice Affect Game Play?</h2>
+  <h2 class="translation">Как выбор подачи информации влияет на
+    игру?</h2>
+  <ul>
+    <li>
+      <p class="source">Consider Armand, who is given a contingency
+        envelope that says "Open when you meet Esmerelda."</p>
+      <p class="translation">Рассмотрим Арманда, у которого есть
+        триггерный конверт с надписью «Открыть при встрече с
+        Эсмеральдой».</p>
+    </li>
+    <li>
+      <p class="source">Armand meets several characters, and then is
+        introduced to Esmerelda. Armand introduces himself as he has to
+        all of the other characters he doesn't know.</p>
+      <p class="translation">Арманд встречает нескольких персонажей,
+        а затем его представляют Эсмеральде. Арманд представляется так
+        же, как и всем другим неизвестным ему персонажам.</p>
+    </li>
+    <li>
+      <p class="source">There's that contingency envelope.
+        Roleplaying stops, which is troubling. Armand opens the envelope
+        and reads "you were lovers long ago."</p>
+      <p class="translation">Срабатывает условие «конверта». Игра
+        делает паузу, что само по себе проблема. Арманд открывает
+        конверт и читает «давным-давно вы были любовниками».</p>
+    </li>
+    <li>
+      <p class="source">That would entirely change how Armand would
+        greet Esmerelda. The player probably did it wrong because they
+        didn't know what the character would. This is relevant.
+        Furthermore, how the relationship ended would make a big
+        difference in this new greeting.</p>
+      <p class="translation">Это полностью меняет отношение Арманда
+        к Эсмеральде. Возможно игрок приветствовал её неправильно,
+        потому что не знал этих сведений. Это важно. Более того, при их
+        новой встрече имеют большое значение обстоятельства расставания.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Other characters will react based
+    on what they see. It might be relevant politically that Armand and
+    Esmerelda have a history. If all a third character saw was the
+    botched introduction, they might come away with the wrong
+    information. </span><span class="notes translation"> Другие
+    персонажи реагируют так, как они это видят. Это может быть
+    политически важно, что у Арманда и Эсмеральды была история. Если
+    всё, что видел сторонний персонаж это плохая информация, они могут
+    разойтись с неправильной информацией. </span>
+</section>
+
+
+
+
+<section class="slide" id="Relevant is Key"
+  label="Важность это ключевой момент">
+  <h2 class="source">Relevant is Key</h2>
+  <h2 class="translation">Важность это ключевой момент</h2>
+  <ul>
+    <li>
+      <p class="source">If it's relevant, it belongs in the
+        character sheet. At a minimum, the character sheet must contain
+        all of the relevant information needed to play the part.</p>
+      <p class="translation">Если что-то важно, оно должно быть в
+        материалах персонажа. Как минимум, материалы персонажа должны
+        содержать всю важную информацию, необходимую для игры.</p>
+    </li>
+    <li>
+      <p class="source">This does not mean all of the details are
+        correct; the information is there as the character sees it or
+        knows it.</p>
+      <p class="translation">Это не значит, что вся информация в
+        материалах персонажа истинна. Информация дана в том виде, в
+        котором персонаж её видел или знает.</p>
+    </li>
+    <li>
+      <p class="source">If d'Artagnan had a relevant argument with
+        Louis over the meaning of honor, it has to be in both
+        characters. That d'Artagnan sees it as the last chance to
+        persuade Louis to be a decent King, and that Louis sees it as
+        yet another nagging annoyance, is perfectly reasonable.</p>
+      <p class="translation">Если д'Артаньян однажды говорил с
+        Людовиком о значении чести, об этом должны знать оба персонажа.
+        Д'Артаньян видит в этом последний шанс убедить Людовика быть
+        достойным королём. А Людовик воспринимает это как очередное
+        ворчание.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+
+<section class="slide" id="Consistency is So Important"
+  label="Согласованность - это очень важно">
+  <h2 class="source">Consistency is So Important</h2>
+  <h2 class="translation">Согласованность - это очень важно</h2>
+  <ul>
+    <li>
+      <p class="source">Even though Louis thought the argument
+        unimportant, it has to be in his character sheet.</p>
+      <p class="translation">Даже если Людовик не считает разговор
+        важным, он должен быть в его листе персонажа.</p>
+    </li>
+    <li>
+      <p class="source">Consider a dramatic moment in game, where
+        d'Artagnan is facing down the King. d'Artagnan refers to the
+        conversation: "I told you that honor was key, that it would make
+        you a better King, yet here we are." If Louis replies "You never
+        told me that," it destroys the moment, and can kill a game.</p>
+      <p class="translation">Представьте драматический момент, в
+        котором д'Артаньян припирает короля к стенке. Д'Артаньян
+        ссылается на разговор: «Я говорил вам, что честь это основа. Это
+        сделает вас лучшим королем, чем сейчас». Если Людовик ответит:
+        «Ты мне этого никогда не говорил», - это разрушит момент и может
+        убить игру.</p>
+    </li>
+    <li>
+      <p class="source">Worse yet, they metagame for a moment and
+        say "the GMs screwed it up."</p>
+      <p class="translation">Ещё хуже, что они выходят в метаигру и
+        говорят «мастер облажался».</p>
+    </li>
+    <li>
+      <p class="source">Always, always, always, make a consistency
+        pass after you've written the game. If X and Y were both
+        together at Z, it has to be in both sheets, so they can both
+        play with it. This is where a new set of eyes really helps.</p>
+      <p class="translation">Всегда, всегда, всегда проверяйте игру
+        на согласованность после того, как написали игру. Если X и Y
+        были вместе в Z, это должно быть отражено в их материалах
+        персонажей, чтобы они оба могли с этим играть. В этой проверке
+        может сильно помочь вторая пара глаз.</p>
+    </li>
+  </ul>
+  <span class="notes source"> You have to start consistent and
+    keep checking as you write. Then you still have to have someone else
+    read it. My son Jordan reads everything I write, and he sees things
+    I thought I fixed. </span><span class="notes translation"> Вы
+    начинаете писать согласованно и продолжаете проверять в процессе
+    работы. Затем вам нужен кто-то, кто это прочитает. Мой сын Джордан
+    читает всё, что я пишу и видит вещи, про которые я был уверен, что я
+    их поправил. </span>
+</section>
+
+
+
+<section class="slide" id="Details Enhance the Picture"
+  label="Детали улучшают картину">
+  <h2 class="source">Details Enhance the Picture</h2>
+  <h2 class="translation">Детали улучшают картину</h2>
+  <ul>
+    <li>
+      <p class="source">Once you have all of the relevant pieces in
+        place, embellish and add.</p>
+      <p class="translation">В какой-то момент все необходимые части
+        будут сделаны, расписаны и встроены.</p>
+    </li>
+    <li>
+      <p class="source">Details give characters something to talk
+        about when they're first getting together. "I grew up in Paris,
+        and loved to walk through the Latin quarter, smelling the aromas
+        from the bistros, watching the tourists as the maitre'd's
+        competed for customers."</p>
+      <p class="translation">Детали дают персонажам отправную точку
+        для разговора при первой встрече. «Я вырос в Париже. Я любил
+        гулять по латинскому кварталу, наблюдая за туристами, вдыхать
+        аромат бистро, хозяева которых лениво зазывали прохожих...»</p>
+    </li>
+    <li>
+      <p class="source">Details give characters something to share
+        in quiet intimate, moments. It can be a way to connect. "I knew
+        your son well, he talked of you and your farm often, in the
+        lulls between battles."</p>
+      <p class="translation">Детали это то, чем персонажи могут
+        делиться в моменты затишья, то, что может помочь наладить
+        контакт. «Я хорошо знал твоего сына. Он часто говорил о тебе и
+        твоей ферме в перерывах между боями».</p>
+    </li>
+    <li>
+      <p class="source">Details give characters a sense of how to
+        play them. Write the part as compassionate or cold, optimistic
+        or pessimistic, and so on. Use details to paint the broad
+        strokes for the player to refine into their interpretation.</p>
+      <p class="translation">Детали дают персонажам ощущение как им
+        играть. Пишите их с сочувствием или отстраненностью, с
+        оптимизмом или пессимизмом и так далее. Используйте детали
+        широкими мазками, чтобы игроки могли найти в них свою
+        интерпретацию.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="Bluesheets are Your Friend"
+  label="Используйте вводные для групп персонажей">
+  <h2 class="source">Bluesheets are Your Friend</h2>
+  <h2 class="translation">Используйте вводные для групп персонажей</h2>
+  <ul>
+    <li>
+      <p class="source">Sometimes, you can push common information
+        into bluesheets.</p>
+      <p class="translation">Иногда вы можете зафиксировать общую
+        информацию для группы персонажей.</p>
+    </li>
+    <li>
+      <p class="source">Bluesheets are pages that contain additional
+        information, not written in a character-specific way. They are
+        typically printed on blue (or green) paper.</p>
+      <p class="translation">Вводные для групп это тексты, которые
+        содержат информацию общую для группы персонажей и не прописанную
+        в личных вводных. (прим.пер.: в оригинале это называется
+        bluesheet, потому что, в США они обычно печатаются на синей или
+        зелёной бумаге)</p>
+    </li>
+    <li>
+      <p class="source">If you find yourself writing the same text
+        over and over again, consider pushing it into a shared
+        bluesheet. It's quite reasonable to share a bluesheet between a
+        small number of characters.</p>
+      <p class="translation">Если вы понимаете, что пишете один и
+        тот же текст снова и снова, подумайте, возможно, его лучше
+        оформить в виде вводной для группы персонажей.</p>
+    </li>
+    <li>
+      <p class="source">If the interpretation of the common event
+        differs significantly, you may not be able to use a bluesheet.
+        Or, you can cheat. You can say "See the X bluesheet, but this is
+        what you really think."</p>
+      <p class="translation">Если интерпретация известного события
+        значительно отличается у разных персонажей, смысла с
+        использовании вводных для групп нет. Или можно схитрить. Вы
+        можете сказать «Читай лист X. Это то, что ты думаешь про
+        событие».</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide" id="You Need to Let Go" label="Отпустите игру">
+  <h2 class="source">You Need to Let Go</h2>
+  <h2 class="translation">Отпустите игру</h2>
+  <ul>
+    <li>
+      <p class="source">You can't control your players. Plots will
+        not go the way you want them to.</p>
+      <p class="translation">Вы не можете контролировать ваших
+        игроков. Сюжеты разовьются не так, как вам хочется.</p>
+    </li>
+    <li>
+      <p class="source">Players are perverse and brilliant. They
+        will see solutions that you never expected. They will find
+        cracks and loopholes. They will compromise when you least expect
+        it.</p>
+      <p class="translation">Игроки упрямы и блестящи. Они увидят
+        решения, которых вы никогда не ожидаете. Они найдут дырки и
+        лазейки. Они пойдут на компромисс, когда вы этого меньше всего
+        ожидаете.</p>
+    </li>
+    <li>
+      <p class="source">I have an archaeologist character in The
+        Idol Hands of Death who has finally gotten the chance to go on
+        the dig he's dreamed of. I thought I'd made it absolutely clear
+        that the dig was his focus, to the exclusion of nearly
+        everything else. In one run, a player announced that he was
+        giving it all up. When I pulled the player aside, he explained
+        his reasons, which made sense - but it was a very different
+        interpretation than I expected.</p>
+      <p class="translation">У меня был персонаж археолог на The
+        Idol Hands of Death, который наконец-то получил шанс попасть на
+        раскопки, о которых он мечтал. Я думал, я ясно дал понять, что
+        раскопки для него важнее всего. На одном из прогонов игрок
+        объявил, что он отказывается от поездки. Поговорив с игроком, я
+        узнал его мотивы, и они имели смысл. Но это была совершенно иная
+        интерпретация, чем я ожидал.</p>
+    </li>
+    <li>
+      <p class="source">You lose all character control once the game
+        starts. Learn to deal with it.</p>
+      <p class="translation">Вы теряете контроль над персонажами в
+        момент начала игры. Учитесь справляться с этим.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Players will solve your unsolvable
+    problems. My solution for Tabula Rasa v2.0 was brilliant,
+    unorthodox, and completely within the abilities they'd given to me.
+    I was given two choices and found a third option. </span><span
+    class="notes translation"> Игроки решают ваши неразрешимые
+    проблемы. Моё решение на Tabula Rasa v2.0 было блестящим,
+    оригинальным и полностью в рамках моих возможностей. Мне было дано
+    два варианта, а я нашёл третий.</span>
+</section>
+
+
+
+<section class="slide" id="You Really Need to Let Go"
+  label="Вам действительно нужно отпустить игру">
+  <h2 class="source">You Really Need to Let Go</h2>
+  <h2 class="translation">Вам действительно нужно отпустить игру</h2>
+  <ul>
+    <li>
+      <p class="source">If you try to control the plots or the
+        action, the players will know it and will resent it.</p>
+      <p class="translation">Если вы пытаетесь управлять сюжетом или
+        действиями, игроки об этом узнают и возмутятся.</p>
+    </li>
+    <li>
+      <p class="source">Deus Ex Machina plots, where "a seemingly
+        unsolvable problem is suddenly and abruptly solved with the
+        contrived and unexpected intervention of some new event,
+        character, ability, or object," will make the players angry.</p>
+      <p class="translation">Сюжеты в стиле «бог из машины», где
+        «кажущаяся неразрешимой проблема решается грубо и внезапно через
+        неожиданное шитое белыми нитками вмешательство извне, будь то
+        событием, персонажем, способностью или другим объектом» разозлят
+        игроков.</p>
+    </li>
+    <li>
+      <p class="source">Don't plan for a specific outcome, because
+        you're guaranteed never to get there.</p>
+      <p class="translation">Не планируйте конкретный исход, потому
+        что нет никаких гарантий, что вы его получите.</p>
+    </li>
+    <li>
+      <p class="source">Trust in what you've written for the
+        characters, stand back, and watch them come to life.</p>
+      <p class="translation">Доверьтесь тому, что вы написали для
+        персонажей, сделайте шаг назад и смотрите как это претворяется в
+        жизнь.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="Don't Forget the Cardinal Rule..."
+  label="Не забудьте главное правило">
+  <h2 class="source">Don't Forget the Cardinal Rule...</h2>
+  <h2 class="translation">Не забудьте главное правило</h2>
+  <ul>
+    <li>
+      <p class="source">Will this character be fun to play?</p>
+      <p class="translation">Будет ли персонажу интересно играть?</p>
+    </li>
+    <li>
+      <p class="source">If you have doubts, ask someone.</p>
+      <p class="translation">Если есть сомнения, спросите
+        кого-нибудь.</p>
+    </li>
+    <li>
+      <p class="source">If you have serious doubts, rewrite the
+        character.</p>
+      <p class="translation">Если есть большие сомнения, перепишите
+        персонажа.</p>
+    </li>
+    <li>
+      <p class="source">Don't wait until you've written the part to
+        ask the question. This has to be in your head as you write.</p>
+      <p class="translation">Не ждите момента, когда вы всё
+        напишете, чтобы спросить. Это вопрос должен быть в вашей голове,
+        когда вы пишете.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="Archetypes aren't just for Characters"
+  label="Архетипы игроков">
+  <h2 class="source">Archetypes aren't just for Characters</h2>
+  <h2 class="translation">Архетипы игроков</h2>
+  <div class="flex-root">
+    <ul class="flex-1-1-auto">
+      <li>
+        <p class="source">As you write the character, you need to
+          consider what kind of player will play the part. It makes a
+          big difference in how the character will be interpreted and
+          played.</p>
+        <p class="translation">Когда вы пишете персонажа, вам нужно
+          подумать какой игрок будет его играть. Интерпретация и отыгрыш
+          персонажа очень сильно отличаются в зависимости от игрока.</p>
+      </li>
+      <li>
+        <p class="source">This is the player archetype triangle,
+          defined in the 90s by Gail and Doug Freedman.</p>
+        <p class="translation">Это треугольник архетипов игроков,
+          описанный в 90х Гейлом и Дагом Фридманом.</p>
+      </li>
+      <li>
+        <p class="source">It's similar to RPG's Gamist/
+          Narrativist/Simulationist trio.</p>
+        <p class="translation">
+          Он похож на треугольник геймист/нарративист/симуляционист. (<a
+            href="http://rpgmuseum.wikia.com/wiki/GNS_Theory">англ.</a>,
+          <a
+            href="http://ru.rpg.wikia.com/wiki/%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C">рус.</a>)
+        </p>
+      </li>
+    </ul>
+    <div class="flex-1-1-auto svg-img">
+      <img src="images/archetypes3_ru.svg" alt="Archetypes triangle">
+    </div>
+  </div>
+  <span class="notes source"> Consider how these archetypes might
+    approach a murder mystery. </span><span class="notes translation">
+    Подумайте, как эти архетипы могут сыграть в расследование убийства.
+  </span>
+</section>
+
+
+
+<section class="slide" id="The Actor" label="Актёр">
+  <h2 class="source">The Actor</h2>
+  <h2 class="translation">Актёр</h2>
+  <ul>
+    <li>
+      <p class="source">The Actor wants to make things happen with
+        his character, play to the audience (of others), act out the
+        dramatic scenes, have loud arguments, gesticulate wildly, and
+        fondly reminisce about old times.</p>
+      <p class="translation">Актёр хочет быть в центре событий. Игра
+        на зрителя, отыгрыш драматических сцен, громко говорит, много
+        жестикулирует и с теплотой вспоминает былые времена.</p>
+    </li>
+    <li>
+      <p class="source">An Actor could talk for hours about some
+        minor incident in their background, making up all sorts of
+        details about who he was with, and what happened.</p>
+      <p class="translation">Актёр может говорить часами о каком-то
+        маленьком событии в своём прошлом, детально рассказывая, кто с
+        ним был, и что произошло.</p>
+    </li>
+    <li>
+      <p class="source">An Actor goes for the dramatic, and so might
+        not be best for those roles where they have to get away with
+        something.</p>
+      <p class="translation">Актёр едет за драмой и поэтому плохо
+        подходит для незаметных ролей.</p>
+    </li>
+    <li>
+      <p class="source">An Actor might actually dramatically confess
+        to committing murder, even though it wouldn't be in the
+        character's best interest.</p>
+      <p class="translation">Актёр может драматично признаться в
+        совершении убийства, даже если это полностью противоречит
+        интересам персонажа.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="The Role-Player" label="Ролеплеер">
+  <h2 class="source">The Role-Player</h2>
+  <h2 class="translation">Ролеплеер</h2>
+  <ul>
+    <li>
+      <p class="source">The Role-Player wants to identify with the
+        character, internalizing the character's goals.</p>
+      <p class="translation">Ролеплеер хочет влезть в шкуру
+        персонажа и воспринять его цели.</p>
+    </li>
+    <li>
+      <p class="source">The Role-Player wants to act and react as
+        the character would, regardless of what's going on.</p>
+      <p class="translation">Ролеплеер хочет действовать и
+        реагировать так, как это делал бы персонаж, независимо от того,
+        что происходит.</p>
+    </li>
+    <li>
+      <p class="source">A Role-Player would remember the details of
+        their past as their character would.</p>
+      <p class="translation">Ролеплеер будет помнить прошлое так,
+        как это сделал бы его персонаж.</p>
+    </li>
+    <li>
+      <p class="source">If a murder mystery is really irrelevant to
+        the Role-Player's goals, they might not bother to reveal the
+        details that they know, even if it means a guilty player walks
+        away.</p>
+      <p class="translation">Если раскрытие убийства не пересекается
+        с целями ролеплеера, то он может не слить разоблачающую
+        информацию, даже если это значит, что виновник уйдёт
+        безнаказанным.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="The Problem Solver" label="Решатель проблем">
+  <h2 class="source">The Problem Solver</h2>
+  <h2 class="translation">Решатель проблем</h2>
+  <ul>
+    <li>
+      <p class="source">The Problem Solver wants to figure out
+        what's going on.</p>
+      <p class="translation">Решатель проблем хочет понять, что
+        происходит.</p>
+    </li>
+    <li>
+      <p class="source">The Problem Solver likes to solve puzzles,
+        investigate clues, follow up on all the To Dos they can, and
+        check off as many goals as possible. It doesn't matter how they
+        get to the solution; characterization is less important.</p>
+      <p class="translation">Решатель проблем любит решать загадки,
+        искать улики, следовать по всем имеющимся направлениям и достичь
+        максимального количества целей. Пути решения не важны.
+        Персонажность не имеет значения.</p>
+    </li>
+    <li>
+      <p class="source">A Problem Solver is more likely to want to
+        know what happened to the victim of a crime than to go on about
+        their own character's history.</p>
+      <p class="translation">Решателю проблем важнее узнать, что
+        случилось с жертвой преступления, чем развить историю
+        собственного персонажа.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="Matching Players to Characters"
+  label="Сопоставление игроков и персонажей">
+  <h2 class="source">Matching Players to Characters</h2>
+  <h2 class="translation">Сопоставление игроков и персонажей</h2>
+  <ul>
+    <li>
+      <p class="source">The triangle is a good shorthand to describe
+        players. It's also a good way to describe characters.</p>
+      <p class="translation">Треугольник - это хороший способ
+        описания игроков. Также он хорошо описывает персонажей.</p>
+    </li>
+    <li>
+      <p class="source">Players fall somewhere in the triangle. So
+        do characters.</p>
+      <p class="translation">Игроки склоняются к какому-то варианту
+        в треугольнике так же, как и персонажи.</p>
+    </li>
+    <li>
+      <p class="source">I tend to write murderer characters who need
+        to get away with it for most of the game as a Problem Solver. A
+        Problem Solver player in the role keeps them focused, dancing as
+        the noose tightens.</p>
+      <p class="translation">Я стараюсь делать персонажей-убийц из
+        решателей проблем, которые не раскроют себя большую часть игры.
+        Решатель проблем в этой позиции, пока верёвка затягивается,
+        становится очень сфокусированным и изворотливым.</p>
+    </li>
+    <li>
+      <p class="source">A Role Player might stay too much in
+        character to get away with it.</p>
+      <p class="translation">Ролеплеер может слишком сильно уйти в
+        персонажа, чтобы не понести наказание за содеянное.</p>
+    </li>
+    <li>
+      <p class="source">An Actor might decide it would be dramatic
+        to confess in midgame, which would abruptly end the To Dos for
+        the detectives.</p>
+      <p class="translation">Актёр может решить, что признание в
+        середине игры наиболее драматично, что в свою очередь сломает
+        цели детективам.</p>
+    </li>
+  </ul>
+  <span class="notes source"> I'm probably halfway between Role
+    Player and Problem Solver, closer to the Actor corner. </span><span
+    class="notes translation"> Я сам наполовину между ролеплеером
+    и решателем проблем, с уклоном в актёра. </span>
+</section>
+
+
+
+<section class="slide" id="The Third Dimension"
+  label="Пирамида архетипов">
+  <h2 class="source">The Third Dimension</h2>
+  <h2 class="translation">Пирамида архетипов</h2>
+  <div class="flex-root">
+    <ul class="flex-1-1-auto">
+      <li>
+        <p class="source">I've realized there's a fourth archetype:
+          the Gunslinger.</p>
+        <p class="translation">Я понял, что есть ещё четвёртый
+          архетип: стрелок.</p>
+      </li>
+      <li>
+        <p class="source">Players fall somewhere in this three
+          dimensional volume.</p>
+        <p class="translation">Игроки находятся где-то в этой
+          пирамиде.</p>
+      </li>
+    </ul>
+    <div class="flex-1-1-auto svg-img">
+      <img src="images/archetypes4_ru.svg" alt="Archetypes pyramid">
+    </div>
+  </div>
+</section>
+
+
+
+<section class="slide" id="The Gunslinger" label="Стрелок">
+  <h2 class="source">The Gunslinger</h2>
+  <h2 class="translation">Стрелок</h2>
+  <ul>
+    <li>
+      <p class="source">The Gunslinger is someone who enjoys using
+        mechanics to extend their role-playing with special abilities
+        and combat.</p>
+      <p class="translation">Стрелок - это тот, кто получает
+        удовольствие от использования моделей для выигрыша с помощью
+        спецспособностей и боя.</p>
+    </li>
+    <li>
+      <p class="source">This may be as simple as using a boffer
+        weapon or Nerf gun in livecombat. It may be as involved as using
+        dice, cards, a war game, or something else to simulate something
+        not physically possible or reasonable.</p>
+      <p class="translation">Это могут быть простые варианты:
+        бофферы или нерфы. Это может быть что-то с применением кубиков,
+        карт, варгеймов или чего-то ещё, имитирующего физически
+        невозможное или недопустимое.</p>
+    </li>
+    <li>
+      <p class="source">The Gunslinger prefers these elements in
+        their play. They may step out of the role-playing moment to
+        invoke these mechanics - and it is not limited to combat.</p>
+      <p class="translation">Стрелки предпочитают модели в игре. Они
+        могут отказаться от ролевого момента, чтобы воспользоваться
+        моделями, и не только в бою.</p>
+    </li>
+    <li>
+      <p class="source">The Gunslinger would rather pull out a "Fast
+        Talk" ability card than try to actually convince someone to do
+        their bidding.</p>
+      <p class="translation">Стрелок предпочтёт выложить карту
+        «быстрый разговор», чем попытаться по жизни сторговаться.</p>
+    </li>
+  </ul>
+  <span class="notes source"> I stink at mechanics. I forget that
+    I have Special Ability cards. I have the personal Special Ability of
+    making mechanics fail in unusual and unexpected ways. I can't count,
+    add, or subtract when I'm in a LARP. I fall in the plane at the
+    bottom of the pyramid. </span><span class="notes translation"> Я не
+    люблю модели. Я забыл, что у меня есть свои спецспособности. Моя
+    спецспособность в том, чтобы ломать модели необычными и неожиданными
+    способами. Я не могу считать, складывать и вычитать, когда я на
+    игре. Я нахожусь в плоскости пирамиды архетипов (исходный
+    треугольник). </span>
+</section>
+    <section class="slide" id="Mechanics" label="Модели">
+  <h2 class="source">Mechanics</h2>
+  <h2 class="translation">Модели</h2>
+  <ul>
+    <li>
+      <p class="source"></p>
+      <p class="translation">Прим.пер.: модели в ролевых играх США
+        весьма специфичны. Поэтому этот раздел интересен скорее в
+        познавательном ключе. Не стоит его советы переносить один в один
+        на наши модели.</p>
+    </li>
+    <li>
+      <p class="source">You may have gathered I'm not a big fan of
+        mechanics.</p>
+      <p class="translation">Вы могли заметить, что я не большой
+        фанат моделей.</p>
+    </li>
+    <li>
+      <p class="source">Mechanics interrupt the flow of role-playing
+        and characterization.</p>
+      <p class="translation">Модели прерывают поток игры и не дают
+        вжиться в персонажа.</p>
+    </li>
+    <li>
+      <p class="source">Mechanics break the mood.</p>
+      <p class="translation">Модели ломают настрой.</p>
+    </li>
+    <li>
+      <p class="source">Mechanics create time bubbles, where players
+        can't be reached, and connections are broken.</p>
+      <p class="translation">Модели создают пузыри времени, в
+        которых персонажи недостижимы и взаимодействия невозможны.</p>
+    </li>
+    <li>
+      <p class="source">Mechanics take time to explain on paper and
+        during game briefing, take time to run, and, with a player like
+        me, need a GM to get "right."</p>
+      <p class="translation">Модели требуют времени на объяснения на
+        бумаге и во время игрового брифинга, требуют времени на их
+        использование и, с игроком вроде меня, требуют мастера для
+        получения «одобрения».</p>
+    </li>
+    <li>
+      <p class="source">Mechanics suck up GM time, which can mean
+        players waiting in line to get to a GM. No one wants to wait in
+        line while other action is going on.</p>
+      <p class="translation">Модели высасывают время мастера, из-за
+        чего игроки выстраиваются в очередь к мастеру. Никто не хочет
+        стоять в очереди, когда вокруг идут активные события.</p>
+    </li>
+  </ul>
+  <span class="notes source"> There are war stories of horrible
+    games where nearly every action required waiting in line for a GM.
+    If I really wanted to play a tabletop game or a war game, I wouldn't
+    be at a LARP. </span><span class="notes translation"> Есть военные
+    истории с ужасных игр, где почти каждое действие требовало ожидания
+    в очереди к мастеру. Если бы действительно хотел поиграть в настолку
+    или варгейм, я бы не поехал на РИЖД. </span>
+</section>
+
+
+
+<section class="slide" id="So How Do You Do Odd Things?"
+  label="И как же ты делаешь невозможные вещи?">
+  <h2 class="source">So How Do You Do Odd Things?</h2>
+  <h2 class="translation">И как же ты делаешь невозможные вещи?</h2>
+  <ul>
+    <li>
+      <p class="source">Why are you doing this? What are you trying
+        to accomplish in game? Do you really need this to tell the story
+        you're trying to tell?</p>
+      <p class="translation">Почему вы добавляете это в игру? Почему
+        вы пытаетесь добавить это в игру? Действительно ли вам это
+        нужно, чтобы рассказать историю, которую вы пытаетесь
+        рассказать?</p>
+    </li>
+    <li>
+      <p class="source">The first option is not to do them. You can
+        write great games without them.</p>
+      <p class="translation">Первый вариант - не делать модели. Вы
+        можете сделать отличную игру без моделей.</p>
+    </li>
+    <li>
+      <p class="source">The second option is to run with "GM
+        Sanctioned Mayhem Only," which means if a player wants to do
+        something, they go to a GM who figures out what happens. There's
+        no need for statistics or detailed special ability cards,
+        because the GM keeps this in their head.</p>
+      <p class="translation">Второй вариант - игра через «одобрения
+        мастера». Это значит, что если игрок хочет что-то сделать, он
+        идёт к мастеру, рассказывает что он делает, а мастер говорит что
+        из этого вышло. Нет необходимости в статистике или карте
+        способностей, потому что всё это у мастера в голове.</p>
+    </li>
+    <li>
+      <p class="source">If you must have player-driven mechanics,
+        then Keep It As Simple As Possible. Remember that the player is
+        going to be fumbling through ability cards, looking up numbers
+        on the character sheet, and struggling to make something happen.
+      </p>
+      <p class="translation">Если вам необходимы модели, зависящие
+        от игрока, сделайте их максимально простыми. Помните о том, что
+        игроку придётся пролистывать карты способностей, искать цифры в
+        листах персонажа и прикладывать усилия, чтобы что-нибудь
+        произошло.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="But I have this Really Cool System!"
+  label="Но у меня есть отличная система!">
+  <h2 class="source">But I have this Really Cool System!</h2>
+  <h2 class="translation">Но у меня есть отличная система!</h2>
+  <ul>
+    <li>
+      <p class="source">That's what everyone thinks, until the
+        players get their hands on it.</p>
+      <p class="translation">Так думает каждый, пока эта система не
+        попадает в руки игроков.</p>
+    </li>
+    <li>
+      <p class="source">If you must have a system, write it all down
+        first, well before the game.</p>
+      <p class="translation">Если у вас должна быть система, для
+        начала хорошо пропишите её до игры.</p>
+    </li>
+    <li>
+      <p class="source">Find a handful of playtesters who have never
+        heard of your system, who have not been in the design meetings,
+        who are not practiced at such things.</p>
+      <p class="translation">Найдите подходящих тестеров, которые
+        никогда не слышали о вашей системе, не обсуждали её устройство и
+        кто малоопытен в таких вещах.</p>
+    </li>
+    <li>
+      <p class="source">Brief them as you would for the game and
+        then playtest the system. Watch how people struggle with it. Fix
+        the problems and repeat the playtesting. Continue until it works
+        or you give up.</p>
+      <p class="translation">Расскажите им о системе так, как вы бы
+        сделали это на игре и попробуйте её в деле. Наблюдайте за
+        действиями людей. Исправьте недостатки и повторите тест.
+        Продолжайте пока не заработает, либо сдайтесь.</p>
+    </li>
+    <li>
+      <p class="source">Make sure that you have extra GMs at runtime
+        to help handle this. Make sure that they are practiced with the
+        mechanics. It's a bad sign if the player has to explain the
+        system to the GM.</p>
+      <p class="translation">Убедитесь в наличии дополнительных
+        мастеров для помощи на самой игре. Убедитесь, что мастера
+        натренировались в модели. Плохой знак, если игрок объясняет
+        систему мастеру.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="Item Cards are a Mechanic, Too"
+  label="Карты предметов тоже модели">
+  <h2 class="source">Item Cards are a Mechanic, Too</h2>
+  <h2 class="translation">Карты предметов тоже модели</h2>
+  <ul>
+    <li>
+      <p class="source">How many games have you been in where you
+        are given a stack of index cards representing items you have in
+        game?</p>
+      <p class="translation">На скольких играх вы получали колоду
+        карт, обозначающих игровые предметы персонажа?</p>
+    </li>
+    <li>
+      <p class="source">How many times have you struggled to find a
+        specific item by searching through all of the things in your
+        packets?</p>
+      <p class="translation">Сколько раз вы пытались найти нужный
+        вам предмет, перебирая все вещи из карманов?</p>
+    </li>
+    <li>
+      <p class="source">Compare the play experience of handing a
+        "Holy Hand Grenade of St. Antioch" item card to a GM versus
+        carrying the Hand Grenade and then trying to lob it, on the
+        count of five, at someone playing the Vorpal Bunny.</p>
+      <p class="translation">Сравните опыт выкладывания карты
+        «Святой Ручной гранаты Святого Антиоха» мастеру и то, как вы её
+        несёте и пытаетесь кинуть на счёт 5 в того, кто играет
+        ворпального кролика.</p>
+    </li>
+    <li>
+      <p class="source">Use real props or close facsimiles whenever
+        possible - unless the game may be exposed to nonplayers. Then
+        fake guns, other weapons, bombs, drugs, and other potentially
+        sensitive objects should not be used.</p>
+      <p class="translation">Используйте настоящие вещи или хорошие
+        реплики везде где возможно, кроме тех случаев, когда на игре
+        могут находиться не игроки. Тогда не нужно использовать муляжи
+        пушек и прочего оружия, бомбы, наркотики и другие потенциально
+        «опасные» объекты.</p>
+    </li>
+  </ul>
+  <span class="notes source"> Or digging in soft soil looking for
+    body parts, or disassembling a nuclear generator to make a bomb, or
+    just trying to conceal a bulging folder of secret information. It
+    adds greatly to the play experience. Just remember: Thou Shalt Not
+    Freak the Mundanes. </span><span class="notes translation"> Или
+    раскопки в мягкой почве в поисках частей тела, или разборка ядерного
+    реактора для изготовления бомбы, или попытка спрятать толстую папку
+    с секретной информацией. Всё это сильно улучшает игровой опыт.
+    Просто помните: Thou Shalt Not Freak the Mundanes (?) </span>
+</section>
+
+
+
+<section class="slide" id="Don't Confuse a Prop With A Plot"
+  label="Не путайте предметы с сюжетом">
+  <h2 class="source">Don't Confuse a Prop With A Plot</h2>
+  <h2 class="translation">Не путайте предметы с сюжетом</h2>
+  <ul>
+    <li>
+      <p class="source">A cool prop is not a plot or a To Do.</p>
+      <p class="translation">Клёвый предмет это не сюжет и не цель.</p>
+    </li>
+    <li>
+      <p class="source">Cool scenery and set dressings don't help
+        players who are standing around bored.</p>
+      <p class="translation">Крутые декорации и костюмы не помогут
+        скучающим игрокам.</p>
+    </li>
+    <li>
+      <p class="source">Consider the stories, the To Dos, the plots,
+        and the characters. If they can't stand on their own, running
+        powerfully in a bare room, then all the props and set dressings
+        in the world aren't going to help.</p>
+      <p class="translation">Посмотрите на цели, сюжеты и
+        персонажей. Если они не работают сами по себе и не создают игру
+        в пустой комнате, тогда никакие предметы и костюмы в мире не
+        помогут.</p>
+    </li>
+  </ul>
+  <span class="notes source"> There's a LARP group out there that
+    I won't name. They pride themselves on their prop creation skills,
+    and go around teaching them. They've built some imaginative
+    materials, better than in most games. Their props are great, but
+    their games have a reputation for stinking. They've confused
+    creating a cool setting with creating a good game. </span><span
+    class="notes translation"> Существует группа мастеров,
+    которую я не назову. Они гордятся своим крафтом и они его активно
+    развивают. Они создают поражающие воображение материалы лучше, чем
+    на многих играх. Их вещи великолепны, но у их игр плохая репутация.
+    Они путают создание крутого сеттинга с созданием крутой игры. </span>
+</section>
+    <section class="slide" id="Conclusions" label="Заключение">
+  <h2 class="source">Conclusions</h2>
+  <h2 class="translation">Заключение</h2>
+  <ul>
+    <li>
+      <p class="source">We've talked about the core of what it takes
+        to do a good LARP, which is applicable to many different flavors
+        of games. There are additional ideas which factor in if you're
+        running a live-combat game, or a horde game, or a serious murder
+        mystery, or any of the other many styles.</p>
+      <p class="translation">
+        Мы поговорили об основах, позволяющих сделать игру хорошей. Это
+        применимо к играм различных типов. Существуют дополнительные
+        тонкости при подготовке манёвров, ордоигр (прим.пер. см. <a
+          href="http://blog.aegames.org/2015/03/styles-of-larp.html">ссылку</a>),
+        кабинеток про таинственные убийства и многих других стилей игр.
+      </p>
+    </li>
+    <li>
+      <p class="source">Keep the Twelve Rules in mind as you design
+        your game, and as you write.</p>
+      <p class="translation">Помните о 12 правилах при
+        проектировании и написании игры.</p>
+    </li>
+    <li>
+      <p class="source">Start with the stories and what the
+        characters are going to do.</p>
+      <p class="translation">Начинайте с историй и целей персонажей.</p>
+    </li>
+    <li>
+      <p class="source">Build with triangles, creating a web of
+        interactions, decisions, and To Dos.</p>
+      <p class="translation">Стройте из треугольников, создавая сеть
+        взаимодействий, решений и целей.</p>
+    </li>
+    <li>
+      <p class="source">Always ask the question: "Would this be fun
+        to play?"</p>
+      <p class="translation">Всегда задавайтесь вопросом «Будет ли в
+        это интересно играть?»</p>
+    </li>
+  </ul>
+  <span class="notes source"> We've just skimmed the surface.</span><span
+    class="notes translation">Мы только подготовили почву.</span>
+</section>
+
+
+
+<section class="slide" id="More Conclusions" label="Ещё заключение">
+  <h2 class="source">More Conclusions</h2>
+  <h2 class="translation">Ещё заключение</h2>
+  <ul>
+    <li>
+      <p class="source">Keep the structure of the game in mind, and
+        how it might flow. Be careful not to break the game into smaller
+        pieces, breaking the interconnections.</p>
+      <p class="translation">Держите структуру игры в голове и
+        варианты развития событий. Будьте внимательны и не разбивайте
+        игру на маленькие несвязанные части.</p>
+    </li>
+    <li>
+      <p class="source">Make sure the characters are consistent with
+        each other. If an event happened to two characters, it has to be
+        in both of their backgrounds.</p>
+      <p class="translation">Удостоверьтесь, что вводные персонажей
+        согласованы друг с другом. Если в событии участвовало два
+        персонажа, это должно быть отражено в предыстории у обоих.</p>
+    </li>
+    <li>
+      <p class="source">You can't control the action. Let it go.</p>
+      <p class="translation">Вы не можете управлять игрой. Отпустите
+        её.</p>
+    </li>
+    <li>
+      <p class="source">Know your players and match them to the
+        appropriate characters.</p>
+      <p class="translation">Знайте ваших игроков и ставьте их на
+        подходящие роли.</p>
+    </li>
+    <li>
+      <p class="source">Keep it simple, especially when it comes to
+        mechanics. Less is Better. None is Great.</p>
+      <p class="translation">Будьте проще, особенно когда это
+        касается моделей. Меньше лучше. Ничего - идеал.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="Even More Conclusions"
+  label="И ещё заключение">
+  <h2 class="source">Even More Conclusions</h2>
+  <h2 class="translation">И ещё заключение</h2>
+  <ul>
+    <li>
+      <p class="source">Writing a good LARP will always take longer
+        than you expect. Give yourself plenty of time. Don't wait for
+        the last minute.</p>
+      <p class="translation">Чтобы написать хорошую игру вам
+        понадобится больше времени, чем вам кажется. Дайте себе
+        достаточно времени. Не ждите последней минуты.</p>
+    </li>
+    <li>
+      <p class="source">With time, you can bounce ideas off of other
+        writers. They can provide a much needed sanity check. You will
+        write goofy things.</p>
+      <p class="translation">По мере создания игры рассказывайте
+        свои идеи сомастерам. Они скажут вам, когда вы напишите
+        глупость.</p>
+    </li>
+    <li>
+      <p class="source">With time, you can review, revise, and check
+        for consistency. You can give the finished materials to someone
+        else to read, so they can look at it with fresh eyes.</p>
+      <p class="translation">По мере написания, вы сможете
+        пересмотреть, исправить и проверить игру на согласованность. Вы
+        можете дать законченные материалы кому-нибудь на вычитку, чтобы
+        он посмотрел свежим взглядом.</p>
+    </li>
+    <li>
+      <p class="source">With time, you can do a better production
+        job, with cool props.</p>
+      <p class="translation">Со временем вы будете делать игры лучше
+        и с хорошим антуражем.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section class="slide" id="Some Final Advice" label="Последний совет">
+  <h2 class="source">Some Final Advice</h2>
+  <h2 class="translation">Последний совет</h2>
+  <ul>
+    <li>
+      <p class="source">As you write, play in other people's LARPs.
+        There is no better way to learn what works and what doesn't.
+        It's also fun, stimulating new ideas.</p>
+      <p class="translation">Когда пишите, играйте в чужие игры. Это
+        лучший способ узнать что работает, а что нет.</p>
+    </li>
+    <li>
+      <p class="source">"The most dangerous thought that you can
+        have as a creative person is to think that you know what you're
+        doing, because once you think you know what you're doing you
+        stop looking around for other ways of doing things and you stop
+        being able to see other ways of doing things. You become blind."
+        - Bret Victor</p>
+      <p class="translation">«Наиболее опасная мысль, которая может
+        к вам прийти как творческому человеку, это мысль, что вы знаете
+        что вы делаете. Потому что если вы станете так думать, вы
+        перестанете оглядываться в поискать других путей и перестанете
+        видеть альтернативы. Вы станете слепы». Брет Виктор</p>
+    </li>
+  </ul>
+  <span class="notes source"> Room in the BYOG effort. </span><span
+    class="notes translation"></span>
+</section>
+    
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Перейти к</label>
+      <select type="text" name="slidenum" id="goto-slide"></select>
+      <button type="submit">OK</button>
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<script src="customScript.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>

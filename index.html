@@ -4,9 +4,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google-site-verification" content="8mkXqKMUgI5khwLWuQZxM1iWBVZVhFt8rEgxs_R5n_o" />
-<title>Программы NtsDK для ролевых игр, визуализация алгоритмов Data Mining и др.</title>
-<meta name="description" content="Программы для РИ: набор инструментов мастера-сюжетника НИМС, City Runner, Cyber-City. Проведение экспериментов: Measurelook. Визуализация алгоритмов K-Means и Fuzzy c-Means."/>
+<title>NtsDK software</title>
+<meta name="description" content="LARP software: story master toolkit NIMS, City Runner, Cyber-City. Experiments processing: Measurelook. Visualisation of K-Means and Fuzzy c-Means."/>
 
 <script type='text/javascript' src='libs/old-jquery.js'></script>
 <script type='text/javascript' src='libs/unitegallery/js/unitegallery.min.js'></script> 
@@ -24,156 +23,124 @@
 <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css"  media="screen" />
 <link rel="stylesheet" type="text/css" href="style/style.css"  media="screen" />
 
-<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37764330 = new Ya.Metrika({ id:37764330, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37764330" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter41548304 = new Ya.Metrika({ id:41548304, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/41548304" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 
 </head>
 <body>
-<a href="index-en.html"><div class="langSwitch langSwitch-en"></div></a>
+<a href="index-ru.html"><div class="langSwitch langSwitch-ru"></div></a>
 <div id="root">
-
   <div id="header">
     <div class="panel panel-default">
       <div class="panel-body">
         <div id="headerContent">
-          <div class="text">Здравствуйте! Меня зовут Тимофей. На этом сайте вы найдете информацию о моих программах.</div>
+          <div class="text">Hello! My name is Timofey. You will find information about my programs on this site.</div>
         </div>
       </div>
     </div>
 
   </div>
   <div id="content">
-		
+	
 
   
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Набор инструментов мастера сюжетника (НИМС)</h3>
+        <h3 class="panel-title">Larpwriter Toolkit NIMS</h3>
       </div>
       <div class="panel-body">
         <div class="programContent">
-          <a id="nimsGallery-img" class="link"><img align="left" src="images/nims.png"></a>
-          <div class="text">НИМС - это редактор для написания вводных для ролевых игр (РИ). В процессе работы вы создаете персонажей, описываете истории, пишете адаптации произошедших событий, а затем НИМС группирует эти данные в файлы для выдачи игрокам. Кроме того, есть инструмент просмотра хронологии событий, фильтр по персонажам, группы персонажей, отношения персонажей карта сюжета и отрисовка социальных связей. НИМС реализован в виде интерактивной веб-страницы в двух версиях: однопользовательская офлайн версия (доступна для скачивания) и многопользовательская серверная версия (по запросу). Все, что вам нужно для работы с НИМС это веб-браузер. Проверялась работа программы в Firefox, Chrome. Internet Explorer не поддерживается.
+          <a id="nimsGalleryEn-img" class="link"><img align="left" src="images/nims.png"></a>
+          <div class="text">NIMS is an editor for larpwriting. You create characters, write stories, prepare adaptations (character visions) and compile all this information to handout files. Also there are some extra tools: timeline, character filter, character groups, character relations, story investigation board and social networks drawing. NIMS is an interactive web page into two versions: single user offline version (ready for downloading) and multiuser online version (created by request). You need only web browser for using NIMS. NIMS is tested in Firefox and Chrome. Internet Explorer is not supported.
           <br><br>
 					
-					<a class="link" href="#/" id="nims-sources-guide-toggler">Путеводитель по ресурсам НИМС</a>
+					<a class="link" href="#/" id="nims-sources-guide-toggler">Guide by NIMS resources</a>
 					<br><br>
 					
 					<div id="nims-sources-guide" class="displayNone">
 					
-					<h4>Знакомство и сопровождение</h4>
-					<p>Основная концепция и возможности описаны в <a class="link" href="nims/online/extras/presentation/nims-intro.html">презентации</a>. Попробовать НИМС онлайн можно по <a class="link" href="nims/online/nims.html">ссылке</a>.
-					Это не серверная версия, а обычная веб-страница для ознакомления. Назначение всех страниц и всех
-					кнопок описано в документации доступной как <a class="link" href="nims/online/extras/doc/nims.html">онлайн</a>, так и в скачиваемом архиве. Периодически я делаю скринкасты по использованию НИМС и новостям проекта на <a class="link" href="https://www.youtube.com/playlist?list=PL3zrBk4Un47FkHoRv0eVb5vS7PQtGoALR">YouTube канале</a>. Все версии НИМС для скачивания находятся <a class="link" href="https://bitbucket.org/NtsDK/larpwriter-toolkit-nims/downloads/">здесь</a> (кроме серверной, которая ещё официально не выпущена).
+					<h4>Welcome and support</h4>
+					<p>Basic concepts and possibilities are described in <a class="link" href="nims-en/online/extras/presentation/nims-intro.html">presentation</a>. You can try NIMS online by <a class="link" href="nims-en/online/nims.html">link</a>. This is not a server version. It equals offline version. 
+					All possibilities and features are described in documentation. It is available <a class="link" href="nims-en/online/extras/doc/nims.html">online</a> and in NIMS downloadable archive.
+					
+					I made screencasts about NIMS updates and tutorials on my <a class="link" href="https://www.youtube.com/playlist?list=PL3zrBk4Un47Fnq6_gFXCcrzTsoCREV1Om">YouTube channel</a>.
+
 					</p>
 					
-					<h4>Сообщество</h4>
-					<p>Основное русскоязычное сообщество это <a class="link" href="http://vk.com/larp_nims">группа вконтакте</a>.
+					<h4>Community</h4>
+					<p>Main Russian speaking community is <a class="link" href="http://vk.com/larp_nims">vkontakte group</a>. There are no NIMS groups for English speaking community. But we have <a class="link" href="https://t.me/larp_nims">chat in telegram</a>.
+
+					Also you can email me directly ntsdk(dog)yandex(dot)ru. 
 					
-					Кроме этого вы можете написать мне напрямую на ntsdk(dog)yandex(dot)ru. 
-					
-					Так же вы можете подписаться на email рассылку с новостями проекта (см. форму под блоком ссылок). 
 					</p>
 
 					
-					<h4>Материалы</h4>
-					<p>Исходный код НИМС находится в открытом доступе в <a class="link" href="https://github.com/NtsDK/larpwriter-toolkit-nims">репозитории</a> под лицензией Apache 2.0. В отдельном <a class="link" href="https://github.com/NtsDK/larpwriter-toolkit-nims-translations">репозитории</a> хранятся сопроводительные материалы и мультиязыковая поддержка: презентация, документация, база-пример и переводы.
+					<h4>Source code</h4>
+					<p>NIMS source code is available in <a class="link" href="https://github.com/NtsDK/larpwriter-toolkit-nims">repo</a> under Apache 2.0 license. In this <a class="link" href="https://github.com/NtsDK/larpwriter-toolkit-nims-translation">repo</a> stored support and internationalization information: presentation, documentation, base example and NIMS translations.
 					</p>
 					
 					</div>
-					Ссылки: 
+					Links: 
           <div class="link-container">
-            <a id="nimsGallery" class="link">Скрины</a>
-            <a class="link" href="nims/online/extras/presentation/nims-intro.html">Презентация</a>
-  					<a class="link" href="nims/online/nims.html">Демо онлайн</a>
-  					<a class="link" href="nims/video.html">Видео</a>
-  					<a class="link" href="nims/online/extras/doc/nims.html">Документация онлайн</a>
-            
-  					<a class="link" href="https://bitbucket.org/NtsDK/larpwriter-toolkit-nims/downloads/"> Сборки НИМС для скачивания</a>
+            <a id="nimsGalleryEn" class="link">Screens</a>
+            <a class="link" href="nims-en/online/extras/presentation/nims-intro.html">Presentation</a>
+  					<a class="link" href="nims-en/online/nims.html">Online demo</a>
+  					<a class="link" href="nims-en/online/extras/doc/nims.html">Documentation (EN)</a>
+  					<a class="link" href="https://bitbucket.org/NtsDK/larpwriter-toolkit-nims/downloads/">Builds for downloading </a>
   
-  					<a class="link" href="http://vk.com/larp_nims">Группа ВК</a>
-  					<a class="link" href="nims/Graph-Visualization/index.html">3D социальная сеть</a>
-            <a class="link" href="https://github.com/NtsDK/larpwriter-toolkit-nims">Репозиторий ядра НИМС</a>
-  					<a class="link" href="https://github.com/NtsDK/larpwriter-toolkit-nims-translations">Репозиторий документации и переводов</a>
-            <a class="link" href="https://www.youtube.com/playlist?list=PL3zrBk4Un47FkHoRv0eVb5vS7PQtGoALR">Плейлист YouTube</a>
+  					<a class="link" href="http://vk.com/larp_nims">vk group (RU)</a>
+  					<a class="link" href="nims/Graph-Visualization/index.html">Social Network 3D (RU)</a>
+            <a class="link" href="https://github.com/NtsDK/larpwriter-toolkit-nims">NIMS core repo</a>
+  					<a class="link" href="https://github.com/NtsDK/larpwriter-toolkit-nims-translations">NIMS translations and support repo</a>
+            <a class="link" href="https://www.youtube.com/playlist?list=PL3zrBk4Un47Fnq6_gFXCcrzTsoCREV1Om">YouTube playlist (EN)</a>
 					</div>
-					
-				
 
-					
           </div>
         </div>
       </div>
     </div>
-		
-		<div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Docxtemplater и Mustache песочница</h3>
-      </div>
-      <div class="panel-body">
-        <div class="programContent">
-          <a id="docx-sandbox-img" class="link"><img align="left" src="images/docxtemplater.png"></a>
-          <div class="text">На этой странице в интерактивном режиме можно отредактировать шаблон Mustache, посмотреть результат рендеринга Mustache, сконвертировать шаблон Mustache в шаблон docxtemplater и сгенерировать docx файл по шаблону docxtemplater.
-          </div>
-          <br>
-          <div class="link-container">
-						<a id="docx-sandbox" class="link">Скрины</a>
-						<a class="link" href="docxtemplater/docxtemplater.html">Docxtemplater и Mustache песочница</a>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-		
-		<div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Сага о Форкосиганах. Карта ПВ-туннелей (Vorkosigan Saga wormholes map)</h3>
-      </div>
-      <div class="panel-body">
-        <div class="programContent">
-          <a id="barrayar-img" class="link"><img align="left" src="images/wormhole-map.png"></a>
-          <div class="text">При проведении игр по вселенной Саги о Форкосиганах регулярно возникает необходимость в карте ПВ-туннелей. Те карты, что я видел были довольно низкого качества в растровом формате. Я решил, что с этим нужно что-то сделать. Во-первых, я сделал карту в формате graphML. Это специальный формат для рисования схем, который редактируется с помощью бесплатной программы <a class="link" href="http://www.yworks.com/products/yed">yEd</a>. Теперь вы можете в любой момент отредактировать карту (перекрасить, добавить или удалить миры, переделать надписи, изменить расположение миров на рисунке) и экспортировать ее в растровое или векторное изображение. Во-вторых, миры на карте могут быть упорядочены алгоритмически. Смотрите <a class="link" href="https://www.youtube.com/watch?v=2DKAyhBgo7A">видео</a> как это сделать. Получившуюся у меня карту я экспортировал в формат <a class="link" href="barrayar/Barrayar tunnel map - ru.png">png</a> и <a class="link" href="barrayar/Barrayar tunnel map - ru.svg">svg</a>. Так же я прилагаю описание схемы ПВ-тоннелей в формате JSON на случай алгоритмического построения карт. Например, с помощью этих данных я сделал автоматически отрисовываемую <a class="link" href="nims/Graph-Visualization/barrayar3d-ru.html">трёхмерную карту ПВ-туннелей</a>. Все вышеизложенное выполнено на двух языках - русском и английском.
-          </div>
-					
-					
-          <br>
-          <div class="link-container">
-						<a id="barrayar" class="link">Скрины</a>
-						<a class="link" href="https://www.youtube.com/watch?v=2DKAyhBgo7A">Видео туториал как работать с этими картами</a>
-						<a class="link" href="barrayar/Barrayar tunnel map - ru.graphml">Карта ПВ-туннелей в GraphML (для yEd)</a>
-						<a class="link" href="barrayar/Barrayar tunnel map - ru.png">Карта ПВ-туннелей png (обычное изображение)</a>
-						<a class="link" href="barrayar/Barrayar tunnel map - ru.svg">Карта ПВ-туннелей svg (векторное изображение)</a>
-						<a class="link" href="barrayar/Barrayar tunnel map - ru.json">Карта ПВ-туннелей JSON (для программирования)</a>
-						<a class="link" href="nims/Graph-Visualization/barrayar3d-ru.html">Карта ПВ-туннелей 3D</a>
-						
-						<a class="link" href="barrayar/Barrayar tunnel map - en.graphml">Карта ПВ-туннелей в GraphML (для yEd, ENG)</a>
-						<a class="link" href="barrayar/Barrayar tunnel map - en.png">Карта ПВ-туннелей png (обычное изображение, ENG)</a>
-						<a class="link" href="barrayar/Barrayar tunnel map - en.svg">Карта ПВ-туннелей svg (векторное изображение, ENG)</a>
-						<a class="link" href="barrayar/Barrayar tunnel map - en.json">Карта ПВ-туннелей JSON (для программирования, ENG)</a>
-						<a class="link" href="nims/Graph-Visualization/barrayar3d-en.html">Карта ПВ-туннелей 3D, ENG</a>
-						
-          </div>
-          
-        </div>
-      </div>
-    </div>
-		
-		<div class="panel panel-default">
+    
+    <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Measurelook</h3>
       </div>
       <div class="panel-body">
         <div class="programContent">
           <a id="measurelook-img" class="link"><img align="left" src="images/measurelook.jpg"></a>
-          <div class="text">Measurelook это формат и просмотровщик результатов вычислительных экспериментов. Он был разработан для хранения в одном файле информации об эксперименте и результате эксперимента. Подробнее см. репозиторий.
+          <div class="text">Measurelook is a JSON format for storing calculation experiment results. It was created to store experiment meta information and results in one file. It can be automatically visualized with Measurelook viewer. For details see repository.
           </div>
           <br>
           <div class="link-container">
-						<a id="measurelook" class="link">Скрины</a>
-						<a class="link" href="measurelook/index.html">Просмотровщик Measurelook</a>
-  					<a class="link" href="measurelook/example.html">Пример вычислительного эксперимента, возвращающего результат в формате Measurelook</a>
-            <a class="link" href="https://github.com/NtsDK/measurelook">Репозиторий просмотровщика (в том числе валидатор и описание формата)</a>
-            <a class="link" href="https://github.com/NtsDK/measurelook-plot-demo">Пример построения графика для научной статьи с использованием Measurelook, R и Inkscape</a>
-            <a class="link" href="https://github.com/NtsDK/measurelook-c-printer">Принтер файлов Measurelook на Си с примером использования</a>
+						<a id="measurelook" class="link">Screens</a>
+						<a class="link" href="measurelook-en/index.html">Measurelook Viewer</a>
+            <a class="link" href="https://github.com/NtsDK/measurelook">Measurelook Viewer build repo (it includes format description and JSON Schema validator)</a>
+            <a class="link" href="https://github.com/NtsDK/measurelook-plot-demo">Example of generating chart for scientific article with Measurelook, R and Inkscape</a>
+            <a class="link" href="https://github.com/NtsDK/measurelook-c-printer">Measurelook file printer for C language with usage example</a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">LARP software</h3>
+      </div>
+      <div class="panel-body">
+        <div class="programContent">
+          <a id="larpsoft-img" class="link"><img align="left" src="images/matcher.jpg"></a>
+          <div class="text">Sometimes I made small programs for LARP. I will enumerate them here.
+          <br><br>
+          Program for matching characters and players and vice versa. Enter players and characters lists, enter profile item list, fill profiles. Program automatically match players and characters.
+          <br><br>
+          The Mixing Desk of LARP - famous Nordic LARP tool. It is used for make general view of game design and organizers decision perspective. The Mixing Desk is fully configurable. You can add/remove sliders and save your work state. Checked in Firefox and Chrome.
+          </div>
+          <br>
+          <div class="link-container">
+						<a id="larpsoft" class="link">Screenshots</a>
+						<a class="link" href="matcher/matcher-en.html">Program "Match characters and players"</a>
+            <a class="link" href="sliderShare/sliderShare-mdol-en.html">Classic Mixing Desk of LARP</a>
+            <a class="link" href="sliderShare/sliderShare-en.html">Empty Mixer Desk</a>
           </div>
           
         </div>
@@ -182,28 +149,28 @@
 		
 		<div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Программы для РИ</h3>
+        <h3 class="panel-title">Docxtemplater and Mustache sandbox</h3>
       </div>
       <div class="panel-body">
         <div class="programContent">
-          <a id="larpsoft-img" class="link"><img align="left" src="images/matcher.jpg"></a>
-          <div class="text">Периодически я делаю небольшие программки для РИ. Они будут перечислены здесь.
-          <br><br>
-					Программа для подбора ролей для игроков или наоборот. Вводите список игроков и список ролей, указываете список полей досье, заполняете досье. Программа автоматически сопоставит игроков и персонажей.
-          <br><br>
-          "Микшерный пульт ролевой игры онлайн" (The Mixing Desk of LARP) - популярный инструмент мастеров ролевых игр в зарубежном интернете. Он предназначен для взгляда на игру со стороны, на процесс как мастера делают игры и какие решения принимают. Микшерный пульт настраиваемый - можно добавлять/удалять бегунки и сохранять результаты своей работы. Проверено в Firefox и Chrome.
+          <a id="docx-sandbox-img" class="link"><img align="left" src="images/docxtemplater.png"></a>
+          <div class="text">
+						On this page you can:<br>
+							1. edit Mustache template<br>
+							2. see Mustache rendering result<br>
+							3. convert Mustache template to Docxtemplater template<br>
+							4. render docx by Docxtemplater template<br>
           </div>
           <br>
           <div class="link-container">
-						<a id="larpsoft" class="link">Скрины</a>
-						<a class="link" href="matcher/matcher.html">Программа "Сопоставление персонажей и игроков"</a>
-            <a class="link" href="sliderShare/sliderShare-mdol-ru.html">Классический микшерный пульт ролевой игры</a>
-            <a class="link" href="sliderShare/sliderShare.html">Пустой микшерный пульт</a>
+						<a id="docx-sandbox" class="link">Screens</a>
+						<a class="link" href="docxtemplater/docxtemplater-en.html">Docxtemplater and Mustache sandbox</a>
           </div>
           
         </div>
       </div>
     </div>
+		
 		
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -212,12 +179,12 @@
       <div class="panel-body">
         <div class="programContent">
           <a id="arkhamGallery-img" class="link"><img align="left" src="images/cityRunner.png"></a>
-          <div class="text">Проект City Runner был сделан для городской ролевой игры <a href="http://vk.com/arkhem_ufa">Аркхэм. По ту Сторону.</a> и включает в себя сервер и редактор для составления врат. Мастер создает в редакторе схему врат. Врата состоят из испытаний, которые будет проходить игрок. Схема врат загружается на сервер и активируется. После этого игрок может заходить во врата по ссылке. Мастера печатают ссылки в виде QR-кодов, игроки ищут QR-коды и выполняют задания. Админка сервера адаптирована для десктопов, а игровая часть для смартфонов.
+          <div class="text">City Runner project was made for city LARP game <a href="http://vk.com/arkhem_ufa">Arkham. On the other side. (RUS)</a> and consist of server and gates editor. Game master creates gates schema. Gates consist of several trials for player. Gates schema loaded on the server and activated. After this player can enter the gates by the web link. Masters print gates link on QR code, players search QR-codes and solve trials. Master interface is built for desktops. Players interface is for smartphones.
           </div>
           <br>
           <div class="link-container">
-            <a id="arkhamGallery" class="link">Скрины</a>
-            <a class="link" href="http://ntsdk.livejournal.com/23273.html">Описание игровой механики</a>
+            <a id="arkhamGallery" class="link">Screens</a>
+            <a class="link" href="http://ntsdk.livejournal.com/23273.html">Game mechanics description (RU)</a>
           </div>
           
         </div>
@@ -231,12 +198,13 @@
       <div class="panel-body">
         <div class="programContent">
           <a id="cyberCityGallery-img" class="link"><img align="left" src="images/cyberCity.jpg"></a>
-          <div class="text">Проект Cyber-City был сделан для игры на базе <a href="http://vk.com/battletech3">Battletech 3: Цена Арены.</a> Мы делали ее <a href="http://ntsdk.livejournal.com/4418.html">большой толпой.</a> Cyber-City это игровой портал, реализующий информационную составляющую игры. Он включает в себя: банк, управление виртуальным имуществом (акции, компании и т.д.), организация боев, IM игрок-игрок и игрок-мастер, рейтинги и др. Все самописное, использует Java+Tomcat+MySQL.
+          <div class="text">
+					Cyber-City project was made for pavilion LARP game <a href="http://vk.com/battletech3">Battletech 3: Arena's cost. (RU)</a> There was a big <a href="http://ntsdk.livejournal.com/4418.html">developers team (RUS).</a> Cyber-City is a game portal with information layer. It includes: banking, virtual possessions (stocks, companies, etc.), mech battles support, instant messages player-player and player-master, ratings and other. All made from scratch by Java+Tomcat+MySQL.
           </div>
           <br>
           <div class="link-container">
-            <a id="cyberCityGallery" class="link">Скрины</a>
-            <a class="link" href="http://ntsdk.livejournal.com/4625.html">Прогерский отчет</a>
+            <a id="cyberCityGallery" class="link">Screens</a>
+            <a class="link" href="http://ntsdk.livejournal.com/4625.html">Programming report (RU)</a>
           </div>
         </div>
       </div>
@@ -244,24 +212,17 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Визуализация алгоритмов Data Mining: K-Means vs. Fuzzy C-Means</h3>
+        <h3 class="panel-title">Visualisation of Data Mining algorithms: K-Means vs. Fuzzy C-Means</h3>
       </div>
       <div class="panel-body">
         <div class="programContent">
           <a id="fcm-img" class="link"><img align="left" src="images/FCMvsKMeans.jpg"></a>
-            <div class="text">Когда-то мне было нужно сравнить алгоритмы кластеризации K-Means и Fuzzy C-Means, и я 
-            сделал для этого визуализацию. Сейчас в ней зашиты следующие параметры - генерируется 4 кластера по 50 точек.
-            Размер кластера фиксирован. Далее выполняется инициализация центроидов - случайным образом выбирается 4 
-            точки из имеющихся. Далее выполняется кластеризация. У каждого кластера свой цвет. В алгоритме Fuzzy C-Means 
-            точки раскрашиваются в смесь цветов в соответствии с расстоянием до центроида. В алгоритме K-Means каждая точка
-            окрашивается в соответствии с цветом кластера. Кроме того, для каждого кластера строится выпуклая оболочка для
-            рисования контура. Раньше еще рисовались треки центроидов, но после обновления fabric.js это почему-то 
-            перестало работать. 
+            <div class="text">Some time ago I need comprison of K-Means and Fuzzy C-Means clustering algos. I made visualisation for this task. There are some hardcoded values now - 4 clusters with 50 points. Cluster size is fixed. Centroids initialization takes 4 random points from existing points. Then clustering starts. Each cluster has own color. Fuzzy C-Means colors points in color mix. K-means color points by nearest centroid. Also convex hull is drawn for each cluster. Earlier there were centroid tracks but after fabric.js update this reature is broken by unknown reason.
             </div>
             <br>
             <div class="link-container">
-              <a class="link" href="dmVis/page.html">Визуализация</a>
-              <a class="link" href="https://github.com/NtsDK/Data-Mining-Visualizations">Репозиторий проекта</a>
+              <a class="link" href="dmVis/page.html">Visualisation</a>
+              <a class="link" href="https://github.com/NtsDK/Data-Mining-Visualizations">Project repo</a>
             </div>
         </div>
       </div>
@@ -270,24 +231,22 @@
     
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Игрульки</h3>
+        <h3 class="panel-title">Games</h3>
       </div>
       <div class="panel-body">
         <div class="programContent">
           <a id="gamesGallery-img" class="link"><img align="left" src="images/twitch_plays_oit9ja.jpg"></a>
-            <div class="text">Уже три года участвую в Global Game Jam. В 2014 мы сделали Unstable Willy - платформер на
-            двух человек. В 2015 Ink Must Flow - платформер со странной физикой. В 2016 - Twitch Plays OiT9ja - игрушка для
-            коллективных голосований в чате на твиче.   
+            <div class="text">I took part in three Global Game Jams. In 2014 we made Unstable Willy - platform game for two players. In 2015 Ink Must Flow - platform game with experimental physics. In 2016 - Twitch Plays OiT9ja - crowd voting game for Twitch chat.
             </div>
             <br>
             <div class="link-container">
-              <a id="gamesGallery" class="link">Скрины</a>
-              <a class="link" href="http://globalgamejam.org/users/ntsdk">Мой профиль GGJ</a>
-              <a class="link" href="http://gamejolt.com/profile/ntsdk/182392">Мой профиль GameJolt</a>
-              <a class="link" href="https://www.youtube.com/watch?v=zKwmIVmGqvU">Видео прохождение Unstable Willy (YouTube)</a>
-              <a class="link" href="https://github.com/kothead/ggj15">Репозиторий Ink Must Flow</a>
-              <a class="link" href="https://www.youtube.com/watch?v=voohSgkQxZw">Геймплей Twitch Plays OiT9ja (YouTube)</a>
-              <a class="link" href="https://bitbucket.org/NtsDK/twitch-plays-oit9ja/overview">Репозиторий Twitch Plays OiT9ja</a>
+              <a id="gamesGallery" class="link">Screens</a>
+              <a class="link" href="http://globalgamejam.org/users/ntsdk">My GGJ profile</a>
+              <a class="link" href="http://gamejolt.com/profile/ntsdk/182392">My GameJolt profile</a>
+              <a class="link" href="https://www.youtube.com/watch?v=zKwmIVmGqvU">Unstable Willy walkthrough(YouTube)</a>
+              <a class="link" href="https://github.com/kothead/ggj15">Ink Must Flow repo</a>
+              <a class="link" href="https://www.youtube.com/watch?v=voohSgkQxZw">Twitch Plays OiT9ja gameplay(YouTube)</a>
+              <a class="link" href="https://bitbucket.org/NtsDK/twitch-plays-oit9ja/overview">Twitch Plays OiT9ja repo</a>
             </div>
         </div>
       </div>
@@ -295,41 +254,15 @@
     
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Система "Ассистент выборы"</h3>
+        <h3 class="panel-title">Legal information</h3>
       </div>
       <div class="panel-body">
-        <div class="programContent">
-          <a id="pollsGallery-img" class="link"><img align="left" src="images/polls.jpg"></a>
-            <div class="text">
-            
-            <p>Система «Ассистент выборы» предназначена для фиксации информации о явке избирателей на избирательные участки по часам и сравнения явки между выборами. В комплекте  идет база-пример на которой можно увидеть все возможности системы. Система реализована в виде интерактивной веб-страницы. Все, что вам нужно для работы с системой «Ассистент выборы» это веб-браузер. Проверялась работа программы в Firefox, Chrome. Работа в Internet Explorer не проверялась. Для работы системе «Ассистент выборы» не требуется соединение с интернетом. Для запуска системы «Ассистент выборы» скачайте архив по <a class="link" href="https://github.com/NtsDK/polls-assistant/releases/download/0.1.0/polls_assistant_0.1.0.zip">ссылке</a>, распакуйте его и запустите файл polls. Так же вы можете скачать документацию к системе по <a class="link" href="https://github.com/NtsDK/polls-assistant-doc/releases/download/0.1.0/polls_assistant_doc.zip">ссылке</a>. Для использования распакуйте архив и запустите файл polls_assistant.</p>
-            </div>
+        <a href="https://github.com/NtsDK">My github page</a>
             <br>
-            <div class="link-container">
-              <a id="pollsGallery" class="link">Скрины</a>
-              <a class="link" href="https://github.com/NtsDK/polls-assistant/releases/download/0.1.0/polls_assistant_0.1.0.zip">Скачать систему «Ассистент выборы» 0.1.0</a>
-              <a class="link" href="https://github.com/NtsDK/polls-assistant-doc/releases/download/0.1.0/polls_assistant_doc.zip">Скачать документацию</a>
-              <a class="link" href="polls/polls_assistant_0.1.0/polls.html">Демо онлайн</a>
-              <a class="link" href="polls/polls_doc/polls_assistant.html">Документация онлайн</a>
-              <a class="link" href="https://github.com/NtsDK/polls-assistant">Репозиторий проекта</a>
-              <a class="link" href="https://github.com/NtsDK/polls-assistant-doc">Репозиторий документации</a>
-            </div>
-        </div>
+            Copyright © 2017 Timofey Rechkalov. All rights reserved.
       </div>
     </div>
     
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Правовая информация</h3>
-      </div>
-      <div class="panel-body">
-        <a href="https://github.com/NtsDK">Моя страничка на github</a>
-        <br>
-        © Т. В. Речкалов, 2017
-      </div>
-    </div>
-
-
   </div>
 </div>
 

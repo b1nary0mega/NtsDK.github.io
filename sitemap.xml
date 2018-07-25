@@ -6,212 +6,277 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+
 <url>
   <loc>http://trechkalov.com/</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/index-en.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/nims/online/extras/presentation/nims-intro.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/nims/online/nims.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/nims.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/nims/video.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/nims/Graph-Visualization/index.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/docxtemplater/docxtemplater.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/nims/Graph-Visualization/barrayar3d-ru.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/nims/Graph-Visualization/barrayar3d-en.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/measurelook/index.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/measurelook/example.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/matcher/matcher.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/sliderShare/sliderShare.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/mayak/mayak.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/dmVis/page.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/polls/polls_assistant_0.1.0/polls.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/polls/polls_doc/polls_assistant.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/index.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/index-ru.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/presentation/nims-intro.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/nims.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/nims.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/Graph-Visualization/index.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/measurelook-en/index.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/matcher/matcher-en.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/sliderShare/sliderShare-mdol-en.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/sliderShare/sliderShare-en.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/docxtemplater/docxtemplater-en.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/genindex.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/dmVis/page.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/intro.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/index.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/micros.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/nims/online/extras/presentation/nims-intro.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/theory.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/nims/online/nims.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/tasks.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/nims/online/extras/doc/nims.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/toolsEnum.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/nims/video.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/quickStart.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/docxtemplater/docxtemplater.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/firstPage.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/nims/Graph-Visualization/barrayar3d-ru.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/masterPage.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/nims/Graph-Visualization/barrayar3d-en.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/playerPage.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/measurelook/index.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/export.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/measurelook/example.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/nims/online/extras/doc/api.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/matcher/matcher.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/polls/polls_doc/genindex.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/sliderShare/sliderShare-mdol-ru.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/polls/polls_doc/intro.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/sliderShare/sliderShare.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/polls/polls_doc/tasks.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/polls/polls_assistant_0.1.0/polls.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://trechkalov.com/polls/polls_doc/quickStart.html</loc>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://trechkalov.com/polls/polls_doc/pages.html</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://trechkalov.com/polls/polls_doc/polls_assistant.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/genindex.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/intro.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/micros.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/theory.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/tasks.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/toolsEnum.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/quickStart.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/pages.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims-en/online/extras/doc/export.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/genindex.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/intro.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/micros.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/theory.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/tasks.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/toolsEnum.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/quickStart.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/firstPage.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/masterPage.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/playerPage.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/export.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/nims/online/extras/doc/api.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/genindex.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/intro.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/tasks.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/quickStart.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://trechkalov.com/polls/polls_doc/pages.html</loc>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>http://trechkalov.com/nims/online/extras/doc/pages.html</loc>
-  <changefreq>monthly</changefreq>
+  <lastmod>2018-07-25T22:35:00+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
+
+
 </urlset>

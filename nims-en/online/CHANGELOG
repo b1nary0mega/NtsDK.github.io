@@ -1,3 +1,28 @@
+version 0.7.2 (26 Jul 2018)
+
+  Added the mixing desk of LARP and LARP design cards.
+  Refreshed and improved English translation.
+  More usability improvements.
+  Improved design of enum and multi enum profile items.
+  Library updates.
+  Added autosave base in browser.
+
+version 0.7.0 (25 Apr 2018)
+
+  Reworked interface and relations.
+  Added gears.
+  Reworked profile page and logs.
+
+version 0.6.1 (23 May 2017)
+
+  Character profiles splitted into characters and players profiles.
+  Added players everywhere: diagrams, statistics, export, filter, social network and other.
+  Added text search.
+  Implemented claim database.
+  
+  Export improvements: export only finished stories, story selector and markdown.
+  Added timeline by character. 
+
 version 0.5.2 (21 Nov 2016)
 
   Big update.

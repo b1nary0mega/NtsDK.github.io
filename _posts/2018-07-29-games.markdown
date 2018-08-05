@@ -1,0 +1,6 @@
+---
+layout: post
+title: "Video games"
+---
+
+I took part in three Global Game Jams. In 2014 we made Unstable Willy - platform game for two players. In 2015 Ink Must Flow - platform game with experimental physics. In 2016 - Twitch Plays OiT9ja - crowd voting game for Twitch chat. 

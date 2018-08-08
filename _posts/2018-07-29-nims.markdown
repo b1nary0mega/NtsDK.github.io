@@ -3,19 +3,26 @@ layout: post
 title: "Larpwriter Toolkit NIMS"
 ---
 
-
 NIMS is an editor for larpwriting. You create characters, write stories, prepare adaptations (character visions) and compile all this information to handout files. Also there are some extra tools: timeline, character filter, character groups, character relations, story investigation board and social networks drawing. NIMS is an interactive web page into two versions: single user offline version (ready for downloading) and multiuser online version (created by request). You need only web browser for using NIMS. NIMS is tested in Firefox and Chrome. Internet Explorer is not supported.
 
-Guide by NIMS resources
+You can try NIMS 0.7.2 online by [link][nims-demo-en]. This is not a server version. This demo is an equivalent of offline version.
 
-Welcome and support
+![My helpful screenshot]({{ "/images/nims072_en.jpg" | absolute_url }})
 
-Basic concepts and possibilities are described in presentation. You can try NIMS online by link. This is not a server version. It equals offline version. All possibilities and features are described in documentation. It is available online and in NIMS downloadable archive. I made screencasts about NIMS updates and tutorials on my YouTube channel.
-Community
+## Source code
 
-Main Russian speaking community is vkontakte group. There are no NIMS groups for English speaking community. But we have chat in telegram. Also you can email me directly ntsdk(dog)yandex(dot)ru.
-Source code
+NIMS source code is available in the [repo][nims-core-repo] under Apache 2.0 license. Second [repo][nims-l18n-repo] stores documentation and internationalization information: presentation, documentation, base example and NIMS translations.
 
-NIMS source code is available in repo under Apache 2.0 license. In this repo stored support and internationalization information: presentation, documentation, base example and NIMS translations.
-Links:
-Screens Presentation Online demo Documentation (EN) Builds for downloading vk group (RU) Social Network 3D (RU) NIMS core repo NIMS translations and support repo YouTube playlist (EN) 
+## Links
+
+* [NIMS 0.7.2 Online demo][nims-demo-en]
+* [Builds for downloading][nims-builds]
+* [NIMS core repo][nims-core-repo]
+* [NIMS translations repo][nims-l18n-repo]
+* [YouTube playlist (EN, outdated)][nims-youtube]
+
+[nims-demo-en]: /nims-en/online/nims.html
+[nims-builds]: https://bitbucket.org/NtsDK/larpwriter-toolkit-nims/downloads/
+[nims-core-repo]: https://github.com/NtsDK/larpwriter-toolkit-nims
+[nims-l18n-repo]: https://github.com/NtsDK/larpwriter-toolkit-nims-translations
+[nims-youtube]: https://www.youtube.com/playlist?list=PL3zrBk4Un47Fnq6_gFXCcrzTsoCREV1Om

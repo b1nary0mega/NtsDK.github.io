@@ -1,7 +1,0 @@
----
-layout: post
-title: "Custom title"
----
-
-
-Content

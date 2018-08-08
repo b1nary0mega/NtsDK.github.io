@@ -3,4 +3,41 @@ layout: post
 title: "Video games"
 ---
 
-I took part in three Global Game Jams. In 2014 we made Unstable Willy - platform game for two players. In 2015 Ink Must Flow - platform game with experimental physics. In 2016 - Twitch Plays OiT9ja - crowd voting game for Twitch chat. 
+I took part in three Global Game Jams (GGJ). 
+
+## Unstable Willy (GGJ 2014)
+
+This is a platform for two players with one keyboard. 
+
+![My helpful screenshot]({{ "/images/games/UnstableWilly2.png" | absolute_url }})
+
+* [Unstable Willy walkthrough (YouTube)][uw-youtube]
+
+## Ink Must Flow (GGJ 2015)
+
+The story of space octopus who needs to run away from black hole. This is a platform game with experimental physics. 
+
+![My helpful screenshot]({{ "/images/games/InkMustFlow1.jpg" | absolute_url }})
+
+* [Ink Must Flow repo][imf-repo]
+
+## Twitch Plays OiT9ja (GGJ 2016)
+
+Crowd voting game for Twitch chat. It combines idea of quick word writer T9 and answering any question with Ouija board.
+
+![My helpful screenshot]({{ "/images/games/TPO.png" | absolute_url }})
+
+* [https://www.youtube.com/watch?v=voohSgkQxZw][tpo-youtube]
+* [Twitch Plays OiT9ja repo][tpo-repo]
+
+## Links
+
+* [My Global Game Jam profile][ggj-profile]
+* [My GameJolt profile][gj-profile]
+
+[ggj-profile]: http://globalgamejam.org/users/ntsdk
+[gj-profile]: http://gamejolt.com/profile/ntsdk/182392
+[uw-youtube]: https://www.youtube.com/watch?v=zKwmIVmGqvU
+[imf-repo]: https://github.com/kothead/ggj15
+[tpo-youtube]: https://www.youtube.com/watch?v=voohSgkQxZw
+[tpo-repo]: https://bitbucket.org/NtsDK/twitch-plays-oit9ja/overview

@@ -4,7 +4,7 @@
   <head>
 		<meta charset="utf-8">
     <title>Graph Visualization</title>
-		<meta name="description" content="Отрисовка графа социальной сети персонажей ролевой игры в 3D на основе force-directed layout."/>
+		<meta name="description" content="3D force-directed layout graph renderer."/>
 		
     <script type="text/javascript" src="Graph.js"></script>
 		<script type="text/javascript" src="../../barrayar/tunnel-map-en.js"></script>
@@ -73,26 +73,26 @@
     <div id="options">
       <form>
         <p>
-          <label>Вид отрисовки</label><br>
+          <label>Render type</label><br>
           <select id="drawing_select" onchange="window.location.href = '?' + this.selectedIndex;">
-            <option>2D-модель</option>
-            <option selected="selected">3D-модель</option>
+            <option>2D-model</option>
+            <option selected="selected">3D-model</option>
           </select>
         </p>
         <p>
           <input type="checkbox" id="show_labels" onclick="drawing.show_labels = this.checked;">
-          <label for="show_labels">Показать подписи</label>
+          <label for="show_labels">Show labels</label>
         </p>
         <p>
-          <input type="button" value="Остановить отрисовку" onclick="drawing.stop_calculating();">
+          <input type="button" value="Stop drawing" onclick="drawing.stop_calculating();">
         </p>
       </form>
     </div>
 
     <div style="position: absolute; bottom: 0;">
-			Вращение: зажмите левую кнопку мыши и ведите мышь<br />
-			Масштаб: зажмите S + левую кнопку мыши и ведите мышь<br>
-			Смещение: зажмите D + левую кнопку мыши и ведите мышь
+			Rotation: press left mouse button and move mouse<br />
+			Scale: mouse wheel or press S + press left mouse button and move mouse<br>
+			Bias: press D + press left mouse button and move mouse
     </div>
   </body>
 </html>

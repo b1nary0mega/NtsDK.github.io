@@ -32,14 +32,31 @@ SET2 = {he, she}
 | Past    | Did ANY see   | ANY saw   | ANY didn't see    |
 
 
+# Special case, verb example: be
 
-| Who?  | Whom? |
-| I     | Me    |
-| You   | You   |
-| He    | Him   |
-| She   | Her   |
-| We    | Us    |
-| They  | Them  |
+|---
+|| Question | Statement | Negation |
+| Future  | Will ANY be       | ANY will be       | ANY will not be |
+| Present | Am I              | I am              | + not |
+|         | Is he, she, it    | he, she, it is    |  |
+|         | Are you, we, they | you, we, they are |  |
+| Past    | Was I, he, she, it | I, he, she, it was | + not |
+|         | Were you, we, they | you, we, they were |  |
+
+If add verb+ing = continuous. (need to specify time range)
+
+| Who?  | Whom? | Whose?
+| I     | Me    | My
+| You   | You   | Your
+| He    | Him   | His
+| She   | Her   | Her
+| We    | Us    | Our
+| They  | Them  | Their
+
+My name is ...
+What is your name ...
+
+
 
 Question words: What, Who, Where, When, Why, How
 

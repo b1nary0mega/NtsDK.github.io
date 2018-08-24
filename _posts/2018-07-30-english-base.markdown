@@ -62,8 +62,33 @@ Question words: What, Who, Where, When, Why, How
 
 Prepositions: in, to, from,
 
-Filler words: Well, you know, I mean, like, sort of
+Filler words: Well, you know, I mean, like, sort of, you know what I mean
 
+# Tell about yourself
+
+I work in the (museum) as a (PR-manager).
+
+# Articles
+
+"The" is a short form of "this".
+
+"A" is short form of "one".
+
+# Etiquette
+
+hello, hi
+
+Good morning, Good afternoon, Good evening, Good night, 
+
+Dear - formal greeting for letter
+
+Thank you, thanks, please, welcome
+
+Nice to meet you
+
+Apologize, forgive me, sorry, excuse me, regret, pardon
+
+goodbye, bye, see you, take care, farewell 
 
 |---
 | Default aligned | Left aligned | Center aligned | Right aligned

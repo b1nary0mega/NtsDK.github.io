@@ -66,3 +66,55 @@ hoe - how
 hoeveel - how much
 
 waarom - why
+
+# nummers (numbers)
+
+nul 	zero
+
+een 	one
+
+twee 	two
+
+drie 	three
+
+vier 	four
+
+vijf 	five
+
+zes 	six
+
+zeven 	seven
+
+acht 	eight
+
+negen 	nine
+
+tien 	ten
+
+elf 	eleven
+
+twaalf 	twelve
+
+dertien 	thirteen
+
+veertien 	fourteen
+
+vijftien 	fifteen
+
+twintig 	twenty
+
+eenentwintig 	twenty one
+
+dertig 	thirty
+
+veertig 	forty
+
+vijftig 	fifty
+
+honderd 	hundred
+
+tweehonderd 	two hundred
+
+duizend 	thousand
+
+miljoen 	million
